@@ -254,7 +254,7 @@ ycor[11, 2] = -12; xcor[11, 2] = -4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>///Invincibility Over
 bessmertie=0;
 </string>
           </argument>
@@ -481,7 +481,7 @@ if (sprite_index == luna_stay_a) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw memes
+            <string>///Draw Head
 if image_xscale&gt;0
 {
 ycor[0, 0] = -1; xcor[0, 0] = 0;
@@ -612,9 +612,10 @@ ycor[5, 2] = -3; xcor[5, 2] = +0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha=1
+            <string>/// Player Logic
+image_alpha=1
 
-/// Player Logic
+
 
 // VELOCITY HANDLING ==================================================
 
@@ -723,7 +724,7 @@ if (isClimbing == false) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>///Invincibility Frames
 
 if bessmertie=1
 {
@@ -776,7 +777,8 @@ if dir=-1{image_xscale=-1}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar myRooms;
+            <string>///Room Loader
+globalvar myRooms;
 myRooms = ds_list_create();
 ds_list_add(myRooms,l1_2);
 ds_list_add(myRooms,l1_3);
@@ -820,7 +822,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.jump=0
+            <string>///Bubble Jump
+if other.jump=0
 {
 yspeed -=30;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));

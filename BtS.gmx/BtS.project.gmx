@@ -56,6 +56,7 @@
     <script>scripts\iff.gml</script>
     <script>scripts\scr_motion_blur.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\control</object>
     <objects name="chara">
@@ -96,6 +97,8 @@
   <rooms name="rooms">
     <rooms name="level1">
       <room>rooms\l1_1</room>
+      <room>rooms\panelka_</room>
+      <room>rooms\enisey_s_level_</room>
       <room>rooms\l1_2</room>
       <room>rooms\l1_3</room>
     </rooms>
