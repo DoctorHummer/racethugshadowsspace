@@ -174,26 +174,10 @@ draw_sprite(heart,0,l,view_yview+16);
 l+=w;
 }
 
-draw_text(32, 32, "FPS = " + string(fps));
+draw_text_ext_colour(32, 32, "FPS = " + string(fps),1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>331</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_restart_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
