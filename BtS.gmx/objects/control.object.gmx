@@ -174,7 +174,7 @@ draw_sprite(heart,0,l,view_yview+16);
 l+=w;
 }
 
-draw_text(32, 32, "FPS = " + string(fps));
+draw_text_ext_colour(32, 32, "FPS = " + string(fps),1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>
