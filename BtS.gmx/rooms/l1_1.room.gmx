@@ -122,6 +122,8 @@
     <instance objName="o_lvl1grass" x="1216" y="960" name="inst_5DF29ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="1280" y="960" name="inst_C7228F0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="640" y="960" name="inst_511F108B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="restart" x="64" y="64" name="inst_A572BD8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="roombutton" x="128" y="64" name="inst_5EB5D79A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

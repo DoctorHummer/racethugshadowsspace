@@ -46,6 +46,7 @@
       </sprites>
     </sprites>
     <sprite>sprites\part</sprite>
+    <sprite>sprites\cheat</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\l1back</background>
@@ -91,6 +92,10 @@
         <object>objects\red_haunt</object>
       </objects>
       <object>objects\parmonster</object>
+    </objects>
+    <objects name="cheats">
+      <object>objects\restart</object>
+      <object>objects\roombutton</object>
     </objects>
   </objects>
   <rooms name="rooms">
