@@ -81,6 +81,7 @@
       <object>objects\bubble</object>
       <object>objects\platformtrack</object>
       <object>objects\platformvertical</object>
+      <object>objects\platformdown</object>
     </objects>
     <objects name="mechanics">
       <object>objects\background1</object>
