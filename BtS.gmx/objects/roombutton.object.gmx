@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>roomvar=l1_1
+            <string>roomvar=""
 </string>
           </argument>
         </arguments>
@@ -72,7 +72,7 @@
           <argument>
             <kind>1</kind>
             <string>roomvar=get_string("Введите название комнаты","")
-room_goto(roomvar)
+room_goto(string(roomvar))
 </string>
           </argument>
         </arguments>

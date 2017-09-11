@@ -26,11 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>global.weaponstyle=0; //оружие
-global.bulletspeed=30; //скорость полёта света
-global.shotspeed=11; //скорострельность
-global.movespeed=15; //cкорость передвижения
-global.playergravity=1.20 //гравитация
-global.jumpheight=19 //высота прыжка
+global.bulletspeed=15; //скорость полёта света
+global.shotspeed=20; //скорострельность
+global.movespeed=8; //cкорость передвижения
+global.playergravity=0.6 //гравитация
+global.jumpheight=15 //высота прыжка
 global.maxlives=3 //макс. здоровье
 lives=3
 </string>

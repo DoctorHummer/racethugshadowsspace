@@ -57,7 +57,6 @@
     <script>scripts\iff.gml</script>
     <script>scripts\scr_motion_blur.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\control</object>
     <objects name="chara">
