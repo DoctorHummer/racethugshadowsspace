@@ -227,7 +227,6 @@
     <instance objName="o_lvl1grass" x="1152" y="320" name="inst_4A78BBD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="1088" y="256" name="inst_025B4D29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="960" y="192" name="inst_CAEC160A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="690" y="600" name="inst_E59BCEF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="1088" y="640" name="inst_16953163" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="1088" y="704" name="inst_E39CEE37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="256" y="640" name="inst_F1A7E34D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
