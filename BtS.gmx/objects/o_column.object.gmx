@@ -54,9 +54,7 @@ if (place_free(x,y-64) &amp;&amp; place_free(x,y+64)){image_index=1;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
