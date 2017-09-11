@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>image_index=0
 image_speed=0
+
+if (place_free(x,y-64) &amp;&amp; !place_free(x,y+64)){image_index=2;}
+if (!place_free(x,y-64) &amp;&amp; place_free(x,y+64)){image_index=0;}
+if (!place_free(x,y-64) &amp;&amp; !place_free(x,y+64)){image_index=3;}
+if (place_free(x,y-64) &amp;&amp; place_free(x,y+64)){image_index=1;}
 </string>
           </argument>
         </arguments>
@@ -49,13 +54,8 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (place_free(x,y-64) &amp;&amp; !place_free(x,y+64)){image_index=2;}
-if (!place_free(x,y-64) &amp;&amp; place_free(x,y+64)){image_index=0;}
-if (!place_free(x,y-64) &amp;&amp; !place_free(x,y+64)){image_index=3;}
-if (place_free(x,y-64) &amp;&amp; place_free(x,y+64)){image_index=1;}
+            <string>
 
-if (y&lt;32 or y&gt;928 or x&lt;32 or x&gt;1248) {instance_destroy()}
-if (y&gt;736 and x&lt;256) {instance_destroy()}
 </string>
           </argument>
         </arguments>

@@ -175,6 +175,7 @@ l+=w;
 }
 
 draw_text_ext_colour(32, 32, "FPS = " + string(fps),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(32, 64, roombutton.roomvar,1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>

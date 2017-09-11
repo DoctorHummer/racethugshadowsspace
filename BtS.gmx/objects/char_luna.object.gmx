@@ -355,14 +355,14 @@ if (landing &gt; 0) {
 }
 
 // Configure image speeds.
-image_speed = 1.0;
+image_speed = 0.5;
 
 if (sprite_index == luna_run) {
-  image_speed = 0.8;
+  image_speed = 0.4;
 }
 
 if (sprite_index == luna_stay) {
-  image_speed = 0.1;
+  image_speed = 0.05;
 }
 
 </string>
@@ -449,14 +449,14 @@ if (landing &gt; 0) {
 }
 
 // Configure image speeds.
-image_speed = 1.0;
+image_speed = 0.5;
 
 if (sprite_index == luna_run_a) {
-  image_speed = 0.8;
+  image_speed = 0.4;
 }
 
 if (sprite_index == luna_stay_a) {
-  image_speed = 0.1;
+  image_speed = 0.05;
 }
 
 </string>
@@ -825,7 +825,7 @@ else
             <string>///Bubble Jump
 if other.jump=0
 {
-yspeed -=30;
+yspeed -=jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 other.jump=1
 }
@@ -865,11 +865,11 @@ var ii = floor( image_index );
 draw_self();
 eyetimer+=1
 if eyetimer&lt;150 {draw_sprite_ext(luna_eyes,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if eyetimer=150 {draw_sprite_ext(luna_eyes,1,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if eyetimer=151 {draw_sprite_ext(luna_eyes,2,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if eyetimer=152 {draw_sprite_ext(luna_eyes,3,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if eyetimer=153 {draw_sprite_ext(luna_eyes,4,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if eyetimer&gt;=153 {eyetimer=0}
+if (eyetimer=150 or eyetimer=151) {draw_sprite_ext(luna_eyes,1,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
+if (eyetimer=152 or eyetimer=153) {draw_sprite_ext(luna_eyes,2,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
+if (eyetimer=154 or eyetimer=155) {draw_sprite_ext(luna_eyes,3,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
+if (eyetimer=156 or eyetimer=157) {draw_sprite_ext(luna_eyes,4,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
+if eyetimer&gt;=158 {eyetimer=choose(0,50,-100,-150)}
 draw_sprite_ext(luna_hat,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,image_alpha)
 </string>
           </argument>

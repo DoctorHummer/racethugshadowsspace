@@ -59,7 +59,7 @@ index=0
 if jump=1
 {
 index+=1
-if index&gt;4
+if index&gt;9
 {jump=0}
 }
 
@@ -76,22 +76,6 @@ a.image_alpharange=choose(0.25,0.5,0.75)
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="spikes">
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -114,11 +98,11 @@ a.image_alpharange=choose(0.25,0.5,0.75)
             <string>draw_sprite_ext(jumpshroom,0,x,y,scalex,scaley,image_angle,c_white,image_alpha)//пузырь
 draw_sprite_ext(jumpshroom,1,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha)//камни
 if index=0{scalex=1; scaley=1}
-if index=1{scalex=1.2; scaley=0.8}
-if index=2{scalex=1; scaley=1}
-if index=3{scalex=0.9; scaley=1.2}
-if index=4{scalex=0.8; scaley=1.5}
-if index=5{scalex=0.9; scaley=1.2}
+if (index=1 or index=2){scalex=1.2; scaley=0.8}
+if (index=3 or index=4){scalex=1; scaley=1}
+if (index=5 or index=6){scalex=0.9; scaley=1.2}
+if (index=7 or index=8){scalex=0.8; scaley=1.5}
+if index=9{scalex=0.9; scaley=1.2}
 </string>
           </argument>
         </arguments>

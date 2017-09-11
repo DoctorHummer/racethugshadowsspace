@@ -53,14 +53,14 @@ movetimer=0;
 
 if movemode=0
 {
-vspeed=2
-if (!place_meeting(x,y+64,platformtrack)){movemode=1; if place_meeting(x,y-35,player){player.y-=4}}
+vspeed=1
+if (!place_meeting(x,y+64,platformtrack)){movemode=1; if place_meeting(x,y-35,player){player.y-=2};}
 }
 
 if movemode=1
 {
-vspeed=-2
-if (!place_meeting(x,y-64,platformtrack)){movemode=0; if place_meeting(x,y-35,player){player.y+=4}}
+vspeed=-1
+if (!place_meeting(x,y-64,platformtrack)){movemode=0; if place_meeting(x,y-35,player){player.y+=2};}
 }
 </string>
           </argument>

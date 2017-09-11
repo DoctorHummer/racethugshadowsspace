@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>roomvar=""
+            <string>roomvar=l1_1
 </string>
           </argument>
         </arguments>
@@ -54,7 +54,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,8 +71,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>roomvar=get_string("Введите название комнаты","")
-room_goto(string(roomvar))
+            <string>//roomvar=get_string("Введите название комнаты","")
+
+//room_goto(roomvar)
+
+if room_next(room) != -1
+   {
+   room_goto_next();
+   }
+   else
+   {
+   game_restart()
+   }
 </string>
           </argument>
         </arguments>

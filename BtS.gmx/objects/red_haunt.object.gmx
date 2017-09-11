@@ -116,14 +116,14 @@ a.image_index=1
             <kind>1</kind>
             <string>if dead=false
 {
-motion_add(point_direction(x,y,player.x,player.y),1)
+motion_add(point_direction(x,y,player.x,player.y),0.5)
     if x&lt;player.x{image_xscale=1}
     if x&gt;player.x{image_xscale=-1}
-    if (speed &gt; 8)
+    if (speed &gt; 4)
     {
-        speed = 8;
+        speed = 4;
     }
-    image_speed=0.5
+    image_speed=0.25
 }
     
 
