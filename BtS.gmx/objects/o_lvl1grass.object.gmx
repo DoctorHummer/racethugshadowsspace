@@ -76,14 +76,14 @@ image_index = scr_auto_tile();
             <kind>1</kind>
             <string>
 if random(200)=1{k1=1}
-if k1=0{rotlevs1+=0.08}
-if k1=1{rotlevs1-=0.08}
+if k1=0{rotlevs1+=0.04}
+if k1=1{rotlevs1-=0.04}
 if rotlevs1&lt;-2{k1=0}
 if rotlevs1&gt;2{k1=1}
 
 if random(200)=1{k2=1}
-if k2=0{rotvins1+=0.04}
-if k2=1{rotvins1-=0.04}
+if k2=0{rotvins1+=0.02}
+if k2=1{rotvins1-=0.02}
 if rotvins1&lt;-2{k2=0}
 if rotvins1&gt;2{k2=1}
 </string>

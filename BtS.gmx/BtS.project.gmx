@@ -31,6 +31,7 @@
       <sprite>sprites\jumpshroom</sprite>
       <sprite>sprites\platform</sprite>
       <sprite>sprites\ptrack</sprite>
+      <sprite>sprites\gear</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -87,6 +88,7 @@
       <object>objects\background1</object>
       <object>objects\particle</object>
       <object>objects\Shaker</object>
+      <object>objects\superview</object>
     </objects>
     <objects name="monsters">
       <objects name="tier1">
@@ -105,6 +107,7 @@
       <room>rooms\l1_2</room>
       <room>rooms\f_uck_gay</room>
       <room>rooms\l1_3</room>
+      <room>rooms\l1_4</room>
       <room>rooms\i_panelka_</room>
       <room>rooms\i_enisey_s_level_</room>
       <room>rooms\f_urrod</room>

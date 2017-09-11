@@ -104,6 +104,7 @@ t = 0;
             <kind>1</kind>
             <string>eyetimer=0
 double_jump=1
+shuffletimer=0
 if instance_exists(player) and !instance_exists(chararm)
 {
 instance_create(x+0,y+0,chararm)
@@ -778,12 +779,17 @@ if dir=-1{image_xscale=-1}
           <argument>
             <kind>1</kind>
             <string>///Room Loader
+if shuffletimer&lt;5
+{
 globalvar myRooms;
 myRooms = ds_list_create();
 ds_list_add(myRooms,l1_2);
 ds_list_add(myRooms,l1_3);
 ds_list_shuffle(myRooms);
-
+}
+else
+{shuffletimer=5}
+shuffletimer+=1
 
 if (x&gt;room_width)
 {
@@ -825,7 +831,7 @@ else
             <string>///Bubble Jump
 if other.jump=0
 {
-yspeed -=jumpHeight;
+yspeed =-jumpHeight*1.5;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 other.jump=1
 }

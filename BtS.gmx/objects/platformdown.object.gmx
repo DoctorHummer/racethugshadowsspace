@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>movemode=0
 movetimer=0;
+image_speed=0
+image_index=1
+gearot=0;
 </string>
           </argument>
         </arguments>
@@ -76,20 +79,6 @@ if movemode=2
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>500</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring>draw_self();</codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -104,8 +93,13 @@ if movemode=2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-draw_text_ext_colour(32, 64, movemode,1,100,c_white,c_white,c_white,c_white,1)
+            <string>draw_self();
+draw_sprite_ext(gear,0,x-68,y+17,1,1,gearot,c_white,1);
+draw_sprite_ext(gear,0,x+68,y+17,1,1,-gearot,c_white,1);
+if (vspeed&lt;0)
+{gearot+=1}
+if (vspeed&gt;0)
+{gearot-=2}
 </string>
           </argument>
         </arguments>
