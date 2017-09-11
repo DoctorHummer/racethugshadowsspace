@@ -730,12 +730,12 @@ if bessmertie=1
 {
 
 
-if t &lt; 40
+if t &lt; 80
 {
 
-if (t&lt;=4 || t&gt;8 &amp;&amp; t&lt;=12 || t&gt;16 &amp;&amp; t&lt;=20 || t&gt;24 &amp;&amp; t&lt;=28 || t&gt;32 &amp;&amp; t&lt;=36 || t&gt;40 &amp;&amp; t&lt;=44|| t&gt;48 &amp;&amp; t&lt;=52 || t&gt;56 &amp;&amp; t&lt;=60 || t&gt;64 )
+if (t&lt;=8 || t&gt;16 &amp;&amp; t&lt;=24 || t&gt;32 &amp;&amp; t&lt;=40 || t&gt;48 &amp;&amp; t&lt;=56 || t&gt;64 &amp;&amp; t&lt;=72 || t&gt;80 &amp;&amp; t&lt;=88|| t&gt;96 &amp;&amp; t&lt;=104 || t&gt;112 &amp;&amp; t&lt;=120 || t&gt;128 )
 {image_alpha=0.5}
-if (t&gt;4 &amp;&amp; t&lt;=8 || t&gt;12 &amp;&amp; t&lt;=16 || t&gt;20 &amp;&amp; t&lt;=24 || t&gt;28 &amp;&amp; t&lt;=32 || t&gt;36 &amp;&amp; t&lt;=40 || t&gt;44 &amp;&amp; t&lt;=48 || t&gt;52 &amp;&amp; t&lt;=56 || t&gt;60 &amp;&amp; t&lt;=64 )
+if (t&gt;8 &amp;&amp; t&lt;=16 || t&gt;24 &amp;&amp; t&lt;=32 || t&gt;40 &amp;&amp; t&lt;=48 || t&gt;56 &amp;&amp; t&lt;=64 || t&gt;72 &amp;&amp; t&lt;=80 || t&gt;88 &amp;&amp; t&lt;=96 || t&gt;104 &amp;&amp; t&lt;=112 || t&gt;120 &amp;&amp; t&lt;=128 )
 {image_alpha=1}
 t+=1; //counts down to when the guy stops flashing, ignoring the clumsy "alarm" feature
 }

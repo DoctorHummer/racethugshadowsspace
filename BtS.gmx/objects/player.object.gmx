@@ -28,7 +28,7 @@
             <string>if bessmertie&lt;1
 {
 instance_create(x,y,Shaker)
-alarm[0]=40;
+alarm[0]=80;
 bessmertie=1;
 lives-=1;
 if other.x&lt;x{xspeed = +30;}
