@@ -105,7 +105,6 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
-      <room>rooms\f_uck_gay</room>
       <room>rooms\l1_3</room>
       <room>rooms\l1_4</room>
       <room>rooms\i_panelka_</room>
@@ -114,6 +113,7 @@
       <room>rooms\f_solodov</room>
       <room>rooms\f_genndy</room>
       <room>rooms\f_idite_nahui</room>
+      <room>rooms\f_uck_gay</room>
       <room>rooms\f_vnimatelno</room>
     </rooms>
   </rooms>
