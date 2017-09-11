@@ -3,7 +3,7 @@
   <caption></caption>
   <width>2560</width>
   <height>1920</height>
-  <vsnap>1</vsnap>
+  <vsnap>64</vsnap>
   <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
@@ -516,6 +516,7 @@
     <instance objName="spikes" x="1088" y="64" name="inst_18FBCD95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="char_luna" x="128" y="1853" name="inst_008ACA71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="superview" x="64" y="1695" name="inst_D1AAFD75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platformtrack" x="448" y="512" name="inst_0602AC51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
