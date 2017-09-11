@@ -172,7 +172,6 @@
     <instance objName="platformtrack" x="1088" y="640" name="inst_B467094E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platformtrack" x="1088" y="704" name="inst_1C1B1E27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platformtrack" x="1088" y="768" name="inst_C105EC9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="1088" y="192" name="inst_9A927E3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="1024" y="896" name="inst_A42F2417" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes" x="960" y="896" name="inst_4651223D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes" x="896" y="896" name="inst_D07E63F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
