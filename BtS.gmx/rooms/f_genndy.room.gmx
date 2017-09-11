@@ -172,7 +172,7 @@
     <instance objName="platformtrack" x="1088" y="640" name="inst_B467094E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platformtrack" x="1088" y="704" name="inst_1C1B1E27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platformtrack" x="1088" y="768" name="inst_C105EC9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platformup" x="1088" y="192" name="inst_9A927E3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="1088" y="192" name="inst_9A927E3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="1024" y="896" name="inst_A42F2417" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes" x="960" y="896" name="inst_4651223D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes" x="896" y="896" name="inst_D07E63F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
@@ -252,6 +252,7 @@
     <instance objName="o_lvl1grass" x="64" y="576" name="inst_2D5DA1F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="64" y="640" name="inst_32B180C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="backtree" x="704" y="960" name="inst_666D02D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platformvertical" x="1088" y="320" name="inst_509A0BA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
