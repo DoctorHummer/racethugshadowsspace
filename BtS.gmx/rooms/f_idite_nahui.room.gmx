@@ -195,7 +195,7 @@
     <instance objName="spikes" x="448" y="768" name="inst_BF44A56E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="spikes" x="448" y="832" name="inst_B39D1779" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="spikes" x="448" y="896" name="inst_4621B064" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="spikes" x="512" y="640" name="inst_D0AF588B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="135"/>
+    <instance objName="spikes" x="512" y="640" name="inst_D0AF588B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="o_lvl1grass" x="1088" y="64" name="inst_C0A04B4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="1152" y="64" name="inst_661519E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="1088" y="0" name="inst_726C5E1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
