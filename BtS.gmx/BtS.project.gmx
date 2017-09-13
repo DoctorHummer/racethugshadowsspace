@@ -105,6 +105,7 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
+      <room>rooms\f_is_kal</room>
       <room>rooms\f_urod_vnimatelno</room>
       <room>rooms\f_huh</room>
       <room>rooms\l1_3</room>
