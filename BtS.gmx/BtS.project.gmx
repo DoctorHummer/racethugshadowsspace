@@ -126,11 +126,16 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
+<<<<<<< HEAD
       <room>rooms\i_my_little_pony</room>
       <room>rooms\i_stfu_</room>
       <room>rooms\i_enis_potterg_</room>
       <room>rooms\i_lived_under_the_stairs_</room>
       <room>rooms\i_m_gay_</room>
+=======
+      <room>rooms\f_botsosi_hiu</room>
+      <room>rooms\f_urod_pojrigovna</room>
+>>>>>>> 1b8306c45225ef93043c879dc51503b32a579729
       <room>rooms\i_sratterstein</room>
       <room>rooms\i_play_bts</room>
       <room>rooms\i_eat_ass</room>
