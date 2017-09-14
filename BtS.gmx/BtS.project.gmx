@@ -26,6 +26,8 @@
       <sprite>sprites\grass</sprite>
       <sprite>sprites\vine</sprite>
       <sprite>sprites\spike</sprite>
+      <sprite>sprites\aspike</sprite>
+      <sprite>sprites\bspike</sprite>
       <sprite>sprites\tree</sprite>
       <sprite>sprites\treelight</sprite>
       <sprite>sprites\jumpshroom</sprite>
@@ -43,8 +45,11 @@
     <sprites name="monsters">
       <sprites name="tier1">
         <sprite>sprites\redguy</sprite>
-        <sprite>sprites\redguydead</sprite>
+        <sprite>sprites\purpleguy</sprite>
+        <sprite>sprites\purpleguydeath</sprite>
+        <sprite>sprites\sparrk</sprite>
       </sprites>
+      <sprite>sprites\cloud</sprite>
     </sprites>
     <sprite>sprites\part</sprite>
     <sprite>sprites\cheat</sprite>
@@ -75,6 +80,8 @@
       <objects name="traps">
         <object>objects\trapblock</object>
         <object>objects\spikes</object>
+        <object>objects\spikes_a</object>
+        <object>objects\spikes_b</object>
       </objects>
       <objects name="backtiles">
         <object>objects\backtree</object>
@@ -89,12 +96,24 @@
       <object>objects\particle</object>
       <object>objects\Shaker</object>
       <object>objects\superview</object>
+      <object>objects\monstergore</object>
     </objects>
     <objects name="monsters">
-      <objects name="tier1">
-        <object>objects\red_haunt</object>
-      </objects>
       <object>objects\parmonster</object>
+      <object>objects\parbullet</object>
+      <objects name="dankforest">
+        <objects name="tier1">
+          <object>objects\red_haunt</object>
+        </objects>
+        <objects name="tier2">
+          <object>objects\weep</object>
+          <object>objects\weepdead</object>
+        </objects>
+        <objects name="bullets">
+          <object>objects\weepbullet</object>
+          <object>objects\spark</object>
+        </objects>
+      </objects>
     </objects>
     <objects name="cheats">
       <object>objects\restart</object>

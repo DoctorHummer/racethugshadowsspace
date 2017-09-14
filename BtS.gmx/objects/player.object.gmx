@@ -8,6 +8,38 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="4" ename="parbullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if bessmertie&lt;1
+{
+instance_create(x,y,Shaker)
+alarm[0]=80;
+bessmertie=1;
+lives-=1;
+if other.x&lt;x{xspeed = +30;}
+else{xspeed = -30;}
+yspeed = -15;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="parmonster">
       <action>
         <libid>1</libid>
@@ -57,7 +89,7 @@ yspeed = -15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bessmertie&lt;1
+            <string>if (bessmertie&lt;1 and other.active=1)
 {
 instance_create(x,y,Shaker)
 alarm[0]=40;

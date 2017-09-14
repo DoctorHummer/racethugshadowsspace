@@ -67,7 +67,7 @@ image_speed=0;
 if image_alpha&gt;image_alpharange{image_alpha-=0.1} else {instance_destroy()}
 image_xscale+=0.01 image_yscale+=0.01
 }
-if (type=3)
+if (type=3 or type=4)
 {
 image_speed=0;
 if image_alpha&gt;0{image_alpha-=0.1} else {instance_destroy()}
