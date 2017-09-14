@@ -92,7 +92,6 @@
       <object>objects\platformvertical</object>
       <object>objects\platformdown</object>
       <object>objects\o_shatterBlock</object>
-      <object>objects\o_shatterBlockShoot</object>
     </objects>
     <objects name="mechanics">
       <object>objects\background1</object>
@@ -127,8 +126,6 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
-      <room>rooms\i_puk</room>
-      <room>rooms\room24</room>
       <room>rooms\i_sratterstein</room>
       <room>rooms\i_play_bts</room>
       <room>rooms\i_eat_ass</room>
