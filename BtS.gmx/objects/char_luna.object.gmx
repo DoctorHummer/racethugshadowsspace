@@ -831,7 +831,7 @@ else
             <string>///Bubble Jump
 if other.jump=0
 {
-yspeed =-jumpHeight*1.5;
+yspeed =-30;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 other.jump=1
 }
