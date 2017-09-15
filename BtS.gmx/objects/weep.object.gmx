@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>hp=2
-bessmertie=0
-btimer=0
 dead=false
 deathimagecount=4;
+bessmertie=0
+btimer=0
 
 image_angle=random_range(-3,3);k1=0;
 </string>
@@ -54,7 +54,7 @@ image_angle=random_range(-3,3);k1=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>a=instance_create(x,y,weepdead)
+            <string>a=instance_create(x,y,weepdead);
 a.image_xscale=image_xscale
 </string>
           </argument>
@@ -80,10 +80,13 @@ a.image_xscale=image_xscale
             <kind>1</kind>
             <string>if dead=false
 {
-
+//motion_add(point_direction(x,y,player.x,player.y),0.5)
     if x&lt;player.x{image_xscale=1}
     if x&gt;player.x{image_xscale=-1}
-    
+   // if (speed &gt; 4)
+   // {
+   //     speed = 4;
+   // }
     image_speed=0.25
 if bessmertie=1 {btimer+=1 if btimer&gt;4{btimer=0; bessmertie=0}}
 }
