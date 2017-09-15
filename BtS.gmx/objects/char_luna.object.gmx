@@ -785,6 +785,18 @@ globalvar myRooms;
 myRooms = ds_list_create();
 ds_list_add(myRooms,l1_2);
 ds_list_add(myRooms,l1_3);
+ds_list_add(myRooms,l1_4);
+ds_list_add(myRooms,l1_5);
+ds_list_add(myRooms,l1_6);
+ds_list_add(myRooms,l1_7);
+ds_list_add(myRooms,l1_8);
+ds_list_add(myRooms,l1_9);
+ds_list_add(myRooms,l1_10);
+ds_list_add(myRooms,l1_11);
+ds_list_add(myRooms,l1_12);
+ds_list_add(myRooms,l1_13);
+ds_list_add(myRooms,l1_14);
+ds_list_add(myRooms,l1_15);
 ds_list_shuffle(myRooms);
 }
 else

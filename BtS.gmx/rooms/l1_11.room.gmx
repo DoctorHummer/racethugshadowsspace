@@ -139,19 +139,9 @@
     <instance objName="o_lvl1grass" x="1088" y="896" name="inst_BFF37D7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="1152" y="896" name="inst_DF696A00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="1152" y="832" name="inst_CFE01D89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="spikes" x="1024" y="896" name="inst_46F24242" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="960" y="896" name="inst_CFA15193" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="896" y="896" name="inst_BB8FF2D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="832" y="896" name="inst_E97F3096" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="768" y="896" name="inst_92FC994B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="704" y="896" name="inst_CB976973" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="640" y="896" name="inst_7F0A4FE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="576" y="896" name="inst_AB346AEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes" x="512" y="896" name="inst_7C6E3C17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="o_lvl1grass" x="576" y="704" name="inst_306E9B1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="960" y="704" name="inst_D09485FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="192" y="512" name="inst_22145CEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1grass" x="256" y="576" name="inst_7F6D6CCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="64" y="512" name="inst_6AC80491" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="64" y="576" name="inst_8D28BC26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="128" y="512" name="inst_1ACA83CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -260,10 +250,8 @@
     <instance objName="o_lvl1grass" x="1216" y="128" name="inst_4016420D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="576" y="768" name="inst_C2C0D16E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="576" y="832" name="inst_13BACD25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_column" x="576" y="896" name="inst_BFBE6B39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="960" y="832" name="inst_7412E506" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="960" y="768" name="inst_1D263868" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_column" x="960" y="896" name="inst_ECB7BCC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="960" y="768" name="inst_F604AD85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="704" y="576" name="inst_9602A314" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="704" y="576" name="inst_E5AA9FD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -271,7 +259,6 @@
     <instance objName="o_column" x="704" y="704" name="inst_093451B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="704" y="768" name="inst_A6DE0744" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="704" y="832" name="inst_6CF3D007" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_column" x="704" y="896" name="inst_A91CA8F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="576" y="448" name="inst_F0CC49DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="576" y="512" name="inst_536BD5D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="576" y="576" name="inst_27E14A3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -283,6 +270,24 @@
     <instance objName="red_haunt" x="512" y="256" name="inst_DA279FC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="red_haunt" x="1024" y="128" name="inst_B079821F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="red_haunt" x="832" y="192" name="inst_A1DF281D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spikes_a" x="512" y="896" name="inst_4849F2AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="576" y="896" name="inst_599C4371" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="576" y="896" name="inst_48D2DABC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="640" y="896" name="inst_AB32132E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="704" y="896" name="inst_5EDC5517" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="768" y="896" name="inst_9CCF0E38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="768" y="896" name="inst_1D4D1138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="896" y="896" name="inst_4B702229" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="832" y="896" name="inst_DB73132A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="960" y="896" name="inst_68BB9E2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_a" x="1024" y="896" name="inst_5641F946" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="o_column" x="576" y="896" name="inst_2C9DEC15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_column" x="704" y="896" name="inst_BB2109D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_column" x="960" y="896" name="inst_CEC7DE11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_column" x="1088" y="704" name="inst_672FF1CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_column" x="1088" y="768" name="inst_C820BC1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_column" x="1088" y="832" name="inst_0AEC0BDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_door" x="1280" y="768" name="inst_20F79D39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

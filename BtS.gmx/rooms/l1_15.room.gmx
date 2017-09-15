@@ -360,6 +360,7 @@
     <instance objName="red_haunt" x="64" y="352" name="inst_D5BA4413" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="red_haunt" x="1152" y="864" name="inst_3E795B20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="red_haunt" x="736" y="768" name="inst_39E2B13B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_door" x="1280" y="768" name="inst_A8941F0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

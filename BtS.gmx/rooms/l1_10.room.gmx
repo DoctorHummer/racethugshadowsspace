@@ -487,6 +487,10 @@
     <instance objName="o_column" x="2304" y="1728" name="inst_FB836456" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="2304" y="1856" name="inst_E76A0665" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="2304" y="1792" name="inst_C676B4C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weep" x="576" y="320" name="inst_5071523E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weep" x="2176" y="640" name="inst_D064AC18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weep" x="1472" y="1408" name="inst_CF99243E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_door" x="2560" y="1728" name="inst_81B1950D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
