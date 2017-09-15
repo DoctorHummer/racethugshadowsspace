@@ -35,6 +35,7 @@
       <sprite>sprites\ptrack</sprite>
       <sprite>sprites\gear</sprite>
       <sprite>sprites\shatterBlock</sprite>
+      <sprite>sprites\door</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -92,6 +93,7 @@
       <object>objects\platformvertical</object>
       <object>objects\platformdown</object>
       <object>objects\o_shatterBlock</object>
+      <object>objects\o_door</object>
     </objects>
     <objects name="mechanics">
       <object>objects\background1</object>
@@ -126,14 +128,14 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
+      <room>rooms\l1_3</room>
+      <room>rooms\l1_4</room>
       <room>rooms\i_sratterstein</room>
       <room>rooms\i_play_bts</room>
       <room>rooms\i_eat_ass</room>
       <room>rooms\f_is_kal</room>
       <room>rooms\f_urod_vnimatelno</room>
       <room>rooms\f_huh</room>
-      <room>rooms\l1_3</room>
-      <room>rooms\l1_4</room>
       <room>rooms\f_urrodus_room</room>
       <room>rooms\f_meme_forest</room>
       <room>rooms\f_ass</room>
@@ -148,6 +150,13 @@
       <room>rooms\i_pukish_</room>
       <room>rooms\i_smell_</room>
       <room>rooms\i_sratt_from__verh</room>
+      <room>rooms\f_botsosi_hiu</room>
+      <room>rooms\f_urod_pojrigovna</room>
+      <room>rooms\i_enis_potterg_</room>
+      <room>rooms\i_lived_under_the_stairs_</room>
+      <room>rooms\i_m_gay_</room>
+      <room>rooms\i_my_little_pony</room>
+      <room>rooms\i_stfu_</room>
     </rooms>
   </rooms>
   <help>
