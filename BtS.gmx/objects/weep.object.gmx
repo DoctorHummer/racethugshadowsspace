@@ -32,6 +32,8 @@ bessmertie=0
 btimer=0
 
 image_angle=random_range(-3,3);k1=0;
+
+tier=2
 </string>
           </argument>
         </arguments>

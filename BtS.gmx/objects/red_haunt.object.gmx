@@ -32,6 +32,8 @@ bessmertie=0
 btimer=0
 
 image_angle=random_range(-3,3);k1=0;
+
+tier=1
 </string>
           </argument>
         </arguments>
@@ -93,7 +95,7 @@ a.direction=random(360)
 a.image_alpha=1.5
 a.image_index=1
 }
-
+script_execute(itemdrop);
 </string>
           </argument>
         </arguments>

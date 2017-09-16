@@ -25,14 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.weaponstyle=0; //оружие
+            <string>global.maxlives=3 //макс. здоровье
+lives=3
+global.coins=0 //монеты
+global.goldenkeys=0 //зол.ключи
+
+global.weaponstyle=0; //оружие
 global.bulletspeed=15; //скорость полёта света
 global.shotspeed=20; //скорострельность
 global.movespeed=8; //cкорость передвижения
 global.playergravity=0.6 //гравитация
 global.jumpheight=15 //высота прыжка
-global.maxlives=3 //макс. здоровье
-lives=3
 </string>
           </argument>
         </arguments>

@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>timer=0
+
+tier=2
 </string>
           </argument>
         </arguments>
@@ -93,6 +95,7 @@ repeat(8)
 instance_create(x,y,monstergore)
 }
 
+script_execute(itemdrop);
 </string>
           </argument>
         </arguments>
