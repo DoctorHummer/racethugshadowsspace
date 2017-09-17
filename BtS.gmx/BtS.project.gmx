@@ -139,11 +139,6 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
-<<<<<<< HEAD
-=======
-      <room>rooms\f_facewarp_is_better</room>
-      <room>rooms\f_slish_ti__svinia</room>
->>>>>>> eb09087791f1c3d2ba2df3dc13f8f6a9e0f0ee13
       <room>rooms\l1_3</room>
       <room>rooms\l1_4</room>
       <room>rooms\l1_5</room>
