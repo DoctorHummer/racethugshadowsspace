@@ -53,6 +53,7 @@ gearot=0;
           <argument>
             <kind>1</kind>
             <string>if place_meeting(x,y-35,player){if vspeed!=0 {player.y+=vspeed}}
+if place_meeting(x,y+35,player){if vspeed!=0 {player.y+=vspeed}}
 
 if movemode=0
 {

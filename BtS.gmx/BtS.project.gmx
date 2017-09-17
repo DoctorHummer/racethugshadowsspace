@@ -45,6 +45,8 @@
     <sprites name="background">
       <sprite>sprites\stars1</sprite>
       <sprite>sprites\moony</sprite>
+      <sprite>sprites\forest</sprite>
+      <sprite>sprites\thecloud</sprite>
     </sprites>
     <sprites name="monsters">
       <sprites name="tier1">
@@ -68,6 +70,9 @@
     <script>scripts\scr_motion_blur.gml</script>
     <script>scripts\itemdrop.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\c_font</font>
+  </fonts>
   <objects name="objects">
     <object>objects\control</object>
     <objects name="chara">
@@ -134,7 +139,6 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
-      <room>rooms\f_slish_ti__svinia</room>
       <room>rooms\l1_3</room>
       <room>rooms\l1_4</room>
       <room>rooms\l1_5</room>
@@ -148,6 +152,7 @@
       <room>rooms\l1_13</room>
       <room>rooms\l1_14</room>
       <room>rooms\l1_15</room>
+      <room>rooms\f_slish_ti__svinia</room>
       <room>rooms\f_huh</room>
       <room>rooms\f_meme_forest</room>
       <room>rooms\f_ass</room>
