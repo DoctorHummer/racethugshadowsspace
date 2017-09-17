@@ -177,8 +177,14 @@ draw_sprite(heart,0,l,view_yview+16);
 l+=w;
 }
 
-draw_text_ext_colour(32+view_xview, 32+view_yview, "FPS = " + string(fps),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(16+view_xview, 16+view_yview, string(fps),1,100,c_white,c_white,c_white,c_white,1)
 
+draw_set_color(c_white);
+draw_set_font(c_font);
+draw_sprite(pick,0,view_xview+64,view_yview+64);
+draw_text_ext_colour(86+view_xview, 48+view_yview, string(global.coins),1,100,c_white,c_white,c_white,c_white,1)
+draw_sprite(pick,1,view_xview+64,view_yview+96);
+draw_text_ext_colour(86+view_xview, 80+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>

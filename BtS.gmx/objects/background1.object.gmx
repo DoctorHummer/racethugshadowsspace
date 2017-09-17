@@ -42,6 +42,38 @@ s13x=random(room_width); s13y=(random(room_height)/2); s13i=choose(0,1,2,3,4,5);
 s14x=random(room_width); s14y=(random(room_height)/2); s14i=choose(0,1,2,3,4,5); s14xs=0.4 + random(0.6); s14ys=s14xs; s14alpha=s1xs; s14im=0
 s15x=random(room_width); s15y=(random(room_height)/2); s15i=choose(0,1,2,3,4,5); s15xs=0.4 + random(0.6); s15ys=s15xs; s15alpha=s1xs; s15im=0
 s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5); s16xs=0.4 + random(0.6); s16ys=s16xs; s16alpha=s16xs; s16im=0
+
+
+cloudx1=choose(608,708,808,908,108,208,308,408,508); cloudy1=(random(room_height)/2)
+cloudx2=choose(608,708,808,908,108,208,308,408,508); cloudy2=(random(room_height)/2)
+cloudx3=choose(608,708,808,908,108,208,308,408,508); cloudy3=(random(room_height)/2)
+cloudx4=choose(608,708,808,908,108,208,308,408,508); cloudy4=(random(room_height)/2)
+cloudx5=choose(608,708,808,908,108,208,308,408,508); cloudy5=(random(room_height)/2)
+cloudx6=choose(608,708,808,908,108,208,308,408,508); cloudy6=(random(room_height)/2)
+cloudx7=choose(608,708,808,908,108,208,308,408,508); cloudy7=(random(room_height)/2)
+cloudx8=choose(608,708,808,908,108,208,308,408,508); cloudy8=(random(room_height)/2)
+cloudx9=choose(608,708,808,908,108,208,308,408,508); cloudy9=(random(room_height)/2)
+cloudx10=choose(608,708,808,908,108,208,308,408,508); cloudy10=(random(room_height)/2)
+xerc1=choose(1,2,3)
+xerc2=choose(1,2,3)
+xerc3=choose(1,2,3)
+xerc4=choose(1,2,3)
+xerc5=choose(1,2,3)
+xerc6=choose(1,2,3)
+xerc7=choose(1,2,3)
+xerc8=choose(1,2,3)
+xerc9=choose(1,2,3)
+xerc10=choose(1,2,3)
+lol1=choose(0,1,2)
+lol2=choose(0,1,2)
+lol3=choose(0,1,2)
+lol4=choose(0,1,2)
+lol5=choose(0,1,2)
+lol6=choose(0,1,2)
+lol7=choose(0,1,2)
+lol8=choose(0,1,2)
+lol9=choose(0,1,2)
+lol10=choose(0,1,2)
 </string>
           </argument>
         </arguments>
@@ -97,6 +129,37 @@ if s15im=0{s15alpha+=0.01}; if s15alpha&gt;1{s15im=1}; if s15im=1{s15alpha-=0.01
 if s15alpha&lt;0{s15im=0; s15x=random(room_width); s15y=(random(room_height)/2)}
 if s16im=0{s16alpha+=0.005}; if s16alpha&gt;1{s16im=1}; if s16im=1{s16alpha-=0.005}; 
 if s16alpha&lt;0{s16im=0; s16x=random(room_width); s16y=(random(room_height)/2)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+cloudx1-=xerc1; if cloudx1&lt;-250{cloudx1=room_width+choose(250,300,350); cloudy1=(random(room_height)/2); xerc1=choose(1,2,3)}
+cloudx2-=xerc2; if cloudx2&lt;-250{cloudx2=room_width+choose(250,300,350); cloudy2=(random(room_height)/2); xerc2=choose(1,2,3)}
+cloudx3-=xerc3; if cloudx3&lt;-250{cloudx3=room_width+choose(250,300,350); cloudy3=(random(room_height)/2); xerc3=choose(1,2,3)}
+cloudx4-=xerc4; if cloudx4&lt;-250{cloudx4=room_width+choose(250,300,350); cloudy4=(random(room_height)/2); xerc4=choose(1,2,3)}
+cloudx5-=xerc5; if cloudx5&lt;-250{cloudx5=room_width+choose(250,300,350); cloudy5=(random(room_height)/2); xerc5=choose(1,2,3)}
+cloudx6-=xerc6; if cloudx6&lt;-250{cloudx6=room_width+choose(250,300,350); cloudy6=(random(room_height)/2); xerc6=choose(1,2,3)}
+cloudx7-=xerc7; if cloudx7&lt;-250{cloudx7=room_width+choose(250,300,350); cloudy7=(random(room_height)/2); xerc7=choose(1,2,3)}
+cloudx8-=xerc8; if cloudx8&lt;-250{cloudx8=room_width+choose(250,300,350); cloudy8=(random(room_height)/2); xerc8=choose(1,2,3)}
+cloudx9-=xerc9; if cloudx9&lt;-250{cloudx9=room_width+choose(250,300,350); cloudy9=(random(room_height)/2); xerc9=choose(1,2,3)}
+cloudx10-=xerc10; if cloudx10&lt;-250{cloudx10=room_width+choose(250,300,350); cloudy10=(random(room_height)/2); xerc10=choose(1,2,3)}
 </string>
           </argument>
         </arguments>
@@ -176,6 +239,19 @@ draw_sprite_ext(stars1,s14i,s14x+view_xview,s14y+view_yview,s14xs*0.2,s14ys*0.2,
 draw_sprite_ext(stars1,s15i,s15x+view_xview,s15y+view_yview,s15xs*0.2,s15ys*0.2,0,c_white,s15alpha)
 draw_sprite_ext(stars1,s16i,s16x+view_xview,s16y+view_yview,s16xs*0.2,s16ys*0.2,0,c_white,s16alpha)
 draw_sprite_ext(moony,0,view_xview+250,view_yview+160,1,1,0,c_white,1)
+draw_sprite_ext(thecloud,lol1,cloudx1+view_xview,cloudy1+view_yview,1,1,0,c_white,0.3)
+draw_sprite_ext(thecloud,lol2,cloudx2+view_xview,cloudy2+view_yview,1,1,0,c_white,0.2)
+draw_sprite_ext(thecloud,lol3,cloudx3+view_xview,cloudy3+view_yview,1,1,0,c_white,0.2)
+draw_sprite_ext(thecloud,lol4,cloudx4+view_xview,cloudy4+view_yview,1,1,0,c_white,0.2)
+draw_sprite_ext(thecloud,lol5,cloudx5+view_xview,cloudy5+view_yview,1,1,0,c_white,0.2)
+draw_sprite(forest,0,view_xview,view_yview)
+draw_sprite_ext(thecloud,lol9,cloudx9+view_xview,cloudy9+view_yview,1,1,0,c_white,0.3)
+draw_sprite_ext(thecloud,lol10,cloudx10+view_xview,cloudy10+view_yview,1,1,0,c_white,0.5)
+draw_sprite(forest,1,view_xview,view_yview)
+draw_sprite(forest,2,view_xview,view_yview)
+draw_sprite_ext(thecloud,lol6,cloudx6,cloudy6,1,1,0,c_white,0.3)
+draw_sprite_ext(thecloud,lol7,cloudx7,cloudy7,1,1,0,c_white,0.2)
+draw_sprite_ext(thecloud,lol8,cloudx8,cloudy8,1,1,0,c_white,0.4)
 </string>
           </argument>
         </arguments>
