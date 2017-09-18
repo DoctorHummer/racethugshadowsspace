@@ -51,11 +51,15 @@
     <sprites name="monsters">
       <sprites name="tier1">
         <sprite>sprites\redguy</sprite>
-        <sprite>sprites\purpleguy</sprite>
-        <sprite>sprites\purpleguydeath</sprite>
         <sprite>sprites\sparrk</sprite>
       </sprites>
       <sprite>sprites\cloud</sprite>
+      <sprites name="tier2">
+        <sprite>sprites\purpleguy</sprite>
+        <sprite>sprites\purpleguydeath</sprite>
+        <sprite>sprites\rcloud</sprite>
+        <sprite>sprites\recloud_eyes</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\part</sprite>
     <sprite>sprites\cheat</sprite>
@@ -123,6 +127,7 @@
         <objects name="tier2">
           <object>objects\weep</object>
           <object>objects\weepdead</object>
+          <object>objects\redcloud</object>
         </objects>
         <objects name="bullets">
           <object>objects\weepbullet</object>
@@ -139,11 +144,6 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
-<<<<<<< HEAD
-      <room>rooms\i_virginity_</room>
-      <room>rooms\f_slish_ti__svinia</room>
-=======
->>>>>>> 9c5423d73210a1a6f2dcdbb13b49832363615a78
       <room>rooms\l1_3</room>
       <room>rooms\l1_4</room>
       <room>rooms\l1_5</room>

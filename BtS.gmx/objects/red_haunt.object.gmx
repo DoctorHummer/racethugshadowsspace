@@ -30,10 +30,12 @@ dead=false
 deathimagecount=4;
 bessmertie=0
 btimer=0
+speeed=choose(2.5,3,3.2,3.5,3.75,4)
 
 image_angle=random_range(-3,3);k1=0;
 
 tier=1
+bounce=1
 </string>
           </argument>
         </arguments>
@@ -162,7 +164,7 @@ if hp&lt;=0{instance_destroy()}
           </argument>
           <argument>
             <kind>0</kind>
-            <string>4</string>
+            <string>speeed</string>
           </argument>
           <argument>
             <kind>4</kind>
