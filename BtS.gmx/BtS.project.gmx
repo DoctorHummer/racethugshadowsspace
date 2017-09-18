@@ -58,6 +58,7 @@
         <sprite>sprites\purpleguy</sprite>
         <sprite>sprites\purpleguydeath</sprite>
         <sprite>sprites\rcloud</sprite>
+        <sprite>sprites\rspike</sprite>
         <sprite>sprites\recloud_eyes</sprite>
       </sprites>
     </sprites>

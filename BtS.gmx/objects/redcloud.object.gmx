@@ -209,14 +209,38 @@ rot=point_direction(x,y,player.x,player.y);
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if (rot&gt;67.5 &amp;&amp; rot&lt;=112.5) {draw_sprite(recloud_eyes,0,x,y-8)} //up
-if (rot&gt;112.5 &amp;&amp; rot&lt;=135) {draw_sprite(recloud_eyes,0,x-5,y-5)} //left up
-if (rot&gt;135 &amp;&amp; rot&lt;=202.5) {draw_sprite(recloud_eyes,0,x-8,y)} //left
-if (rot&gt;202.5 &amp;&amp; rot&lt;=225) {draw_sprite(recloud_eyes,0,x-5,y+5)} //left down
-if (rot&gt;225 &amp;&amp; rot&lt;=292.5) {draw_sprite(recloud_eyes,0,x,y+8)} //down
-if (rot&gt;292.5 &amp;&amp; rot&lt;=315) {draw_sprite(recloud_eyes,0,x+5,y+5)} //right down
-if (rot&gt;315 &amp;&amp; rot&lt;=359) {draw_sprite(recloud_eyes,0,x+8,y)} //right
-if (rot&gt;=0 &amp;&amp; rot&lt;=67.5) {draw_sprite(recloud_eyes,0,x+5,y-5)} //right up
+if (rot&gt;0 &amp;&amp; rot&lt;=11.25) {draw_sprite(recloud_eyes,0,x+9,y-1)} 
+if (rot&gt;11.25 &amp;&amp; rot&lt;=22.50) {draw_sprite(recloud_eyes,0,x+8,y-2)} 
+if (rot&gt;22.50 &amp;&amp; rot&lt;=33.75) {draw_sprite(recloud_eyes,0,x+7,y-3)} 
+if (rot&gt;33.75 &amp;&amp; rot&lt;=45) {draw_sprite(recloud_eyes,0,x+6,y-4)} 
+if (rot&gt;45 &amp;&amp; rot&lt;=56.25) {draw_sprite(recloud_eyes,0,x+4,y-6)} 
+if (rot&gt;56.25 &amp;&amp; rot&lt;=67.50) {draw_sprite(recloud_eyes,0,x+3,y-7)} 
+if (rot&gt;67.50 &amp;&amp; rot&lt;=78.75) {draw_sprite(recloud_eyes,0,x+2,y-8)} 
+if (rot&gt;78.75 &amp;&amp; rot&lt;=90) {draw_sprite(recloud_eyes,0,x+1,y-9)} 
+if (rot&gt;90 &amp;&amp; rot&lt;=101.25) {draw_sprite(recloud_eyes,0,x-1,y-9)} 
+if (rot&gt;101.25 &amp;&amp; rot&lt;=112.50) {draw_sprite(recloud_eyes,0,x-2,y-8)} 
+if (rot&gt;112.50 &amp;&amp; rot&lt;=123.75) {draw_sprite(recloud_eyes,0,x-3,y-7)} 
+if (rot&gt;123.75 &amp;&amp; rot&lt;=135) {draw_sprite(recloud_eyes,0,x-4,y-6)} 
+if (rot&gt;135 &amp;&amp; rot&lt;=146.25) {draw_sprite(recloud_eyes,0,x-6,y-4)} 
+if (rot&gt;146.25 &amp;&amp; rot&lt;=157.50) {draw_sprite(recloud_eyes,0,x-7,y-3)} 
+if (rot&gt;157.50 &amp;&amp; rot&lt;=168.75) {draw_sprite(recloud_eyes,0,x-8,y-2)} 
+if (rot&gt;168.75 &amp;&amp; rot&lt;=180) {draw_sprite(recloud_eyes,0,x-9,y-1)}
+if (rot&gt;180 &amp;&amp; rot&lt;=191.25) {draw_sprite(recloud_eyes,0,x-9,y+1)}
+if (rot&gt;191.25 &amp;&amp; rot&lt;=202.50) {draw_sprite(recloud_eyes,0,x-8,y+2)} 
+if (rot&gt;202.50 &amp;&amp; rot&lt;=213.75) {draw_sprite(recloud_eyes,0,x-7,y+3)} 
+if (rot&gt;213.75 &amp;&amp; rot&lt;=225) {draw_sprite(recloud_eyes,0,x-6,y+4)} 
+if (rot&gt;225 &amp;&amp; rot&lt;=236.25) {draw_sprite(recloud_eyes,0,x-4,y+6)} 
+if (rot&gt;236.25 &amp;&amp; rot&lt;=247.50) {draw_sprite(recloud_eyes,0,x-3,y+7)} 
+if (rot&gt;247.50 &amp;&amp; rot&lt;=258.75) {draw_sprite(recloud_eyes,0,x-2,y+8)} 
+if (rot&gt;258.75 &amp;&amp; rot&lt;=270) {draw_sprite(recloud_eyes,0,x-1,y+9)} 
+if (rot&gt;270 &amp;&amp; rot&lt;=281.25) {draw_sprite(recloud_eyes,0,x+1,y+9)}
+if (rot&gt;281.25 &amp;&amp; rot&lt;=292.50) {draw_sprite(recloud_eyes,0,x+2,y+8)} 
+if (rot&gt;292.50 &amp;&amp; rot&lt;=303.75) {draw_sprite(recloud_eyes,0,x+3,y+7)} 
+if (rot&gt;303.75 &amp;&amp; rot&lt;=315) {draw_sprite(recloud_eyes,0,x+4,y+6)} 
+if (rot&gt;315 &amp;&amp; rot&lt;=326.25) {draw_sprite(recloud_eyes,0,x+6,y+4)} 
+if (rot&gt;326.25 &amp;&amp; rot&lt;=337.50) {draw_sprite(recloud_eyes,0,x+7,y+3)} 
+if (rot&gt;337.50 &amp;&amp; rot&lt;=348.75) {draw_sprite(recloud_eyes,0,x+8,y+2)}
+if (rot&gt;348.75 &amp;&amp; rot&lt;=360) {draw_sprite(recloud_eyes,0,x+9,y+1)}
 </string>
           </argument>
         </arguments>
