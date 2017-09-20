@@ -154,6 +154,10 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
+      <room>rooms\f_takbleed</room>
+      <room>rooms\f_mmjopa_</room>
+      <room>rooms\f_letsdrinkteaandtalkaboutplot_TO_FIX</room>
+      <room>rooms\f_undertaleisbanned</room>
       <room>rooms\f_hummer_huy_verni_novu</room>
       <room>rooms\f_you_are_gayy</room>
       <room>rooms\l1_3</room>
