@@ -58,8 +58,13 @@
         <sprite>sprites\purpleguy</sprite>
         <sprite>sprites\purpleguydeath</sprite>
         <sprite>sprites\rcloud</sprite>
-        <sprite>sprites\rspike</sprite>
         <sprite>sprites\recloud_eyes</sprite>
+      </sprites>
+      <sprites name="tier3">
+        <sprite>sprites\rspike</sprite>
+        <sprite>sprites\rspikechain</sprite>
+        <sprite>sprites\rspikeeye</sprite>
+        <sprite>sprites\rspikegore</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\part</sprite>
@@ -121,6 +126,10 @@
     <objects name="monsters">
       <object>objects\parmonster</object>
       <object>objects\parbullet</object>
+      <objects name="bullets">
+        <object>objects\weepbullet</object>
+        <object>objects\spark</object>
+      </objects>
       <objects name="dankforest">
         <objects name="tier1">
           <object>objects\red_haunt</object>
@@ -130,9 +139,9 @@
           <object>objects\weepdead</object>
           <object>objects\redcloud</object>
         </objects>
-        <objects name="bullets">
-          <object>objects\weepbullet</object>
-          <object>objects\spark</object>
+        <objects name="tier3">
+          <object>objects\redspike</object>
+          <object>objects\redspikegore1</object>
         </objects>
       </objects>
     </objects>
