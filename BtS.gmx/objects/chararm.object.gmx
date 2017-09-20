@@ -184,6 +184,7 @@ t=0;
 image_alpha=1
 move_towards_point(mouse_x,mouse_y,0)      //����������� = (������ �� ������ � ������� ����)
 image_angle=direction;
+
 </string>
           </argument>
         </arguments>

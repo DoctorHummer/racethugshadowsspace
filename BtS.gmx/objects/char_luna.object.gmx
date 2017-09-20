@@ -657,10 +657,10 @@ isWallsliding = false;
 
 if (isClimbing == false) {
   // Handle directions.
-  if (keyboard_check_pressed(ord('A')) || (keyboard_check(ord('A')) &amp;&amp; keyboard_check_released(ord('D')))) {
+  if (gamepad_button_check_pressed(0, gp_padl) || keyboard_check_pressed(ord('A')) || (keyboard_check(ord('A')) &amp;&amp; keyboard_check_released(ord('D')))) {
     dir = -1;
   }
-  if (keyboard_check_pressed(ord('D')) || (keyboard_check(ord('D')) &amp;&amp; keyboard_check_released(ord('A')))) {
+  if (gamepad_button_check_pressed(0, gp_padr) || keyboard_check_pressed(ord('D')) || (keyboard_check(ord('D')) &amp;&amp; keyboard_check_released(ord('A')))) {
     dir = 1; 
   }
   
@@ -669,7 +669,7 @@ if (isClimbing == false) {
     yspeed += weight;
 
     // Jump cancel.
-    if ((!keyboard_check(vk_space)) &amp;&amp; isJumping &amp;&amp; (yspeed &lt; -jumpHeight / 2)) {
+    if ((!gamepad_button_check(0, gp_face2)) &amp;&amp; (!keyboard_check(vk_space)) &amp;&amp; isJumping &amp;&amp; (yspeed &lt; -jumpHeight / 2)) {
       yspeed = -jumpHeight / 3;
     }
   }
@@ -679,7 +679,7 @@ if (isClimbing == false) {
   else {
     availableJumps = maxDoubleJumps;
     canDoubleJump = false;
-    if (keyboard_check_pressed(vk_space)) {
+    if (gamepad_button_check_pressed(0, gp_face2) || keyboard_check_pressed(vk_space)) {
       yspeed = -jumpHeight;
       xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
       isJumping = true;
@@ -687,15 +687,21 @@ if (isClimbing == false) {
   }
 
   // Horizontal acceleration.
-  if (keyboard_check(ord('A')) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1) {
+  if (
+  keyboard_check(ord('A')) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1 ||
+  gamepad_button_check(0, gp_padl) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1
+  ) {
     xspeed -= accel;
   }
-  if (keyboard_check(ord('D')) &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1) {
+  if (
+  keyboard_check(ord('D')) &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1 ||
+  gamepad_button_check(0, gp_padr)  &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1
+  ) {
     xspeed += accel;
   }
   
   // Horizontal friction.
-  if (!keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D'))) {
+  if (!gamepad_button_check(0, gp_padl) &amp;&amp; !gamepad_button_check(0, gp_padr) &amp;&amp; !keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D'))) {
     if (abs(xspeed) &gt; xfriction) {
       xspeed -= sign(xspeed) * xfriction;
     } else {
@@ -705,6 +711,26 @@ if (isClimbing == false) {
 
 }
 
+if (gamepad_button_check_pressed(0, gp_face2))
+{
+if( place_free(x,y+1) &amp;&amp; double_jump = 1 )
+{ 
+double_jump=0;
+yspeed = -jumpHeight;
+xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
+repeat(20)
+{
+a=instance_create(x,y+35,particle)
+a.type=1;
+a.image_xscale=choose(0.1,0.2,0.3)
+a.image_yscale=a.image_xscale
+a.speed=4+random(4)
+a.direction=100+random(260)
+a.image_alpha=choose(0.7,0.85,1)
+a.image_index=1
+}
+}
+}
 </string>
           </argument>
         </arguments>
