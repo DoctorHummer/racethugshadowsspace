@@ -129,12 +129,6 @@
     <instance objName="o_lvl1grass" x="256" y="512" name="inst_287A6D01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="320" y="512" name="inst_5C171FF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1grass" x="384" y="512" name="inst_81636007" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_shatterBlock" x="384" y="768" name="inst_C0BFDB19" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="384" y="704" name="inst_4C81D965" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="384" y="576" name="inst_8CF74A31" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="384" y="640" name="inst_3DCD0E70" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="384" y="896" name="inst_788CC061" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="384" y="832" name="inst_869AB56E" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
     <instance objName="platformtrack" x="512" y="640" name="inst_E93EFB9C" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
     <instance objName="platformtrack" x="512" y="704" name="inst_6312BA2D" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
     <instance objName="platformtrack" x="512" y="768" name="inst_EA935A77" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
@@ -183,9 +177,6 @@
     <instance objName="spikes" x="1216" y="576" name="inst_3BEC1421" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="spikes" x="1216" y="640" name="inst_F0F340FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="spikes" x="1216" y="704" name="inst_B9663FE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="o_shatterBlock" x="1216" y="256" name="inst_3A60DDEF" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="1152" y="256" name="inst_0654ADD0" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="o_shatterBlock" x="1088" y="256" name="inst_C898DC9E" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
