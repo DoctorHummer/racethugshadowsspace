@@ -867,12 +867,12 @@ else
           <argument>
             <kind>1</kind>
             <string>///Bubble Jump
-if other.jump=0
-{
-yspeed -=20;
+//if other.jump=0
+//{
+yspeed=-22;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 other.jump=1
-}
+//}
 </string>
           </argument>
         </arguments>

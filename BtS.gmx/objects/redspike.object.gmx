@@ -3,7 +3,7 @@
   <spriteName>rspike</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>6</depth>
   <persistent>0</persistent>
   <parentName>parmonster</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -201,6 +201,15 @@ draw_sprite(rspikechain,0,x,y-896)
 draw_sprite(rspikechain,0,x,y-1024)
 draw_self();
 draw_sprite_ext(rspikeeye,0,x,y,1,1,rot,c_white,1)
+if (rot&gt;=350 or rot&lt;10 or rot&gt;=170 and rot&lt;190) {draw_sprite(rspikeeyeup,8,x,y)}
+if (rot&gt;=10 and rot&lt;20 or rot&gt;=340 and rot&lt;350 or rot&gt;=190 and rot&lt;200 or rot&gt;=160 and rot&lt;170) {draw_sprite(rspikeeyeup,7,x,y)}
+if (rot&gt;=20 and rot&lt;30 or rot&gt;=330 and rot&lt;340 or rot&gt;=200 and rot&lt;210 or rot&gt;=150 and rot&lt;160) {draw_sprite(rspikeeyeup,6,x,y)}
+if (rot&gt;=30 and rot&lt;40 or rot&gt;=320 and rot&lt;330 or rot&gt;=210 and rot&lt;220 or rot&gt;=140 and rot&lt;150) {draw_sprite(rspikeeyeup,5,x,y)}
+if (rot&gt;=40 and rot&lt;50 or rot&gt;=310 and rot&lt;320 or rot&gt;=220 and rot&lt;230 or rot&gt;=130 and rot&lt;140) {draw_sprite(rspikeeyeup,4,x,y)}
+if (rot&gt;=50 and rot&lt;60 or rot&gt;=300 and rot&lt;310 or rot&gt;=230 and rot&lt;240 or rot&gt;=120 and rot&lt;130) {draw_sprite(rspikeeyeup,3,x,y)}
+if (rot&gt;=60 and rot&lt;70 or rot&gt;=290 and rot&lt;300 or rot&gt;=240 and rot&lt;250 or rot&gt;=110 and rot&lt;120) {draw_sprite(rspikeeyeup,2,x,y)}
+if (rot&gt;=70 and rot&lt;80 or rot&gt;=280 and rot&lt;290 or rot&gt;=250 and rot&lt;260 or rot&gt;=100 and rot&lt;110) {draw_sprite(rspikeeyeup,1,x,y)}
+if (rot&gt;=80 and rot&lt;90 or rot&gt;=270 and rot&lt;280 or rot&gt;=260 and rot&lt;270 or rot&gt;=90 and rot&lt;100) {draw_sprite(rspikeeyeup,0,x,y)}
 </string>
           </argument>
         </arguments>

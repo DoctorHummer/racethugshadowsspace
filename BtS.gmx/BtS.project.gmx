@@ -41,6 +41,7 @@
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
       <sprite>sprites\pick</sprite>
+      <sprite>sprites\cursor</sprite>
     </sprites>
     <sprites name="background">
       <sprite>sprites\stars1</sprite>
@@ -65,6 +66,7 @@
         <sprite>sprites\rspikechain</sprite>
         <sprite>sprites\rspikeeye</sprite>
         <sprite>sprites\rspikegore</sprite>
+        <sprite>sprites\rspikeeyeup</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\part</sprite>
