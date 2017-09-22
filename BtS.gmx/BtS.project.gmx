@@ -60,6 +60,7 @@
         <sprite>sprites\purpleguydeath</sprite>
         <sprite>sprites\rcloud</sprite>
         <sprite>sprites\recloud_eyes</sprite>
+        <sprite>sprites\purplebullet</sprite>
       </sprites>
       <sprites name="tier3">
         <sprite>sprites\rspike</sprite>
@@ -67,6 +68,7 @@
         <sprite>sprites\rspikeeye</sprite>
         <sprite>sprites\rspikegore</sprite>
         <sprite>sprites\rspikeeyeup</sprite>
+        <sprite>sprites\purplebullet2</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\part</sprite>
@@ -130,7 +132,8 @@
       <object>objects\parbullet</object>
       <objects name="bullets">
         <object>objects\weepbullet</object>
-        <object>objects\spark</object>
+        <object>objects\weepbulletd</object>
+        <object>objects\spikeshot</object>
       </objects>
       <objects name="dankforest">
         <objects name="tier1">
@@ -143,7 +146,9 @@
         </objects>
         <objects name="tier3">
           <object>objects\redspike</object>
-          <object>objects\redspikegore1</object>
+          <object>objects\purplespike</object>
+          <object>objects\whitespike</object>
+          <object>objects\spikegore1</object>
         </objects>
       </objects>
     </objects>

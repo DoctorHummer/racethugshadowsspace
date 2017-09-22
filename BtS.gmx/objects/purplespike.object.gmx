@@ -40,6 +40,8 @@ movable=0
 if place_meeting(x,y,platformtrack){movable=1}
 movemode=choose(0,1)
 sp=1.5
+
+timer=0
 </string>
           </argument>
         </arguments>
@@ -93,7 +95,7 @@ sp=1.5
             <string>repeat(20)
 {
 a=instance_create(x,y,particle)
-a.type=3;
+a.type=4;
 a.image_xscale=choose(0.1,0.2,0.3)
 a.image_yscale=a.image_xscale
 a.speed=5+random(7)
@@ -166,7 +168,11 @@ if movemode=4{vspeed=-sp sp+=0.025 if sp&gt;=1.5 {movemode=1}}
 if movemode=5{vspeed=+sp sp+=0.025 if sp&gt;=1.5 {movemode=0}}
 }
 
-
+timer+=1
+if (timer&gt;100 and timer&lt;111){image_xscale-=0.0125; image_yscale+=0.0125;}
+if timer=112 {instance_create(x,y,spikeshot)}
+if (timer&gt;110 and timer&lt;116){image_xscale+=0.0375; image_yscale-=0.0375;}
+if timer&gt;115 {image_xscale=1; image_yscale=1; timer=choose(0,-25,-50,-75,-100)}
 
 </string>
           </argument>
@@ -208,7 +214,7 @@ draw_sprite(rspikechain,0,x,y-1792)
 draw_sprite(rspikechain,0,x,y-1920)
 draw_sprite(rspikechain,0,x,y-2048)
 draw_self();
-draw_sprite_ext(rspikeeye,0,x,y,1,1,rot,c_white,1)
+draw_sprite_ext(rspikeeye,1,x,y,1,1,rot,c_white,1)
 if (rot&gt;=350 or rot&lt;10 or rot&gt;=170 and rot&lt;190) {draw_sprite(rspikeeyeup,8,x,y)}
 if (rot&gt;=10 and rot&lt;20 or rot&gt;=340 and rot&lt;350 or rot&gt;=190 and rot&lt;200 or rot&gt;=160 and rot&lt;170) {draw_sprite(rspikeeyeup,7,x,y)}
 if (rot&gt;=20 and rot&lt;30 or rot&gt;=330 and rot&lt;340 or rot&gt;=200 and rot&lt;210 or rot&gt;=150 and rot&lt;160) {draw_sprite(rspikeeyeup,6,x,y)}
