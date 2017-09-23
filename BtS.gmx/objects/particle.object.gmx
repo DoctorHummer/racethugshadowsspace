@@ -61,7 +61,7 @@ if t=0{ if image_alpha&lt;image_alpharange{image_alpha+=0.05} else {timer+=1; if
 
 if t=1{image_alpha-=0.05; if image_alpha&lt;=0{instance_destroy()}}}
 }
-if (type=1 or type=2)
+if (type=1 or type=2 or type=5)
 {
 image_speed=0;
 if image_alpha&gt;image_alpharange{image_alpha-=0.1} else {instance_destroy()}

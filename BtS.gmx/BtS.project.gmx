@@ -52,7 +52,6 @@
     <sprites name="monsters">
       <sprites name="tier1">
         <sprite>sprites\redguy</sprite>
-        <sprite>sprites\sparrk</sprite>
       </sprites>
       <sprite>sprites\cloud</sprite>
       <sprites name="tier2">
@@ -161,7 +160,6 @@
     <rooms name="level1">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
-      <room>rooms\f_vostok_delo_tonkoe</room>
       <room>rooms\l1_3</room>
       <room>rooms\l1_4</room>
       <room>rooms\l1_5</room>
@@ -175,6 +173,7 @@
       <room>rooms\l1_13</room>
       <room>rooms\l1_14</room>
       <room>rooms\l1_15</room>
+      <room>rooms\f_vostok_delo_tonkoe</room>
       <room>rooms\f_takbleed</room>
       <room>rooms\f_mmjopa_</room>
       <room>rooms\f_letsdrinkteaandtalkaboutplot_TO_FIX</room>

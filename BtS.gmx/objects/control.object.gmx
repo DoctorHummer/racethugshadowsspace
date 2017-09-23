@@ -28,6 +28,7 @@
             <string>global.maxlives=3 //макс. здоровье
 lives=3
 global.coins=0 //монеты
+global.keys=0 //ключи
 global.goldenkeys=0 //зол.ключи
 
 global.weaponstyle=0; //оружие
@@ -207,8 +208,10 @@ draw_set_color(c_white);
 draw_set_font(c_font);
 draw_sprite(pick,0,view_xview+64,view_yview+64);
 draw_text_ext_colour(86+view_xview, 48+view_yview, string(global.coins),1,100,c_white,c_white,c_white,c_white,1)
-draw_sprite(pick,1,view_xview+64,view_yview+96);
-draw_text_ext_colour(86+view_xview, 80+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
+draw_sprite(pick,2,view_xview+64,view_yview+96);
+draw_text_ext_colour(86+view_xview, 80+view_yview, string(global.keys),1,100,c_white,c_white,c_white,c_white,1)
+draw_sprite(pick,1,view_xview+64,view_yview+128);
+draw_text_ext_colour(86+view_xview, 112+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>

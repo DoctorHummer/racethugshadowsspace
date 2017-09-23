@@ -25,5 +25,6 @@
     <frame index="2">images\part_2.png</frame>
     <frame index="3">images\part_3.png</frame>
     <frame index="4">images\part_4.png</frame>
+    <frame index="5">images\part_5.png</frame>
   </frames>
 </sprite>
