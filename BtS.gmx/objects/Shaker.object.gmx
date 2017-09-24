@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_hspeed[0] = 5;
-view_vspeed[0] = 5;
+            <string>view_hspeed = 5;
+view_vspeed = 5;
 shake = 10;  //àìïëèòóäà òðÿñêè
 alarm[0] = 1;
 </string>
@@ -53,8 +53,8 @@ alarm[0] = 1;
             <kind>1</kind>
             <string>if instance_number(Shaker) &gt; 1 {exit}
 
-view_hspeed[0] = -1;
-view_vspeed[0] = -1;
+view_hspeed = -1;
+view_vspeed = -1;
 </string>
           </argument>
         </arguments>
@@ -78,9 +78,9 @@ view_vspeed[0] = -1;
           <argument>
             <kind>1</kind>
             <string>if shake mod 2 = 0
-{view_yview[0] -= shake;}
+{view_yview -= shake;}
 else
-{view_yview[0] += shake;}
+{view_yview += shake;}
 
 shake -= 1;
 
