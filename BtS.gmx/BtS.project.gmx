@@ -37,6 +37,8 @@
       <sprite>sprites\shatterBlock</sprite>
       <sprite>sprites\door</sprite>
       <sprite>sprites\stat</sprite>
+      <sprite>sprites\chest</sprite>
+      <sprite>sprites\sbush</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -82,6 +84,7 @@
     <script>scripts\iff.gml</script>
     <script>scripts\scr_motion_blur.gml</script>
     <script>scripts\itemdrop.gml</script>
+    <script>scripts\normalchest_drop.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\c_font</font>
@@ -110,6 +113,10 @@
       <objects name="backtiles">
         <object>objects\backtree</object>
         <object>objects\statue</object>
+        <object>objects\bush</object>
+      </objects>
+      <objects name="chests">
+        <object>objects\o_chest</object>
       </objects>
       <object>objects\bubble</object>
       <object>objects\platformtrack</object>

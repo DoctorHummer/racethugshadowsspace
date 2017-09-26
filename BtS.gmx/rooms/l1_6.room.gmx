@@ -4,7 +4,7 @@
   <width>1280</width>
   <height>960</height>
   <vsnap>64</vsnap>
-  <hsnap>32</hsnap>
+  <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -201,6 +201,7 @@
     <instance objName="platformdown" x="1088" y="256" name="inst_F81CA042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="weep" x="640" y="384" name="inst_460AC57A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_door" x="1280" y="768" name="inst_8791A38E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_chest" x="576" y="160" name="inst_FE5B090F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

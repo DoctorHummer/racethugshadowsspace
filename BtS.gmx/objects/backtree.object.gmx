@@ -45,19 +45,6 @@ vx4=+265;vy4=-346;
 vx5=-66;vy5=-310;
 vx6=+82;vy6=-292;
 
-lx1=random_range(-175,+125); ly1=random_range(-400,-700);
-lx2=random_range(-125,+75); ly2=random_range(-400,-700);
-lx3=random_range(-75,-25); ly3=random_range(-400,-700);
-lx4=random_range(-25,+25); ly4=random_range(-400,-700);
-lx5=random_range(+25,+100); ly5=random_range(-400,-700);
-lx6=random_range(+100,+175); ly6=random_range(-400,-700);
-
-lscale1=choose(0.1,0.2,0.3);
-lscale2=choose(0.1,0.2,0.3);
-lscale3=choose(0.1,0.2,0.3);
-lscale4=choose(0.1,0.2,0.3);
-lscale5=choose(0.1,0.2,0.3);
-lscale6=choose(0.1,0.2,0.3);
 </string>
           </argument>
         </arguments>
@@ -146,12 +133,6 @@ draw_sprite_ext(vine,vineindex4,x+vx4,y+vy4-32,1,1,rotvins4,c_white,1);
 draw_sprite_ext(vine,vineindex5,x+vx5,y+vy5-32,1,1,rotvins5,c_white,1);
 draw_sprite_ext(vine,vineindex6,x+vx6,y+vy6-32,1,1,rotvins6,c_white,1);
 
-draw_sprite_ext(treelight,0,x+lx1,y+ly1,lscale1,lscale1,0,c_white,1);
-draw_sprite_ext(treelight,0,x+lx2,y+ly2,lscale2,lscale2,0,c_white,1);
-draw_sprite_ext(treelight,0,x+lx3,y+ly3,lscale3,lscale3,0,c_white,1);
-draw_sprite_ext(treelight,0,x+lx4,y+ly4,lscale4,lscale4,0,c_white,1);
-draw_sprite_ext(treelight,0,x+lx5,y+ly5,lscale5,lscale5,0,c_white,1);
-draw_sprite_ext(treelight,0,x+lx6,y+ly6,lscale6,lscale6,0,c_white,1);
 </string>
           </argument>
         </arguments>

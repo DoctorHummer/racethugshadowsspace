@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>6</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>trapblock</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,6 +32,7 @@ if place_meeting(x,y,platformtrack){movable=1}
 movemode=choose(0,1)
 sp=1.5
 
+active=1
 </string>
           </argument>
         </arguments>
