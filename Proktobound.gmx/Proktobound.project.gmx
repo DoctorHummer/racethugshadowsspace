@@ -7,11 +7,16 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\prokto_down</sprite>
+    <sprite>sprites\prokto_up</sprite>
+    <sprite>sprites\proktoshadow</sprite>
+    <sprite>sprites\prokto_left</sprite>
+    <sprite>sprites\proktofloor</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\proktor</object>
+    <object>objects\prokto_floor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\proktolobby</room>
