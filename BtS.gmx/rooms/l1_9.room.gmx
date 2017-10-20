@@ -197,17 +197,17 @@
     <instance objName="o_column" x="704" y="320" name="inst_3C727819" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="704" y="832" name="inst_F11C7376" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="704" y="896" name="inst_A8252254" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="redspike" x="960" y="640" name="inst_A2C7CD8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="768" name="inst_933D873E" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="704" name="inst_8B71DDB3" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="640" name="inst_45562674" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="576" name="inst_39F8D717" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="512" name="inst_6DB87412" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="448" name="inst_9DA2C991" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="384" name="inst_26BE450C" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="320" name="inst_340C8BF8" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="256" name="inst_34EF4E9A" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
-    <instance objName="platformtrack" x="960" y="192" name="inst_69E0FD57" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="redspike" x="1024" y="640" name="inst_A2C7CD8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="768" name="inst_933D873E" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="704" name="inst_8B71DDB3" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="640" name="inst_45562674" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="576" name="inst_39F8D717" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="512" name="inst_6DB87412" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="448" name="inst_9DA2C991" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="384" name="inst_26BE450C" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="320" name="inst_340C8BF8" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="256" name="inst_34EF4E9A" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="1024" y="192" name="inst_69E0FD57" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
     <instance objName="o_chest" x="320" y="224" name="inst_92555642" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
