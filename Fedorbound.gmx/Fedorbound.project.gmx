@@ -7,9 +7,19 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\player_stand</sprite>
+    <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\kal_and_ass</sprite>
+    <sprite>sprites\Battle_Sword_Attack</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\huy</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\kaj</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
