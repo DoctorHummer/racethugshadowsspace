@@ -109,6 +109,8 @@ if instance_exists(player) and !instance_exists(chararm)
 {
 instance_create(x+0,y+0,chararm)
 }
+eyeindex=0
+wingstimer=0
 </string>
           </argument>
         </arguments>
@@ -489,7 +491,8 @@ instance_activate_object(background1);
 instance_activate_object(lightballpar);
 instance_activate_object(parbullet);
 instance_activate_object(background1);
-instance_activate_region(view_xview-128,view_yview-128,view_wview+128,view_hview+128,1); 
+instance_activate_object(pickups);
+instance_activate_region(view_xview-164,view_yview-164,view_wview+196,view_hview+196,1); 
 </string>
           </argument>
         </arguments>
@@ -662,10 +665,10 @@ else {
   if (yspeed &gt; 0) {
     isClimbing = false;
     isJumping = false;
-    double_jump=1;
     isDismounting = false;
     landing = landing_max;
     dismount = dismount_max;
+    wingstimer=0;
     y = floor(y);
   }
   move_contact_solid(point_direction(x, y, x, y + yspeed), yspeed);
@@ -712,6 +715,7 @@ if (isClimbing == false) {
     if (gamepad_button_check_pressed(0, gp_face2) || keyboard_check_pressed(vk_space)) {
       yspeed = -jumpHeight;
       xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
+      double_jump=1;
       isJumping = true;
     }
   }
@@ -742,23 +746,40 @@ if (isClimbing == false) {
 }
 
 if (gamepad_button_check_pressed(0, gp_face2))
+{if (global.getwings=false)
 {
 if( place_free(x,y+1) &amp;&amp; double_jump = 1 )
 { 
 double_jump=0;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
-repeat(20)
-{
-a=instance_create(x,y+35,particle)
-a.type=1;
-a.image_xscale=choose(0.1,0.2,0.3)
-a.image_yscale=a.image_xscale
-a.speed=4+random(4)
-a.direction=100+random(260)
-a.image_alpha=choose(0.7,0.85,1)
-a.image_index=1
+
+a=instance_create(x,y,particles)
+a.type=3;
+} 
 }
+
+if (global.getwings=true)
+{
+if( place_free(x,y+1) &amp;&amp; double_jump = 1 )
+{ 
+double_jump=2;
+yspeed = -jumpHeight;
+xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
+
+a=instance_create(x,y,particles)
+a.type=3;
+} 
+
+if( place_free(x,y+1) &amp;&amp; double_jump = 2 )
+{ 
+double_jump=0;
+yspeed = -jumpHeight;
+xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
+
+a=instance_create(x,y,particles)
+a.type=3;
+} 
 }
 }
 
@@ -875,6 +896,36 @@ else
 }
 }
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Other
+if global.getwings=true
+{
+if( place_free(x,y+1) &amp;&amp; double_jump = 0 )
+{
+if wingstimer&lt;30
+{wingstimer+=1}
+}
+}
 </string>
           </argument>
         </arguments>
@@ -937,15 +988,94 @@ switch( sprite_index ) {
 }
 
 var ii = floor( image_index );
+
+if global.getwings=true 
+{
+if (wingstimer&gt;0 and wingstimer&lt;=4){draw_sprite_ext(wings,0,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;4 and wingstimer&lt;=9){draw_sprite_ext(wings,1,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.25);}
+if (wingstimer&gt;9 and wingstimer&lt;=14){draw_sprite_ext(wings,2,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.50);}
+if (wingstimer&gt;14 and wingstimer&lt;=17){draw_sprite_ext(wings,3,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.75);}
+if (wingstimer&gt;17 and wingstimer&lt;=20){draw_sprite_ext(wings,4,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;20 and wingstimer&lt;=22){draw_sprite_ext(wings,5,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;22 and wingstimer&lt;=24){draw_sprite_ext(wings,6,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;24 and wingstimer&lt;=26){draw_sprite_ext(wings,7,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.75);}
+if (wingstimer&gt;26 and wingstimer&lt;=28){draw_sprite_ext(wings,8,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.50);}
+if (wingstimer&gt;28 and wingstimer&lt;=30){draw_sprite_ext(wings,9,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.25);}
+}
+
+
 draw_self();
-eyetimer+=1
-if eyetimer&lt;150 {draw_sprite_ext(luna_eyes,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if (eyetimer=150 or eyetimer=151 or eyetimer=152) {draw_sprite_ext(luna_eyes,1,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if (eyetimer=153 or eyetimer=154 or eyetimer=155) {draw_sprite_ext(luna_eyes,2,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if (eyetimer=156 or eyetimer=157 or eyetimer=158) {draw_sprite_ext(luna_eyes,3,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if (eyetimer=159 or eyetimer=160 or eyetimer=161) {draw_sprite_ext(luna_eyes,4,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1)}
-if eyetimer&gt;161 {eyetimer=choose(0,50,-100,-150)}
-draw_sprite_ext(luna_hat,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,image_alpha)
+
+if (flashlight=true)
+{
+draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
+if image_xscale&gt;0
+{
+switch (point_direction(x, y, mouse_x, mouse_y) + 45) div 22.5  {
+case 16:
+case 0: eyeindex = 0; break;
+case 1: eyeindex = 1; break;
+case 2: eyeindex = 2; break;
+case 3: eyeindex = 3;  break;
+case 4: eyeindex = 4; break;
+case 5: eyeindex = 5; break;
+case 6: eyeindex = 6; break;
+case 7: eyeindex = 7;  break;
+case 8: eyeindex = 8; break;
+case 9: eyeindex = 9; break;
+case 10: eyeindex = 10; break;
+case 11: eyeindex = 11;  break;
+case 12: eyeindex = 12; break;
+case 13: eyeindex = 13; break;
+case 14: eyeindex = 14; break;
+case 15: eyeindex = 15;  break;
+}
+}
+else
+{
+switch (point_direction(x, y, mouse_x, mouse_y) + 45) div 22.5  {
+case 16:
+case 0: eyeindex = 10; break;
+case 1: eyeindex = 9; break;
+case 2: eyeindex = 8; break;
+case 3: eyeindex = 7;  break;
+case 4: eyeindex = 6; break;
+case 5: eyeindex = 5; break;
+case 6: eyeindex = 4; break;
+case 7: eyeindex = 3;  break;
+case 8: eyeindex = 2; break;
+case 9: eyeindex = 1; break;
+case 10: eyeindex = 0; break;
+case 11: eyeindex = 15;  break;
+case 12: eyeindex = 14; break;
+case 13: eyeindex = 13; break;
+case 14: eyeindex = 12; break;
+case 15: eyeindex = 11;  break;
+}
+}
+}
+
+if (flashlight=false)
+{
+draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
+if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = luna_run or sprite_index = luna_run_a)
+{
+eyeindex=0
+}
+if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=0)
+{
+eyeindex=2
+}
+if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=1)
+{
+eyeindex=0
+}
+if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=2)
+{
+eyeindex=14
+}
+}
+draw_sprite_ext(luna_hat,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,image_alpha);
 </string>
           </argument>
         </arguments>
@@ -968,24 +1098,41 @@ draw_sprite_ext(luna_hat,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if (global.getwings=false)
+{
 if( place_free(x,y+1) &amp;&amp; double_jump = 1 )
 { 
 double_jump=0;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
-repeat(20)
-{
-a=instance_create(x,y+35,particle)
-a.type=1;
-a.image_xscale=choose(0.1,0.2,0.3)
-a.image_yscale=a.image_xscale
-a.speed=4+random(4)
-a.direction=100+random(260)
-a.image_alpha=choose(0.7,0.85,1)
-a.image_index=1
-}
+
+a=instance_create(x,y,particles)
+a.type=3;
 } 
+}
+
+if (global.getwings=true)
+{
+if( place_free(x,y+1) &amp;&amp; double_jump = 1 )
+{ 
+double_jump=2;
+yspeed = -jumpHeight;
+xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
+
+a=instance_create(x,y,particles)
+a.type=3;
+} 
+else
+if( place_free(x,y+1) &amp;&amp; double_jump = 2 )
+{ 
+double_jump=0;
+yspeed = -jumpHeight*1.2;
+xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
+
+a=instance_create(x,y-35,particles)
+a.type=6;
+} 
+}
 </string>
           </argument>
         </arguments>

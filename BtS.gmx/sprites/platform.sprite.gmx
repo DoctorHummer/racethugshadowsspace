@@ -21,6 +21,5 @@
   <height>64</height>
   <frames>
     <frame index="0">images\platform_0.png</frame>
-    <frame index="1">images\platform_1.png</frame>
   </frames>
 </sprite>

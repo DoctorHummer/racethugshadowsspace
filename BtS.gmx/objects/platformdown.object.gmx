@@ -28,7 +28,7 @@
             <string>movemode=0
 movetimer=0;
 image_speed=0
-image_index=1
+image_index=0
 gearot=0;
 </string>
           </argument>
@@ -100,6 +100,9 @@ if (vspeed&lt;0)
 {gearot+=1}
 if (vspeed&gt;0)
 {gearot-=2}
+draw_sprite_ext(grasscover,1,x-64,y,1,1,0,c_white,1);
+draw_sprite_ext(grasscover,46,x,y,1,1,0,c_white,1);
+draw_sprite_ext(grasscover,3,x+64,y,1,1,0,c_white,1);
 </string>
           </argument>
         </arguments>

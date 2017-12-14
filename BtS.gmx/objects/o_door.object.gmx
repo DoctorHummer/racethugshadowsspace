@@ -25,7 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(parmonster)
+            <string>if global.brokenlock=false
+{
+if !instance_exists(parmonster)
+{
+instance_create(x,y,o_opendoor)
+instance_destroy()
+}
+}
+else
 {
 instance_create(x,y,o_opendoor)
 instance_destroy()
@@ -55,7 +63,6 @@ instance_destroy()
             <string>draw_sprite_ext(door,1,x,y,1,1,0,c_white,1);
 draw_sprite_ext(door,0,x,y,1,1,0,c_white,1);
 draw_sprite_ext(gear,0,x-13,y-12,1,1,0,c_white,1);
-
 </string>
           </argument>
         </arguments>

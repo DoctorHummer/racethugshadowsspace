@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>
 move_towards_point(mouse_x+25-random(48),mouse_y+25-random(48),global.bulletspeed)
+
+if global.mirror=true {alarm[0]=100}
 </string>
           </argument>
         </arguments>

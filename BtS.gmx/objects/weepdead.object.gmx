@@ -36,34 +36,6 @@ tier=2
     <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
-        <id>201</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_create_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>10</kind>
-            <object>Shaker</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -78,17 +50,9 @@ tier=2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat(45)
-{
-a=instance_create(x,y,particle)
-a.type=4;
-a.image_xscale=choose(0.6,0.7,0.8)
-a.image_yscale=a.image_xscale
-a.speed=5+random(7)
-a.direction=random(360)
-a.image_alpha=2
-a.image_index=1
-}
+            <string>
+a=instance_create(x,y,particles)
+a.type=1;
 
 repeat(8)
 {

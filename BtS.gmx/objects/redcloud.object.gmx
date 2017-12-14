@@ -111,18 +111,11 @@ rot=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat(20)
-{
-a=instance_create(x,y,particle)
-a.type=3;
-a.image_xscale=choose(0.1,0.2,0.3)
-a.image_yscale=a.image_xscale
-a.speed=5+random(7)
-a.direction=random(360)
-a.image_alpha=1.5
-a.image_index=1
-}
+            <string>
 script_execute(itemdrop);
+
+a=instance_create(x,y,particles)
+a.type=2;
 </string>
           </argument>
         </arguments>

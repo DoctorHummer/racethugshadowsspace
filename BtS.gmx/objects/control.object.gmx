@@ -29,14 +29,26 @@
 lives=3
 global.coins=0 //монеты
 global.keys=0 //ключи
-global.goldenkeys=0 //зол.ключи
+global.goldenkeys=10 //зол.ключи
 
 global.weaponstyle=0; //оружие
 global.bulletspeed=15; //скорость полёта света
 global.shotspeed=20; //скорострельность
-global.movespeed=8; //cкорость передвижения
+global.movespeed=7; //cкорость передвижения
 global.playergravity=0.6 //гравитация
 global.jumpheight=15 //высота прыжка
+global.damage=1; //урон
+
+//простые
+
+//необычные
+global.mirror=true; //зеркало
+global.stonehorseshoe=true; //каменная подкова
+
+//редкие
+global.getwings=true; //крылья
+global.brokenlock=true; //сломанный замок
+global.ancientjewel=true; //древнее украшение
 </string>
           </argument>
         </arguments>
@@ -59,65 +71,31 @@ global.jumpheight=15 //высота прыжка
             <kind>1</kind>
             <string>global.passedrooms=0 //пройденные комнаты
 
+global.item1tierlist = ds_list_create();
+global.item2tierlist = ds_list_create();
+global.item3tierlist = ds_list_create();
+
+ds_list_add(global.item1tierlist,0)
+ds_list_add(global.item1tierlist,1)
+ds_list_add(global.item1tierlist,2)
+
+ds_list_add(global.item2tierlist,0)
+ds_list_add(global.item2tierlist,1)
+ds_list_add(global.item2tierlist,2)
+
+ds_list_add(global.item3tierlist,0)
+ds_list_add(global.item3tierlist,1)
+ds_list_add(global.item3tierlist,2)
+
+ds_list_shuffle(global.item1tierlist);
+ds_list_shuffle(global.item2tierlist);
+ds_list_shuffle(global.item3tierlist);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if keyboard_check_pressed(ord('Q'))
-{
-if global.maxlives=6{global.maxlives=0}else{global.maxlives+=1}
-if lives=6{lives=0}else{lives+=1}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.passedrooms&lt;15){global.maxspiks=3}
-if (global.passedrooms&gt;=15 and global.passedrooms&lt;30){global.maxspiks=4}
-if (global.passedrooms&gt;=30 and global.passedrooms&lt;50){global.maxspiks=5}
-if (global.passedrooms&gt;=50 and global.passedrooms&lt;75){global.maxspiks=6}
-if (global.passedrooms&gt;=75 and global.passedrooms&lt;105){global.maxspiks=7}
-if (global.passedrooms&gt;=105 and global.passedrooms&lt;140){global.maxspiks=8}
-if (global.passedrooms&gt;=140 and global.passedrooms&lt;180){global.maxspiks=9}
-if (global.passedrooms&gt;=180){global.maxspiks=10}
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -212,6 +190,15 @@ draw_sprite(pick,2,view_xview+64,view_yview+96);
 draw_text_ext_colour(86+view_xview, 80+view_yview, string(global.keys),1,100,c_white,c_white,c_white,c_white,1)
 draw_sprite(pick,1,view_xview+64,view_yview+128);
 draw_text_ext_colour(86+view_xview, 112+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(86+view_xview, 144+view_yview, ds_list_find_index(global.item1tierlist,0),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(86+view_xview, 176+view_yview, ds_list_find_index(global.item2tierlist,0),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(86+view_xview, 208+view_yview, ds_list_find_index(global.item3tierlist,0),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(112+view_xview, 144+view_yview, ds_list_find_index(global.item1tierlist,1),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(112+view_xview, 176+view_yview, ds_list_find_index(global.item2tierlist,1),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(112+view_xview, 208+view_yview, ds_list_find_index(global.item3tierlist,1),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(144+view_xview, 144+view_yview, ds_list_find_index(global.item1tierlist,2),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(144+view_xview, 176+view_yview, ds_list_find_index(global.item2tierlist,2),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(144+view_xview, 208+view_yview, ds_list_find_index(global.item3tierlist,2),1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>

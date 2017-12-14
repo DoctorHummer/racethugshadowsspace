@@ -37,6 +37,44 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>a=instance_create(x,y,lightball_impact)
+a.direction=-direction
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -83,7 +121,7 @@ image_angle=direction
 if self.y&gt;room_height
 {instance_destroy()}
 image_angle=direction 
-
+image_alpha=0.1;
 </string>
           </argument>
         </arguments>
@@ -130,8 +168,14 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if global.mirror=false
+{
 instance_destroy()
+}
+if global.mirror=true
+{
+move_bounce_solid(true)
+}
 </string>
           </argument>
         </arguments>
@@ -154,8 +198,12 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_motion_blur();
-
+            <string>dist=point_distance(x,y,xprevious,yprevious)
+dire=point_direction(x,y,xprevious,yprevious)
+for(i=0;i&lt;dist;i+=1){
+            draw_sprite_ext(sprite_index,-1,x+lengthdir_x(i,dire),y+lengthdir_y(i,dire),image_xscale,image_yscale,image_angle,image_blend,0.05)
+}           
+draw_sprite_ext(sprite_index,-1,x,y,image_xscale,image_yscale,image_angle,image_blend,0.5+(0.5-dist/250))
 </string>
           </argument>
         </arguments>

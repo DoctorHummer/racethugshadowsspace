@@ -19,9 +19,11 @@
       <sprite>sprites\lightballsprite</sprite>
       <sprite>sprites\lightball_death</sprite>
       <sprite>sprites\player_mask</sprite>
+      <sprite>sprites\wings</sprite>
     </sprites>
     <sprites name="objects">
       <sprite>sprites\o_l1grass</sprite>
+      <sprite>sprites\blockforrooms</sprite>
       <sprite>sprites\column</sprite>
       <sprite>sprites\grass</sprite>
       <sprite>sprites\vine</sprite>
@@ -38,7 +40,10 @@
       <sprite>sprites\door</sprite>
       <sprite>sprites\stat</sprite>
       <sprite>sprites\chest</sprite>
+      <sprite>sprites\gchest</sprite>
       <sprite>sprites\sbush</sprite>
+      <sprite>sprites\grasscover</sprite>
+      <sprite>sprites\stonewall</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -74,6 +79,7 @@
     </sprites>
     <sprite>sprites\part</sprite>
     <sprite>sprites\cheat</sprite>
+    <sprite>sprites\itemsprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\l1back</background>
@@ -85,6 +91,8 @@
     <script>scripts\scr_motion_blur.gml</script>
     <script>scripts\itemdrop.gml</script>
     <script>scripts\normalchest_drop.gml</script>
+    <script>scripts\goldenchest_drop.gml</script>
+    <script>scripts\tv_init.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\c_font</font>
@@ -99,13 +107,16 @@
       <object>objects\lightballpar</object>
       <object>objects\lightball_impact</object>
       <object>objects\pickups</object>
+      <object>objects\items</object>
     </objects>
     <objects name="objects">
       <object>objects\o_blockparent</object>
-      <object>objects\o_lvl1grass</object>
+      <object>objects\o_lvl1block</object>
+      <object>objects\o_lvl1wall</object>
       <object>objects\o_column</object>
       <objects name="traps">
-        <object>objects\trapblock</object>
+        <object>objects\spikeparent</object>
+        <object>objects\trapparent</object>
         <object>objects\spikes</object>
         <object>objects\spikes_a</object>
         <object>objects\spikes_b</object>
@@ -117,6 +128,7 @@
       </objects>
       <objects name="chests">
         <object>objects\o_chest</object>
+        <object>objects\o_goldenchest</object>
       </objects>
       <object>objects\bubble</object>
       <object>objects\platformtrack</object>
@@ -136,6 +148,7 @@
     <objects name="monsters">
       <object>objects\parmonster</object>
       <object>objects\parbullet</object>
+      <object>objects\particles</object>
       <objects name="bullets">
         <object>objects\weepbullet</object>
         <object>objects\weepbulletd</object>

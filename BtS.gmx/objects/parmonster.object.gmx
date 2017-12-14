@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if bessmertie=0
 {
-hp-=1
+hp-=global.damage
 bessmertie=1
 }
 with(other){instance_destroy()}

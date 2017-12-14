@@ -45,6 +45,25 @@ vx4=+265;vy4=-346;
 vx5=-66;vy5=-310;
 vx6=+82;vy6=-292;
 
+glowing=choose(0,1,2,3)
+Sname=part_system_create();
+part_system_depth(Sname,19);
+particle1 = part_type_create();
+part_type_shape(particle1,pt_shape_flare);
+part_type_size(particle1,1,1,0,0.20);
+part_type_scale(particle1,0.40,0.40);
+part_type_color3(particle1,16711935,16777215,65535);
+part_type_alpha3(particle1,0,0.35,0);
+part_type_speed(particle1,1,1,0.00,0);
+part_type_direction(particle1,0,359,1,7);
+part_type_gravity(particle1,0,270);
+part_type_orientation(particle1,0,0,0,0,1);
+part_type_blend(particle1,1);
+part_type_life(particle1,60,60);
+
+emitter1 = part_emitter_create(Sname);
+part_emitter_region(Sname,emitter1,self.x-348,self.x+348,self.y-800,self.y-350,ps_shape_rectangle,1);
+part_emitter_stream(Sname,emitter1,particle1,1);
 </string>
           </argument>
         </arguments>
@@ -106,6 +125,45 @@ if rotvins6&gt;2{k6=1}
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_emitter_destroy(Sname,emitter1) 
+
+part_system_destroy(Sname)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">

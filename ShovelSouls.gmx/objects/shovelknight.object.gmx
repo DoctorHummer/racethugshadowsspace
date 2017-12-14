@@ -135,7 +135,7 @@ xspeed = iff(abs(xspeed) &gt; xmaxspeed, xmaxspeed * sign(xspeed), xspeed);
 yspeed = iff(abs(yspeed) &gt; ymaxspeed, ymaxspeed * sign(yspeed), yspeed);
 
 // Vertical velocity:
-if (!place_meeting(x, y + yspeed, cube)) {
+if (place_free(x, y + yspeed)) {
   y += yspeed;
 }
 else {
@@ -153,7 +153,7 @@ else {
 }
 
 // Horizontal velocity:
-if (!place_meeting(x + xspeed, y, cube)) {
+if (place_free(x + xspeed, y)) {
     x += xspeed;
 } 
 else {
@@ -227,7 +227,63 @@ if (isClimbing == false) {
       xspeed = 0;
     }
   }
+  
+  
+  // Climbing on to ladder.
+  if (place_meeting(x, y, o_ladder) &amp;&amp; !isDismounting &amp;&amp; attack!=2) {
+    if (keyboard_check(global.controlup) &amp;&amp; place_meeting(x, y-8, o_ladder)) {
+      isClimbing = true;
+    }
+    if (keyboard_check(global.controldown) &amp;&amp; place_meeting(x, y+8, o_ladder) &amp;&amp; !place_meeting(x, y+1, cube)) {
+      isClimbing = true;
+    }
   }
+}
+// Movement on ladder:
+else {
+  // Stop climbing.
+  if (!place_meeting(x, y, o_ladder)) {
+    isClimbing = false;
+  }
+  
+  // Handle direction.
+  if (keyboard_check_pressed(global.controlleft)) {
+    dir = -1;
+  } 
+  if keyboard_check_pressed(global.controlright) {
+    dir = 1;
+  }
+  
+  
+  xspeed = 0;
+  yspeed = 0;
+  
+  if (firing == 0) {
+    // Go down the ladder.
+    if (place_meeting(x, y+8, o_ladder) &amp;&amp; keyboard_check(global.controldown)) {
+      if attack=0 {yspeed = 2.5;} else {yspeed = -0.1;}
+      if (place_meeting(x, y+1, cube)) {
+        is_climbing = false;
+      }
+    }
+    // Go up the ladder.
+    if (place_meeting(x, y-8, o_ladder) &amp;&amp; keyboard_check(global.controlup)) {
+      if attack=0 {yspeed = -2.5;} else {yspeed = -0.1;}
+    }
+  }
+  
+  // Dismounting.
+  if (keyboard_check_pressed(global.controljump) || dismount &lt;= 0) {
+    isClimbing = false;
+    isDismounting = true;
+    if (dismount &lt;= 0) {
+      xspeed = (xmaxspeed / 2) * dir;
+    }
+      yspeed = -12;
+  if (!audio_is_playing(jump)){audio_play_sound(jump,0.5,false)}
+  }
+}
+ 
 </string>
           </argument>
         </arguments>
@@ -289,6 +345,17 @@ if (landing &gt; 0) {
   sprite_index = iff(aiming, shovel_land, shovel_land);
   if (!audio_is_playing(jumpstop)){audio_play_sound(jumpstop,0.5,false)}
 }
+
+if (isClimbing) {
+    sprite_index = shovelclimb;
+    if (dismount &lt; dismount_max &amp;&amp; yspeed == 0) {
+      sprite_index = shovelclimb;
+    }
+    if (!place_meeting(x, y-8, o_ladder)) {
+      sprite_index = shovelclimbtop;
+    }
+  image_index = floor(y/16); 
+}
 // Configure image speeds.
 image_speed = 0.4;
 
@@ -307,7 +374,7 @@ attack=1
 audio_play_sound(shovelattack,0.5,false);
 }
 
-if (keyboard_check(global.controldown) and isJumping = true)
+if (keyboard_check(global.controldown) and isJumping = true and isClimbing = false &amp;&amp; !isDismounting &amp;&amp; !place_meeting(x, y, ladder))
 {
 attack=2
 image_index=0
@@ -318,15 +385,25 @@ attacktimer=10
 
 if attack=1
 {
+if isClimbing=false
+{
 sprite_index=shovel_attack; image_speed = 0.5;
+}
+if isClimbing=true
+{
+sprite_index=shovelclimbattack; image_speed = 0.5;
+}
 if attacktimer=5 {if dir=1 {instance_create(shovelknight.x+24,shovelknight.y,attackhitbox)} else {instance_create(shovelknight.x-24,shovelknight.y,attackhitbox)}}
 attacktimer--
 }
 
 if attack=2
 {
+if (isClimbing = false &amp;&amp; !isDismounting &amp;&amp; !place_meeting(x, y, ladder))
+{
 sprite_index=shovel_downattack; image_speed = 0;
 if (place_meeting(shovelknight.x, shovelknight.y+1, cube)) {attack=0; attacktimer=0;}
+}
 }
 
 
@@ -404,6 +481,10 @@ image_alpha = 1; t=0;
 if bessmertie=0
 {
 global.hp-=2
+ini_open('savegame.ss');
+var t = ini_read_real('stats','hp', 0);
+ini_write_real('stats','hp', t - 2);
+ini_close();
 hitted=15
 if x&lt;other.x {xspeed-=10}
 if x&gt;=other.x {xspeed+=10}
@@ -412,12 +493,21 @@ alarm[0]=40;
 bessmertie=1;
 if (!audio_is_playing(hit)){audio_play_sound(hit,0.5,false)}
 }
+
+  if (isClimbing = true) {
+    isClimbing = false;
+    isDismounting = true;
+    if (dismount &lt;= 0) {
+      xspeed = (xmaxspeed / 2) * dir;
+    }
+      yspeed = -12;
+  }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="hollow">
+    <event eventtype="4" ename="parmonster">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -447,6 +537,10 @@ else
 if bessmertie=0
 {
 global.hp-=1
+ini_open('savegame.ss');
+var t = ini_read_real('stats','hp', 0);
+ini_write_real('stats','hp', t - 1);
+ini_close();
 hitted=1
 if x&lt;other.x {xspeed-=10}
 if x&gt;=other.x {xspeed+=10}
@@ -462,6 +556,10 @@ else
 if bessmertie=0
 {
 global.hp-=1
+ini_open('savegame.ss');
+var t = ini_read_real('stats','hp', 0);
+ini_write_real('stats','hp', t - 1);
+ini_close();
 hitted=15
 if x&lt;other.x {xspeed-=10}
 if x&gt;=other.x {xspeed+=10}
@@ -471,6 +569,16 @@ bessmertie=1;
 if (!audio_is_playing(hit)){audio_play_sound(hit,0.5,false)}
 }
 }
+
+
+  if (isClimbing = true) {
+    isClimbing = false;
+    isDismounting = true;
+    if (dismount &lt;= 0) {
+      xspeed = (xmaxspeed / 2) * dir;
+    }
+      yspeed = -12;
+  }
 </string>
           </argument>
         </arguments>
