@@ -60,7 +60,7 @@ bounce=1
             <kind>1</kind>
             <string>//repeat(20)
 //{
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=0;
 //a=instance_create(x,y,particle)
 //a.type=3;

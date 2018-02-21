@@ -63,7 +63,7 @@ sp=1.5
           <argument>
             <kind>1</kind>
             <string>
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=2;
 
 script_execute(itemdrop);

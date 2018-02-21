@@ -14,10 +14,10 @@
       <sprite>sprites\luna_jump</sprite>
       <sprite>sprites\luna_jump_a</sprite>
       <sprite>sprites\luna_eyes</sprite>
+      <sprite>sprites\lunahurt_eyes</sprite>
       <sprite>sprites\luna_hat</sprite>
       <sprite>sprites\luna_arm</sprite>
       <sprite>sprites\lightballsprite</sprite>
-      <sprite>sprites\lightball_death</sprite>
       <sprite>sprites\player_mask</sprite>
       <sprite>sprites\wings</sprite>
     </sprites>
@@ -44,6 +44,9 @@
       <sprite>sprites\sbush</sprite>
       <sprite>sprites\grasscover</sprite>
       <sprite>sprites\stonewall</sprite>
+      <sprite>sprites\blockadditional</sprite>
+      <sprite>sprites\torches</sprite>
+      <sprite>sprites\ftain</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -66,7 +69,6 @@
         <sprite>sprites\purpleguydeath</sprite>
         <sprite>sprites\rcloud</sprite>
         <sprite>sprites\recloud_eyes</sprite>
-        <sprite>sprites\purplebullet</sprite>
       </sprites>
       <sprites name="tier3">
         <sprite>sprites\rspike</sprite>
@@ -125,6 +127,7 @@
         <object>objects\backtree</object>
         <object>objects\statue</object>
         <object>objects\bush</object>
+        <object>objects\torch</object>
       </objects>
       <objects name="chests">
         <object>objects\o_chest</object>
@@ -137,6 +140,7 @@
       <object>objects\o_shatterBlock</object>
       <object>objects\o_door</object>
       <object>objects\o_opendoor</object>
+      <object>objects\fountrain</object>
     </objects>
     <objects name="mechanics">
       <object>objects\background1</object>
@@ -144,14 +148,13 @@
       <object>objects\Shaker</object>
       <object>objects\superview</object>
       <object>objects\monstergore</object>
+      <object>objects\particles</object>
     </objects>
     <objects name="monsters">
       <object>objects\parmonster</object>
       <object>objects\parbullet</object>
-      <object>objects\particles</object>
       <objects name="bullets">
         <object>objects\weepbullet</object>
-        <object>objects\weepbulletd</object>
         <object>objects\spikeshot</object>
       </objects>
       <objects name="dankforest">
@@ -170,6 +173,7 @@
           <object>objects\spikegore1</object>
         </objects>
       </objects>
+      <object>objects\mparticles</object>
     </objects>
     <objects name="cheats">
       <object>objects\restart</object>

@@ -98,11 +98,11 @@ a.image_alpharange=choose(0.25,0.5,0.75)
             <string>draw_sprite_ext(jumpshroom,0,x,y,scalex,scaley,image_angle,c_white,image_alpha)//пузырь
 draw_sprite_ext(jumpshroom,1,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha)//камни
 if index=0{scalex=1; scaley=1}
-if (index=1 or index=2){scalex=1.2; scaley=0.8}
+if (index=1 or index=2){scalex=1.1; scaley=0.9}
 if (index=3 or index=4){scalex=1; scaley=1}
-if (index=5 or index=6){scalex=0.9; scaley=1.2}
-if (index=7 or index=8){scalex=0.8; scaley=1.5}
-if index=9{scalex=0.9; scaley=1.2}
+if (index=5 or index=6){scalex=0.9; scaley=1.1}
+if (index=7 or index=8){scalex=0.8; scaley=1.2}
+if index=9{scalex=0.9; scaley=1.1}
 </string>
           </argument>
         </arguments>

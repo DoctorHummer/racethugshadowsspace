@@ -117,12 +117,36 @@ image_angle=direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale=0.2; image_yscale=image_xscale;
+            <string>image_xscale=0.5; image_yscale=image_xscale;
 if self.y&gt;room_height
 {instance_destroy()}
 image_angle=direction 
 image_alpha=0.1;
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>543</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sprite_color</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>13</kind>
+            <string>8454143</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -198,11 +222,13 @@ move_bounce_solid(true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dist=point_distance(x,y,xprevious,yprevious)
+            <string>
+dist=point_distance(x,y,xprevious,yprevious)
 dire=point_direction(x,y,xprevious,yprevious)
-for(i=0;i&lt;dist;i+=1){
-            draw_sprite_ext(sprite_index,-1,x+lengthdir_x(i,dire),y+lengthdir_y(i,dire),image_xscale,image_yscale,image_angle,image_blend,0.05)
-}           
+//for(i=0;i&lt;dist;i+=1){
+//            draw_sprite_ext(sprite_index,-1,x+lengthdir_x(i,dire),y+lengthdir_y(i,dire),image_xscale,image_yscale,image_angle,image_blend,0.05)
+//}           
+//
 draw_sprite_ext(sprite_index,-1,x,y,image_xscale,image_yscale,image_angle,image_blend,0.5+(0.5-dist/250))
 </string>
           </argument>

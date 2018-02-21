@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>0</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,201 +25,106 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-type=0
-Starter = part_system_create()
-Emitter = part_emitter_create(Starter)
-pp = part_type_create()
-part_emitter_region(Starter,Emitter,x,x,y,y,ps_shape_rectangle,1)
-part_type_shape(pp,pt_shape_sphere)
-part_type_orientation(pp,0,0,0,0,1)
-part_type_speed(pp,0,0,0.09,0)
-part_type_size(pp,0.90,0.90,0,1)
-part_type_scale(pp,0.76,0.1)
-part_type_color3(pp,c_red,c_orange,c_red)
-part_type_life(pp,50,50)
-part_type_direction(pp,0,359,0,0)
-part_type_alpha3(pp,0.80,0.44,0.01)
-part_type_blend(pp,1)
-part_emitter_stream(Starter,Emitter,pp,10)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>5</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-part_emitter_destroy(Starter,Emitter) 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-part_emitter_destroy(Starter,Emitter) 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if type=0
-{
-part_type_color3(pp,c_black,c_orange,c_red)
-part_type_life(pp,60,60)
-part_type_scale(pp,0.76,0.1)
-part_type_shape(pp,pt_shape_sphere)
-}//red particles from monster
-if type=1
-{
-part_type_color3(pp,c_black,c_purple,c_purple)
-part_type_life(pp,60,60)
-part_type_scale(pp,0.76,0.4)
-part_type_shape(pp,pt_shape_sphere)
-}//purple particles from monster
-if type=2
-{
-part_type_color3(pp,c_black,c_orange,c_red)
-part_type_life(pp,60,60)
-part_type_scale(pp,0.76,0.4)
-part_type_shape(pp,pt_shape_sphere)
-}//red particles from big monster
-if type=3
-{
-part_type_color3(pp,c_black,c_black,c_black)
-part_type_life(pp,20,20    )
-part_type_scale(pp,0.6,0.2)
-part_type_shape(pp,pt_shape_sphere)
-}//particles from double jump
-if type=4
-{
-part_type_color3(pp,c_orange,c_yellow,c_orange)
-part_type_life(pp,6,6)
-part_type_scale(pp,0.86,0.2)
-part_type_speed(pp,0,0,0.1,0)
-part_type_shape(pp,pt_shape_flare)
-}//particles from golden keys and coins
-if type=5
-{
-part_type_color3(pp,c_aqua,c_gray,c_gray)
-part_type_life(pp,6,6)
-part_type_scale(pp,0.86,0.2)
-part_type_speed(pp,0,0,0.1,0)
-part_type_shape(pp,pt_shape_flare)
-}//particles from keys
-if type=6
-{
-part_type_color3(pp,c_gray,c_purple,c_purple)
-part_type_life(pp,60,60)
-part_type_scale(pp,0.76,0.4)
-part_type_speed(pp,0,0,0.6,0)
-part_type_shape(pp,pt_shape_sphere)
-if instance_exists(player)
-{
-part_emitter_region(Starter,Emitter,player.x,player.x,player.y,player.y,ps_shape_rectangle,1)
-}
-}//particles from wing jump
+            <string>Starter_Depth0 = part_system_create()
+Starter_Depth19 = part_system_create()
+
+Emitter1 = part_emitter_create(Starter_Depth0)
+Particle1 = part_type_create()
+part_type_orientation(Particle1,0,0,0,0,1)
+part_type_size(Particle1,0.90,0.90,0,1)
+part_type_color3(Particle1,c_black,c_orange,c_red)
+part_type_life(Particle1,60,60)
+part_type_scale(Particle1,0.76,0.1)
+part_type_shape(Particle1,pt_shape_sphere)
+part_type_speed(Particle1,0,0,0.09,0)
+part_type_direction(Particle1,0,359,0,0)
+part_type_alpha3(Particle1,0.80,0.44,0.01)
+part_type_blend(Particle1,1)
+//red particles from monster
+
+Emitter2 = part_emitter_create(Starter_Depth0)
+Particle2 = part_type_create()
+part_type_orientation(Particle2,0,0,0,0,1)
+part_type_size(Particle2,0.90,0.90,0,1)
+part_type_color3(Particle2,c_black,c_purple,c_purple)
+part_type_life(Particle2,60,60)
+part_type_scale(Particle2,0.76,0.4)
+part_type_shape(Particle2,pt_shape_sphere)
+part_type_speed(Particle2,0,0,0.09,0)
+part_type_direction(Particle2,0,359,0,0)
+part_type_alpha3(Particle2,0.80,0.44,0.01)
+part_type_blend(Particle2,1)
+//purple particles from monster
+
+Emitter3 = part_emitter_create(Starter_Depth0)
+Particle3 = part_type_create()
+part_type_orientation(Particle3,0,0,0,0,1)
+part_type_size(Particle3,0.90,0.90,0,1)
+part_type_color3(Particle3,c_black,c_orange,c_red)
+part_type_life(Particle3,60,60)
+part_type_scale(Particle3,0.76,0.4)
+part_type_shape(Particle3,pt_shape_sphere)
+part_type_speed(Particle3,0,0,0.09,0)
+part_type_direction(Particle3,0,359,0,0)
+part_type_alpha3(Particle3,0.80,0.44,0.01)
+part_type_blend(Particle3,1)
+//red particles from big monster
+
+Emitter4 = part_emitter_create(Starter_Depth0)
+Particle4 = part_type_create()
+part_type_orientation(Particle4,0,0,0,0,1)
+part_type_size(Particle4,0.90,0.90,0,1)
+part_type_color3(Particle4,c_black,c_black,c_black)
+part_type_life(Particle4,20,20    )
+part_type_scale(Particle4,0.6,0.2)
+part_type_shape(Particle4,pt_shape_sphere)
+part_type_speed(Particle4,0,0,0.09,0)
+part_type_direction(Particle4,0,359,0,0)
+part_type_alpha3(Particle4,0.80,0.44,0.01)
+part_type_blend(Particle4,1)
+//particles from double jump
+
+Emitter5 = part_emitter_create(Starter_Depth0)
+Particle5 = part_type_create()
+part_type_orientation(Particle5,0,0,0,0,1)
+part_type_size(Particle5,0.90,0.90,0,1)
+part_type_color3(Particle5,c_orange,c_yellow,c_orange)
+part_type_life(Particle5,6,6)
+part_type_scale(Particle5,0.86,0.2)
+part_type_speed(Particle5,0,0,0.1,0)
+part_type_shape(Particle5,pt_shape_flare)
+part_type_direction(Particle5,0,359,0,0)
+part_type_alpha3(Particle5,0.80,0.44,0.01)
+part_type_blend(Particle5,1)
+//particles from golden keys and coins
+
+Emitter6 = part_emitter_create(Starter_Depth0)
+Particle6 = part_type_create()
+part_type_orientation(Particle6,0,0,0,0,1)
+part_type_size(Particle6,0.90,0.90,0,1)
+part_type_color3(Particle6,c_aqua,c_gray,c_gray)
+part_type_life(Particle6,6,6)
+part_type_scale(Particle6,0.86,0.2)
+part_type_speed(Particle6,0,0,0.1,0)
+part_type_shape(Particle6,pt_shape_flare)
+part_type_direction(Particle6,0,359,0,0)
+part_type_alpha3(Particle6,0.80,0.44,0.01)
+part_type_blend(Particle6,1)
+//particles from keys
+
+Emitter7 = part_emitter_create(Starter_Depth0)
+Particle7 = part_type_create()
+part_type_size(Particle7,0.90,0.90,0,1)
+part_type_color3(Particle7,c_gray,c_purple,c_purple)
+part_type_life(Particle7,60,60)
+part_type_scale(Particle7,0.76,0.4)
+part_type_speed(Particle7,0,0,0.6,0)
+part_type_shape(Particle7,pt_shape_sphere)
+part_type_direction(Particle7,0,359,0,0)
+part_type_alpha3(Particle7,0.80,0.44,0.01)
+part_type_blend(Particle7,1)
+//particles from wing jump
+
 </string>
           </argument>
         </arguments>
@@ -242,143 +147,16 @@ part_emitter_region(Starter,Emitter,player.x,player.x,player.y,player.y,ps_shape
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-part_emitter_destroy(Starter,Emitter) 
-part_system_destroy(Starter)
+            <string>part_particles_clear(Particle1)
+part_particles_clear(Particle2)
+part_particles_clear(Particle3)
+part_particles_clear(Particle4)
+part_particles_clear(Particle5)
+part_particles_clear(Particle6)
+part_particles_clear(Particle7)
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-part_emitter_destroy(Starter,Emitter) 
-part_system_destroy(Starter)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="7" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-part_emitter_destroy(Starter,Emitter) 
-part_system_destroy(Starter)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-part_emitter_destroy(Starter,Emitter) 
-part_system_destroy(Starter)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

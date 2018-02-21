@@ -111,6 +111,7 @@ instance_create(x+0,y+0,chararm)
 }
 eyeindex=0
 wingstimer=0
+eyehurt=0
 </string>
           </argument>
         </arguments>
@@ -235,6 +236,29 @@ ycor[10, 2] = -12; xcor[10, 2] = -4;
 ycor[11, 0] = -18; xcor[11, 0] = -4;
 ycor[11, 1] = -13; xcor[11, 1] = -4;
 ycor[11, 2] = -12; xcor[11, 2] = -4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>eyehurt=0
 </string>
           </argument>
         </arguments>
@@ -488,6 +512,7 @@ instance_deactivate_all(true);
 instance_activate_object(control);
 instance_activate_object(superview);
 instance_activate_object(background1);
+instance_activate_object(particles);
 instance_activate_object(lightballpar);
 instance_activate_object(parbullet);
 instance_activate_object(background1);
@@ -519,14 +544,8 @@ instance_activate_region(view_xview-164,view_yview-164,view_wview+196,view_hview
 if image_xscale&gt;0
 {
 ycor[0, 0] = -1; xcor[0, 0] = 0;
-ycor[0, 1] = 0; xcor[0, 1] = 0;
-ycor[0, 2] = +1; xcor[0, 2] = 0;
-ycor[0, 3] = 0; xcor[0, 3] = 0;
 
 ycor[1, 0] = -1; xcor[1, 0] = 0;
-ycor[1, 1] = 0; xcor[1, 1] = 0;
-ycor[1, 2] = +1; xcor[1, 2] = 0;
-ycor[1, 3] = 0; xcor[1, 3] = 0;
 
 ycor[2, 0] = +3; xcor[2, 0] = +4;
 ycor[2, 1] = +3; xcor[2, 1] = +4;
@@ -575,14 +594,8 @@ ycor[5, 2] = -3; xcor[5, 2] = +0;
 if image_xscale&lt;0
 {
 ycor[0, 0] = -1; xcor[0, 0] = 0;
-ycor[0, 1] = 0; xcor[0, 1] = 0;
-ycor[0, 2] = +1; xcor[0, 2] = 0;
-ycor[0, 3] = 0; xcor[0, 3] = 0;
 
 ycor[1, 0] = -1; xcor[1, 0] = 0;
-ycor[1, 1] = 0; xcor[1, 1] = 0;
-ycor[1, 2] = +1; xcor[1, 2] = 0;
-ycor[1, 3] = 0; xcor[1, 3] = 0;
 
 ycor[2, 0] = +3; xcor[2, 0] = -4;
 ycor[2, 1] = +3; xcor[2, 1] = -4;
@@ -1006,6 +1019,8 @@ if (wingstimer&gt;28 and wingstimer&lt;=30){draw_sprite_ext(wings,9,player.x, pl
 
 draw_self();
 
+if eyehurt=0
+{
 if (flashlight=true)
 {
 draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
@@ -1075,6 +1090,11 @@ if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=2)
 eyeindex=14
 }
 }
+}
+else
+{
+draw_sprite_ext(lunahurt_eyes,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
+}
 draw_sprite_ext(luna_hat,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,image_alpha);
 </string>
           </argument>
@@ -1106,7 +1126,7 @@ double_jump=0;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=3;
 } 
 }
@@ -1119,7 +1139,7 @@ double_jump=2;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=3;
 } 
 else
@@ -1129,7 +1149,7 @@ double_jump=0;
 yspeed = -jumpHeight*1.2;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y-35,particles)
+a=instance_create(x,y,mparticles)
 a.type=6;
 } 
 }

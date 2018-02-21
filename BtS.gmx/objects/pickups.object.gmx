@@ -165,19 +165,19 @@ if global.coins&lt;99{global.coins+=1}
 //a.direction=i
 //a.image_alpha=1.5
 //}
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=4;
 }
 if type=1 
 {
 if global.goldenkeys&lt;99{global.goldenkeys+=1}
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=4;
 }
 if type=2
 {
 if global.keys&lt;99{global.keys+=1}
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=5;
 }
 </string>

@@ -28,6 +28,8 @@
             <string>timer=0
 
 tier=2
+
+a=1; a2=0;
 </string>
           </argument>
         </arguments>
@@ -51,7 +53,7 @@ tier=2
           <argument>
             <kind>1</kind>
             <string>
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=1;
 
 repeat(8)
@@ -81,13 +83,13 @@ script_execute(itemdrop);
           <argument>
             <kind>1</kind>
             <string>a=instance_create(x-32,y,weepbullet);
-a.direction=180; a.speed=4;
+a.direction=180; a.speed=6;
 a=instance_create(x+32,y,weepbullet);
-a.direction=0; a.speed=4;
+a.direction=0; a.speed=6;
 a=instance_create(x,y-32,weepbullet);
-a.direction=90; a.speed=4;
+a.direction=90; a.speed=6;
 a=instance_create(x,y+32,weepbullet);
-a.direction=270; a.speed=4;
+a.direction=270; a.speed=6;
 </string>
           </argument>
         </arguments>
@@ -116,9 +118,36 @@ if (timer=2 or timer=3) {image_index=1}
 if (timer=4 or timer=5) {image_index=2}
 if (timer=6 or timer=7) {image_index=3}
 if (timer=8 or timer=9) {image_index=4}
-if (timer&gt;9) {image_index=5; if (image_xscale=1) {image_angle+=0.2}else{image_angle-=0.2}}
+if (timer&gt;9) {image_index=5; if (image_xscale&gt;=0) {image_angle+=0.2}else{image_angle-=0.2}}
 if (timer&gt;22) {instance_destroy()}
 
+a2+=0.03;
+image_xscale*=1.01;
+image_yscale*=1.005;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,a)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_fuchsia,a2)
 
 </string>
           </argument>

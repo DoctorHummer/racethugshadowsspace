@@ -65,7 +65,7 @@ timer=0
           <argument>
             <kind>1</kind>
             <string>
-a=instance_create(x,y,particles)
+a=instance_create(x,y,mparticles)
 a.type=1;
 
 script_execute(itemdrop);

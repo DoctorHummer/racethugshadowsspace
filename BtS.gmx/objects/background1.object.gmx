@@ -26,22 +26,22 @@
           <argument>
             <kind>1</kind>
             <string>//backstuff
-s1x=random(room_width); s1y=(random(room_height)/2); s1i=choose(0,1,2,3,4,5); s1xs=0.4 + random(0.6); s1ys=s1xs; s1alpha=s1xs; s1im=0
-s2x=random(room_width); s2y=(random(room_height)/2); s2i=choose(0,1,2,3,4,5); s2xs=0.4 + random(0.6); s2ys=s2xs; s2alpha=s2xs; s2im=0
-s3x=random(room_width); s3y=(random(room_height)/2); s3i=choose(0,1,2,3,4,5); s3xs=0.4 + random(0.6); s3ys=s3xs; s3alpha=s3xs; s3im=0
-s4x=random(room_width); s4y=(random(room_height)/2); s4i=choose(0,1,2,3,4,5); s4xs=0.4 + random(0.6); s4ys=s4xs; s4alpha=s4xs; s4im=0
-s5x=random(room_width); s5y=(random(room_height)/2); s5i=choose(0,1,2,3,4,5); s5xs=0.4 + random(0.6); s5ys=s5xs; s5alpha=s5xs; s5im=0
-s6x=random(room_width); s6y=(random(room_height)/2); s6i=choose(0,1,2,3,4,5); s6xs=0.4 + random(0.6); s6ys=s6xs; s6alpha=s6xs; s6im=0
-s7x=random(room_width); s7y=(random(room_height)/2); s7i=choose(0,1,2,3,4,5); s7xs=0.4 + random(0.6); s7ys=s7xs; s7alpha=s7xs; s7im=0
-s8x=random(room_width); s8y=(random(room_height)/2); s8i=choose(0,1,2,3,4,5); s8xs=0.4 + random(0.6); s8ys=s8xs; s8alpha=s8xs; s8im=0
-s9x=random(room_width); s9y=(random(room_height)/2); s9i=choose(0,1,2,3,4,5); s9xs=0.4 + random(0.6); s9ys=s9xs; s9alpha=s9xs; s9im=0
-s10x=random(room_width); s10y=(random(room_height)/2); s10i=choose(0,1,2,3,4,5); s10xs=0.4 + random(0.6); s10ys=s10xs; s10alpha=s10xs; s10im=0
-s11x=random(room_width); s11y=(random(room_height)/2); s11i=choose(0,1,2,3,4,5); s11xs=0.4 + random(0.6); s11ys=s11xs; s11alpha=s11xs; s11im=0
-s12x=random(room_width); s12y=(random(room_height)/2); s12i=choose(0,1,2,3,4,5); s12xs=0.4 + random(0.6); s12ys=s12xs; s12alpha=s12xs; s12im=0
-s13x=random(room_width); s13y=(random(room_height)/2); s13i=choose(0,1,2,3,4,5); s13xs=0.4 + random(0.6); s13ys=s13xs; s13alpha=s13xs; s13im=0
-s14x=random(room_width); s14y=(random(room_height)/2); s14i=choose(0,1,2,3,4,5); s14xs=0.4 + random(0.6); s14ys=s14xs; s14alpha=s1xs; s14im=0
-s15x=random(room_width); s15y=(random(room_height)/2); s15i=choose(0,1,2,3,4,5); s15xs=0.4 + random(0.6); s15ys=s15xs; s15alpha=s1xs; s15im=0
-s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5); s16xs=0.4 + random(0.6); s16ys=s16xs; s16alpha=s16xs; s16im=0
+s1x=random(room_width); s1y=(random(room_height)/2); s1i=choose(0,1,2,3,4,5); s1xs=0.9 + random(0.6); s1ys=s1xs; s1alpha=s1xs; s1im=0
+s2x=random(room_width); s2y=(random(room_height)/2); s2i=choose(0,1,2,3,4,5); s2xs=0.9 + random(0.6); s2ys=s2xs; s2alpha=s2xs; s2im=0
+s3x=random(room_width); s3y=(random(room_height)/2); s3i=choose(0,1,2,3,4,5); s3xs=0.9 + random(0.6); s3ys=s3xs; s3alpha=s3xs; s3im=0
+s4x=random(room_width); s4y=(random(room_height)/2); s4i=choose(0,1,2,3,4,5); s4xs=0.9 + random(0.6); s4ys=s4xs; s4alpha=s4xs; s4im=0
+s5x=random(room_width); s5y=(random(room_height)/2); s5i=choose(0,1,2,3,4,5); s5xs=0.9 + random(0.6); s5ys=s5xs; s5alpha=s5xs; s5im=0
+s6x=random(room_width); s6y=(random(room_height)/2); s6i=choose(0,1,2,3,4,5); s6xs=0.9 + random(0.6); s6ys=s6xs; s6alpha=s6xs; s6im=0
+s7x=random(room_width); s7y=(random(room_height)/2); s7i=choose(0,1,2,3,4,5); s7xs=0.9 + random(0.6); s7ys=s7xs; s7alpha=s7xs; s7im=0
+s8x=random(room_width); s8y=(random(room_height)/2); s8i=choose(0,1,2,3,4,5); s8xs=0.9 + random(0.6); s8ys=s8xs; s8alpha=s8xs; s8im=0
+s9x=random(room_width); s9y=(random(room_height)/2); s9i=choose(0,1,2,3,4,5); s9xs=0.9 + random(0.6); s9ys=s9xs; s9alpha=s9xs; s9im=0
+s10x=random(room_width); s10y=(random(room_height)/2); s10i=choose(0,1,2,3,4,5); s10xs=0.9 + random(0.6); s10ys=s10xs; s10alpha=s10xs; s10im=0
+s11x=random(room_width); s11y=(random(room_height)/2); s11i=choose(0,1,2,3,4,5); s11xs=0.9 + random(0.6); s11ys=s11xs; s11alpha=s11xs; s11im=0
+s12x=random(room_width); s12y=(random(room_height)/2); s12i=choose(0,1,2,3,4,5); s12xs=0.9 + random(0.6); s12ys=s12xs; s12alpha=s12xs; s12im=0
+s13x=random(room_width); s13y=(random(room_height)/2); s13i=choose(0,1,2,3,4,5); s13xs=0.9 + random(0.6); s13ys=s13xs; s13alpha=s13xs; s13im=0
+s14x=random(room_width); s14y=(random(room_height)/2); s14i=choose(0,1,2,3,4,5); s14xs=0.9 + random(0.6); s14ys=s14xs; s14alpha=s14xs; s14im=0
+s15x=random(room_width); s15y=(random(room_height)/2); s15i=choose(0,1,2,3,4,5); s15xs=0.9 + random(0.6); s15ys=s15xs; s15alpha=s15xs; s15im=0
+s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5); s16xs=0.9 + random(0.6); s16ys=s16xs; s16alpha=s16xs; s16im=0
 
 
 cloudx1=choose(608,708,808,908,108,208,308,408,508); cloudy1=(random(room_height)/2)
@@ -222,22 +222,22 @@ s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5);
             <kind>1</kind>
             <string>//background
 draw_background(l1back,view_xview,view_yview)
-draw_sprite_ext(stars1,s1i,s1x+view_xview,s1y+view_yview,s1xs*0.2,s1ys*0.2,0,c_white,s1alpha)
-draw_sprite_ext(stars1,s2i,s2x+view_xview,s2y+view_yview,s2xs*0.2,s2ys*0.2,0,c_white,s2alpha)
-draw_sprite_ext(stars1,s3i,s3x+view_xview,s3y+view_yview,s3xs*0.2,s3ys*0.2,0,c_white,s3alpha)
-draw_sprite_ext(stars1,s4i,s4x+view_xview,s4y+view_yview,s4xs*0.2,s4ys*0.2,0,c_white,s4alpha)
-draw_sprite_ext(stars1,s5i,s5x+view_xview,s5y+view_yview,s5xs*0.2,s5ys*0.2,0,c_white,s5alpha)
-draw_sprite_ext(stars1,s6i,s6x+view_xview,s6y+view_yview,s6xs*0.2,s6ys*0.2,0,c_white,s6alpha)
-draw_sprite_ext(stars1,s7i,s7x+view_xview,s7y+view_yview,s7xs*0.2,s7ys*0.2,0,c_white,s7alpha)
-draw_sprite_ext(stars1,s8i,s8x+view_xview,s8y+view_yview,s8xs*0.2,s8ys*0.2,0,c_white,s8alpha)
-draw_sprite_ext(stars1,s9i,s9x+view_xview,s9y+view_yview,s9xs*0.2,s9ys*0.2,0,c_white,s9alpha)
-draw_sprite_ext(stars1,s10i,s10x+view_xview,s10y+view_yview,s10xs*0.2,s10ys*0.2,0,c_white,s10alpha)
-draw_sprite_ext(stars1,s11i,s11x+view_xview,s11y+view_yview,s11xs*0.2,s11ys*0.2,0,c_white,s11alpha)
-draw_sprite_ext(stars1,s12i,s12x+view_xview,s12y+view_yview,s12xs*0.2,s12ys*0.2,0,c_white,s12alpha)
-draw_sprite_ext(stars1,s13i,s13x+view_xview,s13y+view_yview,s13xs*0.2,s13ys*0.2,0,c_white,s13alpha)
-draw_sprite_ext(stars1,s14i,s14x+view_xview,s14y+view_yview,s14xs*0.2,s14ys*0.2,0,c_white,s14alpha)
-draw_sprite_ext(stars1,s15i,s15x+view_xview,s15y+view_yview,s15xs*0.2,s15ys*0.2,0,c_white,s15alpha)
-draw_sprite_ext(stars1,s16i,s16x+view_xview,s16y+view_yview,s16xs*0.2,s16ys*0.2,0,c_white,s16alpha)
+draw_sprite_ext(stars1,s1i,s1x+view_xview,s1y+view_yview,s1xs*0.8,s1ys*0.8,0,c_white,s1alpha)
+draw_sprite_ext(stars1,s2i,s2x+view_xview,s2y+view_yview,s2xs*0.8,s2ys*0.8,0,c_white,s2alpha)
+draw_sprite_ext(stars1,s3i,s3x+view_xview,s3y+view_yview,s3xs*0.8,s3ys*0.8,0,c_white,s3alpha)
+draw_sprite_ext(stars1,s4i,s4x+view_xview,s4y+view_yview,s4xs*0.8,s4ys*0.8,0,c_white,s4alpha)
+draw_sprite_ext(stars1,s5i,s5x+view_xview,s5y+view_yview,s5xs*0.8,s5ys*0.8,0,c_white,s5alpha)
+draw_sprite_ext(stars1,s6i,s6x+view_xview,s6y+view_yview,s6xs*0.8,s6ys*0.8,0,c_white,s6alpha)
+draw_sprite_ext(stars1,s7i,s7x+view_xview,s7y+view_yview,s7xs*0.8,s7ys*0.8,0,c_white,s7alpha)
+draw_sprite_ext(stars1,s8i,s8x+view_xview,s8y+view_yview,s8xs*0.8,s8ys*0.8,0,c_white,s8alpha)
+draw_sprite_ext(stars1,s9i,s9x+view_xview,s9y+view_yview,s9xs*0.8,s9ys*0.8,0,c_white,s9alpha)
+draw_sprite_ext(stars1,s10i,s10x+view_xview,s10y+view_yview,s10xs*0.8,s10ys*0.8,0,c_white,s10alpha)
+draw_sprite_ext(stars1,s11i,s11x+view_xview,s11y+view_yview,s11xs*0.8,s11ys*0.8,0,c_white,s11alpha)
+draw_sprite_ext(stars1,s12i,s12x+view_xview,s12y+view_yview,s12xs*0.8,s12ys*0.8,0,c_white,s12alpha)
+draw_sprite_ext(stars1,s13i,s13x+view_xview,s13y+view_yview,s13xs*0.8,s13ys*0.8,0,c_white,s13alpha)
+draw_sprite_ext(stars1,s14i,s14x+view_xview,s14y+view_yview,s14xs*0.8,s14ys*0.8,0,c_white,s14alpha)
+draw_sprite_ext(stars1,s15i,s15x+view_xview,s15y+view_yview,s15xs*0.8,s15ys*0.8,0,c_white,s15alpha)
+draw_sprite_ext(stars1,s16i,s16x+view_xview,s16y+view_yview,s16xs*0.8,s16ys*0.8,0,c_white,s16alpha)
 draw_sprite_ext(moony,0,view_xview+250,view_yview+160,1,1,0,c_white,1)
 draw_sprite_ext(thecloud,lol1,cloudx1+view_xview,cloudy1+view_yview,1,1,0,c_white,0.3)
 draw_sprite_ext(thecloud,lol2,cloudx2+view_xview,cloudy2+view_yview,1,1,0,c_white,0.2)
