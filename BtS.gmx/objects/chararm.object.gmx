@@ -327,7 +327,7 @@ alarm[2]=45;
 alarm[0]=global.shotspeed;
 if weaponstyle=0
 {
-{instance_create(xshoot + lengthdir_x(27,direction-8),yshoot + lengthdir_y(27,direction-8),lightball)}
+{instance_create(xshoot + lengthdir_x(45,direction),yshoot + lengthdir_y(45,direction),lightball)}
 }
 </string>
           </argument>

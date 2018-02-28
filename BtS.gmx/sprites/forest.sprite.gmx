@@ -8,20 +8,23 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>1279</bbox_right>
-  <bbox_top>286</bbox_top>
-  <bbox_bottom>959</bbox_bottom>
+  <bbox_right>1598</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>1983</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1280</width>
-  <height>960</height>
+  <width>1599</width>
+  <height>1984</height>
   <frames>
     <frame index="0">images\forest_0.png</frame>
     <frame index="1">images\forest_1.png</frame>
     <frame index="2">images\forest_2.png</frame>
+    <frame index="3">images\forest_3.png</frame>
+    <frame index="4">images\forest_4.png</frame>
+    <frame index="5">images\forest_5.png</frame>
   </frames>
 </sprite>

@@ -27,60 +27,66 @@
             <kind>1</kind>
             <string>Starter_Depth0 = part_system_create()
 Starter_Depth19 = part_system_create()
+Starter_Depth1 = part_system_create()
 
-Emitter1 = part_emitter_create(Starter_Depth0)
-Particle1 = part_type_create()
-part_type_orientation(Particle1,0,0,0,0,1)
-part_type_size(Particle1,0.90,0.90,0,1)
+Particle1 = part_type_create();
+Emitter1 = part_emitter_create(Starter_Depth0);
+part_type_shape(Particle1,pt_shape_sphere);
+part_type_size(Particle1,0.10,0.57,0,0);
+part_type_scale(Particle1,1.76,1.24);
 part_type_color3(Particle1,c_black,c_orange,c_red)
-part_type_life(Particle1,60,60)
-part_type_scale(Particle1,0.76,0.1)
-part_type_shape(Particle1,pt_shape_sphere)
-part_type_speed(Particle1,0,0,0.09,0)
-part_type_direction(Particle1,0,359,0,0)
-part_type_alpha3(Particle1,0.80,0.44,0.01)
-part_type_blend(Particle1,1)
+part_type_alpha3(Particle1,0.56,0.38,0.06);
+part_type_speed(Particle1,4.69,6.62,-0.14,0);
+part_type_direction(Particle1,0,359,0,0);
+part_type_gravity(Particle1,0,270);
+part_type_orientation(Particle1,0,0,0,0,1);
+part_type_blend(Particle1,1);
+part_type_life(Particle1,34,52);
+
 //red particles from monster
 
-Emitter2 = part_emitter_create(Starter_Depth0)
-Particle2 = part_type_create()
-part_type_orientation(Particle2,0,0,0,0,1)
-part_type_size(Particle2,0.90,0.90,0,1)
-part_type_color3(Particle2,c_black,c_purple,c_purple)
-part_type_life(Particle2,60,60)
-part_type_scale(Particle2,0.76,0.4)
-part_type_shape(Particle2,pt_shape_sphere)
-part_type_speed(Particle2,0,0,0.09,0)
-part_type_direction(Particle2,0,359,0,0)
-part_type_alpha3(Particle2,0.80,0.44,0.01)
-part_type_blend(Particle2,1)
+Particle2 = part_type_create();
+Emitter2 = part_emitter_create(Starter_Depth0);
+part_type_shape(Particle2,pt_shape_sphere);
+part_type_size(Particle2,0.10,0.57,0,0);
+part_type_scale(Particle2,2.76,2.24);
+part_type_color3(Particle2,c_black,c_fuchsia,c_purple);
+part_type_alpha3(Particle2,0.56,0.38,0.06);
+part_type_speed(Particle2,4.69,6.62,-0.14,0);
+part_type_direction(Particle2,0,359,0,0);
+part_type_gravity(Particle2,0,270);
+part_type_orientation(Particle2,0,0,0,0,1);
+part_type_blend(Particle2,1);
+part_type_life(Particle2,64,82);
+
+
 //purple particles from monster
 
-Emitter3 = part_emitter_create(Starter_Depth0)
-Particle3 = part_type_create()
-part_type_orientation(Particle3,0,0,0,0,1)
-part_type_size(Particle3,0.90,0.90,0,1)
-part_type_color3(Particle3,c_black,c_orange,c_red)
-part_type_life(Particle3,60,60)
-part_type_scale(Particle3,0.76,0.4)
-part_type_shape(Particle3,pt_shape_sphere)
-part_type_speed(Particle3,0,0,0.09,0)
-part_type_direction(Particle3,0,359,0,0)
-part_type_alpha3(Particle3,0.80,0.44,0.01)
-part_type_blend(Particle3,1)
+Particle3 = part_type_create();
+Emitter3 = part_emitter_create(Starter_Depth0);
+part_type_shape(Particle3,pt_shape_sphere);
+part_type_size(Particle3,0.10,0.57,0,0);
+part_type_scale(Particle3,2.76,2.24);
+part_type_color3(Particle3,c_black,c_orange,c_red);
+part_type_alpha3(Particle3,0.56,0.38,0.06);
+part_type_speed(Particle3,4.69,6.62,-0.14,0);
+part_type_direction(Particle3,0,359,0,0);
+part_type_gravity(Particle3,0,270);
+part_type_orientation(Particle3,0,0,0,0,1);
+part_type_blend(Particle3,1);
+part_type_life(Particle3,64,82);
 //red particles from big monster
 
 Emitter4 = part_emitter_create(Starter_Depth0)
 Particle4 = part_type_create()
-part_type_orientation(Particle4,0,0,0,0,1)
 part_type_size(Particle4,0.90,0.90,0,1)
-part_type_color3(Particle4,c_black,c_black,c_black)
-part_type_life(Particle4,20,20    )
-part_type_scale(Particle4,0.6,0.2)
+part_type_color3(Particle4,c_gray,16757759,8388736);
+part_type_life(Particle4,10,30)
+part_type_scale(Particle4,0.76,0.4)
+part_type_speed(Particle4,0,0,0.1,0)
 part_type_shape(Particle4,pt_shape_sphere)
-part_type_speed(Particle4,0,0,0.09,0)
 part_type_direction(Particle4,0,359,0,0)
-part_type_alpha3(Particle4,0.80,0.44,0.01)
+part_type_alpha3(Particle4,0.3,0.1,0.01)
 part_type_blend(Particle4,1)
 //particles from double jump
 
@@ -125,6 +131,135 @@ part_type_alpha3(Particle7,0.80,0.44,0.01)
 part_type_blend(Particle7,1)
 //particles from wing jump
 
+Emitter8 = part_emitter_create(Starter_Depth0);
+Particle8 = part_type_create();
+part_type_shape(Particle8,pt_shape_flare);
+part_type_size(Particle8,0.47,0.77,0,0);
+part_type_scale(Particle8,1,1);
+part_type_color3(Particle8,4227327,65535,8454143);
+part_type_alpha3(Particle8,0.84,0.49,0.07);
+part_type_speed(Particle8,1,3,0.12,0);
+part_type_direction(Particle8,0,359,0,0);
+part_type_gravity(Particle8,0,270);
+part_type_orientation(Particle8,0,0,0,0,1);
+part_type_blend(Particle8,1);
+part_type_life(Particle8,15,15);
+//particles from light drop
+
+Particle9 = part_type_create();
+Emitter9 = part_emitter_create(Starter_Depth19);
+part_type_shape(Particle9,pt_shape_smoke);
+part_type_size(Particle9,0.10,0.78,0,0);
+part_type_scale(Particle9,1,1);
+part_type_color3(Particle9,0,0,12615680);
+part_type_alpha3(Particle9,1,0.50,0.01);
+part_type_speed(Particle9,2.06,5.58,0.00,0);
+part_type_direction(Particle9,270,270,0,0);
+part_type_gravity(Particle9,0.20,270);
+part_type_orientation(Particle9,0,0,0,0,0);
+part_type_blend(Particle9,0);
+part_type_life(Particle9,10,30);
+//particles from shatter block
+
+Emitter10 = part_emitter_create(Starter_Depth19);
+Particle10 = part_type_create();
+part_type_shape(Particle10,pt_shape_flare);
+part_type_size(Particle10,1,1,0,0.20);
+part_type_scale(Particle10,0.40,0.40);
+part_type_color3(Particle10,16711935,16777215,65535);
+part_type_alpha3(Particle10,0,0.35,0);
+part_type_speed(Particle10,1,1,0.00,0);
+part_type_direction(Particle10,0,359,1,7);
+part_type_gravity(Particle10,0,270);
+part_type_orientation(Particle10,0,0,0,0,1);
+part_type_blend(Particle10,1);
+part_type_life(Particle10,60,60);
+//particles from trees
+
+Particle11 = part_type_create();
+Emitter11 = part_emitter_create(Starter_Depth0);
+part_type_shape(Particle11,pt_shape_flare);
+part_type_size(Particle11,0.05,0.10,0,0);
+part_type_scale(Particle11,8,4);
+part_type_color3(Particle11,16776960,16777088,16381923);
+part_type_alpha3(Particle11,0,0.8,0.10);
+part_type_speed(Particle11,1,3,0.01,0);
+part_type_direction(Particle11,0,359,0,0);
+part_type_gravity(Particle11,0,270);
+part_type_orientation(Particle11,0,0,0,0,1);
+part_type_blend(Particle11,1);
+part_type_life(Particle11,60,60);
+//particles from artifacts
+
+Emitter12 = part_emitter_create(Starter_Depth0);
+Particle12 = part_type_create();
+part_type_shape(Particle12,pt_shape_flare);
+part_type_size(Particle12,0.47,0.77,0,0);
+part_type_scale(Particle12,1,1);
+part_type_color3(Particle12,4227327,c_purple,c_purple);
+part_type_alpha3(Particle12,0.84,0.49,0.07);
+part_type_speed(Particle12,1,3,0.12,0);
+part_type_direction(Particle12,0,359,0,0);
+part_type_gravity(Particle12,0,270);
+part_type_orientation(Particle12,0,0,0,0,1);
+part_type_blend(Particle12,1);
+part_type_life(Particle12,15,15);
+//particles from projectile spawn
+
+Emitter13 = part_emitter_create(Starter_Depth1);
+Particle13 = part_type_create();
+part_type_shape(Particle13,pt_shape_flare);
+part_type_size(Particle13,0.47,0.77,0,0);
+part_type_scale(Particle13,0.7,0.7);
+part_type_color3(Particle13,4227327,65535,8454143);
+part_type_alpha3(Particle13,0.84,0.49,0.07);
+part_type_speed(Particle13,1,2,0.12,0);
+part_type_direction(Particle13,0,359,0,0);
+part_type_gravity(Particle13,0,270);
+part_type_orientation(Particle13,0,0,0,0,1);
+part_type_blend(Particle13,1);
+part_type_life(Particle13,10,10);
+//particles from light creating
+
+Particle14 = part_type_create();
+Emitter14 = part_emitter_create(Starter_Depth0);
+part_type_shape(Particle14,pt_shape_disk);
+part_type_size(Particle14,1.1,1.1,0,0);
+part_type_scale(Particle14,1,1);
+part_type_alpha3(Particle14,0,1,0);
+part_type_speed(Particle14,0.50,2,0,0);
+part_type_direction(Particle14,60,120,0,10);
+part_type_gravity(Particle14,0.10,270);
+part_type_orientation(Particle14,0,0,0,20,0);
+part_type_blend(Particle14,0);
+part_type_life(Particle14,40,40);
+part_type_sprite(Particle14,leaf,false,false,true);
+//particles leafes
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_system_depth(Starter_Depth0,0);
+part_system_depth(Starter_Depth19,19);
+part_system_depth(Starter_Depth1,1);
 </string>
           </argument>
         </arguments>
@@ -154,6 +289,63 @@ part_particles_clear(Particle4)
 part_particles_clear(Particle5)
 part_particles_clear(Particle6)
 part_particles_clear(Particle7)
+part_particles_clear(Particle8)
+part_particles_clear(Particle9)
+part_particles_clear(Particle10)
+part_particles_clear(Particle11)
+part_particles_clear(Particle12)
+part_particles_clear(Particle13)
+part_particles_clear(Particle14)
+part_emitter_clear(Starter_Depth0,Emitter1)
+part_emitter_clear(Starter_Depth0,Emitter2)
+part_emitter_clear(Starter_Depth0,Emitter3)
+part_emitter_clear(Starter_Depth0,Emitter4)
+part_emitter_clear(Starter_Depth0,Emitter5)
+part_emitter_clear(Starter_Depth0,Emitter6)
+part_emitter_clear(Starter_Depth0,Emitter7)
+part_emitter_clear(Starter_Depth0,Emitter8)
+part_emitter_clear(Starter_Depth19,Emitter9)
+part_emitter_clear(Starter_Depth19,Emitter10)
+part_emitter_clear(Starter_Depth0,Emitter11)
+part_emitter_clear(Starter_Depth0,Emitter12)
+part_emitter_clear(Starter_Depth1,Emitter13)
+part_emitter_clear(Starter_Depth0,Emitter14)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_particles_clear(Particle1)
+part_particles_clear(Particle2)
+part_particles_clear(Particle3)
+part_particles_clear(Particle4)
+part_particles_clear(Particle5)
+part_particles_clear(Particle6)
+part_particles_clear(Particle7)
+part_particles_clear(Particle8)
+part_particles_clear(Particle9)
+part_particles_clear(Particle10)
+part_particles_clear(Particle11)
+part_particles_clear(Particle12)
+part_particles_clear(Particle13)
+part_particles_clear(Particle14)
 </string>
           </argument>
         </arguments>

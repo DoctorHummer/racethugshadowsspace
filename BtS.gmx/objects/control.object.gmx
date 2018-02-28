@@ -30,25 +30,25 @@ lives=3
 global.coins=0 //монеты
 global.keys=0 //ключи
 global.goldenkeys=10 //зол.ключи
-
 global.weaponstyle=0; //оружие
+global.lightscale=0.5; //размер снаряда
 global.bulletspeed=15; //скорость полёта света
 global.shotspeed=20; //скорострельность
 global.movespeed=7; //cкорость передвижения
-global.playergravity=0.6 //гравитация
-global.jumpheight=15 //высота прыжка
+global.playergravity=0.8 //гравитация
+global.jumpheight=18 //высота прыжка
 global.damage=1; //урон
 
 //простые
 
 //необычные
-global.mirror=true; //зеркало
-global.stonehorseshoe=true; //каменная подкова
+global.mirror=false; //зеркало
+global.stonehorseshoe=false; //каменная подкова
 
 //редкие
-global.getwings=true; //крылья
-global.brokenlock=true; //сломанный замок
-global.ancientjewel=true; //древнее украшение
+global.getwings=false; //крылья
+global.brokenlock=false; //сломанный замок
+global.ancientjewel=false; //древнее украшение
 </string>
           </argument>
         </arguments>
@@ -112,7 +112,7 @@ ds_list_shuffle(global.item3tierlist);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_speed=60
+            <string>room_speed=60 
 </string>
           </argument>
         </arguments>
@@ -190,15 +190,6 @@ draw_sprite(pick,2,view_xview+64,view_yview+96);
 draw_text_ext_colour(86+view_xview, 80+view_yview, string(global.keys),1,100,c_white,c_white,c_white,c_white,1)
 draw_sprite(pick,1,view_xview+64,view_yview+128);
 draw_text_ext_colour(86+view_xview, 112+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(86+view_xview, 144+view_yview, ds_list_find_index(global.item1tierlist,0),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(86+view_xview, 176+view_yview, ds_list_find_index(global.item2tierlist,0),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(86+view_xview, 208+view_yview, ds_list_find_index(global.item3tierlist,0),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(112+view_xview, 144+view_yview, ds_list_find_index(global.item1tierlist,1),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(112+view_xview, 176+view_yview, ds_list_find_index(global.item2tierlist,1),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(112+view_xview, 208+view_yview, ds_list_find_index(global.item3tierlist,1),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(144+view_xview, 144+view_yview, ds_list_find_index(global.item1tierlist,2),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(144+view_xview, 176+view_yview, ds_list_find_index(global.item2tierlist,2),1,100,c_white,c_white,c_white,c_white,1)
-draw_text_ext_colour(144+view_xview, 208+view_yview, ds_list_find_index(global.item3tierlist,2),1,100,c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>

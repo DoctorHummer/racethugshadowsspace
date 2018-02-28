@@ -35,8 +35,10 @@
       <sprite>sprites\jumpshroom</sprite>
       <sprite>sprites\platform</sprite>
       <sprite>sprites\ptrack</sprite>
+      <sprite>sprites\btrack</sprite>
       <sprite>sprites\gear</sprite>
       <sprite>sprites\shatterBlock</sprite>
+      <sprite>sprites\shatterBlock2</sprite>
       <sprite>sprites\door</sprite>
       <sprite>sprites\stat</sprite>
       <sprite>sprites\chest</sprite>
@@ -47,6 +49,7 @@
       <sprite>sprites\blockadditional</sprite>
       <sprite>sprites\torches</sprite>
       <sprite>sprites\ftain</sprite>
+      <sprite>sprites\leaf</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -76,7 +79,6 @@
         <sprite>sprites\rspikeeye</sprite>
         <sprite>sprites\rspikegore</sprite>
         <sprite>sprites\rspikeeyeup</sprite>
-        <sprite>sprites\purplebullet2</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\part</sprite>
@@ -114,14 +116,12 @@
     <objects name="objects">
       <object>objects\o_blockparent</object>
       <object>objects\o_lvl1block</object>
-      <object>objects\o_lvl1wall</object>
       <object>objects\o_column</object>
       <objects name="traps">
         <object>objects\spikeparent</object>
         <object>objects\trapparent</object>
         <object>objects\spikes</object>
-        <object>objects\spikes_a</object>
-        <object>objects\spikes_b</object>
+        <object>objects\spikes_movable</object>
       </objects>
       <objects name="backtiles">
         <object>objects\backtree</object>
@@ -132,9 +132,11 @@
       <objects name="chests">
         <object>objects\o_chest</object>
         <object>objects\o_goldenchest</object>
+        <object>objects\chestparent</object>
       </objects>
       <object>objects\bubble</object>
       <object>objects\platformtrack</object>
+      <object>objects\blacktrack</object>
       <object>objects\platformvertical</object>
       <object>objects\platformdown</object>
       <object>objects\o_shatterBlock</object>
@@ -171,6 +173,8 @@
           <object>objects\purplespike</object>
           <object>objects\whitespike</object>
           <object>objects\spikegore1</object>
+          <object>objects\spikegore2</object>
+          <object>objects\spinner</object>
         </objects>
       </objects>
       <object>objects\mparticles</object>

@@ -123,8 +123,8 @@ part_emitter_stream(particles.Starter_Depth0,particles.Emitter1,particles.Partic
 }
 if type=1
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter2,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
-part_emitter_stream(particles.Starter_Depth0,particles.Emitter2,particles.Particle2,10)
+part_emitter_region(particles.Starter_Depth0,particles.Emitter2,self.x,self.x,self.y,self.y,ps_shape_ellipse,1);
+part_emitter_stream(particles.Starter_Depth0,particles.Emitter2,particles.Particle2,8);
 }
 if type=2
 {

@@ -49,36 +49,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Player Variables
-dir = 1;               // Player direction. 1 = right, -1 = left.
-xspeed = 0.0;          // Horizontal speed.
-yspeed = 0.0;          // Vertical speed.
-xmaxspeed = global.movespeed;       // Horizontal speed limit.
-ymaxspeed = 40.0;      // Vertical speed limit.
+            <string>dir = 1;              
+xspeed = 0.0;          
+yspeed = 0.0;         
+xmaxspeed = global.movespeed;     
+ymaxspeed = 40.0;      
+weight = global.playergravity;         
+accel = 2.5;          
+xfriction = 2.5;       
+jumpHeight = global.jumpheight;     
 
-weight = global.playergravity;          // How fast the player falls.
-accel = 2.5;           // How fast the player accelerates horizontally.
-xfriction = 2.5;       // How fast the player decelerates horizontally.
-jumpHeight = global.jumpheight;      // How high the player jumps.
+maxDoubleJumps = 0;     
+availableJumps = 0;    
+canDoubleJump = false; 
+canWalljump = true;   
 
-maxDoubleJumps = 0;    // Number of possible additional jumps. 
-availableJumps = 0;    // Number of available additional jumps.
-canDoubleJump = false; // Whether or not player can do an additional jump.
-canWalljump = true;    // Whether or not player can walljump.
+isClimbing = false;   
+isJumping = false;     
+isDismounting = false; 
 
-isClimbing = false;    // Whether or not player is climbing.
-isJumping = false;     // Whether or not player is jumping.
-isDismounting = false; // Whether or not player is dismounting a ladder.
-isWallsliding = false; // Whether or not player is sliding down a wall.
+aiming_max = 60;     
+dismount_max = 20;   
+landing_max = 2;    
 
-aiming_max = 60;       // Max number of aiming frames.
-dismount_max = 20;     // Max number of ladder dismounting frames.
-landing_max = 2;      // Max number of landing frames.
-
-aiming = 0;            // Remaining number of aiming frames.
-dismount = 0;          // Remaining number of ladder dismounting frames.
-landing = 0;           // Remaining number of landing frames.
-firing = 0;            // Remaining number of firing frames.
+aiming = 0;            
+dismount = 0;          
+landing = 0;         
 
 flashlight=0;
 t = 0;
@@ -370,10 +366,13 @@ if ((place_meeting(x, y+1, o_blockparent))) {
 else {
   // Jumping.
   sprite_index = luna_jump;
-  image_index = 1 + sign(yspeed);
-  if (abs(yspeed) &lt; 2) {
-    image_index = 1;
-  }
+  if (yspeed&lt;-7) { image_index = 0; }
+  if (yspeed&lt;-4 and yspeed&gt;=-7) { image_index = 1; }
+  if (yspeed&lt;-2 and yspeed&gt;=-4) { image_index = 2; }
+  if (abs(yspeed) &lt; 2) { image_index = 3; }
+  if (yspeed&gt;2 and yspeed&lt;=4) { image_index = 4; }
+  if (yspeed&gt;4 and yspeed&lt;=7) { image_index = 5; }
+  if (yspeed&gt;7 ) { image_index = 6; }
 }
 // Landing.
 if (landing &gt; 0) {
@@ -463,10 +462,13 @@ if ((place_meeting(x, y+1, o_blockparent))) {
 else {
   // Jumping.
   sprite_index = luna_jump_a;
-  image_index = 1 + sign(yspeed);
-  if (abs(yspeed) &lt; 2) {
-    image_index = 1;
-  }
+  if (yspeed&lt;-7) { image_index = 0; }
+  if (yspeed&lt;-4 and yspeed&gt;=-7) { image_index = 1; }
+  if (yspeed&lt;-2 and yspeed&gt;=-4) { image_index = 2; }
+  if (abs(yspeed) &lt; 2) { image_index = 3; }
+  if (yspeed&gt;2 and yspeed&lt;=4) { image_index = 4; }
+  if (yspeed&gt;4 and yspeed&lt;=7) { image_index = 5; }
+  if (yspeed&gt;7 ) { image_index = 6; }
 }
 // Landing.
 if (landing &gt; 0) {
@@ -516,8 +518,7 @@ instance_activate_object(particles);
 instance_activate_object(lightballpar);
 instance_activate_object(parbullet);
 instance_activate_object(background1);
-instance_activate_object(pickups);
-instance_activate_region(view_xview-164,view_yview-164,view_wview+196,view_hview+196,1); 
+instance_activate_region(view_xview-196,view_yview-196,view_wview+260,view_hview+260,1); 
 </string>
           </argument>
         </arguments>
@@ -581,13 +582,21 @@ ycor[3, 13] = 0; xcor[3, 13] = +4;
 ycor[3, 14] = +1; xcor[3, 14] = +4;
 ycor[3, 15] = +2; xcor[3, 15] = +4;
 
-ycor[4, 0] = -7; xcor[4, 0] = +0;
+ycor[4, 0] = -5; xcor[4, 0] = +0;
 ycor[4, 1] = -5; xcor[4, 1] = +0;
-ycor[4, 2] = -3; xcor[4, 2] = +0;
+ycor[4, 2] = -5; xcor[4, 2] = +0;
+ycor[4, 3] = -5; xcor[4, 3] = +0;
+ycor[4, 4] = -5; xcor[4, 4] = +0;
+ycor[4, 5] = -5; xcor[4, 5] = +0;
+ycor[4, 6] = -5; xcor[4, 6] = +0;
 
-ycor[5, 0] = -7; xcor[5, 0] = +0;
+ycor[5, 0] = -5; xcor[5, 0] = +0;
 ycor[5, 1] = -5; xcor[5, 1] = +0;
-ycor[5, 2] = -3; xcor[5, 2] = +0;
+ycor[5, 2] = -5; xcor[5, 2] = +0;
+ycor[5, 3] = -5; xcor[5, 3] = +0;
+ycor[5, 4] = -5; xcor[5, 4] = +0;
+ycor[5, 5] = -5; xcor[5, 5] = +0;
+ycor[5, 6] = -5; xcor[5, 6] = +0;
 }
 
 
@@ -631,11 +640,11 @@ ycor[3, 13] = 0; xcor[3, 13] = -4;
 ycor[3, 14] = +1; xcor[3, 14] = -4;
 ycor[3, 15] = +2; xcor[3, 15] = -4;
 
-ycor[4, 0] = -7; xcor[4, 0] = +0;
+ycor[4, 0] = -6; xcor[4, 0] = +0;
 ycor[4, 1] = -5; xcor[4, 1] = +0;
 ycor[4, 2] = -3; xcor[4, 2] = +0;
 
-ycor[5, 0] = -7; xcor[5, 0] = +0;
+ycor[5, 0] = -6; xcor[5, 0] = +0;
 ycor[5, 1] = -5; xcor[5, 1] = +0;
 ycor[5, 2] = -3; xcor[5, 2] = +0;
 }
@@ -659,23 +668,18 @@ ycor[5, 2] = -3; xcor[5, 2] = +0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Player Logic
-image_alpha=1
+            <string>image_alpha=1
 
-
-
-// VELOCITY HANDLING ==================================================
-
-// Clamp velocities.
 xspeed = iff(abs(xspeed) &gt; xmaxspeed, xmaxspeed * sign(xspeed), xspeed);
 yspeed = iff(abs(yspeed) &gt; ymaxspeed, ymaxspeed * sign(yspeed), yspeed);
 
 if (place_free(x, y + yspeed)) {
   y += yspeed;
 }
-else {
-  // Landing.
-  if (yspeed &gt; 0) {
+else 
+{
+  if (yspeed &gt; 0) 
+  {
     isClimbing = false;
     isJumping = false;
     isDismounting = false;
@@ -685,10 +689,10 @@ else {
     y = floor(y);
   }
   move_contact_solid(point_direction(x, y, x, y + yspeed), yspeed);
+  
   yspeed = 0;
 }
 
-// Horizontal velocity:
 if (place_free(x + xspeed, y)) {
     x += xspeed;
 } 
@@ -696,13 +700,10 @@ else {
   move_contact_solid(point_direction(x, y, x + xspeed, y), xspeed);
   xspeed = 0;
 }
-
-// PLAYER MOVEMENT ==================================================
-
 isWallsliding = false;
 
 if (isClimbing == false) {
-  // Handle directions.
+
   if (gamepad_button_check_pressed(0, gp_padl) || keyboard_check_pressed(ord('A')) || (keyboard_check(ord('A')) &amp;&amp; keyboard_check_released(ord('D')))) {
     dir = -1;
   }
@@ -710,18 +711,13 @@ if (isClimbing == false) {
     dir = 1; 
   }
   
-  // Jumping from air:
   if (place_free(x, y + 1)) {
     yspeed += weight;
 
-    // Jump cancel.
     if ((!gamepad_button_check(0, gp_face2)) &amp;&amp; (!keyboard_check(vk_space)) &amp;&amp; isJumping &amp;&amp; (yspeed &lt; -jumpHeight / 2)) {
       yspeed = -jumpHeight / 3;
     }
   }
-
-  
-  // Jumping from ground.
   else {
     availableJumps = maxDoubleJumps;
     canDoubleJump = false;
@@ -731,9 +727,10 @@ if (isClimbing == false) {
       double_jump=1;
       isJumping = true;
     }
+    }
   }
+  
 
-  // Horizontal acceleration.
   if (
   keyboard_check(ord('A')) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1 ||
   gamepad_button_check(0, gp_padl) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1
@@ -747,7 +744,6 @@ if (isClimbing == false) {
     xspeed += accel;
   }
   
-  // Horizontal friction.
   if (!gamepad_button_check(0, gp_padl) &amp;&amp; !gamepad_button_check(0, gp_padr) &amp;&amp; !keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D'))) {
     if (abs(xspeed) &gt; xfriction) {
       xspeed -= sign(xspeed) * xfriction;
@@ -756,7 +752,6 @@ if (isClimbing == false) {
     }
   }
 
-}
 
 if (gamepad_button_check_pressed(0, gp_face2))
 {if (global.getwings=false)
@@ -767,8 +762,8 @@ double_jump=0;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,particles)
-a.type=3;
+part_emitter_region(particles.Starter_Depth0,particles.Emitter4,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth0,particles.Emitter4,particles.Particle4,5)
 } 
 }
 
@@ -780,8 +775,8 @@ double_jump=2;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,particles)
-a.type=3;
+part_emitter_region(particles.Starter_Depth0,particles.Emitter4,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth0,particles.Emitter4,particles.Particle4,5)
 } 
 
 if( place_free(x,y+1) &amp;&amp; double_jump = 2 )
@@ -790,8 +785,8 @@ double_jump=0;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,particles)
-a.type=3;
+part_emitter_region(particles.Starter_Depth0,particles.Emitter7,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth0,particles.Emitter7,particles.Particle7,15)
 } 
 }
 }
@@ -961,13 +956,10 @@ if wingstimer&lt;30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Bubble Jump
-//if other.jump=0
-//{
-yspeed = -22;
+            <string>other.jump=1
+yspeed = -jumpHeight*1.45;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
-other.jump=1
-//}
+isJumping = false;
 </string>
           </argument>
         </arguments>
@@ -1077,17 +1069,15 @@ if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = lun
 {
 eyeindex=0
 }
-if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=0)
+if ((sprite_index = luna_jump_a or sprite_index = luna_jump))
 {
-eyeindex=2
-}
-if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=1)
-{
-eyeindex=0
-}
-if ((sprite_index = luna_jump_a or sprite_index = luna_jump) and image_index=2)
-{
-eyeindex=14
+if (image_index=0) {eyeindex=3}
+if (image_index=1) {eyeindex=2}
+if (image_index=2) {eyeindex=1}
+if (image_index=3) {eyeindex=0}
+if (image_index=4) {eyeindex=16}
+if (image_index=5) {eyeindex=15}
+if (image_index=6) {eyeindex=14}
 }
 }
 }

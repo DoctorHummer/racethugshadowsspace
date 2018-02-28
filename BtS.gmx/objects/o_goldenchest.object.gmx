@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>5</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>chestparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,25 +30,11 @@ image_index=0
 image_speed=0
 timer=0
 chanse=random(100)
-Sname = part_system_create()
-particle1 = part_type_create();
-part_type_shape(particle1,pt_shape_sphere);
-part_type_size(particle1,0.10,0.10,0,0);
-part_type_scale(particle1,0.80,0.80);
-part_type_color3(particle1,65535,11468799,16777215);
-part_type_alpha3(particle1,0.10,0.50,0);
-part_type_speed(particle1,0.01,1,0.01,0);
-part_type_direction(particle1,90,90,1,1);
-part_type_gravity(particle1,0,270);
-part_type_orientation(particle1,0,0,0,0,1);
-part_type_blend(particle1,1);
-part_type_life(particle1,60,60);
 
-
-emitter1 = part_emitter_create(Sname);
-part_emitter_region(Sname,emitter1,self.x+61,self.x-61,self.y+8,self.y-32,ps_shape_rectangle,1);
-part_emitter_stream(Sname,emitter1,particle1,1);
-
+if (ds_list_empty(global.item1tierlist) and ds_list_empty(global.item2tierlist) and ds_list_empty(global.item3tierlist))
+{
+instance_destroy()
+}
 </string>
           </argument>
         </arguments>
@@ -97,9 +83,7 @@ if (timer=14 or timer=15) {image_xscale=1; image_yscale=1; image_index=1}
 if (timer=16 or timer=17) {image_index=2}
 if (timer=18 or timer=19) {image_index=3}
 if (timer=20 or timer=21) {image_index=4}
-if timer=22 {active=2; timer=0; part_emitter_destroy(Sname,emitter1) 
-
-script_execute(goldenchest_drop)}
+if timer=22 {active=2; timer=0; script_execute(goldenchest_drop)}
 }
 </string>
           </argument>
@@ -107,29 +91,6 @@ script_execute(goldenchest_drop)}
       </action>
     </event>
     <event eventtype="7" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>part_emitter_destroy(Sname,emitter1) 
-
-part_system_destroy(Sname)
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>203</id>

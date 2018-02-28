@@ -26,9 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0
-timer=0
+start=0
 mode=0
 active=0
+time=60
 </string>
           </argument>
         </arguments>
@@ -53,25 +54,25 @@ active=0
             <kind>1</kind>
             <string>if mode=1
 {
-timer+=1
-if (timer=0 or timer=1){image_index=6}
-if (timer=2 or timer=3){image_index=5}
-if (timer=4 or timer=5){image_index=4}
-if (timer=6 or timer=7){image_index=3}
-if (timer=8 or timer=9){image_index=2}
-if (timer&gt;9){image_index=1}
-if timer&gt;60 {mode=0; timer=0}
+start+=1
+if (start=0 or start=1){image_index=6}
+if (start=2 or start=3){image_index=5}
+if (start=4 or start=5){image_index=4}
+if (start=6 or start=7){image_index=3}
+if (start=8 or start=9){image_index=2}
+if (start&gt;9){image_index=1}
+if start&gt;(9+time) {mode=0; start=0}
 }
 if mode=0
 {
-timer+=1
-if (timer=0 or timer=1){image_index=1}
-if (timer=2 or timer=3){image_index=2}
-if (timer=4 or timer=5){image_index=3}
-if (timer=6 or timer=7){image_index=4}
-if (timer=8 or timer=9){image_index=5}
-if (timer&gt;9){image_index=6}
-if timer&gt;60 {mode=1; timer=0}
+start+=1
+if (start=0 or start=1){image_index=1}
+if (start=2 or start=3){image_index=2}
+if (start=4 or start=5){image_index=3}
+if (start=6 or start=7){image_index=4}
+if (start=8 or start=9){image_index=5}
+if (start&gt;9){image_index=6}
+if start&gt;(9+time) {mode=1; start=0}
 }
 if image_index=1{active=1}else{active=0}
 </string>

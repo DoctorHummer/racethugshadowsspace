@@ -88,7 +88,8 @@ if (!place_meeting(x,y-64,platformtrack)){movemode=0; if place_meeting(x,y-35,pl
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>draw_sprite_ext(platform,1,x,y-64,1,1,0,c_white,1);
+draw_self();
 draw_sprite_ext(gear,0,x-68,y+17,1,1,gearot,c_white,1);
 draw_sprite_ext(gear,0,x+68,y+17,1,1,-gearot,c_white,1);
 if (vspeed!=0)

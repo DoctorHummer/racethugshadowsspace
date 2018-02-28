@@ -38,6 +38,32 @@ if (!place_meeting(x+64,y+64,o_blockparent) &amp;&amp; place_meeting(x+64,y,o_bl
 grassed=1
 centrestyle=choose(0,1,2,3,4)
 centrestylespawn=choose(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+chestspawn=random(30)
+if (
+    !place_meeting(x-64,y-64,o_blockparent) 
+    &amp;&amp; !place_meeting(x-64,y-128,o_blockparent) 
+    &amp;&amp; !place_meeting(x,y-64,o_blockparent) 
+    &amp;&amp; !place_meeting(x,y-128,o_blockparent) 
+    &amp;&amp; !place_meeting(x+64,y-64,o_blockparent) 
+    &amp;&amp; !place_meeting(x+64,y-128,o_blockparent)
+    &amp;&amp; !instance_exists(chestparent)
+    &amp;&amp; self.x&gt;448 &amp;&amp; self.x&lt;room_width &amp;&amp; self.y&gt;0 &amp;&amp; self.y&lt;(room_height)
+    &amp;&amp; place_meeting(x+64,y,o_blockparent) &amp;&amp; place_meeting(x-64,y,o_blockparent)
+    &amp;&amp; !place_meeting(x-64,y-64,spikes) &amp;&amp; !place_meeting(x,y-64,spikes) &amp;&amp; !place_meeting(x+64,y-64,spikes)
+    &amp;&amp; !place_meeting(x-64,y-64,spikes_movable) &amp;&amp; !place_meeting(x,y-64,spikes_movable) &amp;&amp; !place_meeting(x+64,y-64,spikes_movable)
+    &amp;&amp; !place_meeting(x-64,y-64,bubble) &amp;&amp; !place_meeting(x,y-64,bubble) &amp;&amp; !place_meeting(x+64,y-64,bubble)
+    &amp;&amp; room!=l1_1
+    )
+ {
+ if chestspawn&lt;=1
+ {
+ instance_create(self.x,self.y-32,o_goldenchest)
+ }
+ if (chestspawn&gt;1 and chestspawn&lt;8)
+ {
+ instance_create(self.x,self.y-32,o_chest)
+ }
+ }
 </string>
           </argument>
         </arguments>
@@ -72,6 +98,12 @@ if k2=0{rotvins1+=0.02}
 if k2=1{rotvins1-=0.02}
 if rotvins1&lt;-2{k2=0}
 if rotvins1&gt;2{k2=1}
+
+if (place_meeting(x,y-25,player) and player.yspeed&gt;0)
+{
+part_emitter_region(particles.Starter_Depth0,particles.Emitter14,player.x-33,player.x+33,player.y+35+8,player.y+35-8,ps_shape_ellipse,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter14,particles.Particle14,1);
+}
 </string>
           </argument>
         </arguments>

@@ -75,6 +75,10 @@ a=instance_create(x,y,spikegore1); a.image_index=1; a.image_angle=90
 a=instance_create(x,y,spikegore1); a.image_index=2; a.image_angle=180
 a=instance_create(x,y,spikegore1); a.image_index=3; a.image_angle=270
 
+for (i = 0; i &lt; 2048; i += 128)
+   {
+     instance_create(x,y-i,spikegore2);
+   }
 </string>
           </argument>
         </arguments>

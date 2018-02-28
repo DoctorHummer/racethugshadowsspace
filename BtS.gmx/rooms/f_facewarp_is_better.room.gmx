@@ -130,8 +130,6 @@
     <instance objName="o_lvl1block" x="512" y="768" name="inst_35FF31AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="512" y="832" name="inst_B37BB26E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="512" y="896" name="inst_8B77FF1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="spikes_b" x="320" y="576" name="inst_B80B4BA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_b" x="384" y="576" name="inst_92460781" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="o_lvl1block" x="576" y="640" name="inst_79F9B0E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="576" y="576" name="inst_ACB87B00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="576" y="512" name="inst_0EF5DD59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -155,10 +153,8 @@
     <instance objName="o_lvl1block" x="832" y="896" name="inst_92133236" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="768" y="256" name="inst_F4F1D7E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="704" y="256" name="inst_E84E62F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="spikes_a" x="768" y="192" name="inst_EDCACAC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_a" x="704" y="192" name="inst_F3D3F38D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_b" x="256" y="192" name="inst_C0D4A078" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_b" x="192" y="192" name="inst_64D8F4CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_movable" x="768" y="192" name="inst_EDCACAC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="spikes_movable" x="704" y="192" name="inst_F3D3F38D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="o_shatterBlock" x="896" y="320" name="inst_490071A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_shatterBlock" x="960" y="320" name="inst_8339F880" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_shatterBlock" x="1024" y="320" name="inst_963C41D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -215,7 +211,6 @@
     <instance objName="o_column" x="832" y="576" name="inst_F5ED41E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="832" y="640" name="inst_60AECA7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="bubble" x="600" y="480" name="inst_D688D61C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="spikes_b" x="320" y="192" name="inst_E5825290" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="o_column" x="1216" y="64" name="inst_8D451B3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="1216" y="128" name="inst_BC2C0258" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_column" x="832" y="704" name="inst_B52A9975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -231,7 +226,6 @@
     <instance objName="spikes" x="896" y="896" name="inst_C5EF72EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes" x="960" y="896" name="inst_67BA8E2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes" x="1024" y="896" name="inst_E9ECE538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_b" x="384" y="192" name="inst_6875022A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="weep" x="128" y="128" name="inst_99A2DB29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="weep" x="128" y="512" name="inst_8C1C9838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
