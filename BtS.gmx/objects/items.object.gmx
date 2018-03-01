@@ -44,6 +44,11 @@ if (rare=2 and type=2) {image_index=8}
 part_emitter_region(particles.Starter_Depth0,particles.Emitter11,self.x+1,self.x-1,self.y+1,self.y-1,ps_shape_ellipse,1);
 part_emitter_stream(particles.Starter_Depth0,particles.Emitter11,particles.Particle11,1);
 
+image_alpha=0;
+
+image_xscale=0.8
+image_yscale=0.8
+w=0
 </string>
           </argument>
         </arguments>
@@ -93,6 +98,32 @@ if rare=2
 part_type_color3(particles.Particle11,c_black,c_purple,c_purple)
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if image_alpha&lt;1 {image_alpha+=0.1;}
+image_yscale=image_xscale
+if w=0{image_xscale+=0.005; if image_xscale=1{w=1}}
+if w=1{image_xscale-=0.005; if image_xscale=0.8{w=0}}
 </string>
           </argument>
         </arguments>

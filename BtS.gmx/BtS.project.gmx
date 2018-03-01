@@ -50,6 +50,7 @@
       <sprite>sprites\torches</sprite>
       <sprite>sprites\ftain</sprite>
       <sprite>sprites\leaf</sprite>
+      <sprite>sprites\slam</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
@@ -128,6 +129,7 @@
         <object>objects\statue</object>
         <object>objects\bush</object>
         <object>objects\torch</object>
+        <object>objects\lamp</object>
       </objects>
       <objects name="chests">
         <object>objects\o_chest</object>
