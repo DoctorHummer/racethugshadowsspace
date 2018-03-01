@@ -883,6 +883,16 @@ ds_list_add(myRooms,l1_12);
 ds_list_add(myRooms,l1_13);
 ds_list_add(myRooms,l1_14);
 ds_list_add(myRooms,l1_15);
+ds_list_add(myRooms,l1_16);
+ds_list_add(myRooms,l1_17);
+ds_list_add(myRooms,l1_18);
+ds_list_add(myRooms,l1_19);
+ds_list_add(myRooms,l1_20);
+ds_list_add(myRooms,l1_21);
+ds_list_add(myRooms,l1_22);
+ds_list_add(myRooms,l1_23);
+ds_list_add(myRooms,l1_24);
+ds_list_add(myRooms,l1_25);
 ds_list_shuffle(myRooms);
 }
 else
