@@ -117,7 +117,6 @@
     <instance objName="o_lvl1block" x="448" y="896" name="inst_96E98D4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="512" y="896" name="inst_8A55BD53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="64" y="256" name="inst_32903B8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1block" x="128" y="256" name="inst_18AF7771" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="256" y="64" name="inst_39D5B059" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="192" y="320" name="inst_9AA3C624" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="192" y="384" name="inst_2FEFC655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -210,7 +209,6 @@
     <instance objName="spikes" x="448" y="832" name="inst_13F27097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="384" y="768" name="inst_61774563" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="64" y="64" name="inst_33277D09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1block" x="64" y="192" name="inst_81CF4AAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="768" y="128" name="inst_E7DF950A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="1216" y="64" name="inst_BFADACBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="red_haunt" x="1088" y="192" name="inst_40F2B4D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

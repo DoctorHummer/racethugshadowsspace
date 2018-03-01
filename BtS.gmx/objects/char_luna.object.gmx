@@ -78,6 +78,7 @@ landing = 0;
 
 flashlight=0;
 t = 0;
+
 </string>
           </argument>
         </arguments>
@@ -515,6 +516,9 @@ instance_activate_object(control);
 instance_activate_object(superview);
 instance_activate_object(background1);
 instance_activate_object(particles);
+instance_activate_object(torch);
+instance_activate_object(fountain);
+instance_activate_object(backtree);
 instance_activate_object(lightballpar);
 instance_activate_object(parbullet);
 instance_activate_object(background1);
@@ -883,6 +887,16 @@ ds_list_add(myRooms,l1_12);
 ds_list_add(myRooms,l1_13);
 ds_list_add(myRooms,l1_14);
 ds_list_add(myRooms,l1_15);
+ds_list_add(myRooms,l1_16);
+ds_list_add(myRooms,l1_17);
+ds_list_add(myRooms,l1_18);
+ds_list_add(myRooms,l1_19);
+ds_list_add(myRooms,l1_20);
+ds_list_add(myRooms,l1_21);
+ds_list_add(myRooms,l1_22);
+ds_list_add(myRooms,l1_23);
+ds_list_add(myRooms,l1_24);
+ds_list_add(myRooms,l1_25);
 ds_list_shuffle(myRooms);
 }
 else
