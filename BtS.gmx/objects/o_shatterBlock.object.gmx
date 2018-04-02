@@ -52,8 +52,8 @@ sprite_index=shatterBlock
           <argument>
             <kind>1</kind>
             <string>
-part_emitter_region(particles.Starter_Depth19,particles.Emitter9,self.x-32,self.x+32,self.y-32,self.y+32,0,1);
-part_emitter_burst(particles.Starter_Depth19,particles.Emitter9,particles.Particle9,40)
+part_emitter_region(particles.Starter_Depth6,particles.Emitter9,self.x-32,self.x+32,self.y-32,self.y+32,0,1);
+part_emitter_burst(particles.Starter_Depth6,particles.Emitter9,particles.Particle9,40)
 </string>
           </argument>
         </arguments>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100000000</depth>
+  <depth>-1000000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,26 +29,42 @@
 lives=3
 global.coins=0 //монеты
 global.keys=0 //ключи
-global.goldenkeys=10 //зол.ключи
-global.weaponstyle=0; //оружие
-global.lightscale=0.5; //размер снаряда
-global.bulletspeed=15; //скорость полёта света
+global.goldenkeys=0 //зол.ключи
+global.lightscale=0.25; //размер снаряда
+global.bulletspeed=20; //скорость полёта света
 global.shotspeed=20; //скорострельность
 global.movespeed=7; //cкорость передвижения
 global.playergravity=0.8 //гравитация
 global.jumpheight=18 //высота прыжка
-global.damage=1; //урон
+global.damage=1; //общий множитель урона
+global.elecdamage=1; //множитель для электрических приборов
+global.potion=1; //зелье
+global.lightspread=2; //разброс
 
 //простые
 
 //необычные
 global.mirror=false; //зеркало
 global.stonehorseshoe=false; //каменная подкова
+global.goldenmagnet=false; //золотой магнит
 
 //редкие
 global.getwings=false; //крылья
 global.brokenlock=false; //сломанный замок
 global.ancientjewel=false; //древнее украшение
+global.getumbrella=false; //старый зонт
+
+//оружие
+global.weaponstyle=0; //текущее оружие
+all_weapons=4; //количество оружия в игре
+for (i=0;i&lt;=all_weapons;i+=1)//делает недоступным оружие в начале игры
+{
+global.have_gun[i]=false;
+}
+global.have_gun[0]=true //делает доступным фонарик
+global.have_gun[1]=true //делает доступным фонарик
+global.have_gun[2]=true //делает доступным фонарик
+global.have_gun[3]=true //делает доступным фонарик
 </string>
           </argument>
         </arguments>
@@ -78,18 +94,71 @@ global.item3tierlist = ds_list_create();
 ds_list_add(global.item1tierlist,0)
 ds_list_add(global.item1tierlist,1)
 ds_list_add(global.item1tierlist,2)
+ds_list_add(global.item1tierlist,3)
 
 ds_list_add(global.item2tierlist,0)
 ds_list_add(global.item2tierlist,1)
 ds_list_add(global.item2tierlist,2)
+ds_list_add(global.item2tierlist,3)
 
 ds_list_add(global.item3tierlist,0)
 ds_list_add(global.item3tierlist,1)
 ds_list_add(global.item3tierlist,2)
+ds_list_add(global.item3tierlist,3)
 
 ds_list_shuffle(global.item1tierlist);
 ds_list_shuffle(global.item2tierlist);
 ds_list_shuffle(global.item3tierlist);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>select_timer=0
+room_speed=60
+global.autogeneration=false
+//global.delta = delta_time / 16666
+balpha2=1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+global.autogeneration=true
 </string>
           </argument>
         </arguments>
@@ -112,32 +181,163 @@ ds_list_shuffle(global.item3tierlist);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_speed=60 
+            <string>//global.delta = delta_time / 16666
+
+if (keyboard_check_pressed(ord('1')))
+{
+game_restart();
+}
+if (keyboard_check_pressed(ord('2')))
+{
+var getroom=get_string('Введите название комнаты для перемещения','l1_1'); 
+if room_exists(asset_get_index(getroom)){room_goto(asset_get_index(getroom))}
+}
+if (keyboard_check_pressed(ord('3')))
+{
+var getobject=get_string('Введите название объекта','red_haunt'); 
+if object_exists(asset_get_index(getobject)){instance_create(player.x,player.y-256,asset_get_index(getobject))}
+}
+if (keyboard_check(ord('4')))
+{
+if lives&lt;global.maxlives {lives+=1;}
+}
+if (keyboard_check(ord('5')))
+{
+if global.coins&lt;99 {global.coins+=1;}
+}
+if (keyboard_check(ord('6')))
+{
+if global.keys&lt;99 {global.keys+=1;}
+}
+if (keyboard_check(ord('7')))
+{
+if global.goldenkeys&lt;99 {global.goldenkeys+=1;}
+}
+//if (keyboard_check_pressed(ord('8')))
+//{
+//if room_speed=60 {room_speed=30} else {room_speed=60}
+//}
+
+
 </string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>801</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_cursor</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>5</kind>
-            <sprite>cursor</sprite>
+            <kind>1</kind>
+            <string>window_set_cursor(cr_none);
+if global.weaponstyle&gt;=all_weapons {global.weaponstyle=0}
+if select_timer&gt;0 {select_timer-=1}
+
+if lives=0
+{
+lives=-1
+instance_create(player.x,player.y,gameover)
+player.visible=false
+player.spanim=true
+player.image_index=0
+player.image_speed=0
+}
+
+if balpha2&gt;0 {balpha2-=0.025}
+</string>
           </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
           <argument>
-            <kind>4</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>if select_timer=0
+{
+script_execute(select_down)
+select_timer=10
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if select_timer=0
+{
+script_execute(select_up)
+select_timer=10
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+for (i = 0; i &lt; room_width; i += 64)
+   {
+   instance_create(i,-64,o_lvl1block)
+   }
+room_speed=60
+alarm[0]=25
+</string>
           </argument>
         </arguments>
       </action>
@@ -160,6 +360,7 @@ ds_list_shuffle(global.item3tierlist);
           <argument>
             <kind>1</kind>
             <string>//hud
+draw_sprite(hud,0,view_xview,view_yview);
 var w=sprite_get_width(heart);
 
 var lmax = view_xview+976; var l = view_xview+976;
@@ -180,16 +381,45 @@ draw_sprite(heart,0,l,view_yview+16);
 l+=w;
 }
 
-draw_text_ext_colour(16+view_xview, 16+view_yview, string(fps),1,100,c_white,c_white,c_white,c_white,1)
-
 draw_set_color(c_white);
 draw_set_font(c_font);
-draw_sprite(pick,0,view_xview+64,view_yview+64);
-draw_text_ext_colour(86+view_xview, 48+view_yview, string(global.coins),1,100,c_white,c_white,c_white,c_white,1)
-draw_sprite(pick,2,view_xview+64,view_yview+96);
-draw_text_ext_colour(86+view_xview, 80+view_yview, string(global.keys),1,100,c_white,c_white,c_white,c_white,1)
-draw_sprite(pick,1,view_xview+64,view_yview+128);
-draw_text_ext_colour(86+view_xview, 112+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(16+view_xview, 16+view_yview, string(fps),1,100,c_white,c_white,c_white,c_white,1)
+draw_sprite(pick,0,view_xview+44,view_yview+64);
+draw_text_ext_colour(70+view_xview, 48+view_yview, string(global.coins),1,100,c_white,c_white,c_white,c_white,1)
+draw_sprite(pick,2,view_xview+44,view_yview+96);
+draw_text_ext_colour(70+view_xview, 80+view_yview, string(global.keys),1,100,c_white,c_white,c_white,c_white,1)
+draw_sprite(pick,1,view_xview+44,view_yview+128);
+draw_text_ext_colour(70+view_xview, 112+view_yview, string(global.goldenkeys),1,100,c_white,c_white,c_white,c_white,1)
+if global.potion=1
+{
+draw_sprite(potions,1,view_xview+60,view_yview+192);
+}
+else
+{
+draw_sprite(potions,0,view_xview+60,view_yview+192);
+}
+draw_sprite(weaponss,global.weaponstyle,view_xview+1220,view_yview+192);
+
+var roomname = room_get_name(room);
+draw_text_ext_colour(16+view_xview, 920+view_yview, string(roomname),1,100,c_white,c_white,c_white,c_white,1)
+draw_text_ext_colour(1200+view_xview, 920+view_yview, string(global.passedrooms),1,100,c_white,c_white,c_white,c_white,1)
+
+draw_sprite(cursor,global.weaponstyle,mouse_x,mouse_y);
+
+//draw_text_ext_colour(70+view_xview, 302+view_yview, string(ds_list_find_value(global.item1tierlist,0)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(70+view_xview, 342+view_yview, string(ds_list_find_value(global.item2tierlist,0)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(70+view_xview, 382+view_yview, string(ds_list_find_value(global.item3tierlist,0)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(110+view_xview, 302+view_yview, string(ds_list_find_value(global.item1tierlist,1)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(110+view_xview, 342+view_yview, string(ds_list_find_value(global.item2tierlist,1)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(110+view_xview, 382+view_yview, string(ds_list_find_value(global.item3tierlist,1)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(150+view_xview, 302+view_yview, string(ds_list_find_value(global.item1tierlist,2)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(150+view_xview, 342+view_yview, string(ds_list_find_value(global.item2tierlist,2)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(150+view_xview, 382+view_yview, string(ds_list_find_value(global.item3tierlist,2)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(190+view_xview, 302+view_yview, string(ds_list_find_value(global.item1tierlist,3)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(190+view_xview, 342+view_yview, string(ds_list_find_value(global.item2tierlist,3)),1,100,c_white,c_white,c_white,c_white,1)
+//draw_text_ext_colour(190+view_xview, 382+view_yview, string(ds_list_find_value(global.item3tierlist,3)),1,100,c_white,c_white,c_white,c_white,1)
+
+draw_sprite_ext(blackpixel,0,0,0,room_width,room_height,0,c_white,balpha2)
 </string>
           </argument>
         </arguments>

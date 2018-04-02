@@ -72,13 +72,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if type=0 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter1)}
-if type=1 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter2)}
-if type=2 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter3)}
-if type=3 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter4)}
+            <string>if type=0 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter1)}
+if type=1 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter2)}
+if type=2 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter3)}
+if type=3 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter4)}
 if type=4 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter5)}
 if type=5 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter6)}
-if type=6 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter7)}
+if type=6 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter7)}
+if type=7 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter15)}
+if type=8 {part_emitter_clear(particles.Starter_Depth1,particles.Emitter24)}
 </string>
           </argument>
         </arguments>
@@ -118,23 +120,23 @@ if type=6 {part_emitter_clear(particles.Starter_Depth0,particles.Emitter7)}
             <string>
 if type=0
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter1,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
-part_emitter_stream(particles.Starter_Depth0,particles.Emitter1,particles.Particle1,15)
+part_emitter_region(particles.Starter_Depth1,particles.Emitter1,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter1,particles.Particle1,15)
 }
 if type=1
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter2,self.x,self.x,self.y,self.y,ps_shape_ellipse,1);
-part_emitter_stream(particles.Starter_Depth0,particles.Emitter2,particles.Particle2,8);
+part_emitter_region(particles.Starter_Depth1,particles.Emitter2,self.x,self.x,self.y,self.y,ps_shape_ellipse,1);
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter2,particles.Particle2,8);
 }
 if type=2
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter3,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
-part_emitter_stream(particles.Starter_Depth0,particles.Emitter3,particles.Particle3,10)
+part_emitter_region(particles.Starter_Depth1,particles.Emitter3,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter3,particles.Particle3,10)
 }
 if type=3
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter4,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
-part_emitter_stream(particles.Starter_Depth0,particles.Emitter4,particles.Particle4,10)
+part_emitter_region(particles.Starter_Depth1,particles.Emitter4,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter4,particles.Particle4,10)
 }
 if type=4
 {
@@ -148,8 +150,18 @@ part_emitter_stream(particles.Starter_Depth0,particles.Emitter6,particles.Partic
 }
 if type=6
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter7,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
-part_emitter_stream(particles.Starter_Depth0,particles.Emitter7,particles.Particle7,10)
+part_emitter_region(particles.Starter_Depth1,particles.Emitter7,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter7,particles.Particle7,10)
+}
+if type=7
+{
+part_emitter_region(particles.Starter_Depth1,particles.Emitter15,self.x,self.x,self.y,self.y,ps_shape_ellipse,1);
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter15,particles.Particle15,1);
+}
+if type=8
+{
+part_emitter_region(particles.Starter_Depth1,particles.Emitter24,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_stream(particles.Starter_Depth1,particles.Emitter24,particles.Particle24,15)
 }
 </string>
           </argument>

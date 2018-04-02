@@ -9,22 +9,37 @@
     <sprites name="char">
       <sprite>sprites\luna_stay</sprite>
       <sprite>sprites\luna_stay_a</sprite>
+      <sprite>sprites\luna_stay_b</sprite>
       <sprite>sprites\luna_run</sprite>
       <sprite>sprites\luna_run_a</sprite>
+      <sprite>sprites\luna_run_b</sprite>
       <sprite>sprites\luna_jump</sprite>
       <sprite>sprites\luna_jump_a</sprite>
+      <sprite>sprites\luna_jump_b</sprite>
+      <sprite>sprites\luna_lose</sprite>
       <sprite>sprites\luna_eyes</sprite>
       <sprite>sprites\lunahurt_eyes</sprite>
       <sprite>sprites\luna_hat</sprite>
       <sprite>sprites\luna_arm</sprite>
+      <sprite>sprites\luna_arm_torch</sprite>
       <sprite>sprites\lightballsprite</sprite>
       <sprite>sprites\player_mask</sprite>
       <sprite>sprites\wings</sprite>
+      <sprite>sprites\luna_drink</sprite>
+      <sprite>sprites\luna_projector</sprite>
+      <sprite>sprites\luna_projectorhand1</sprite>
+      <sprite>sprites\luna_projectorhand2</sprite>
+      <sprite>sprites\luna_arm_lamps</sprite>
+      <sprite>sprites\luna_lavalamp</sprite>
+      <sprite>sprites\s_umbrella</sprite>
     </sprites>
     <sprites name="objects">
       <sprite>sprites\o_l1grass</sprite>
+      <sprite>sprites\s_mirror</sprite>
       <sprite>sprites\blockforrooms</sprite>
+      <sprite>sprites\stoneforroom</sprite>
       <sprite>sprites\column</sprite>
+      <sprite>sprites\columnforroom</sprite>
       <sprite>sprites\grass</sprite>
       <sprite>sprites\vine</sprite>
       <sprite>sprites\spike</sprite>
@@ -42,49 +57,75 @@
       <sprite>sprites\door</sprite>
       <sprite>sprites\stat</sprite>
       <sprite>sprites\chest</sprite>
+      <sprite>sprites\chest2</sprite>
       <sprite>sprites\gchest</sprite>
+      <sprite>sprites\gchest2</sprite>
       <sprite>sprites\sbush</sprite>
       <sprite>sprites\grasscover</sprite>
-      <sprite>sprites\stonewall</sprite>
+      <sprite>sprites\wall</sprite>
       <sprite>sprites\blockadditional</sprite>
       <sprite>sprites\torches</sprite>
       <sprite>sprites\ftain</sprite>
       <sprite>sprites\leaf</sprite>
       <sprite>sprites\slam</sprite>
+      <sprite>sprites\weapon_items</sprite>
+      <sprite>sprites\lightpadlock</sprite>
+      <sprite>sprites\doorgem</sprite>
+      <sprite>sprites\button</sprite>
+      <sprite>sprites\prism</sprite>
+      <sprite>sprites\blackpixel</sprite>
     </sprites>
     <sprites name="hud">
       <sprite>sprites\heart</sprite>
       <sprite>sprites\pick</sprite>
       <sprite>sprites\cursor</sprite>
+      <sprite>sprites\potions</sprite>
+      <sprite>sprites\hud</sprite>
+      <sprite>sprites\weaponss</sprite>
+      <sprite>sprites\transitionline</sprite>
+      <sprite>sprites\gameoverl</sprite>
+      <sprite>sprites\kaj</sprite>
+    </sprites>
+    <sprites name="monsters">
+      <sprites name="tier1">
+        <sprite>sprites\redguy</sprite>
+        <sprite>sprites\bluefly</sprite>
+      </sprites>
+      <sprites name="tier2">
+        <sprite>sprites\purpleguy</sprite>
+        <sprite>sprites\purpleguydeath</sprite>
+        <sprite>sprites\rcloud</sprite>
+        <sprite>sprites\recloud_eyes</sprite>
+        <sprite>sprites\s_horno</sprite>
+      </sprites>
+      <sprites name="tier3">
+        <sprite>sprites\rspike</sprite>
+        <sprite>sprites\rspikechain</sprite>
+        <sprite>sprites\rspikesmallchain</sprite>
+        <sprite>sprites\rspikeeye</sprite>
+        <sprite>sprites\rspikegore</sprite>
+        <sprite>sprites\rspikeeyeup</sprite>
+        <sprite>sprites\core</sprite>
+        <sprite>sprites\coregun</sprite>
+        <sprite>sprites\coregores</sprite>
+      </sprites>
+      <sprite>sprites\toad</sprite>
+      <sprite>sprites\tongue</sprite>
+      <sprite>sprites\frogeyes</sprite>
+      <sprite>sprites\toadcrown</sprite>
+      <sprite>sprites\toadjump</sprite>
     </sprites>
     <sprites name="background">
       <sprite>sprites\stars1</sprite>
       <sprite>sprites\moony</sprite>
       <sprite>sprites\forest</sprite>
       <sprite>sprites\thecloud</sprite>
-    </sprites>
-    <sprites name="monsters">
-      <sprites name="tier1">
-        <sprite>sprites\redguy</sprite>
-      </sprites>
-      <sprite>sprites\cloud</sprite>
-      <sprites name="tier2">
-        <sprite>sprites\purpleguy</sprite>
-        <sprite>sprites\purpleguydeath</sprite>
-        <sprite>sprites\rcloud</sprite>
-        <sprite>sprites\recloud_eyes</sprite>
-      </sprites>
-      <sprites name="tier3">
-        <sprite>sprites\rspike</sprite>
-        <sprite>sprites\rspikechain</sprite>
-        <sprite>sprites\rspikeeye</sprite>
-        <sprite>sprites\rspikegore</sprite>
-        <sprite>sprites\rspikeeyeup</sprite>
-      </sprites>
+      <sprite>sprites\treelamps</sprite>
     </sprites>
     <sprite>sprites\part</sprite>
-    <sprite>sprites\cheat</sprite>
     <sprite>sprites\itemsprite</sprite>
+    <sprite>sprites\torchit</sprite>
+    <sprite>sprites\projectorexplosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\l1back</background>
@@ -98,25 +139,40 @@
     <script>scripts\normalchest_drop.gml</script>
     <script>scripts\goldenchest_drop.gml</script>
     <script>scripts\tv_init.gml</script>
+    <script>scripts\select_down.gml</script>
+    <script>scripts\select_up.gml</script>
+    <script>scripts\room_goto_transition.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\c_font</font>
+    <font>fonts\c_font_for_items</font>
   </fonts>
   <objects name="objects">
     <object>objects\control</object>
     <objects name="chara">
       <object>objects\player</object>
       <object>objects\char_luna</object>
-      <object>objects\chararm</object>
-      <object>objects\lightball</object>
-      <object>objects\lightballpar</object>
-      <object>objects\lightball_impact</object>
       <object>objects\pickups</object>
+      <object>objects\pickupsfortoad</object>
+      <object>objects\potionfull</object>
       <object>objects\items</object>
+      <object>objects\itemdescription</object>
+      <objects name="weap">
+        <object>objects\weapon_collectible</object>
+        <object>objects\chararm</object>
+        <object>objects\lightball</object>
+        <object>objects\lightballpar</object>
+        <object>objects\lightballexplo_impact</object>
+        <object>objects\torch_hitbox</object>
+      </objects>
+      <object>objects\gameover</object>
+      <object>objects\blackscreen</object>
     </objects>
     <objects name="objects">
       <object>objects\o_blockparent</object>
       <object>objects\o_lvl1block</object>
+      <object>objects\o_lvl1stone</object>
+      <object>objects\o_wall</object>
       <object>objects\o_column</object>
       <objects name="traps">
         <object>objects\spikeparent</object>
@@ -142,17 +198,21 @@
       <object>objects\platformvertical</object>
       <object>objects\platformdown</object>
       <object>objects\o_shatterBlock</object>
-      <object>objects\o_door</object>
-      <object>objects\o_opendoor</object>
       <object>objects\fountain</object>
+      <objects name="doors and etc">
+        <object>objects\o_door</object>
+        <object>objects\o_opendoor</object>
+        <object>objects\o_lightlock</object>
+        <object>objects\o_prism</object>
+      </objects>
     </objects>
     <objects name="mechanics">
       <object>objects\background1</object>
-      <object>objects\particle</object>
+      <object>objects\starsky</object>
       <object>objects\Shaker</object>
       <object>objects\superview</object>
-      <object>objects\monstergore</object>
       <object>objects\particles</object>
+      <object>objects\sys_transition</object>
     </objects>
     <objects name="monsters">
       <object>objects\parmonster</object>
@@ -161,12 +221,13 @@
         <object>objects\weepbullet</object>
         <object>objects\spikeshot</object>
       </objects>
-      <objects name="dankforest">
+      <objects name="forest">
         <objects name="tier1">
           <object>objects\red_haunt</object>
         </objects>
         <objects name="tier2">
           <object>objects\weep</object>
+          <object>objects\horno</object>
           <object>objects\weepdead</object>
           <object>objects\redcloud</object>
         </objects>
@@ -174,16 +235,20 @@
           <object>objects\redspike</object>
           <object>objects\purplespike</object>
           <object>objects\whitespike</object>
+          <object>objects\spinner</object>
+          <object>objects\redbombardo</object>
+          <object>objects\purplebombardo</object>
+        </objects>
+        <objects name="other">
           <object>objects\spikegore1</object>
           <object>objects\spikegore2</object>
-          <object>objects\spinner</object>
+          <object>objects\coregore</object>
         </objects>
       </objects>
       <object>objects\mparticles</object>
-    </objects>
-    <objects name="cheats">
-      <object>objects\restart</object>
-      <object>objects\roombutton</object>
+      <object>objects\frog</object>
+      <object>objects\fly</object>
+      <object>objects\frogtongue</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -213,6 +278,16 @@
       <room>rooms\l1_23</room>
       <room>rooms\l1_24</room>
       <room>rooms\l1_25</room>
+      <room>rooms\l1_26</room>
+      <room>rooms\l1_27</room>
+      <room>rooms\l1_spotlight_1</room>
+      <room>rooms\l1_spotlight_2</room>
+      <room>rooms\l1_spotlight_3</room>
+      <room>rooms\l1_28</room>
+      <room>rooms\l1_29</room>
+      <room>rooms\l1_30</room>
+      <room>rooms\l1_31</room>
+      <room>rooms\l1_32</room>
       <room>rooms\f_undertaleisbanned</room>
       <room>rooms\f_you_are_gayy</room>
       <room>rooms\f_slish_ti__svinia</room>
@@ -220,14 +295,11 @@
       <room>rooms\f_meme_forest</room>
       <room>rooms\f_ukupnikisfakegod</room>
       <room>rooms\f_ass</room>
-      <room>rooms\i_enisey_s_level_</room>
       <room>rooms\f_urrod</room>
       <room>rooms\f_solodov</room>
       <room>rooms\f_genndy</room>
       <room>rooms\f_idite_nahui</room>
       <room>rooms\f_uck_gay</room>
-      <room>rooms\f_vnimatelno</room>
-      <room>rooms\i_smell_</room>
       <room>rooms\f_botsosi_hiu</room>
       <room>rooms\i_huigovnozalupa</room>
       <room>rooms\f_urod_pojrigovna</room>
@@ -241,6 +313,11 @@
       <room>rooms\f_deepdarkfantasies</room>
       <room>rooms\f_gachiluna</room>
       <room>rooms\f_ohohopickitup</room>
+      <room>rooms\i_jopa_slona</room>
+      <room>rooms\i_eternal_punishment</room>
+      <room>rooms\i_fedars_sexroom</room>
+      <room>rooms\i_milf_hunter</room>
+      <room>rooms\i_nichego_sebe_sekretka</room>
     </rooms>
   </rooms>
   <help>

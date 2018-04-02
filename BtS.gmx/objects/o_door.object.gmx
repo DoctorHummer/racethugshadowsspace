@@ -8,6 +8,47 @@
   <parentName>o_blockparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>doortype=0
+col = make_color_rgb(255,255,51);
+
+if doortype=1
+{
+col = make_color_rgb(255,255,51);
+}
+if doortype=2
+{
+col = make_color_rgb(0, 191, 255);
+}
+if doortype=3
+{
+col = make_color_rgb(255, 0, 0);
+}
+if doortype=4
+{
+col = make_color_rgb(255, 0, 255);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,18 +66,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.brokenlock=false
+            <string>if doortype=0
+{
+if global.brokenlock=false
 {
 if !instance_exists(parmonster)
 {
-instance_create(x,y,o_opendoor)
+a=instance_create(x,y,o_opendoor)
+a.image_angle=image_angle
 instance_destroy()
 }
 }
 else
 {
-instance_create(x,y,o_opendoor)
+a=instance_create(x,y,o_opendoor)
+a.image_angle=image_angle
 instance_destroy()
+}
+}
+
+var lock1; var lock2; var lock3; var lock4;
+with(o_lightlock){ 
+if(locktype=1){lock1 = id;}if(locktype=2){lock2 = id;}if(locktype=3){lock3 = id;}if(locktype=4){lock4 = id;}
+}
+if doortype=1
+{
+if (instance_exists(lock1) and lock1.unlocked=true)
+{a=instance_create(x,y,o_opendoor) a.image_angle=image_angle a.doortype=doortype instance_destroy()}
+col = make_color_rgb(255,255,51);
+}
+if doortype=2
+{
+if (instance_exists(lock2) and lock2.unlocked=true)
+{a=instance_create(x,y,o_opendoor) a.image_angle=image_angle a.doortype=doortype instance_destroy()}
+col = make_color_rgb(0, 191, 255);
+}
+if doortype=3
+{
+if (instance_exists(lock3) and lock3.unlocked=true)
+{a=instance_create(x,y,o_opendoor) a.image_angle=image_angle a.doortype=doortype instance_destroy()}
+col = make_color_rgb(255, 0, 0);
+}
+if doortype=4
+{
+if (instance_exists(lock4) and lock4.unlocked=true)
+{a=instance_create(x,y,o_opendoor) a.image_angle=image_angle a.doortype=doortype instance_destroy()}
+col = make_color_rgb(255, 0, 255);
 }
 </string>
           </argument>
@@ -60,9 +135,26 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(door,1,x,y,1,1,0,c_white,1);
-draw_sprite_ext(door,0,x,y,1,1,0,c_white,1);
-draw_sprite_ext(gear,0,x-13,y-12,1,1,0,c_white,1);
+            <string>draw_sprite_ext(door,1,x,y,1,1,image_angle,c_white,1);
+draw_sprite_ext(door,0,x,y,1,1,image_angle,c_white,1);
+if doortype=0
+{
+if image_angle=0 {draw_sprite_ext(gear,0,x-13,y-13,1,1,0,c_white,1);}
+if image_angle=90 {draw_sprite_ext(gear,0,x-13,y+13,1,1,0,c_white,1);}
+if image_angle=180 {draw_sprite_ext(gear,0,x+13,y+13,1,1,0,c_white,1);}
+if image_angle=270 {draw_sprite_ext(gear,0,x+13,y-13,1,1,0,c_white,1);}
+}
+
+if doortype&gt;0
+{
+if image_angle=0 {draw_sprite_ext(lightballsprite,0,x-15,y-15,0.3,0.3,image_angle,col,0.2) draw_sprite_ext(lightballsprite,0,x-15,y-15,0.6,0.6,image_angle,col,0.5) draw_sprite_ext(doorgem,0,x-15,y-15,1,1,0,col,1); }
+if image_angle=90 {draw_sprite_ext(lightballsprite,0,x-15,y+15,0.3,0.3,image_angle,col,0.2) draw_sprite_ext(lightballsprite,0,x-15,y+15,0.6,0.6,image_angle,col,0.5) draw_sprite_ext(doorgem,0,x-15,y+15,1,1,0,col,1); }
+if image_angle=180 {draw_sprite_ext(lightballsprite,0,x+15,y+15,0.3,0.3,image_angle,col,0.2) draw_sprite_ext(lightballsprite,0,x+15,y+15,0.6,0.6,image_angle,col,0.5) draw_sprite_ext(doorgem,0,x+15,y+15,1,1,0,col,1); }
+if image_angle=270 {draw_sprite_ext(lightballsprite,0,x+15,y-15,0.3,0.3,image_angle,col,0.2) draw_sprite_ext(lightballsprite,0,x+15,y-15,0.6,0.6,image_angle,col,0.5) draw_sprite_ext(doorgem,0,x+15,y-15,1,1,0,col,1); }
+}
+
+
+
 </string>
           </argument>
         </arguments>

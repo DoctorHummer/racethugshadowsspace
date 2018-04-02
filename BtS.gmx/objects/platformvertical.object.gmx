@@ -25,12 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>movemode=choose(0,1)
+            <string>movemode=choose(0,1);
 movetimer=0;
 image_speed=0
 image_index=0
 gearot=0;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -53,19 +75,22 @@ gearot=0;
           <argument>
             <kind>1</kind>
             <string>if (place_meeting(x,y-35,player)){if vspeed!=0 {player.y+=vspeed}}
-if place_meeting(x,y+35,player){if vspeed!=0 {player.y+=vspeed}}
+if place_meeting(x,y+35,player){ player.y+=abs(vspeed)}
 
-if movemode=0
+if movemode=0//down
 {
 vspeed=1
-if (!place_meeting(x,y+64,platformtrack)){movemode=1; if place_meeting(x,y-35,player){player.y-=2};}
+hspeed=0;
+if (!place_meeting(x,y+64,platformtrack)){movemode=1; if place_meeting(self.x,self.y-35,player){player.y-=2};}
 }
 
-if movemode=1
+if movemode=1//up
 {
 vspeed=-1
-if (!place_meeting(x,y-64,platformtrack)){movemode=0; if place_meeting(x,y-35,player){player.y+=2};}
+hspeed=0;
+if (!place_meeting(x,y-64,platformtrack)){movemode=0; if place_meeting(self.x,self.y-35,player){player.y+=2};}
 }
+
 </string>
           </argument>
         </arguments>
@@ -92,8 +117,7 @@ if (!place_meeting(x,y-64,platformtrack)){movemode=0; if place_meeting(x,y-35,pl
 draw_self();
 draw_sprite_ext(gear,0,x-68,y+17,1,1,gearot,c_white,1);
 draw_sprite_ext(gear,0,x+68,y+17,1,1,-gearot,c_white,1);
-if (vspeed!=0)
-{gearot+=1}
+gearot+=1
 </string>
           </argument>
         </arguments>

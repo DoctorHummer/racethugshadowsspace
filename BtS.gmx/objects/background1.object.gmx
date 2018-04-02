@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>100000000</depth>
+  <depth>1000000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,23 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//backstuff
-s1x=random(room_width); s1y=(random(room_height)/2); s1i=choose(0,1,2,3,4,5); s1xs=0.9 + random(0.6); s1ys=s1xs; s1alpha=s1xs; s1im=0
-s2x=random(room_width); s2y=(random(room_height)/2); s2i=choose(0,1,2,3,4,5); s2xs=0.9 + random(0.6); s2ys=s2xs; s2alpha=s2xs; s2im=0
-s3x=random(room_width); s3y=(random(room_height)/2); s3i=choose(0,1,2,3,4,5); s3xs=0.9 + random(0.6); s3ys=s3xs; s3alpha=s3xs; s3im=0
-s4x=random(room_width); s4y=(random(room_height)/2); s4i=choose(0,1,2,3,4,5); s4xs=0.9 + random(0.6); s4ys=s4xs; s4alpha=s4xs; s4im=0
-s5x=random(room_width); s5y=(random(room_height)/2); s5i=choose(0,1,2,3,4,5); s5xs=0.9 + random(0.6); s5ys=s5xs; s5alpha=s5xs; s5im=0
-s6x=random(room_width); s6y=(random(room_height)/2); s6i=choose(0,1,2,3,4,5); s6xs=0.9 + random(0.6); s6ys=s6xs; s6alpha=s6xs; s6im=0
-s7x=random(room_width); s7y=(random(room_height)/2); s7i=choose(0,1,2,3,4,5); s7xs=0.9 + random(0.6); s7ys=s7xs; s7alpha=s7xs; s7im=0
-s8x=random(room_width); s8y=(random(room_height)/2); s8i=choose(0,1,2,3,4,5); s8xs=0.9 + random(0.6); s8ys=s8xs; s8alpha=s8xs; s8im=0
-s9x=random(room_width); s9y=(random(room_height)/2); s9i=choose(0,1,2,3,4,5); s9xs=0.9 + random(0.6); s9ys=s9xs; s9alpha=s9xs; s9im=0
-s10x=random(room_width); s10y=(random(room_height)/2); s10i=choose(0,1,2,3,4,5); s10xs=0.9 + random(0.6); s10ys=s10xs; s10alpha=s10xs; s10im=0
-s11x=random(room_width); s11y=(random(room_height)/2); s11i=choose(0,1,2,3,4,5); s11xs=0.9 + random(0.6); s11ys=s11xs; s11alpha=s11xs; s11im=0
-s12x=random(room_width); s12y=(random(room_height)/2); s12i=choose(0,1,2,3,4,5); s12xs=0.9 + random(0.6); s12ys=s12xs; s12alpha=s12xs; s12im=0
-s13x=random(room_width); s13y=(random(room_height)/2); s13i=choose(0,1,2,3,4,5); s13xs=0.9 + random(0.6); s13ys=s13xs; s13alpha=s13xs; s13im=0
-s14x=random(room_width); s14y=(random(room_height)/2); s14i=choose(0,1,2,3,4,5); s14xs=0.9 + random(0.6); s14ys=s14xs; s14alpha=s14xs; s14im=0
-s15x=random(room_width); s15y=(random(room_height)/2); s15i=choose(0,1,2,3,4,5); s15xs=0.9 + random(0.6); s15ys=s15xs; s15alpha=s15xs; s15im=0
-s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5); s16xs=0.9 + random(0.6); s16ys=s16xs; s16alpha=s16xs; s16im=0
-
+instance_create(x,y,starsky)
 
 cloudx1=choose(608,708,808,908,108,208,308,408,508); cloudy1=(random(room_height)/2)
 cloudx2=choose(608,708,808,908,108,208,308,408,508); cloudy2=(random(room_height)/2)
@@ -74,65 +58,29 @@ lol7=choose(0,1,2)
 lol8=choose(0,1,2)
 lol9=choose(0,1,2)
 lol10=choose(0,1,2)
+
+back1x=random_range(-200,+200)
+back2x=random_range(-200,+200)
+back3x=random_range(-200,+200)
+back4x=random_range(-200,+200)
+
+k=0;rotvins1=random_range(-1,1);
+vineindex1=choose(0,1,2);
+vineindex2=choose(0,1,2);
+vineindex3=choose(0,1,2);
+vineindex4=choose(3,4,5);
+vineindex5=choose(3,4,5);
+vineindex6=choose(3,4,5);
+vineindex7=choose(3,4,5);
+vineindex8=choose(6,7,8);
+vineindex9=choose(6,7,8);
+vineindex10=choose(6,7,8);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>s1ys=s1xs; s2ys=s2xs; s3ys=s3xs; s4ys=s4xs; s5ys=s5xs; s6ys=s6xs; s7ys=s7xs; s8ys=s8xs; s9ys=s9xs; s10ys=s10xs; s11ys=s11xs; s12ys=s12xs; s13ys=s13xs; s14ys=s14xs; s15ys=s15xs; s16ys=s16xs;
-if s1im=0{s1alpha+=0.02}; if s1alpha&gt;1{s1im=1}; if s1im=1{s1alpha-=0.02}; 
-if s1alpha&lt;0{s1im=0; s1x=random(room_width); s1y=(random(room_height)/2)}
-if s2im=0{s2alpha+=0.01}; if s2alpha&gt;1{s2im=1}; if s2im=1{s2alpha-=0.01}; 
-if s2alpha&lt;0{s2im=0; s2x=random(room_width); s2y=(random(room_height)/2)}
-if s3im=0{s3alpha+=0.02}; if s3alpha&gt;1{s3im=1}; if s3im=1{s3alpha-=0.02}; 
-if s3alpha&lt;0{s3im=0; s3x=random(room_width); s3y=(random(room_height)/2)}
-if s4im=0{s4alpha+=0.01}; if s4alpha&gt;1{s4im=1}; if s4im=1{s4alpha-=0.01}; 
-if s4alpha&lt;0{s4im=0; s4x=random(room_width); s4y=(random(room_height)/2)}
-if s5im=0{s5alpha+=0.02}; if s5alpha&gt;1{s5im=1}; if s5im=1{s5alpha-=0.02}; 
-if s5alpha&lt;0{s5im=0; s5x=random(room_width); s5y=(random(room_height)/2)}
-if s6im=0{s6alpha+=0.01}; if s6alpha&gt;1{s6im=1}; if s6im=1{s6alpha-=0.01}; 
-if s6alpha&lt;0{s6im=0; s6x=random(room_width); s6y=(random(room_height)/2)}
-if s7im=0{s7alpha+=0.02}; if s7alpha&gt;1{s7im=1}; if s7im=1{s7alpha-=0.02}; 
-if s7alpha&lt;0{s7im=0; s7x=random(room_width); s7y=(random(room_height)/2)}
-if s8im=0{s8alpha+=0.01}; if s8alpha&gt;1{s8im=1}; if s8im=1{s8alpha-=0.01}; 
-if s8alpha&lt;0{s8im=0; s8x=random(room_width); s8y=(random(room_height)/2)}
-if s9im=0{s9alpha+=0.02}; if s9alpha&gt;1{s9im=1}; if s9im=1{s9alpha-=0.02}; 
-if s9alpha&lt;0{s9im=0; s9x=random(room_width); s9y=(random(room_height)/2)}
-if s10im=0{s10alpha+=0.01}; if s10alpha&gt;1{s10im=1}; if s10im=1{s10alpha-=0.01}; 
-if s10alpha&lt;0{s10im=0; s10x=random(room_width); s10y=(random(room_height)/2)}
-if s11im=0{s11alpha+=0.005}; if s11alpha&gt;1{s11im=1}; if s11im=1{s11alpha-=0.005}; 
-if s11alpha&lt;0{s11im=0; s11x=random(room_width); s11y=(random(room_height)/2)}
-if s12im=0{s12alpha+=0.01}; if s12alpha&gt;1{s12im=1}; if s12im=1{s12alpha-=0.01}; 
-if s12alpha&lt;0{s12im=0; s12x=random(room_width); s12y=(random(room_height)/2)}
-if s13im=0{s13alpha+=0.01}; if s13alpha&gt;1{s13im=1}; if s13im=1{s13alpha-=0.01}; 
-if s13alpha&lt;0{s13im=0; s13x=random(room_width); s13y=(random(room_height)/2)}
-if s14im=0{s14alpha+=0.005}; if s14alpha&gt;1{s14im=1}; if s14im=1{s14alpha-=0.005}; 
-if s14alpha&lt;0{s14im=0; s14x=random(room_width); s14y=(random(room_height)/2)}
-if s15im=0{s15alpha+=0.01}; if s15alpha&gt;1{s15im=1}; if s15im=1{s15alpha-=0.01}; 
-if s15alpha&lt;0{s15im=0; s15x=random(room_width); s15y=(random(room_height)/2)}
-if s16im=0{s16alpha+=0.005}; if s16alpha&gt;1{s16im=1}; if s16im=1{s16alpha-=0.005}; 
-if s16alpha&lt;0{s16im=0; s16x=random(room_width); s16y=(random(room_height)/2)}
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -160,6 +108,7 @@ cloudx7-=xerc7; if cloudx7&lt;-250{cloudx7=room_width+choose(250,300,350); cloud
 cloudx8-=xerc8; if cloudx8&lt;-250{cloudx8=room_width+choose(250,300,350); cloudy8=(random(room_height)/2); xerc8=choose(1,2,3)}
 cloudx9-=xerc9; if cloudx9&lt;-250{cloudx9=room_width+choose(250,300,350); cloudy9=(random(room_height)/2); xerc9=choose(1,2,3)}
 cloudx10-=xerc10; if cloudx10&lt;-250{cloudx10=room_width+choose(250,300,350); cloudy10=(random(room_height)/2); xerc10=choose(1,2,3)}
+if random(200)=1{k=1} if k=0{rotvins1+=0.02} if k=1{rotvins1-=0.02} if rotvins1&lt;-2{k=0} if rotvins1&gt;2{k=1}
 </string>
           </argument>
         </arguments>
@@ -182,22 +131,22 @@ cloudx10-=xerc10; if cloudx10&lt;-250{cloudx10=room_width+choose(250,300,350); c
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>s1x=random(room_width); s1y=(random(room_height)/2); s1i=choose(0,1,2,3,4,5); s1xs=0.4 + random(0.6); s1ys=s1xs; s1alpha=s1xs; s1im=0
-s2x=random(room_width); s2y=(random(room_height)/2); s2i=choose(0,1,2,3,4,5); s2xs=0.4 + random(0.6); s2ys=s2xs; s2alpha=s2xs; s2im=0
-s3x=random(room_width); s3y=(random(room_height)/2); s3i=choose(0,1,2,3,4,5); s3xs=0.4 + random(0.6); s3ys=s3xs; s3alpha=s3xs; s3im=0
-s4x=random(room_width); s4y=(random(room_height)/2); s4i=choose(0,1,2,3,4,5); s4xs=0.4 + random(0.6); s4ys=s4xs; s4alpha=s4xs; s4im=0
-s5x=random(room_width); s5y=(random(room_height)/2); s5i=choose(0,1,2,3,4,5); s5xs=0.4 + random(0.6); s5ys=s5xs; s5alpha=s5xs; s5im=0
-s6x=random(room_width); s6y=(random(room_height)/2); s6i=choose(0,1,2,3,4,5); s6xs=0.4 + random(0.6); s6ys=s6xs; s6alpha=s6xs; s6im=0
-s7x=random(room_width); s7y=(random(room_height)/2); s7i=choose(0,1,2,3,4,5); s7xs=0.4 + random(0.6); s7ys=s7xs; s7alpha=s7xs; s7im=0
-s8x=random(room_width); s8y=(random(room_height)/2); s8i=choose(0,1,2,3,4,5); s8xs=0.4 + random(0.6); s8ys=s8xs; s8alpha=s8xs; s8im=0
-s9x=random(room_width); s9y=(random(room_height)/2); s9i=choose(0,1,2,3,4,5); s9xs=0.4 + random(0.6); s9ys=s9xs; s9alpha=s9xs; s9im=0
-s10x=random(room_width); s10y=(random(room_height)/2); s10i=choose(0,1,2,3,4,5); s10xs=0.4 + random(0.6); s10ys=s10xs; s10alpha=s10xs; s10im=0
-s11x=random(room_width); s11y=(random(room_height)/2); s11i=choose(0,1,2,3,4,5); s11xs=0.4 + random(0.6); s11ys=s11xs; s11alpha=s11xs; s11im=0
-s12x=random(room_width); s12y=(random(room_height)/2); s12i=choose(0,1,2,3,4,5); s12xs=0.4 + random(0.6); s12ys=s12xs; s12alpha=s12xs; s12im=0
-s13x=random(room_width); s13y=(random(room_height)/2); s13i=choose(0,1,2,3,4,5); s13xs=0.4 + random(0.6); s13ys=s13xs; s13alpha=s13xs; s13im=0
-s14x=random(room_width); s14y=(random(room_height)/2); s14i=choose(0,1,2,3,4,5); s14xs=0.4 + random(0.6); s14ys=s14xs; s14alpha=s1xs; s14im=0
-s15x=random(room_width); s15y=(random(room_height)/2); s15i=choose(0,1,2,3,4,5); s15xs=0.4 + random(0.6); s15ys=s15xs; s15alpha=s1xs; s15im=0
-s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5); s16xs=0.4 + random(0.6); s16ys=s16xs; s16alpha=s16xs; s16im=0
+            <string>
+vineindex1=choose(0,1,2);
+vineindex2=choose(0,1,2);
+vineindex3=choose(0,1,2);
+vineindex4=choose(3,4,5);
+vineindex5=choose(3,4,5);
+vineindex6=choose(3,4,5);
+vineindex7=choose(3,4,5);
+vineindex8=choose(6,7,8);
+vineindex9=choose(6,7,8);
+vineindex10=choose(6,7,8);
+
+back1x=random_range(-200,+200)
+back2x=random_range(-200,+200)
+back3x=random_range(-200,+200)
+back4x=random_range(-200,+200)
 </string>
           </argument>
         </arguments>
@@ -221,50 +170,45 @@ s16x=random(room_width); s16y=(random(room_height)/2); s16i=choose(0,1,2,3,4,5);
           <argument>
             <kind>1</kind>
             <string>//background
-draw_background(l1back,view_xview,view_yview)
-draw_sprite_ext(stars1,s1i,s1x+view_xview,s1y+view_yview,s1xs*0.8,s1ys*0.8,0,c_white,s1alpha)
-draw_sprite_ext(stars1,s2i,s2x+view_xview,s2y+view_yview,s2xs*0.8,s2ys*0.8,0,c_white,s2alpha)
-draw_sprite_ext(stars1,s3i,s3x+view_xview,s3y+view_yview,s3xs*0.8,s3ys*0.8,0,c_white,s3alpha)
-draw_sprite_ext(stars1,s4i,s4x+view_xview,s4y+view_yview,s4xs*0.8,s4ys*0.8,0,c_white,s4alpha)
-draw_sprite_ext(stars1,s5i,s5x+view_xview,s5y+view_yview,s5xs*0.8,s5ys*0.8,0,c_white,s5alpha)
-draw_sprite_ext(stars1,s6i,s6x+view_xview,s6y+view_yview,s6xs*0.8,s6ys*0.8,0,c_white,s6alpha)
-draw_sprite_ext(stars1,s7i,s7x+view_xview,s7y+view_yview,s7xs*0.8,s7ys*0.8,0,c_white,s7alpha)
-draw_sprite_ext(stars1,s8i,s8x+view_xview,s8y+view_yview,s8xs*0.8,s8ys*0.8,0,c_white,s8alpha)
-draw_sprite_ext(stars1,s9i,s9x+view_xview,s9y+view_yview,s9xs*0.8,s9ys*0.8,0,c_white,s9alpha)
-draw_sprite_ext(stars1,s10i,s10x+view_xview,s10y+view_yview,s10xs*0.8,s10ys*0.8,0,c_white,s10alpha)
-draw_sprite_ext(stars1,s11i,s11x+view_xview,s11y+view_yview,s11xs*0.8,s11ys*0.8,0,c_white,s11alpha)
-draw_sprite_ext(stars1,s12i,s12x+view_xview,s12y+view_yview,s12xs*0.8,s12ys*0.8,0,c_white,s12alpha)
-draw_sprite_ext(stars1,s13i,s13x+view_xview,s13y+view_yview,s13xs*0.8,s13ys*0.8,0,c_white,s13alpha)
-draw_sprite_ext(stars1,s14i,s14x+view_xview,s14y+view_yview,s14xs*0.8,s14ys*0.8,0,c_white,s14alpha)
-draw_sprite_ext(stars1,s15i,s15x+view_xview,s15y+view_yview,s15xs*0.8,s15ys*0.8,0,c_white,s15alpha)
-draw_sprite_ext(stars1,s16i,s16x+view_xview,s16y+view_yview,s16xs*0.8,s16ys*0.8,0,c_white,s16alpha)
-draw_sprite_ext(moony,0,view_xview+250,view_yview+160,1,1,0,c_white,1)
+draw_sprite_ext(moony,0,view_xview+640,view_yview+260,1,1,0,c_white,1)
 draw_sprite_ext(thecloud,lol1,cloudx1+view_xview,cloudy1+view_yview,1,1,0,c_white,0.5)
 draw_sprite_ext(thecloud,lol2,cloudx2+view_xview,cloudy2+view_yview,1,1,0,c_white,0.4)
 draw_sprite_ext(thecloud,lol3,cloudx3+view_xview,cloudy3+view_yview,1,1,0,c_white,0.4)
 
-draw_sprite(forest,0,view_xview*0.95,view_yview)
-draw_sprite(forest,0,view_xview*0.95+1500,view_yview)
+draw_sprite(forest,0,view_xview*0.95+back1x-1280,view_yview)
+draw_sprite(forest,0,view_xview*0.95+back1x,view_yview)
+draw_sprite(forest,0,view_xview*0.95+back1x+1280,view_yview)
+draw_sprite_ext(treelamps,vineindex1,view_xview*0.95+back1x+694,view_yview+461,0.5,0.5,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex2,view_xview*0.95+back1x+792,view_yview+454,0.5,0.5,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex3,view_xview*0.95+back1x+613,view_yview+502,0.5,0.5,rotvins1,c_white,1)
 
 draw_sprite_ext(thecloud,lol4,cloudx4+view_xview,cloudy4+view_yview,1,1,0,c_white,0.4)
 draw_sprite_ext(thecloud,lol5,cloudx5+view_xview,cloudy5+view_yview,1,1,0,c_white,0.4)
 
-draw_sprite(forest,1,view_xview*0.85,view_yview*0.85)
-draw_sprite(forest,1,view_xview*0.85+1500,view_yview*0.85)
+draw_sprite(forest,1,view_xview*0.85+back2x-1280,view_yview*0.85)
+draw_sprite(forest,1,view_xview*0.85+back2x,view_yview*0.85)
+draw_sprite(forest,1,view_xview*0.85+back2x+1280,view_yview*0.85)
 
 draw_sprite_ext(thecloud,lol9,cloudx9+view_xview,cloudy9+view_yview,1,1,0,c_white,0.5)
 draw_sprite_ext(thecloud,lol10,cloudx10+view_xview,cloudy10+view_yview,1,1,0,c_white,0.6)
 
-draw_sprite(forest,2,view_xview*0.7,view_yview*0.7)
-draw_sprite(forest,2,view_xview*0.7+1500,view_yview*0.7)
+draw_sprite(forest,2,view_xview*0.7+back3x-1280,view_yview*0.7)
+draw_sprite(forest,2,view_xview*0.7+back3x,view_yview*0.7)
+draw_sprite(forest,2,view_xview*0.7+back3x+1280,view_yview*0.7)
+draw_sprite_ext(treelamps,vineindex4,view_xview*0.7+back3x+248,view_yview*0.7+530,0.75,0.75,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex5,view_xview*0.7+back3x+472,view_yview*0.7+481,0.75,0.75,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex6,view_xview*0.7+back3x+970,view_yview*0.7+399,0.75,0.75,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex7,view_xview*0.7+back3x+1156,view_yview*0.7+329,0.75,0.75,rotvins1,c_white,1)
+draw_sprite(forest,3,view_xview*0.55+back4x-1280,view_yview*0.55)
+draw_sprite(forest,3,view_xview*0.55+back4x,view_yview*0.55)
+draw_sprite(forest,3,view_xview*0.55+back4x+1280,view_yview*0.55)
+draw_sprite(forest,4,view_xview*0.55+back4x-1280,view_yview*0.55+960)
+draw_sprite(forest,4,view_xview*0.55+back4x,view_yview*0.55+960)
+draw_sprite(forest,4,view_xview*0.55+back4x+1280,view_yview*0.55+960)
+draw_sprite_ext(treelamps,vineindex8,view_xview*0.55+back4x+1487,view_yview*0.55+275,1,1,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex9,view_xview*0.55+back4x+396,view_yview*0.55+188,1,1,rotvins1,c_white,1)
+draw_sprite_ext(treelamps,vineindex10,view_xview*0.55+back4x+1073,view_yview*0.55+233,1,1,rotvins1,c_white,1)
 
-draw_sprite(forest,3,view_xview*0.55,view_yview*0.55)
-draw_sprite(forest,3,view_xview*0.55+1500,view_yview*0.55)
-
-draw_sprite(forest,4,view_xview*0.4,view_yview*0.4)
-draw_sprite(forest,4,view_xview*0.4+1500,view_yview*0.4)
-draw_sprite(forest,5,view_xview*0.25,view_yview*0.25)
-draw_sprite(forest,5,view_xview*0.25+1500,view_yview*0.25)
 draw_sprite_ext(thecloud,lol6,cloudx6,cloudy6,1,1,0,c_white,0.3)
 draw_sprite_ext(thecloud,lol7,cloudx7,cloudy7,1,1,0,c_white,0.2)
 draw_sprite_ext(thecloud,lol8,cloudx8,cloudy8,1,1,0,c_white,0.4)

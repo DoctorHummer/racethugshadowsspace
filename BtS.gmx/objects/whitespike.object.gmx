@@ -32,7 +32,12 @@ if place_meeting(x,y,platformtrack){movable=1}
 movemode=choose(0,1)
 sp=1.5
 
+a=distance_to_object(spinner)
+spinspeed=0.5
+trail=distance_to_object(spinner)/23
+
 active=1
+image_angle=random_range(-30,30)
 </string>
           </argument>
         </arguments>
@@ -84,6 +89,14 @@ if movemode=4{vspeed=-sp sp+=0.025 if sp&gt;=1.5 {movemode=1}}
 if movemode=5{vspeed=+sp sp+=0.025 if sp&gt;=1.5 {movemode=0}}
 }
 
+if movable=2
+{
+if instance_exists(spinner)
+{
+x=spinner.x+lengthdir_x(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
+y=spinner.y+lengthdir_y(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
+}
+}
 </string>
           </argument>
         </arguments>
@@ -92,27 +105,17 @@ if movemode=5{vspeed=+sp sp+=0.025 if sp&gt;=1.5 {movemode=0}}
     <event eventtype="4" ename="lightballpar">
       <action>
         <libid>1</libid>
-        <id>115</id>
+        <id>203</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_bounce</functionname>
+        <functionname>action_kill_object</functionname>
         <codestring></codestring>
         <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -132,23 +135,35 @@ if movemode=5{vspeed=+sp sp+=0.025 if sp&gt;=1.5 {movemode=0}}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(rspikechain,0,x,y)
-draw_sprite(rspikechain,0,x,y-128)
-draw_sprite(rspikechain,0,x,y-256)
-draw_sprite(rspikechain,0,x,y-384)
-draw_sprite(rspikechain,0,x,y-512)
-draw_sprite(rspikechain,0,x,y-640)
-draw_sprite(rspikechain,0,x,y-768)
-draw_sprite(rspikechain,0,x,y-896)
-draw_sprite(rspikechain,0,x,y-1024)
-draw_sprite(rspikechain,0,x,y-1152)
-draw_sprite(rspikechain,0,x,y-1280)
-draw_sprite(rspikechain,0,x,y-1408)
-draw_sprite(rspikechain,0,x,y-1536)
-draw_sprite(rspikechain,0,x,y-1664)
-draw_sprite(rspikechain,0,x,y-1792)
-draw_sprite(rspikechain,0,x,y-1920)
-draw_sprite(rspikechain,0,x,y-2048)
+            <string>var width;
+width=sprite_get_width(rspikesmallchain)
+
+var a = collision_line(x,y,x,-128,o_lvl1block, false, false)
+var atrail=distance_to_object(a)/23+2;
+var dirr=point_direction(a.x,a.y,x,y)
+ 
+if (a != noone) 
+{
+if movable=0
+{
+for (loop=0; loop&lt;=atrail; loop+=1) 
+{
+draw_sprite_ext(rspikesmallchain,0,lengthdir_x(loop*-width,dirr)+x,lengthdir_y(loop*-width,dirr)+y,1,1,dirr,c_white,1)}
+}
+}
+
+var wd=point_direction(x,-64,x,y)
+if movable=1
+{
+for (loop=0; loop&lt;=60; loop+=1) {draw_sprite_ext(rspikesmallchain,0,lengthdir_x(loop*-width,wd)+x,lengthdir_y(loop*-width,wd)+y,1,1,wd,c_white,1)}
+}
+
+if movable=2
+{
+var spd=point_direction(spinner.x,spinner.y,x,y)
+for (loop=0; loop&lt;=trail; loop+=1) {draw_sprite_ext(rspikesmallchain,0,lengthdir_x(loop*-width,spd)+x,lengthdir_y(loop*-width,spd)+y,1,1,spd,c_white,1)}
+}
+
 draw_self();
 draw_sprite_ext(rspikeeye,2,x,y,1,1,rot,c_white,1)
 if (rot&gt;=320 or rot&lt;40 or rot&gt;=140 and rot&lt;220) {draw_sprite(rspikeeyeup,5,x,y)}

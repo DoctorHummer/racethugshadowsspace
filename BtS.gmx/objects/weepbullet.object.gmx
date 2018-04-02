@@ -25,12 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wbxscale=0.8
-wbyscale=0.8
+            <string>wbxscale=0.4
+wbyscale=0.4
+type=0
 w=0
 mode=0
-part_emitter_region(particles.Starter_Depth0,particles.Emitter12,x,x,y,y,ps_shape_ellipse,1)
-part_emitter_burst(particles.Starter_Depth0,particles.Emitter12,particles.Particle12,3)
+alarm[0]=1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if type=0
+{
+part_emitter_region(particles.Starter_Depth1,particles.Emitter12,x,x,y,y,ps_shape_ellipse,1)
+part_emitter_burst(particles.Starter_Depth1,particles.Emitter12,particles.Particle12,3)
+}
+if type=1
+{
+part_emitter_region(particles.Starter_Depth1,particles.Emitter28,x,x,y,y,ps_shape_ellipse,1)
+part_emitter_burst(particles.Starter_Depth1,particles.Emitter28,particles.Particle28,3)
+}
 </string>
           </argument>
         </arguments>
@@ -54,14 +86,22 @@ part_emitter_burst(particles.Starter_Depth0,particles.Emitter12,particles.Partic
           <argument>
             <kind>1</kind>
             <string>wbyscale=wbxscale
-if w=0{wbxscale+=0.005; if wbxscale=1.2{w=1}}
-if w=1{wbxscale-=0.005; if wbxscale=0.8{w=0}}
-if mode=1 {image_alpha-=0.1}
+if w=0{wbxscale+=0.005; if wbxscale=0.6{w=1}}
+if w=1{wbxscale-=0.005; if wbxscale=0.4{w=0}}
+if mode=1 {image_alpha-=0.2}
 if image_alpha&lt;=0 {instance_destroy()}
 if (distance_to_object(o_blockparent)&lt;=0 and mode=0)
 {
-part_emitter_region(particles.Starter_Depth0,particles.Emitter12,x,x,y,y,ps_shape_ellipse,1)
-part_emitter_burst(particles.Starter_Depth0,particles.Emitter12,particles.Particle12,6)
+if type=0
+{
+part_emitter_region(particles.Starter_Depth1,particles.Emitter12,x,x,y,y,ps_shape_ellipse,1)
+part_emitter_burst(particles.Starter_Depth1,particles.Emitter12,particles.Particle12,6)
+}
+if type=1
+{
+part_emitter_region(particles.Starter_Depth1,particles.Emitter28,x,x,y,y,ps_shape_ellipse,1)
+part_emitter_burst(particles.Starter_Depth1,particles.Emitter28,particles.Particle28,6)
+}
 mode=1
 }
 </string>
@@ -86,9 +126,16 @@ mode=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_fuchsia,1)
-draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_white,0.5)
-draw_sprite_ext(sprite_index,0,x,y,wbxscale*0.5,wbyscale*0.5,0,c_white,1)
+            <string>if type=0
+{
+draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_fuchsia,image_alpha)
+}
+if type=1
+{
+draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_red,image_alpha)
+}
+draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_white,image_alpha*0.5)
+draw_sprite_ext(sprite_index,0,x,y,wbxscale*0.5,wbyscale*0.5,0,c_white,image_alpha)
 </string>
           </argument>
         </arguments>

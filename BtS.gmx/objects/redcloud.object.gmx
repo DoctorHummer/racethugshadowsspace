@@ -29,7 +29,7 @@
 dead=false
 bessmertie=0
 btimer=0
-speeed=choose(2.5,2.75,3)
+speeed=choose(2.5,2.75,3,3.25,3.5)
 
 image_angle=random_range(-3,3);k1=0;
 
@@ -37,6 +37,7 @@ tier=2
 bounce=0
 
 rot=0
+
 </string>
           </argument>
         </arguments>
@@ -88,12 +89,80 @@ script_execute(itemdrop);
 
 a=instance_create(x,y,mparticles)
 a.type=2;
+
+a=instance_create(x,y,mparticles)
+a.type=7;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>115</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (place_meeting(x+36,y,other))
+{
+part_emitter_region(particles.Starter_Depth0,particles.Emitter18,self.x+32,self.x+32,self.y-32,self.y+32,1,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter18,particles.Particle18,12);
+}
+if (place_meeting(x-36,y,other))
+{
+part_emitter_region(particles.Starter_Depth0,particles.Emitter18,self.x-32,self.x-32,self.y-32,self.y+32,1,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter18,particles.Particle18,12);
+}
+
+if (place_meeting(x,y+36,other))
+{
+part_emitter_region(particles.Starter_Depth0,particles.Emitter17,self.x-32,self.x+32,self.y+32,self.y+32,1,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter17,particles.Particle17,12);
+}
+if (place_meeting(x,y-36,other))
+{
+part_emitter_region(particles.Starter_Depth0,particles.Emitter17,self.x-32,self.x+32,self.y-32,self.y-32,1,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter17,particles.Particle17,12);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -130,7 +199,7 @@ rot=point_direction(x,y,player.x,player.y);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="o_blockparent">
+    <event eventtype="4" ename="bubble">
       <action>
         <libid>1</libid>
         <id>115</id>
@@ -147,11 +216,35 @@ rot=point_direction(x,y,player.x,player.y);
         <arguments>
           <argument>
             <kind>4</kind>
-            <string>0</string>
+            <string>1</string>
           </argument>
           <argument>
             <kind>4</kind>
-            <string>0</string>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (x &lt; 0) || (x &gt; room_width) hspeed = -hspeed;
+if (y &lt; 0) || (y &gt; room_height) vspeed = -vspeed;
+</string>
           </argument>
         </arguments>
       </action>
@@ -174,6 +267,12 @@ rot=point_direction(x,y,player.x,player.y);
           <argument>
             <kind>1</kind>
             <string>draw_self();
+if bessmertie=1
+{
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_red,0.5)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.15,image_yscale*1.1,0,c_white,0.25)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.3,image_yscale*1.2,0,c_white,0.15)
+}
 if (rot&gt;0 &amp;&amp; rot&lt;=11.25) {draw_sprite(recloud_eyes,0,x+9,y-1)} 
 if (rot&gt;11.25 &amp;&amp; rot&lt;=22.50) {draw_sprite(recloud_eyes,0,x+8,y-2)} 
 if (rot&gt;22.50 &amp;&amp; rot&lt;=33.75) {draw_sprite(recloud_eyes,0,x+7,y-3)} 

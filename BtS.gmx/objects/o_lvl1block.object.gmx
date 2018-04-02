@@ -3,7 +3,7 @@
   <spriteName>blockforrooms</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>5</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>o_blockparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,17 +28,13 @@
             <string>image_speed = 0;
 sprite_index = o_l1grass;
 image_index = scr_auto_tile();
-grassindex=choose(0,1,2,3,4,5,6,7,8,9);rotlevs1=random_range(-2,2);k1=0;grassrandom=choose(0,1,2);
-vineindex=choose(0,1,2);k2=0;rotvins1=random_range(-1,1);vinerandom=choose(0,1,2,3,4);
-vineindex2=choose(3,4,5);
-cangrass=0; canvine1=0; canvine2=0;
-if (!place_meeting(x,y-64,o_blockparent)) {cangrass=1}
-if (!place_meeting(x,y+64,o_blockparent) &amp;&amp; !place_meeting(x,y+128,o_blockparent)) {canvine1=1}
-if (!place_meeting(x+64,y+64,o_blockparent) &amp;&amp; place_meeting(x+64,y,o_blockparent) &amp;&amp; !place_meeting(x,y+64,o_blockparent)) {cangvine2=1}
-grassed=1
+
 centrestyle=choose(0,1,2,3,4)
 centrestylespawn=choose(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
 chestspawn=random(24)
+
+if global.autogeneration=true
+{
 if (
     !place_meeting(x-64,y-64,o_blockparent) 
     &amp;&amp; !place_meeting(x-64,y-128,o_blockparent) 
@@ -47,11 +43,17 @@ if (
     &amp;&amp; !place_meeting(x+64,y-64,o_blockparent) 
     &amp;&amp; !place_meeting(x+64,y-128,o_blockparent)
     &amp;&amp; !instance_exists(chestparent)
-    &amp;&amp; self.x&gt;448 &amp;&amp; self.x&lt;room_width &amp;&amp; self.y&gt;0 &amp;&amp; self.y&lt;(room_height)
+    &amp;&amp; !instance_exists(frog)
+    &amp;&amp; self.x&gt;448 &amp;&amp; self.x&lt;room_width &amp;&amp; self.y&gt;128 &amp;&amp; self.y&lt;(room_height)
     &amp;&amp; place_meeting(x+64,y,o_blockparent) &amp;&amp; place_meeting(x-64,y,o_blockparent)
     &amp;&amp; !place_meeting(x-64,y-64,spikes) &amp;&amp; !place_meeting(x,y-64,spikes) &amp;&amp; !place_meeting(x+64,y-64,spikes)
     &amp;&amp; !place_meeting(x-64,y-64,spikes_movable) &amp;&amp; !place_meeting(x,y-64,spikes_movable) &amp;&amp; !place_meeting(x+64,y-64,spikes_movable)
     &amp;&amp; !place_meeting(x-64,y-64,bubble) &amp;&amp; !place_meeting(x,y-64,bubble) &amp;&amp; !place_meeting(x+64,y-64,bubble)
+    &amp;&amp; !place_meeting(x-64,y-64,torch)
+    &amp;&amp; !place_meeting(x,y-64,fountain)
+    &amp;&amp; !place_meeting(x-64,y-64,fountain)
+    &amp;&amp; !place_meeting(x+64,y-64,fountain)
+    &amp;&amp; !place_meeting(x+128,y-64,fountain)
     &amp;&amp; room!=l1_1
     )
  {
@@ -64,6 +66,27 @@ if (
  instance_create(self.x,self.y-32,o_chest)
  }
  }
+}
+
+grassindex=choose(0,1,2,3,4,5,6,7,8,9);rotlevs1=random_range(-2,2);k1=0;grassrandom=choose(0,1,2);
+vineindex=choose(0,1,2);k2=0;rotvins1=random_range(-1,1);vinerandom=choose(0,1,2,3,4);
+vineindex2=choose(3,4,5);
+cangrass=0; canvine1=0; canvine2=0;
+if (y&gt;32 and x&lt;room_width-64)
+{
+if 
+(!place_meeting(x,y-64,o_blockparent)
+&amp;&amp; !place_meeting(x,y-64,spikes)
+&amp;&amp; !place_meeting(x,y-64,spikes_movable)
+&amp;&amp; !place_meeting(x,y-64,bubble)
+&amp;&amp; !place_meeting(x,y-64,o_chest)
+&amp;&amp; !place_meeting(x,y-64,o_goldenchest)
+&amp;&amp; !place_meeting(x,y-64,torch)
+) 
+{cangrass=1}
+if (!place_meeting(x,y+64,o_blockparent) &amp;&amp; !place_meeting(x,y+128,o_blockparent)) {canvine1=1}
+if (!place_meeting(x+64,y+64,o_blockparent) &amp;&amp; place_meeting(x+64,y,o_blockparent) &amp;&amp; !place_meeting(x,y+64,o_blockparent)) {cangvine2=1}
+}
 </string>
           </argument>
         </arguments>
@@ -86,8 +109,7 @@ if (
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if random(200)=1{k1=1}
+            <string>if random(200)=1{k1=1}
 if k1=0{rotlevs1+=0.04}
 if k1=1{rotlevs1-=0.04}
 if rotlevs1&lt;-2{k1=0}
@@ -103,6 +125,11 @@ if (place_meeting(x,y-25,player) and player.yspeed&gt;0)
 {
 part_emitter_region(particles.Starter_Depth0,particles.Emitter14,player.x-33,player.x+33,player.y+35+8,player.y+35-8,ps_shape_ellipse,1);
 part_emitter_burst(particles.Starter_Depth0,particles.Emitter14,particles.Particle14,1);
+}
+if (place_meeting(x,y,lightballexplo_impact) and image_index!=43)
+{
+part_emitter_region(particles.Starter_Depth0,particles.Emitter14,x-32,x+32,y-32,y+32,ps_shape_ellipse,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter14,particles.Particle14,2);
 }
 </string>
           </argument>
@@ -126,11 +153,22 @@ part_emitter_burst(particles.Starter_Depth0,particles.Emitter14,particles.Partic
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (grassed=1 &amp;&amp; grassrandom=1 &amp;&amp; cangrass=1){draw_sprite_ext(grass,grassindex,x,y-28,1,1,rotlevs1,c_white,1);}
-if (grassed=1 &amp;&amp; vinerandom=1 &amp;&amp; canvine1=1){draw_sprite_ext(vine,vineindex,x,y-4,1,1,rotlevs1,c_white,1);}
+            <string>if (grassrandom=1 &amp;&amp; cangrass=1){draw_sprite_ext(grass,grassindex,x,y-28,1,1,rotlevs1,c_white,1);}
+if (vinerandom=1 &amp;&amp; canvine1=1){draw_sprite_ext(vine,vineindex,x,y-4,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+6,y-28,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-6,y-30,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+18,y-22,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-18,y-24,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x,y-28,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+12,y-32,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-12,y-24,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-24,y-22,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+24,y-20,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+30,y-20,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-30,y-20,1,1,rotlevs1,c_white,1);}
 draw_self();
-if (grassed=1 &amp;&amp; vinerandom=4 &amp;&amp; canvine2=1){draw_sprite_ext(vine,vineindex2,x,y,1,1,0,c_white,1);}
-if (grassed=1){draw_sprite_ext(grasscover,image_index,x,y,1,1,0,c_white,1);}
+if (vinerandom=4 &amp;&amp; canvine2=1){draw_sprite_ext(vine,vineindex2,x,y,1,1,0,c_white,1);}
+draw_sprite_ext(grasscover,image_index,x,y,1,1,0,c_white,1);
 </string>
           </argument>
         </arguments>

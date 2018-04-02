@@ -54,6 +54,46 @@ xshoot=self.x+0
 yshoot=self.y+0
 weaponstyle=global.weaponstyle
 t=0;
+a=0
+
+Starter_Torch = part_system_create()
+part_system_depth(Starter_Torch,depth+1);
+
+Starter_LavaBubble = part_system_create()
+part_system_depth(Starter_LavaBubble,depth+1);
+
+ParticleTorch = part_type_create();
+EmitterTorch = part_emitter_create(Starter_Torch);
+part_type_shape(ParticleTorch,pt_shape_flare);
+part_type_size(ParticleTorch,4,2,-0.03,0);
+part_type_scale(ParticleTorch,0.10,0.10);
+part_type_color3(ParticleTorch,65535,4227327,255);
+part_type_alpha3(ParticleTorch,0,1,0);
+part_type_speed(ParticleTorch,0.75,2,0,0);
+part_type_direction(ParticleTorch,90,90,0,1);
+part_type_gravity(ParticleTorch,0,270);
+part_type_orientation(ParticleTorch,0,0,0,0,1);
+part_type_blend(ParticleTorch,1);
+part_type_life(ParticleTorch,23,50);
+
+ParticleLavaBubble = part_type_create();
+EmitterLavaBubble = part_emitter_create(Starter_LavaBubble);
+part_type_shape(ParticleLavaBubble,pt_shape_flare);
+part_type_size(ParticleLavaBubble,1,2,-0.001,0);
+part_type_scale(ParticleLavaBubble,0.05,0.05);
+part_type_color3(ParticleLavaBubble,65535,20,60);
+part_type_alpha3(ParticleLavaBubble,1,1,0);
+part_type_speed(ParticleLavaBubble,0.1,0.5,0.05,0);
+part_type_direction(ParticleLavaBubble,90,90,0,1);
+part_type_gravity(ParticleLavaBubble,0,270);
+part_type_orientation(ParticleLavaBubble,0,0,0,0,1);
+part_type_blend(ParticleLavaBubble,1);
+part_type_life(ParticleLavaBubble,2,20);
+
+torchc=35;
+
+image_speed=0
+image_index=0
 </string>
           </argument>
         </arguments>
@@ -77,6 +117,30 @@ t=0;
           <argument>
             <kind>1</kind>
             <string>char_luna.flashlight=false;
+char_luna.dontdrawarms=false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index=0;image_speed=0
 </string>
           </argument>
         </arguments>
@@ -100,6 +164,7 @@ t=0;
           <argument>
             <kind>1</kind>
             <string>can_shoot=1
+a=0
 </string>
           </argument>
         </arguments>
@@ -124,40 +189,41 @@ t=0;
             <kind>1</kind>
             <string>if instance_exists(char_luna) = 1       //���� ���� ��
    {
-      if (char_luna.sprite_index = luna_stay_a or char_luna.sprite_index = luna_stay)
+      if (char_luna.sprite_index = luna_stay_b or char_luna.sprite_index = luna_stay_a or char_luna.sprite_index = luna_stay)
       {
        if char_luna.image_xscale&gt;0
        {
-         x=player.x+5;y=player.y-12;
+         x=player.x+5;y=player.y-46;
        }
        if char_luna.image_xscale&lt;0
        {
-         x=player.x-5;y=player.y-12;
+         x=player.x-5;y=player.y-46;
        }
       }
-      if (char_luna.sprite_index = luna_run_a or char_luna.sprite_index = luna_run)
+      if (char_luna.sprite_index = luna_run_b or char_luna.sprite_index = luna_run_a or char_luna.sprite_index = luna_run)
       {
        if char_luna.image_xscale&gt;0
        {
-         x=player.x+3;y=player.y-11;
+         x=player.x+8;y=player.y-44;
        }
        if char_luna.image_xscale&lt;0
        {
-         x=player.x-3;y=player.y-11;
+         x=player.x-8;y=player.y-44;
        }
       }
-      if (char_luna.sprite_index = luna_jump_a or char_luna.sprite_index = luna_jump)
+      if (char_luna.sprite_index = luna_jump_b or char_luna.sprite_index = luna_jump_a or char_luna.sprite_index = luna_jump)
       {
        if char_luna.image_xscale&gt;0
        {
-         x=player.x+5;y=player.y-16;
+         x=player.x+5;y=player.y-51;
        }
        if char_luna.image_xscale&lt;0
        {
-         x=player.x-5;y=player.y-16;
+         x=player.x-5;y=player.y-51;
        }
       }
    }
+   
 </string>
           </argument>
         </arguments>
@@ -180,37 +246,24 @@ t=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-image_alpha=1
-move_towards_point(mouse_x,mouse_y,0)      //����������� = (������ �� ������ � ������� ����)
+            <string>image_alpha=1
+move_towards_point(mouse_x,mouse_y,0)
 image_angle=direction;
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if instance_exists(char_luna)
+if instance_exists(char_luna)
 {
-if char_luna.flashlight=0{visible=false}
+if (char_luna.flashlight=false or char_luna.spanim=1){visible=false}
 else{visible=true}
 }
 
+if char_luna.x&lt;mouse_x
+{
+image_yscale=1
+}
+else
+{
+image_yscale=-1
+}
 </string>
           </argument>
         </arguments>
@@ -231,19 +284,74 @@ else{visible=true}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if weaponstyle=0 {sprite_index=luna_arm};
+            <string>weaponstyle=global.weaponstyle
 
-xshoot=self.x+0
+if weaponstyle=0 
+{
+sprite_index=luna_arm
+if char_luna.umbrella=false {char_luna.dontdrawarms=false} else {char_luna.dontdrawarms=true};
+};
+
+if weaponstyle=1
+{
+sprite_index=luna_arm_torch
+char_luna.flashlight=true;
+if char_luna.umbrella=false {char_luna.dontdrawarms=false} else {char_luna.dontdrawarms=true};
+
+if can_shoot=1
+{
+part_emitter_region(Starter_Torch,EmitterTorch,xshoot + lengthdir_x(35,direction),xshoot + lengthdir_x(35,direction),yshoot + lengthdir_y(35,direction),yshoot + lengthdir_y(35,direction),ps_shape_ellipse,1);
+part_emitter_burst(Starter_Torch,EmitterTorch,ParticleTorch,2);
+image_speed=0
+}
+if can_shoot=0
+{
+image_speed=0.2
+}
+}
+
+if weaponstyle=2
+{
+sprite_index=luna_projectorhand2
+char_luna.flashlight=true;
+char_luna.dontdrawarms=true;
+}
+
+if weaponstyle=3 
+{
+part_emitter_region(Starter_LavaBubble,EmitterLavaBubble,xshoot - 5 + lengthdir_x(24,direction),xshoot + 7 + lengthdir_x(24,direction),yshoot + 20 + lengthdir_y(24,direction),yshoot + 20 + lengthdir_y(24,direction),ps_shape_ellipse,1);
+part_emitter_burst(Starter_LavaBubble,EmitterLavaBubble,ParticleLavaBubble,15);
+sprite_index=luna_arm_lamps;
+char_luna.flashlight=true;
+if char_luna.umbrella=false {char_luna.dontdrawarms=false} else {char_luna.dontdrawarms=true};
+};
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>xshoot=self.x+0
 yshoot=self.y+0
-weaponstyle=global.weaponstyle
 
 if player.bessmertie=1
 {
-
-
 if t &lt; 40
 {
-
 if (t&lt;=4 || t&gt;8 &amp;&amp; t&lt;=12 || t&gt;16 &amp;&amp; t&lt;=20 || t&gt;24 &amp;&amp; t&lt;=28 || t&gt;32 &amp;&amp; t&lt;=36 || t&gt;40 &amp;&amp; t&lt;=44|| t&gt;48 &amp;&amp; t&lt;=52 || t&gt;56 &amp;&amp; t&lt;=60 || t&gt;64 )
 {image_alpha=0.5}
 if (t&gt;4 &amp;&amp; t&lt;=8 || t&gt;12 &amp;&amp; t&lt;=16 || t&gt;20 &amp;&amp; t&lt;=24 || t&gt;28 &amp;&amp; t&lt;=32 || t&gt;36 &amp;&amp; t&lt;=40 || t&gt;44 &amp;&amp; t&lt;=48 || t&gt;52 &amp;&amp; t&lt;=56 || t&gt;60 &amp;&amp; t&lt;=64 )
@@ -256,54 +364,14 @@ if player.bessmertie=0
 {
 image_alpha = 1; t=0;
 }
+
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="6" enumb="50">
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>can_shoot</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -320,32 +388,169 @@ image_alpha = 1; t=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=0;
-can_shoot=0;
-char_luna.flashlight=true;
-alarm[2]=45;
-alarm[0]=global.shotspeed;
+            <string>if can_shoot=1
+{
+if char_luna.spanim=0
+{
+
 if weaponstyle=0
 {
-{instance_create(xshoot + lengthdir_x(45,direction),yshoot + lengthdir_y(45,direction),lightball)}
+image_index=0;
+can_shoot=0;
+char_luna.flashlight=true;
+alarm[2]=45
+alarm[0]=global.shotspeed
+instance_create(xshoot + lengthdir_x(45,direction),yshoot + lengthdir_y(45,direction),lightball)
+}
+
+if weaponstyle=1
+{
+can_shoot=0
+alarm[0]=36
+alarm[1]=36
+a=instance_create(xshoot + lengthdir_x(45,direction),yshoot + lengthdir_y(45,direction),torch_hitbox)
+a.speed=35
+if random(4)&lt;2{a.torchmode=0;a.direction=direction+10}else{a.torchmode=1;a.direction=direction-10}
+}
+
+if weaponstyle=2
+{
+image_index=0;
+can_shoot=0;
+alarm[0]=global.shotspeed*2
+a=instance_create(xshoot + lengthdir_x(35,direction),yshoot + 26 + lengthdir_y(45,direction),lightball);
+a.col = make_color_rgb(0,191,255);
+a.xsize=global.lightscale*2;
+a.ysize=global.lightscale*2;
+a.gravity=0.4
+a.gravity_direction=270
+a.ifdestroyspawnexplo=true
+a.particlemode=1
+a.damage=2
+}
+
+if weaponstyle=3
+{
+image_index=0;
+can_shoot=0;
+alarm[0]=global.shotspeed/1.5
+a=instance_create(xshoot + lengthdir_x(35,direction),yshoot + 22 + lengthdir_y(45,direction),lightball);
+a.col = make_color_rgb(255,165,0);
+a.xsize=global.lightscale*0.9;
+a.ysize=global.lightscale*0.9;
+a.gravity=0.5
+a.gravity_direction=direction+random(80)-random(40)
+a.particlemode=2
+a.spread=48
+a.partdest=particles.Particle22;
+a.emitdest=particles.Emitter22;
+a.damage=0.5
+}
+}
 }
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_system_destroy(Starter_Torch)
+part_particles_clear(ParticleTorch)
+part_emitter_clear(Starter_Torch,EmitterTorch)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_particles_clear(ParticleTorch)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_system_destroy(Starter_Torch)
+part_particles_clear(ParticleTorch)
+part_emitter_clear(Starter_Torch,EmitterTorch)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+if weaponstyle=3
+{
+draw_sprite_ext(luna_lavalamp,0,x + lengthdir_x(24,direction),y + lengthdir_y(24,direction),image_xscale,1,0,image_blend,image_alpha)
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

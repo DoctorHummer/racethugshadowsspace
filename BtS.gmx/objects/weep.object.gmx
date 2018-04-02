@@ -30,7 +30,7 @@ dead=false
 deathimagecount=4;
 bessmertie=0
 btimer=0
-speeed=choose(1.5,2,2.2,2.5,2.75,3)
+speeed=choose(2.5,2.75,3)
 
 image_angle=random_range(-3,3);k1=0;
 
@@ -104,38 +104,6 @@ if hp&lt;=0{instance_destroy()}
       </action>
       <action>
         <libid>1</libid>
-        <id>121</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_potential_step</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>player.x</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>player.y</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>speeed</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -157,6 +125,98 @@ if k1=1{image_angle-=0.16}
 if image_angle&lt;-2{k1=0}
 if image_angle&gt;2{k1=1}
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    motion_add(point_direction(x,y,player.x,player.y),.05);
+    if (hspeed &lt; 0)
+    {
+        image_xscale = -1;
+    }
+    if (hspeed &gt; 0)
+    {
+        image_xscale = 1;
+    }
+    if (speed &gt; speeed)
+    {
+        speed = speeed;
+    }
+    if (speed &lt; 1)
+    {
+        speed = 1;
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="o_lvl1block">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{
+    move_bounce_solid(true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,1)
+if bessmertie=1
+{
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_fuchsia,0.5)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.1,image_yscale*1.1,0,c_white,0.25)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.2,image_yscale*1.2,0,c_white,0.15)
+}
 </string>
           </argument>
         </arguments>

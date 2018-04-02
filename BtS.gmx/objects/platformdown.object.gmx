@@ -31,6 +31,7 @@ image_speed=0
 image_index=0
 gearot=0;
 grasss=choose(-1,1);
+mirror=false
 </string>
           </argument>
         </arguments>

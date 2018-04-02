@@ -56,10 +56,8 @@ a=1; a2=0;
 a=instance_create(x,y,mparticles)
 a.type=1;
 
-repeat(8)
-{
-instance_create(x,y,monstergore)
-}
+a=instance_create(x,y,mparticles)
+a.type=7;
 
 script_execute(itemdrop);
 </string>
@@ -83,13 +81,13 @@ script_execute(itemdrop);
           <argument>
             <kind>1</kind>
             <string>a=instance_create(x-32,y,weepbullet);
-a.direction=180; a.speed=6;
+a.direction=180; a.speed=8;
 a=instance_create(x+32,y,weepbullet);
-a.direction=0; a.speed=6;
+a.direction=0; a.speed=8;
 a=instance_create(x,y-32,weepbullet);
-a.direction=90; a.speed=6;
+a.direction=90; a.speed=8;
 a=instance_create(x,y+32,weepbullet);
-a.direction=270; a.speed=6;
+a.direction=270; a.speed=8;
 </string>
           </argument>
         </arguments>

@@ -38,18 +38,11 @@ rot=0
 
 movable=0
 
-if (place_meeting(x,y,platformtrack))
-{
-movable=1
-}
-
-//if distance_to_object(spinner)&lt;256
-//{
-//movable=2
-//}
+if (place_meeting(x,y,platformtrack)){movable=1}
 
 a=distance_to_object(spinner)
-spinspeed=1
+spinspeed=0.5
+trail=distance_to_object(spinner)/23
 
 movemode=choose(0,1)
 sp=1.5
@@ -62,29 +55,10 @@ instance_create(x,y,purplespike)
 instance_destroy()
 }
 }
+spikedeyeimage=0
+
+image_angle=random_range(-20,20)
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -117,6 +91,9 @@ if hp&lt;=0{
 a=instance_create(x,y,mparticles)
 a.type=2;
 
+a=instance_create(x,y,mparticles)
+a.type=7;
+
 script_execute(itemdrop);
 
 a=instance_create(x,y,spikegore1); a.image_index=0; a.image_angle=0
@@ -124,15 +101,32 @@ a=instance_create(x,y,spikegore1); a.image_index=1; a.image_angle=90
 a=instance_create(x,y,spikegore1); a.image_index=2; a.image_angle=180
 a=instance_create(x,y,spikegore1); a.image_index=3; a.image_angle=270
 
-for (i = 0; i &lt; 2048; i += 128)
-   {
-     instance_create(x,y-i,spikegore2);
-   }
+var width=sprite_get_width(rspikesmallchain)
+var a2 = collision_line(x,y,x,-128,o_lvl1block, false, false)
+var atrail=distance_to_object(a2)/23+2;
+var dirr=point_direction(a2.x,a2.y,x,y)
+
+if (a2 != noone) 
+{
+if movable=0
+{
+for (loop=0; loop&lt;=atrail; loop+=1) {m=instance_create(lengthdir_x(loop*-width,dirr)+x,lengthdir_y(loop*-width,dirr)+y,spikegore2); m.image_angle=dirr}     
+}
+}
+var wd=point_direction(x,-64,x,y)
+
+if movable=1
+{
+for (loop=0; loop&lt;=60; loop+=1) {m=instance_create(lengthdir_x(loop*-width,wd)+x,lengthdir_y(loop*-width,wd)+y,spikegore2); m.image_angle=wd} 
+}
+if movable=2
+{
+var spd=point_direction(spinner.x,spinner.y,x,y)
+for (loop=0; loop&lt;=trail; loop+=1) {m=instance_create(lengthdir_x(loop*-width,spd)+x,lengthdir_y(loop*-width,spd)+y,spikegore2); m.image_angle=spd}
+}
 instance_destroy()
 
 }
-
-rot=point_direction(x,y,player.x,player.y);
 
 if movable=1
 {
@@ -154,11 +148,16 @@ if movemode=4{vspeed=-sp sp+=0.025 if sp&gt;=1.5 {movemode=1}}
 if movemode=5{vspeed=+sp sp+=0.025 if sp&gt;=1.5 {movemode=0}}
 }
 
-//if movable=2
-//{
-//x=spinner.x+lengthdir_x(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
-//y=spinner.y+lengthdir_y(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
-//}
+if movable=2
+{
+if instance_exists(spinner)
+{
+x=spinner.x+lengthdir_x(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
+y=spinner.y+lengthdir_y(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
+}
+}
+
+rot=point_direction(x,y,player.x,player.y);
 
 </string>
           </argument>
@@ -182,38 +181,56 @@ if movemode=5{vspeed=+sp sp+=0.025 if sp&gt;=1.5 {movemode=0}}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(rspikechain,0,x,y)
-draw_sprite(rspikechain,0,x,y-128)
-draw_sprite(rspikechain,0,x,y-256)
-draw_sprite(rspikechain,0,x,y-384)
-draw_sprite(rspikechain,0,x,y-512)
-draw_sprite(rspikechain,0,x,y-640)
-draw_sprite(rspikechain,0,x,y-768)
-draw_sprite(rspikechain,0,x,y-896)
-draw_sprite(rspikechain,0,x,y-1024)
-draw_sprite(rspikechain,0,x,y-1152)
-draw_sprite(rspikechain,0,x,y-1280)
-draw_sprite(rspikechain,0,x,y-1408)
-draw_sprite(rspikechain,0,x,y-1536)
-draw_sprite(rspikechain,0,x,y-1664)
-draw_sprite(rspikechain,0,x,y-1792)
-draw_sprite(rspikechain,0,x,y-1920)
-draw_sprite(rspikechain,0,x,y-2048)
+            <string>var width;
+width=sprite_get_width(rspikesmallchain)
 
+var a = collision_line(x,y,x,-128,o_lvl1block, false, false)
+var atrail=distance_to_object(a)/23+2;
+var dirr=point_direction(a.x,a.y,x,y)
+
+if (a != noone) 
+{
+if movable=0
+{
+for (loop=0; loop&lt;=atrail; loop+=1) 
+{
+draw_sprite_ext(rspikesmallchain,0,lengthdir_x(loop*-width,dirr)+x,lengthdir_y(loop*-width,dirr)+y,1,1,dirr,c_white,1)}
+}
+}
+
+var wd=point_direction(x,-64,x,y)
+
+if movable=1
+{
+for (loop=0; loop&lt;=60; loop+=1) {draw_sprite_ext(rspikesmallchain,0,lengthdir_x(loop*-width,wd)+x,lengthdir_y(loop*-width,wd)+y,1,1,wd,c_white,1)}
+}
+
+if movable=2
+{
+var spd=point_direction(spinner.x,spinner.y,x,y)
+for (loop=0; loop&lt;=trail; loop+=1) {draw_sprite_ext(rspikesmallchain,0,lengthdir_x(loop*-width,spd)+x,lengthdir_y(loop*-width,spd)+y,1,1,spd,c_white,1)}
+}
 
 draw_self();
+if bessmertie=1
+{
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,0.5)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.1,image_yscale*1.1,image_angle,c_white,0.25)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.2,image_yscale*1.2,image_angle,c_white,0.15)
+}
 draw_sprite_ext(rspikeeye,0,x,y,1,1,rot,c_white,1)
-if (rot&gt;=350 or rot&lt;10 or rot&gt;=170 and rot&lt;190) {draw_sprite(rspikeeyeup,8,x,y)}
-if (rot&gt;=10 and rot&lt;20 or rot&gt;=340 and rot&lt;350 or rot&gt;=190 and rot&lt;200 or rot&gt;=160 and rot&lt;170) {draw_sprite(rspikeeyeup,7,x,y)}
-if (rot&gt;=20 and rot&lt;30 or rot&gt;=330 and rot&lt;340 or rot&gt;=200 and rot&lt;210 or rot&gt;=150 and rot&lt;160) {draw_sprite(rspikeeyeup,6,x,y)}
-if (rot&gt;=30 and rot&lt;40 or rot&gt;=320 and rot&lt;330 or rot&gt;=210 and rot&lt;220 or rot&gt;=140 and rot&lt;150) {draw_sprite(rspikeeyeup,5,x,y)}
-if (rot&gt;=40 and rot&lt;50 or rot&gt;=310 and rot&lt;320 or rot&gt;=220 and rot&lt;230 or rot&gt;=130 and rot&lt;140) {draw_sprite(rspikeeyeup,4,x,y)}
-if (rot&gt;=50 and rot&lt;60 or rot&gt;=300 and rot&lt;310 or rot&gt;=230 and rot&lt;240 or rot&gt;=120 and rot&lt;130) {draw_sprite(rspikeeyeup,3,x,y)}
-if (rot&gt;=60 and rot&lt;70 or rot&gt;=290 and rot&lt;300 or rot&gt;=240 and rot&lt;250 or rot&gt;=110 and rot&lt;120) {draw_sprite(rspikeeyeup,2,x,y)}
-if (rot&gt;=70 and rot&lt;80 or rot&gt;=280 and rot&lt;290 or rot&gt;=250 and rot&lt;260 or rot&gt;=100 and rot&lt;110) {draw_sprite(rspikeeyeup,1,x,y)}
-if (rot&gt;=80 and rot&lt;90 or rot&gt;=270 and rot&lt;280 or rot&gt;=260 and rot&lt;270 or rot&gt;=90 and rot&lt;100) {draw_sprite(rspikeeyeup,0,x,y)}
+if (rot&gt;=350 or rot&lt;10 or rot&gt;=170 and rot&lt;190) {spikedeyeimage=8}
+if (rot&gt;=10 and rot&lt;20 or rot&gt;=340 and rot&lt;350 or rot&gt;=190 and rot&lt;200 or rot&gt;=160 and rot&lt;170) {spikedeyeimage=7}
+if (rot&gt;=20 and rot&lt;30 or rot&gt;=330 and rot&lt;340 or rot&gt;=200 and rot&lt;210 or rot&gt;=150 and rot&lt;160) {spikedeyeimage=6}
+if (rot&gt;=30 and rot&lt;40 or rot&gt;=320 and rot&lt;330 or rot&gt;=210 and rot&lt;220 or rot&gt;=140 and rot&lt;150) {spikedeyeimage=5}
+if (rot&gt;=40 and rot&lt;50 or rot&gt;=310 and rot&lt;320 or rot&gt;=220 and rot&lt;230 or rot&gt;=130 and rot&lt;140) {spikedeyeimage=4}
+if (rot&gt;=50 and rot&lt;60 or rot&gt;=300 and rot&lt;310 or rot&gt;=230 and rot&lt;240 or rot&gt;=120 and rot&lt;130) {spikedeyeimage=3}
+if (rot&gt;=60 and rot&lt;70 or rot&gt;=290 and rot&lt;300 or rot&gt;=240 and rot&lt;250 or rot&gt;=110 and rot&lt;120) {spikedeyeimage=2}
+if (rot&gt;=70 and rot&lt;80 or rot&gt;=280 and rot&lt;290 or rot&gt;=250 and rot&lt;260 or rot&gt;=100 and rot&lt;110) {spikedeyeimage=1}
+if (rot&gt;=80 and rot&lt;90 or rot&gt;=270 and rot&lt;280 or rot&gt;=260 and rot&lt;270 or rot&gt;=90 and rot&lt;100) {spikedeyeimage=0}
 
-
+draw_sprite_ext(rspikeeyeup,spikedeyeimage,x,y,1,1,0,c_white,1)
+if bessmertie=1{draw_sprite_ext(rspikeeyeup,spikedeyeimage,x,y,1,1,0,c_red,0.5)}
 </string>
           </argument>
         </arguments>

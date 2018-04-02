@@ -30,6 +30,7 @@ if type=0 {image_angle=random(360)}
 if type=1 {image_angle=0}
 gravity=0.5
 gravity_direction=270
+getrekt=false
 </string>
           </argument>
         </arguments>
@@ -79,6 +80,24 @@ gravity_direction=270
             <string>image_speed=0
 image_index=type
 if (type=1 or type=2) {image_angle=0}
+if global.goldenmagnet=false
+{
+gravity=0.5
+gravity_direction=270
+}
+else
+{
+if distance_to_object(player)&lt;256
+{
+gravity=-0.5
+gravity_direction=point_direction(player.x,player.y,x,y)
+}
+else
+{
+gravity=0.5
+gravity_direction=270
+}
+}
 </string>
           </argument>
         </arguments>
@@ -101,8 +120,39 @@ if (type=1 or type=2) {image_angle=0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if getrekt=false
+{
 move_bounce_solid(true)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="spikes_movable">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if getrekt=false
+{
+if (other.active=1 and other.start&gt;9 and other.start &lt; 16)
+{
+motion_add(other.image_angle,2.3)
+}
+}
 </string>
           </argument>
         </arguments>
@@ -125,7 +175,8 @@ move_bounce_solid(true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed/=2
+            <string>
+speed/=2
 if (speed&gt;2)
 {
 move_bounce_solid(true)
@@ -155,16 +206,6 @@ move_bounce_solid(true)
             <string>if type=0 
 {
 if global.coins&lt;99{global.coins+=1}
-//for(i=0;i&lt;360;i+=36)
-//{
-//a=instance_create(x,y,particle)
-//a.type=2;
-//a.image_xscale=choose(0.05,0.1,0.15)
-//a.image_yscale=a.image_xscale
-//a.speed=1+random(1)
-//a.direction=i
-//a.image_alpha=1.5
-//}
 a=instance_create(x,y,mparticles)
 a.type=4;
 }
@@ -197,6 +238,37 @@ a.type=5;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>col = make_color_rgb(255,215,0);
+if global.goldenmagnet=true
+{
+if distance_to_object(player)&lt;256
+{
+draw_sprite_ext(lightballsprite,0,x,y,0.6,0.6,image_angle,col,0.6)
+}
+}
+draw_self();
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

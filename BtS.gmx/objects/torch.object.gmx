@@ -3,7 +3,7 @@
   <spriteName>torches</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>5</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -117,6 +117,32 @@ part_emitter_clear(Starter_Depth6,Emitter15)
           <argument>
             <kind>1</kind>
             <string>part_particles_clear(Particle15)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+part_system_destroy(Starter_Depth6)
+part_particles_clear(Particle15)
+part_emitter_clear(Starter_Depth6,Emitter15)
 </string>
           </argument>
         </arguments>

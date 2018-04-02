@@ -55,30 +55,33 @@ yspeed = 0.0;
 xmaxspeed = global.movespeed;     
 ymaxspeed = 40.0;      
 weight = global.playergravity;         
-accel = 2.5;          
+accel = 2;          
 xfriction = 2.5;       
 jumpHeight = global.jumpheight;     
 
 maxDoubleJumps = 0;     
 availableJumps = 0;    
 canDoubleJump = false; 
-canWalljump = true;   
 
-isClimbing = false;   
 isJumping = false;     
-isDismounting = false; 
-
-aiming_max = 60;     
-dismount_max = 20;   
-landing_max = 2;    
-
-aiming = 0;            
-dismount = 0;          
+ 
+landing_max = 10;             
 landing = 0;         
 
 flashlight=0;
 t = 0;
+dontdrawarms=0;
 
+//xsc=1
+//ysc=1
+//drawxsc=0
+//drawysc=0
+
+hatscale=1
+
+canmove=true
+hatindex=0
+slidealpha=0
 </string>
           </argument>
         </arguments>
@@ -109,6 +112,8 @@ instance_create(x+0,y+0,chararm)
 eyeindex=0
 wingstimer=0
 eyehurt=0
+
+umbrella=false
 </string>
           </argument>
         </arguments>
@@ -129,110 +134,308 @@ eyehurt=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw memes
-ycor[0, 0] = -1; xcor[0, 0] = 0;
-ycor[0, 1] = 0; xcor[0, 1] = 0;
-ycor[0, 2] = +1; xcor[0, 2] = 0;
-ycor[0, 3] = 0; xcor[0, 3] = 0;
+            <string>///Draw Head
+if image_xscale&gt;0
+{
+ycor[0, 0] = -36; xcor[0, 0] = 0;
 
-ycor[1, 0] = -1; xcor[1, 0] = 0;
-ycor[1, 1] = 0; xcor[1, 1] = 0;
-ycor[1, 2] = +1; xcor[1, 2] = 0;
-ycor[1, 3] = 0; xcor[1, 3] = 0;
+ycor[1, 0] = -36; xcor[1, 0] = 0;
 
-ycor[2, 0] = +4; xcor[2, 0] = +4;
-ycor[2, 1] = +5; xcor[2, 1] = +4;
-ycor[2, 2] = +6; xcor[2, 2] = +4;
-ycor[2, 3] = +5; xcor[2, 3] = +4;
-ycor[2, 4] = +4; xcor[2, 4] = +4;
-ycor[2, 5] = +3; xcor[2, 5] = +4;
-ycor[2, 6] = +2; xcor[2, 6] = +4;
-ycor[2, 7] = +3; xcor[2, 7] = +4;
-ycor[2, 8] = +4; xcor[2, 8] = +4;
-ycor[2, 9] = +5; xcor[2, 9] = +4;
-ycor[2, 10] = +6; xcor[2, 10] = +4;
-ycor[2, 11] = +5; xcor[2, 11] = +4;
-ycor[2, 12] = +4; xcor[2, 12] = +4;
-ycor[2, 13] = +3; xcor[2, 13] = +4;
-ycor[2, 14] = +2; xcor[2, 14] = +4;
-ycor[2, 15] = +3; xcor[2, 15] = +4;
+ycor[2, 0] = -33; xcor[2, 0] = +5;
+ycor[2, 1] = -33; xcor[2, 1] = +5;
+ycor[2, 2] = -33; xcor[2, 2] = +5;
+ycor[2, 3] = -34; xcor[2, 3] = +5;
+ycor[2, 4] = -35; xcor[2, 4] = +5;
+ycor[2, 5] = -36; xcor[2, 5] = +5;
+ycor[2, 6] = -35; xcor[2, 6] = +5;
+ycor[2, 7] = -34; xcor[2, 7] = +5;
+ycor[2, 8] = -33; xcor[2, 8] = +5;
+ycor[2, 9] = -33; xcor[2, 9] = +5;
+ycor[2, 10] = -33; xcor[2, 10] = +5;
+ycor[2, 11] = -34; xcor[2, 11] = +5;
+ycor[2, 12] = -35; xcor[2, 12] = +5;
+ycor[2, 13] = -36; xcor[2, 13] = +5;
+ycor[2, 14] = -35; xcor[2, 14] = +5;
+ycor[2, 15] = -34; xcor[2, 15] = +5;
 
-ycor[3, 0] = +4; xcor[3, 0] = +4;
-ycor[3, 1] = +5; xcor[3, 1] = +4;
-ycor[3, 2] = +6; xcor[3, 2] = +4;
-ycor[3, 3] = +5; xcor[3, 3] = +4;
-ycor[3, 4] = +4; xcor[3, 4] = +4;
-ycor[3, 5] = +3; xcor[3, 5] = +4;
-ycor[3, 6] = +2; xcor[3, 6] = +4;
-ycor[3, 7] = +3; xcor[3, 7] = +4;
-ycor[3, 8] = +4; xcor[3, 8] = +4;
-ycor[3, 9] = +5; xcor[3, 9] = +4;
-ycor[3, 10] = +6; xcor[3, 10] = +4;
-ycor[3, 11] = +5; xcor[3, 11] = +4;
-ycor[3, 12] = +4; xcor[3, 12] = +4;
-ycor[3, 13] = +3; xcor[3, 13] = +4;
-ycor[3, 14] = +2; xcor[3, 14] = +4;
-ycor[3, 15] = +3; xcor[3, 15] = +4;
+ycor[3, 0] = -33; xcor[3, 0] = +5;
+ycor[3, 1] = -33; xcor[3, 1] = +5;
+ycor[3, 2] = -33; xcor[3, 2] = +5;
+ycor[3, 3] = -34; xcor[3, 3] = +5;
+ycor[3, 4] = -35; xcor[3, 4] = +5;
+ycor[3, 5] = -36; xcor[3, 5] = +5;
+ycor[3, 6] = -35; xcor[3, 6] = +5;
+ycor[3, 7] = -34; xcor[3, 7] = +5;
+ycor[3, 8] = -33; xcor[3, 8] = +5;
+ycor[3, 9] = -33; xcor[3, 9] = +5;
+ycor[3, 10] = -33; xcor[3, 10] = +5;
+ycor[3, 11] = -34; xcor[3, 11] = +5;
+ycor[3, 12] = -35; xcor[3, 12] = +5;
+ycor[3, 13] = -36; xcor[3, 13] = +5;
+ycor[3, 14] = -35; xcor[3, 14] = +5;
+ycor[3, 15] = -34; xcor[3, 15] = +5;
 
-ycor[4, 0] = -18; xcor[4, 0] = +4;
-ycor[4, 1] = -13; xcor[4, 1] = +4;
-ycor[4, 2] = -12; xcor[4, 2] = +4;
+ycor[4, 0] = -40; xcor[4, 0] = +0;
+ycor[4, 1] = -40; xcor[4, 1] = +0;
+ycor[4, 2] = -40; xcor[4, 2] = +0;
+ycor[4, 3] = -40; xcor[4, 3] = +0;
+ycor[4, 4] = -40; xcor[4, 4] = +0;
+ycor[4, 5] = -40; xcor[4, 5] = +0;
+ycor[4, 6] = -40; xcor[4, 6] = +0;
 
-ycor[5, 0] = -18; xcor[5, 0] = +4;
-ycor[5, 1] = -13; xcor[5, 1] = +4;
-ycor[5, 2] = -12; xcor[5, 2] = +4;
+ycor[5, 0] = -40; xcor[5, 0] = +0;
+ycor[5, 1] = -40; xcor[5, 1] = +0;
+ycor[5, 2] = -40; xcor[5, 2] = +0;
+ycor[5, 3] = -40; xcor[5, 3] = +0;
+ycor[5, 4] = -40; xcor[5, 4] = +0;
+ycor[5, 5] = -40; xcor[5, 5] = +0;
+ycor[5, 6] = -40; xcor[5, 6] = +0;
 
-ycor[6, 0] = -1; xcor[6, 0] = 0;
-ycor[6, 1] = 0; xcor[6, 1] = 0;
-ycor[6, 2] = +1; xcor[6, 2] = 0;
-ycor[6, 3] = 0; xcor[6, 3] = 0;
+ycor[6, 0] = -36; xcor[6, 0] = 0;
+ycor[6, 1] = -36; xcor[6, 1] = 0;
+ycor[6, 2] = -36; xcor[6, 2] = 0;
+ycor[6, 3] = -37; xcor[6, 3] = 0;
+ycor[6, 4] = -37; xcor[6, 4] = 0;
+ycor[6, 5] = -37; xcor[6, 5] = 0;
+ycor[6, 6] = -37; xcor[6, 6] = 0;
+ycor[6, 7] = -37; xcor[6, 7] = 0;
+ycor[6, 8] = -37; xcor[6, 8] = 0;
+ycor[6, 9] = -37; xcor[6, 9] = 0;
+ycor[6, 10] = -37; xcor[6, 10] = 0;
+ycor[6, 11] = -36; xcor[6, 11] = 0;
+ycor[6, 12] = -36; xcor[6, 12] = 0;
 
-ycor[7, 0] = -1; xcor[7, 0] = 0;
-ycor[7, 1] = 0; xcor[7, 1] = 0;
-ycor[7, 2] = +1; xcor[7, 2] = 0;
-ycor[7, 3] = 0; xcor[7, 3] = 0;
+ycor[7, 0] = -36; xcor[7, 0] = 0;
 
-ycor[8, 0] = +4; xcor[8, 0] = -4;
-ycor[8, 1] = +5; xcor[8, 1] = -4;
-ycor[8, 2] = +6; xcor[8, 2] = -4;
-ycor[8, 3] = +5; xcor[8, 3] = -4;
-ycor[8, 4] = +4; xcor[8, 4] = -4;
-ycor[8, 5] = +3; xcor[8, 5] = -4;
-ycor[8, 6] = +2; xcor[8, 6] = -4;
-ycor[8, 7] = +3; xcor[8, 7] = -4;
-ycor[8, 8] = +4; xcor[8, 8] = -4;
-ycor[8, 9] = +5; xcor[8, 9] = -4;
-ycor[8, 10] = +6; xcor[8, 10] = -4;
-ycor[8, 11] = +5; xcor[8, 11] = -4;
-ycor[8, 12] = +4; xcor[8, 12] = -4;
-ycor[8, 13] = +3; xcor[8, 13] = -4;
-ycor[8, 14] = +2; xcor[8, 14] = -4;
-ycor[8, 15] = +3; xcor[8, 15] = -4;
+ycor[8, 0] = -33; xcor[8, 0] = +5;
+ycor[8, 1] = -33; xcor[8, 1] = +5;
+ycor[8, 2] = -33; xcor[8, 2] = +5;
+ycor[8, 3] = -34; xcor[8, 3] = +5;
+ycor[8, 4] = -35; xcor[8, 4] = +5;
+ycor[8, 5] = -36; xcor[8, 5] = +5;
+ycor[8, 6] = -35; xcor[8, 6] = +5;
+ycor[8, 7] = -34; xcor[8, 7] = +5;
+ycor[8, 8] = -33; xcor[8, 8] = +5;
+ycor[8, 9] = -33; xcor[8, 9] = +5;
+ycor[8, 10] = -33; xcor[8, 10] = +5;
+ycor[8, 11] = -34; xcor[8, 11] = +5;
+ycor[8, 12] = -35; xcor[8, 12] = +5;
+ycor[8, 13] = -36; xcor[8, 13] = +5;
+ycor[8, 14] = -35; xcor[8, 14] = +5;
+ycor[8, 15] = -34; xcor[8, 15] = +5;
 
-ycor[9, 0] = +4; xcor[9, 0] = -4;
-ycor[9, 1] = +5; xcor[9, 1] = -4;
-ycor[9, 2] = +6; xcor[9, 2] = -4;
-ycor[9, 3] = +5; xcor[9, 3] = -4;
-ycor[9, 4] = +4; xcor[9, 4] = -4;
-ycor[9, 5] = +3; xcor[9, 5] = -4;
-ycor[9, 6] = +2; xcor[9, 6] = -4;
-ycor[9, 7] = +3; xcor[9, 7] = -4;
-ycor[9, 8] = +4; xcor[9, 8] = -4;
-ycor[9, 9] = +5; xcor[9, 9] = -4;
-ycor[9, 10] = +6; xcor[9, 10] = -4;
-ycor[9, 11] = +5; xcor[9, 11] = -4;
-ycor[9, 12] = +4; xcor[9, 12] = -4;
-ycor[9, 13] = +3; xcor[9, 13] = -4;
-ycor[9, 14] = +2; xcor[9, 14] = -4;
-ycor[9, 15] = +3; xcor[9, 15] = -4;
+ycor[9, 0] = -40; xcor[9, 0] = +0;
+ycor[9, 1] = -40; xcor[9, 1] = +0;
+ycor[9, 2] = -40; xcor[9, 2] = +0;
+ycor[9, 3] = -40; xcor[9, 3] = +0;
+ycor[9, 4] = -40; xcor[9, 4] = +0;
+ycor[9, 5] = -40; xcor[9, 5] = +0;
+ycor[9, 6] = -40; xcor[9, 6] = +0;
+}
 
-ycor[10, 0] = -18; xcor[10, 0] = -4;
-ycor[10, 1] = -13; xcor[10, 1] = -4;
-ycor[10, 2] = -12; xcor[10, 2] = -4;
 
-ycor[11, 0] = -18; xcor[11, 0] = -4;
-ycor[11, 1] = -13; xcor[11, 1] = -4;
-ycor[11, 2] = -12; xcor[11, 2] = -4;
+if image_xscale&lt;0
+{
+ycor[0, 0] = -36; xcor[0, 0] = 0;
+
+ycor[1, 0] = -36; xcor[1, 0] = 0;
+
+ycor[2, 0] = -33; xcor[2, 0] = -5;
+ycor[2, 1] = -33; xcor[2, 1] = -5;
+ycor[2, 2] = -33; xcor[2, 2] = -5;
+ycor[2, 3] = -34; xcor[2, 3] = -5;
+ycor[2, 4] = -35; xcor[2, 4] = -5;
+ycor[2, 5] = -36; xcor[2, 5] = -5;
+ycor[2, 6] = -35; xcor[2, 6] = -5;
+ycor[2, 7] = -34; xcor[2, 7] = -5;
+ycor[2, 8] = -33; xcor[2, 8] = -5;
+ycor[2, 9] = -33; xcor[2, 9] = -5;
+ycor[2, 10] = -33; xcor[2, 10] = -5;
+ycor[2, 11] = -34; xcor[2, 11] = -5;
+ycor[2, 12] = -35; xcor[2, 12] = -5;
+ycor[2, 13] = -36; xcor[2, 13] = -5;
+ycor[2, 14] = -35; xcor[2, 14] = -5;
+ycor[2, 15] = -34; xcor[2, 15] = -5;
+
+ycor[3, 0] = -33; xcor[3, 0] = -5;
+ycor[3, 1] = -33; xcor[3, 1] = -5;
+ycor[3, 2] = -33; xcor[3, 2] = -5;
+ycor[3, 3] = -34; xcor[3, 3] = -5;
+ycor[3, 4] = -35; xcor[3, 4] = -5;
+ycor[3, 5] = -36; xcor[3, 5] = -5;
+ycor[3, 6] = -35; xcor[3, 6] = -5;
+ycor[3, 7] = -34; xcor[3, 7] = -5;
+ycor[3, 8] = -33; xcor[3, 8] = -5;
+ycor[3, 9] = -33; xcor[3, 9] = -5;
+ycor[3, 10] = -33; xcor[3, 10] = -5;
+ycor[3, 11] = -34; xcor[3, 11] = -5;
+ycor[3, 12] = -35; xcor[3, 12] = -5;
+ycor[3, 13] = -36; xcor[3, 13] = -5;
+ycor[3, 14] = -35; xcor[3, 14] = -5;
+ycor[3, 15] = -34; xcor[3, 15] = -5;
+
+ycor[4, 0] = -40; xcor[4, 0] = +0;
+ycor[4, 1] = -40; xcor[4, 1] = +0;
+ycor[4, 2] = -40; xcor[4, 2] = +0;
+ycor[4, 3] = -40; xcor[4, 3] = +0;
+ycor[4, 4] = -40; xcor[4, 4] = +0;
+ycor[4, 5] = -40; xcor[4, 5] = +0;
+ycor[4, 6] = -40; xcor[4, 6] = +0;
+
+ycor[5, 0] = -40; xcor[5, 0] = +0;
+ycor[5, 1] = -40; xcor[5, 1] = +0;
+ycor[5, 2] = -40; xcor[5, 2] = +0;
+ycor[5, 3] = -40; xcor[5, 3] = +0;
+ycor[5, 4] = -40; xcor[5, 4] = +0;
+ycor[5, 5] = -40; xcor[5, 5] = +0;
+ycor[5, 6] = -40; xcor[5, 6] = +0;
+
+ycor[6, 0] = -36; xcor[6, 0] = 0;
+ycor[6, 1] = -36; xcor[6, 1] = 0;
+ycor[6, 2] = -36; xcor[6, 2] = 0;
+ycor[6, 3] = -37; xcor[6, 3] = 0;
+ycor[6, 4] = -37; xcor[6, 4] = 0;
+ycor[6, 5] = -37; xcor[6, 5] = 0;
+ycor[6, 6] = -37; xcor[6, 6] = 0;
+ycor[6, 7] = -37; xcor[6, 7] = 0;
+ycor[6, 8] = -37; xcor[6, 8] = 0;
+ycor[6, 9] = -37; xcor[6, 9] = 0;
+ycor[6, 10] = -37; xcor[6, 10] = 0;
+ycor[6, 11] = -36; xcor[6, 11] = 0;
+ycor[6, 12] = -36; xcor[6, 12] = 0;
+
+ycor[7, 0] = -36; xcor[7, 0] = 0;
+
+ycor[8, 0] = -33; xcor[8, 0] = -5;
+ycor[8, 1] = -33; xcor[8, 1] = -5;
+ycor[8, 2] = -33; xcor[8, 2] = -5;
+ycor[8, 3] = -34; xcor[8, 3] = -5;
+ycor[8, 4] = -35; xcor[8, 4] = -5;
+ycor[8, 5] = -36; xcor[8, 5] = -5;
+ycor[8, 6] = -35; xcor[8, 6] = -5;
+ycor[8, 7] = -34; xcor[8, 7] = -5;
+ycor[8, 8] = -33; xcor[8, 8] = -5;
+ycor[8, 9] = -33; xcor[8, 9] = -5;
+ycor[8, 10] = -33; xcor[8, 10] = -5;
+ycor[8, 11] = -34; xcor[8, 11] = -5;
+ycor[8, 12] = -35; xcor[8, 12] = -5;
+ycor[8, 13] = -36; xcor[8, 13] = -5;
+ycor[8, 14] = -35; xcor[8, 14] = -5;
+ycor[8, 15] = -34; xcor[8, 15] = -5;
+
+ycor[9, 0] = -40; xcor[9, 0] = +0;
+ycor[9, 1] = -40; xcor[9, 1] = +0;
+ycor[9, 2] = -40; xcor[9, 2] = +0;
+ycor[9, 3] = -40; xcor[9, 3] = +0;
+ycor[9, 4] = -40; xcor[9, 4] = +0;
+ycor[9, 5] = -40; xcor[9, 5] = +0;
+ycor[9, 6] = -40; xcor[9, 6] = +0;
+}
+spanim=0
+k1=0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Room Loader
+
+globalvar myRooms;
+myRooms = ds_list_create();
+ds_list_add(myRooms,l1_2);
+ds_list_add(myRooms,l1_3);
+ds_list_add(myRooms,l1_4);
+ds_list_add(myRooms,l1_5);
+ds_list_add(myRooms,l1_6);
+ds_list_add(myRooms,l1_7);
+ds_list_add(myRooms,l1_8);
+ds_list_add(myRooms,l1_9);
+ds_list_add(myRooms,l1_10);
+ds_list_add(myRooms,l1_11);
+ds_list_add(myRooms,l1_12);
+ds_list_add(myRooms,l1_13);
+ds_list_add(myRooms,l1_14);
+ds_list_add(myRooms,l1_15);
+ds_list_add(myRooms,l1_16);
+ds_list_add(myRooms,l1_17);
+ds_list_add(myRooms,l1_18);
+ds_list_add(myRooms,l1_19);
+ds_list_add(myRooms,l1_20);
+ds_list_add(myRooms,l1_21);
+ds_list_add(myRooms,l1_22);
+ds_list_add(myRooms,l1_23);
+ds_list_add(myRooms,l1_24);
+ds_list_add(myRooms,l1_25);
+ds_list_add(myRooms,l1_26);
+ds_list_add(myRooms,l1_27);
+ds_list_add(myRooms,l1_28);
+ds_list_add(myRooms,l1_29);
+ds_list_add(myRooms,l1_30);
+ds_list_add(myRooms,l1_spotlight_1);
+ds_list_add(myRooms,l1_spotlight_2);
+ds_list_add(myRooms,l1_spotlight_3);
+ds_list_add(myRooms,l1_31);
+ds_list_add(myRooms,l1_32);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>108</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_friction</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>spanim=0; image_index=0; eyehurt=0
+
 </string>
           </argument>
         </arguments>
@@ -285,249 +488,6 @@ bessmertie=0;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>flashlight</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Image Handling
-
-// Draw the appropriate sprites:
-if ((place_meeting(x, y+1, o_blockparent))) {
-  if (xspeed == 0) {
-    // Idle.
-    sprite_index = luna_stay;
-
-  }
-  else {
-    // Running.
-    if (sign(xspeed) == sign(dir)) {
-      sprite_index = luna_run;
-    }
-    // Skidding.
-    else {
-      sprite_index = luna_stay;
-    }
-  }
-}
-else {
-  // Jumping.
-  sprite_index = luna_jump;
-  if (yspeed&lt;-7) { image_index = 0; }
-  if (yspeed&lt;-4 and yspeed&gt;=-7) { image_index = 1; }
-  if (yspeed&lt;-2 and yspeed&gt;=-4) { image_index = 2; }
-  if (abs(yspeed) &lt; 2) { image_index = 3; }
-  if (yspeed&gt;2 and yspeed&lt;=4) { image_index = 4; }
-  if (yspeed&gt;4 and yspeed&lt;=7) { image_index = 5; }
-  if (yspeed&gt;7 ) { image_index = 6; }
-}
-// Landing.
-if (landing &gt; 0) {
-  landing -= 1;
-  sprite_index = luna_stay;
-}
-
-// Configure image speeds.
-image_speed = 0.5;
-
-if (sprite_index == luna_run) {
-  image_speed = 0.4;
-}
-
-if (sprite_index == luna_stay) {
-  image_speed = 0.05;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Image Handling
-
-// Draw the appropriate sprites:
-if ((place_meeting(x, y+1, o_blockparent))) {
-  if (xspeed == 0) {
-    // Idle.
-    sprite_index = luna_stay_a;
-  }
-  else {
-    // Running.
-    if (sign(xspeed) == sign(dir)) {
-      sprite_index = luna_run_a;
-    }
-    // Skidding.
-    else {
-      sprite_index = luna_stay_a;
-
-    }
-  }
-}
-else {
-  // Jumping.
-  sprite_index = luna_jump_a;
-  if (yspeed&lt;-7) { image_index = 0; }
-  if (yspeed&lt;-4 and yspeed&gt;=-7) { image_index = 1; }
-  if (yspeed&lt;-2 and yspeed&gt;=-4) { image_index = 2; }
-  if (abs(yspeed) &lt; 2) { image_index = 3; }
-  if (yspeed&gt;2 and yspeed&lt;=4) { image_index = 4; }
-  if (yspeed&gt;4 and yspeed&lt;=7) { image_index = 5; }
-  if (yspeed&gt;7 ) { image_index = 6; }
-}
-// Landing.
-if (landing &gt; 0) {
-  landing -= 1;
-  sprite_index = luna_stay_a;
-
-}
-
-// Configure image speeds.
-image_speed = 0.5;
-
-if (sprite_index == luna_run_a) {
-  image_speed = 0.4;
-}
-
-if (sprite_index == luna_stay_a) {
-  image_speed = 0.05;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Destroy objects
-
-instance_deactivate_all(true);
-instance_activate_object(control);
-instance_activate_object(superview);
-instance_activate_object(background1);
-instance_activate_object(particles);
-instance_activate_object(torch);
-instance_activate_object(fountain);
-instance_activate_object(backtree);
-instance_activate_object(lightballpar);
-instance_activate_object(parbullet);
-instance_activate_object(background1);
-instance_activate_region(view_xview-196,view_yview-196,view_wview+260,view_hview+260,1); 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -548,109 +508,199 @@ instance_activate_region(view_xview-196,view_yview-196,view_wview+260,view_hview
             <string>///Draw Head
 if image_xscale&gt;0
 {
-ycor[0, 0] = -1; xcor[0, 0] = 0;
+ycor[0, 0] = -36; xcor[0, 0] = 0;
 
-ycor[1, 0] = -1; xcor[1, 0] = 0;
+ycor[1, 0] = -36; xcor[1, 0] = 0;
 
-ycor[2, 0] = +3; xcor[2, 0] = +4;
-ycor[2, 1] = +3; xcor[2, 1] = +4;
-ycor[2, 2] = +3; xcor[2, 2] = +4;
-ycor[2, 3] = +2; xcor[2, 3] = +4;
-ycor[2, 4] = +1; xcor[2, 4] = +4;
-ycor[2, 5] = 0; xcor[2, 5] = +4;
-ycor[2, 6] = +1; xcor[2, 6] = +4;
-ycor[2, 7] = +2; xcor[2, 7] = +4;
-ycor[2, 8] = +3; xcor[2, 8] = +4;
-ycor[2, 9] = +3; xcor[2, 9] = +4;
-ycor[2, 10] = +3; xcor[2, 10] = +4;
-ycor[2, 11] = +2; xcor[2, 11] = +4;
-ycor[2, 12] = +1; xcor[2, 12] = +4;
-ycor[2, 13] = 0; xcor[2, 13] = +4;
-ycor[2, 14] = +1; xcor[2, 14] = +4;
-ycor[2, 15] = +2; xcor[2, 15] = +4;
+ycor[2, 0] = -33; xcor[2, 0] = +5;
+ycor[2, 1] = -33; xcor[2, 1] = +5;
+ycor[2, 2] = -33; xcor[2, 2] = +5;
+ycor[2, 3] = -34; xcor[2, 3] = +5;
+ycor[2, 4] = -35; xcor[2, 4] = +5;
+ycor[2, 5] = -36; xcor[2, 5] = +5;
+ycor[2, 6] = -35; xcor[2, 6] = +5;
+ycor[2, 7] = -34; xcor[2, 7] = +5;
+ycor[2, 8] = -33; xcor[2, 8] = +5;
+ycor[2, 9] = -33; xcor[2, 9] = +5;
+ycor[2, 10] = -33; xcor[2, 10] = +5;
+ycor[2, 11] = -34; xcor[2, 11] = +5;
+ycor[2, 12] = -35; xcor[2, 12] = +5;
+ycor[2, 13] = -36; xcor[2, 13] = +5;
+ycor[2, 14] = -35; xcor[2, 14] = +5;
+ycor[2, 15] = -34; xcor[2, 15] = +5;
 
-ycor[3, 0] = +3; xcor[3, 0] = +4;
-ycor[3, 1] = +3; xcor[3, 1] = +4;
-ycor[3, 2] = +3; xcor[3, 2] = +4;
-ycor[3, 3] = +2; xcor[3, 3] = +4;
-ycor[3, 4] = +1; xcor[3, 4] = +4;
-ycor[3, 5] = 0; xcor[3, 5] = +4;
-ycor[3, 6] = +1; xcor[3, 6] = +4;
-ycor[3, 7] = +2; xcor[3, 7] = +4;
-ycor[3, 8] = +3; xcor[3, 8] = +4;
-ycor[3, 9] = +3; xcor[3, 9] = +4;
-ycor[3, 10] = +3; xcor[3, 10] = +4;
-ycor[3, 11] = +2; xcor[3, 11] = +4;
-ycor[3, 12] = +1; xcor[3, 12] = +4;
-ycor[3, 13] = 0; xcor[3, 13] = +4;
-ycor[3, 14] = +1; xcor[3, 14] = +4;
-ycor[3, 15] = +2; xcor[3, 15] = +4;
+ycor[3, 0] = -33; xcor[3, 0] = +5;
+ycor[3, 1] = -33; xcor[3, 1] = +5;
+ycor[3, 2] = -33; xcor[3, 2] = +5;
+ycor[3, 3] = -34; xcor[3, 3] = +5;
+ycor[3, 4] = -35; xcor[3, 4] = +5;
+ycor[3, 5] = -36; xcor[3, 5] = +5;
+ycor[3, 6] = -35; xcor[3, 6] = +5;
+ycor[3, 7] = -34; xcor[3, 7] = +5;
+ycor[3, 8] = -33; xcor[3, 8] = +5;
+ycor[3, 9] = -33; xcor[3, 9] = +5;
+ycor[3, 10] = -33; xcor[3, 10] = +5;
+ycor[3, 11] = -34; xcor[3, 11] = +5;
+ycor[3, 12] = -35; xcor[3, 12] = +5;
+ycor[3, 13] = -36; xcor[3, 13] = +5;
+ycor[3, 14] = -35; xcor[3, 14] = +5;
+ycor[3, 15] = -34; xcor[3, 15] = +5;
 
-ycor[4, 0] = -5; xcor[4, 0] = +0;
-ycor[4, 1] = -5; xcor[4, 1] = +0;
-ycor[4, 2] = -5; xcor[4, 2] = +0;
-ycor[4, 3] = -5; xcor[4, 3] = +0;
-ycor[4, 4] = -5; xcor[4, 4] = +0;
-ycor[4, 5] = -5; xcor[4, 5] = +0;
-ycor[4, 6] = -5; xcor[4, 6] = +0;
+ycor[4, 0] = -40; xcor[4, 0] = +0;
+ycor[4, 1] = -40; xcor[4, 1] = +0;
+ycor[4, 2] = -40; xcor[4, 2] = +0;
+ycor[4, 3] = -40; xcor[4, 3] = +0;
+ycor[4, 4] = -40; xcor[4, 4] = +0;
+ycor[4, 5] = -40; xcor[4, 5] = +0;
+ycor[4, 6] = -40; xcor[4, 6] = +0;
 
-ycor[5, 0] = -5; xcor[5, 0] = +0;
-ycor[5, 1] = -5; xcor[5, 1] = +0;
-ycor[5, 2] = -5; xcor[5, 2] = +0;
-ycor[5, 3] = -5; xcor[5, 3] = +0;
-ycor[5, 4] = -5; xcor[5, 4] = +0;
-ycor[5, 5] = -5; xcor[5, 5] = +0;
-ycor[5, 6] = -5; xcor[5, 6] = +0;
+ycor[5, 0] = -40; xcor[5, 0] = +0;
+ycor[5, 1] = -40; xcor[5, 1] = +0;
+ycor[5, 2] = -40; xcor[5, 2] = +0;
+ycor[5, 3] = -40; xcor[5, 3] = +0;
+ycor[5, 4] = -40; xcor[5, 4] = +0;
+ycor[5, 5] = -40; xcor[5, 5] = +0;
+ycor[5, 6] = -40; xcor[5, 6] = +0;
+
+ycor[6, 0] = -36; xcor[6, 0] = 0;
+ycor[6, 1] = -36; xcor[6, 1] = 0;
+ycor[6, 2] = -36; xcor[6, 2] = 0;
+ycor[6, 3] = -37; xcor[6, 3] = 0;
+ycor[6, 4] = -37; xcor[6, 4] = 0;
+ycor[6, 5] = -37; xcor[6, 5] = 0;
+ycor[6, 6] = -37; xcor[6, 6] = 0;
+ycor[6, 7] = -37; xcor[6, 7] = 0;
+ycor[6, 8] = -37; xcor[6, 8] = 0;
+ycor[6, 9] = -37; xcor[6, 9] = 0;
+ycor[6, 10] = -37; xcor[6, 10] = 0;
+ycor[6, 11] = -36; xcor[6, 11] = 0;
+ycor[6, 12] = -36; xcor[6, 12] = 0;
+
+ycor[7, 0] = -36; xcor[7, 0] = 0;
+
+ycor[8, 0] = -33; xcor[8, 0] = +5;
+ycor[8, 1] = -33; xcor[8, 1] = +5;
+ycor[8, 2] = -33; xcor[8, 2] = +5;
+ycor[8, 3] = -34; xcor[8, 3] = +5;
+ycor[8, 4] = -35; xcor[8, 4] = +5;
+ycor[8, 5] = -36; xcor[8, 5] = +5;
+ycor[8, 6] = -35; xcor[8, 6] = +5;
+ycor[8, 7] = -34; xcor[8, 7] = +5;
+ycor[8, 8] = -33; xcor[8, 8] = +5;
+ycor[8, 9] = -33; xcor[8, 9] = +5;
+ycor[8, 10] = -33; xcor[8, 10] = +5;
+ycor[8, 11] = -34; xcor[8, 11] = +5;
+ycor[8, 12] = -35; xcor[8, 12] = +5;
+ycor[8, 13] = -36; xcor[8, 13] = +5;
+ycor[8, 14] = -35; xcor[8, 14] = +5;
+ycor[8, 15] = -34; xcor[8, 15] = +5;
+
+ycor[9, 0] = -40; xcor[9, 0] = +0;
+ycor[9, 1] = -40; xcor[9, 1] = +0;
+ycor[9, 2] = -40; xcor[9, 2] = +0;
+ycor[9, 3] = -40; xcor[9, 3] = +0;
+ycor[9, 4] = -40; xcor[9, 4] = +0;
+ycor[9, 5] = -40; xcor[9, 5] = +0;
+ycor[9, 6] = -40; xcor[9, 6] = +0;
 }
 
 
 if image_xscale&lt;0
 {
-ycor[0, 0] = -1; xcor[0, 0] = 0;
+ycor[0, 0] = -36; xcor[0, 0] = 0;
 
-ycor[1, 0] = -1; xcor[1, 0] = 0;
+ycor[1, 0] = -36; xcor[1, 0] = 0;
 
-ycor[2, 0] = +3; xcor[2, 0] = -4;
-ycor[2, 1] = +3; xcor[2, 1] = -4;
-ycor[2, 2] = +3; xcor[2, 2] = -4;
-ycor[2, 3] = +2; xcor[2, 3] = -4;
-ycor[2, 4] = +1; xcor[2, 4] = -4;
-ycor[2, 5] = 0; xcor[2, 5] = -4;
-ycor[2, 6] = +1; xcor[2, 6] = -4;
-ycor[2, 7] = +2; xcor[2, 7] = -4;
-ycor[2, 8] = +3; xcor[2, 8] = -4;
-ycor[2, 9] = +3; xcor[2, 9] = -4;
-ycor[2, 10] = +3; xcor[2, 10] = -4;
-ycor[2, 11] = +2; xcor[2, 11] = -4;
-ycor[2, 12] = +1; xcor[2, 12] = -4;
-ycor[2, 13] = 0; xcor[2, 13] = -4;
-ycor[2, 14] = +1; xcor[2, 14] = -4;
-ycor[2, 15] = +2; xcor[2, 15] = -4;
+ycor[2, 0] = -33; xcor[2, 0] = -5;
+ycor[2, 1] = -33; xcor[2, 1] = -5;
+ycor[2, 2] = -33; xcor[2, 2] = -5;
+ycor[2, 3] = -34; xcor[2, 3] = -5;
+ycor[2, 4] = -35; xcor[2, 4] = -5;
+ycor[2, 5] = -36; xcor[2, 5] = -5;
+ycor[2, 6] = -35; xcor[2, 6] = -5;
+ycor[2, 7] = -34; xcor[2, 7] = -5;
+ycor[2, 8] = -33; xcor[2, 8] = -5;
+ycor[2, 9] = -33; xcor[2, 9] = -5;
+ycor[2, 10] = -33; xcor[2, 10] = -5;
+ycor[2, 11] = -34; xcor[2, 11] = -5;
+ycor[2, 12] = -35; xcor[2, 12] = -5;
+ycor[2, 13] = -36; xcor[2, 13] = -5;
+ycor[2, 14] = -35; xcor[2, 14] = -5;
+ycor[2, 15] = -34; xcor[2, 15] = -5;
 
-ycor[3, 0] = +3; xcor[3, 0] = -4;
-ycor[3, 1] = +3; xcor[3, 1] = -4;
-ycor[3, 2] = +3; xcor[3, 2] = -4;
-ycor[3, 3] = +2; xcor[3, 3] = -4;
-ycor[3, 4] = +1; xcor[3, 4] = -4;
-ycor[3, 5] = 0; xcor[3, 5] = -4;
-ycor[3, 6] = +1; xcor[3, 6] = -4;
-ycor[3, 7] = +2; xcor[3, 7] = -4;
-ycor[3, 8] = +3; xcor[3, 8] = -4;
-ycor[3, 9] = +3; xcor[3, 9] = -4;
-ycor[3, 10] = +3; xcor[3, 10] = -4;
-ycor[3, 11] = +2; xcor[3, 11] = -4;
-ycor[3, 12] = +1; xcor[3, 12] = -4;
-ycor[3, 13] = 0; xcor[3, 13] = -4;
-ycor[3, 14] = +1; xcor[3, 14] = -4;
-ycor[3, 15] = +2; xcor[3, 15] = -4;
+ycor[3, 0] = -33; xcor[3, 0] = -5;
+ycor[3, 1] = -33; xcor[3, 1] = -5;
+ycor[3, 2] = -33; xcor[3, 2] = -5;
+ycor[3, 3] = -34; xcor[3, 3] = -5;
+ycor[3, 4] = -35; xcor[3, 4] = -5;
+ycor[3, 5] = -36; xcor[3, 5] = -5;
+ycor[3, 6] = -35; xcor[3, 6] = -5;
+ycor[3, 7] = -34; xcor[3, 7] = -5;
+ycor[3, 8] = -33; xcor[3, 8] = -5;
+ycor[3, 9] = -33; xcor[3, 9] = -5;
+ycor[3, 10] = -33; xcor[3, 10] = -5;
+ycor[3, 11] = -34; xcor[3, 11] = -5;
+ycor[3, 12] = -35; xcor[3, 12] = -5;
+ycor[3, 13] = -36; xcor[3, 13] = -5;
+ycor[3, 14] = -35; xcor[3, 14] = -5;
+ycor[3, 15] = -34; xcor[3, 15] = -5;
 
-ycor[4, 0] = -6; xcor[4, 0] = +0;
-ycor[4, 1] = -5; xcor[4, 1] = +0;
-ycor[4, 2] = -3; xcor[4, 2] = +0;
+ycor[4, 0] = -40; xcor[4, 0] = +0;
+ycor[4, 1] = -40; xcor[4, 1] = +0;
+ycor[4, 2] = -40; xcor[4, 2] = +0;
+ycor[4, 3] = -40; xcor[4, 3] = +0;
+ycor[4, 4] = -40; xcor[4, 4] = +0;
+ycor[4, 5] = -40; xcor[4, 5] = +0;
+ycor[4, 6] = -40; xcor[4, 6] = +0;
 
-ycor[5, 0] = -6; xcor[5, 0] = +0;
-ycor[5, 1] = -5; xcor[5, 1] = +0;
-ycor[5, 2] = -3; xcor[5, 2] = +0;
+ycor[5, 0] = -40; xcor[5, 0] = +0;
+ycor[5, 1] = -40; xcor[5, 1] = +0;
+ycor[5, 2] = -40; xcor[5, 2] = +0;
+ycor[5, 3] = -40; xcor[5, 3] = +0;
+ycor[5, 4] = -40; xcor[5, 4] = +0;
+ycor[5, 5] = -40; xcor[5, 5] = +0;
+ycor[5, 6] = -40; xcor[5, 6] = +0;
+
+ycor[6, 0] = -36; xcor[6, 0] = 0;
+ycor[6, 1] = -36; xcor[6, 1] = 0;
+ycor[6, 2] = -36; xcor[6, 2] = 0;
+ycor[6, 3] = -37; xcor[6, 3] = 0;
+ycor[6, 4] = -37; xcor[6, 4] = 0;
+ycor[6, 5] = -37; xcor[6, 5] = 0;
+ycor[6, 6] = -37; xcor[6, 6] = 0;
+ycor[6, 7] = -37; xcor[6, 7] = 0;
+ycor[6, 8] = -37; xcor[6, 8] = 0;
+ycor[6, 9] = -37; xcor[6, 9] = 0;
+ycor[6, 10] = -37; xcor[6, 10] = 0;
+ycor[6, 11] = -36; xcor[6, 11] = 0;
+ycor[6, 12] = -36; xcor[6, 12] = 0;
+
+ycor[7, 0] = -36; xcor[7, 0] = 0;
+
+ycor[8, 0] = -33; xcor[8, 0] = -5;
+ycor[8, 1] = -33; xcor[8, 1] = -5;
+ycor[8, 2] = -33; xcor[8, 2] = -5;
+ycor[8, 3] = -34; xcor[8, 3] = -5;
+ycor[8, 4] = -35; xcor[8, 4] = -5;
+ycor[8, 5] = -36; xcor[8, 5] = -5;
+ycor[8, 6] = -35; xcor[8, 6] = -5;
+ycor[8, 7] = -34; xcor[8, 7] = -5;
+ycor[8, 8] = -33; xcor[8, 8] = -5;
+ycor[8, 9] = -33; xcor[8, 9] = -5;
+ycor[8, 10] = -33; xcor[8, 10] = -5;
+ycor[8, 11] = -34; xcor[8, 11] = -5;
+ycor[8, 12] = -35; xcor[8, 12] = -5;
+ycor[8, 13] = -36; xcor[8, 13] = -5;
+ycor[8, 14] = -35; xcor[8, 14] = -5;
+ycor[8, 15] = -34; xcor[8, 15] = -5;
+
+ycor[9, 0] = -40; xcor[9, 0] = +0;
+ycor[9, 1] = -40; xcor[9, 1] = +0;
+ycor[9, 2] = -40; xcor[9, 2] = +0;
+ycor[9, 3] = -40; xcor[9, 3] = +0;
+ycor[9, 4] = -40; xcor[9, 4] = +0;
+ycor[9, 5] = -40; xcor[9, 5] = +0;
+ycor[9, 6] = -40; xcor[9, 6] = +0;
 }
 </string>
           </argument>
@@ -672,8 +722,18 @@ ycor[5, 2] = -3; xcor[5, 2] = +0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha=1
+            <string>if instance_exists(sys_transition) or instance_exists(gameover)
+{
+canmove=false
+}
+else
+{
+canmove=true
+}
+if x&lt;0 {x=0}
 
+if canmove=true
+{
 xspeed = iff(abs(xspeed) &gt; xmaxspeed, xmaxspeed * sign(xspeed), xspeed);
 yspeed = iff(abs(yspeed) &gt; ymaxspeed, ymaxspeed * sign(yspeed), yspeed);
 
@@ -684,13 +744,12 @@ else
 {
   if (yspeed &gt; 0) 
   {
-    isClimbing = false;
     isJumping = false;
-    isDismounting = false;
     landing = landing_max;
-    dismount = dismount_max;
     wingstimer=0;
     y = floor(y);
+    double_jump=1;
+    umbrella=false;
   }
   move_contact_solid(point_direction(x, y, x, y + yspeed), yspeed);
   
@@ -704,17 +763,12 @@ else {
   move_contact_solid(point_direction(x, y, x + xspeed, y), xspeed);
   xspeed = 0;
 }
-isWallsliding = false;
-
-if (isClimbing == false) {
-
   if (gamepad_button_check_pressed(0, gp_padl) || keyboard_check_pressed(ord('A')) || (keyboard_check(ord('A')) &amp;&amp; keyboard_check_released(ord('D')))) {
     dir = -1;
   }
   if (gamepad_button_check_pressed(0, gp_padr) || keyboard_check_pressed(ord('D')) || (keyboard_check(ord('D')) &amp;&amp; keyboard_check_released(ord('A')))) {
     dir = 1; 
   }
-  
   if (place_free(x, y + 1)) {
     yspeed += weight;
 
@@ -732,8 +786,6 @@ if (isClimbing == false) {
       isJumping = true;
     }
     }
-  }
-  
 
   if (
   keyboard_check(ord('A')) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1 ||
@@ -763,6 +815,7 @@ if (gamepad_button_check_pressed(0, gp_face2))
 if( place_free(x,y+1) &amp;&amp; double_jump = 1 )
 { 
 double_jump=0;
+image_index=0
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
@@ -786,12 +839,25 @@ part_emitter_stream(particles.Starter_Depth0,particles.Emitter4,particles.Partic
 if( place_free(x,y+1) &amp;&amp; double_jump = 2 )
 { 
 double_jump=0;
+image_index=0
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
 part_emitter_region(particles.Starter_Depth0,particles.Emitter7,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
 part_emitter_stream(particles.Starter_Depth0,particles.Emitter7,particles.Particle7,15)
 } 
+}
+}
+}
+
+if (global.getumbrella=true)
+{
+if place_free(x,y+1)
+{
+if keyboard_check(ord('W'))
+{umbrella=true}
+if keyboard_check_released(ord('W'))
+{umbrella=false}
 }
 }
 
@@ -839,13 +905,13 @@ image_alpha = 1; t=0;
 
 if (flashlight=1)
 {
-if mouse_x&gt;x{image_xscale=1}
-if mouse_x&lt;x{image_xscale=-1}
+if mouse_x&gt;x{image_xscale=1 hatscale=1}
+if mouse_x&lt;x{image_xscale=-1 hatscale=-1}
 }
 if (flashlight=0)
 {
-if dir=1{image_xscale=1}
-if dir=-1{image_xscale=-1}
+image_xscale=dir
+hatscale=dir
 }
 
 </string>
@@ -868,54 +934,14 @@ if dir=-1{image_xscale=-1}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Room Loader
-if shuffletimer&lt;5
+            <string>
+if (x&gt;room_width+64)
 {
-globalvar myRooms;
-myRooms = ds_list_create();
-ds_list_add(myRooms,l1_2);
-ds_list_add(myRooms,l1_3);
-ds_list_add(myRooms,l1_4);
-ds_list_add(myRooms,l1_5);
-ds_list_add(myRooms,l1_6);
-ds_list_add(myRooms,l1_7);
-ds_list_add(myRooms,l1_8);
-ds_list_add(myRooms,l1_9);
-ds_list_add(myRooms,l1_10);
-ds_list_add(myRooms,l1_11);
-ds_list_add(myRooms,l1_12);
-ds_list_add(myRooms,l1_13);
-ds_list_add(myRooms,l1_14);
-ds_list_add(myRooms,l1_15);
-ds_list_add(myRooms,l1_16);
-ds_list_add(myRooms,l1_17);
-ds_list_add(myRooms,l1_18);
-ds_list_add(myRooms,l1_19);
-ds_list_add(myRooms,l1_20);
-ds_list_add(myRooms,l1_21);
-ds_list_add(myRooms,l1_22);
-ds_list_add(myRooms,l1_23);
-ds_list_add(myRooms,l1_24);
-ds_list_add(myRooms,l1_25);
-ds_list_shuffle(myRooms);
-}
-else
-{shuffletimer=5}
-shuffletimer+=1
-
-if (x&gt;room_width)
-{
-{
-if !ds_list_empty(myRooms)
+if (!instance_exists(sys_transition))
 {
 global.passedrooms+=1;
-room_goto(ds_list_find_value(myRooms,0));
+room_goto_transition(ds_list_find_value(myRooms,0), 60);
 ds_list_delete(myRooms,0);
-}
-else
-{
-    show_message("No rooms left");
-}
 }
 }
 
@@ -948,6 +974,250 @@ if wingstimer&lt;30
 {wingstimer+=1}
 }
 }
+
+if umbrella=false
+{
+weight = global.playergravity
+}
+else
+{
+if yspeed&gt;0
+{
+weight = global.playergravity/8; 
+}  
+else
+{
+weight = global.playergravity;   
+}
+}                             
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>spanim</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Image Handling
+
+// Draw the appropriate sprites:
+if ((place_meeting(x, y+1, o_blockparent))) {
+  if (xspeed == 0) {
+    // Idle.
+    if (flashlight=true) sprite_index = luna_stay;
+    if (dontdrawarms=true) sprite_index = luna_stay_b;
+    if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_stay_a;
+
+  }
+  else {
+    // Running.
+    //if (sign(xspeed) == sign(dir)) {
+    if (flashlight=true) sprite_index = luna_run;
+    if (dontdrawarms=true) sprite_index = luna_run_b;
+    if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_run_a;
+    //}
+    //else {
+    //sprite_index = luna_jump;
+    //}
+  }
+}
+else {
+  // Jumping.
+    if (flashlight=true) sprite_index = luna_jump;
+    if (dontdrawarms=true) sprite_index = luna_jump_b;
+    if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_jump_a;
+  if (yspeed&lt;-7) { image_index = 0; }
+  if (yspeed&lt;-4 and yspeed&gt;=-7) { image_index = 1; }
+  if (yspeed&lt;-2 and yspeed&gt;=-4) { image_index = 2; }
+  if (abs(yspeed) &lt; 2) { image_index = 3; }
+  if (yspeed&gt;2 and yspeed&lt;=4) { image_index = 4; }
+  if (yspeed&gt;4 and yspeed&lt;=7) { image_index = 5; }
+  if (yspeed&gt;7 ) { image_index = 6; }
+}
+// Landing.
+if (landing &gt; 0) { 
+landing -= 1; 
+}
+
+// Configure image speeds.
+image_speed = 0.5;
+
+if (sprite_index == luna_run || sprite_index == luna_run_a || sprite_index == luna_run_b) {
+  image_speed = 0.35;
+}
+
+if (sprite_index == luna_stay || sprite_index == luna_stay_a || sprite_index == luna_stay_b) {
+  image_speed = 0.05;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (keyboard_check_pressed(ord('Q')))
+{
+if global.potion&gt;0
+{
+spanim=1;
+if lives&lt;global.maxlives {lives+=1;}
+global.potion-=1;
+image_index=0
+alarm[2]=40
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy objects
+//instance_deactivate_all(true);
+//instance_activate_object(control);
+//instance_activate_object(superview);
+//instance_activate_object(background1);
+//instance_activate_object(particles);
+//instance_activate_object(torch);
+//instance_activate_object(fountain);
+//instance_activate_object(backtree);
+//instance_activate_object(lightballpar);
+//instance_activate_object(parbullet);
+//instance_activate_object(background1);
+//instance_activate_region(view_xview-196,view_yview-196,view_wview+260,view_hview+260,1); 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Potion
+if spanim=1
+{
+sprite_index=luna_drink; image_speed = 0.35;
+if image_index&gt;5 and image_index&lt;10
+{
+eyehurt=1 
+part_emitter_region(particles.Starter_Depth0,particles.Emitter16,self.x-64,self.x+64,self.y,self.y+35,1,1);
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter16,particles.Particle16,6);}  
+}
+
+if spanim=1 { xmaxspeed = 0; }
+else
+{ xmaxspeed = global.movespeed; }
+
+
 </string>
           </argument>
         </arguments>
@@ -974,6 +1244,31 @@ if wingstimer&lt;30
 yspeed = -jumpHeight*1.45;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 isJumping = false;
+double_jump=1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+ds_list_shuffle(myRooms);
 </string>
           </argument>
         </arguments>
@@ -996,40 +1291,79 @@ isJumping = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var i_off;
-switch( sprite_index ) {
-    case( luna_stay ): i_off = 0; break;
-    case( luna_stay_a ): i_off = 1; break;
-    case( luna_run ): i_off = 2; break;
-    case( luna_run_a ): i_off = 3; break;
-    case( luna_jump ): i_off = 4; break;
-    case( luna_jump_a ): i_off = 5; break;
+            <string>
+
+var i_off;
+switch( sprite_index ) { 
+case( luna_stay ): i_off = 0; break; 
+case( luna_stay_a ): i_off = 1; break; 
+case( luna_run ): i_off = 2; break; 
+case( luna_run_a ): i_off = 3; break;
+case( luna_jump ): i_off = 4; break; 
+case( luna_jump_a ): i_off = 5; break; 
+case( luna_drink ): i_off = 6; break;
+case( luna_stay_b ): i_off = 7; break; 
+case( luna_run_b ): i_off = 8; break;
+case( luna_jump_b ): i_off = 9; break; 
 }
 
 var ii = floor( image_index );
 
 if global.getwings=true 
 {
-if (wingstimer&gt;0 and wingstimer&lt;=4){draw_sprite_ext(wings,0,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
-if (wingstimer&gt;4 and wingstimer&lt;=9){draw_sprite_ext(wings,1,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.25);}
-if (wingstimer&gt;9 and wingstimer&lt;=14){draw_sprite_ext(wings,2,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.50);}
-if (wingstimer&gt;14 and wingstimer&lt;=17){draw_sprite_ext(wings,3,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.75);}
-if (wingstimer&gt;17 and wingstimer&lt;=20){draw_sprite_ext(wings,4,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
-if (wingstimer&gt;20 and wingstimer&lt;=22){draw_sprite_ext(wings,5,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
-if (wingstimer&gt;22 and wingstimer&lt;=24){draw_sprite_ext(wings,6,player.x, player.y-35,image_xscale,image_yscale,0,c_white,1);}
-if (wingstimer&gt;24 and wingstimer&lt;=26){draw_sprite_ext(wings,7,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.75);}
-if (wingstimer&gt;26 and wingstimer&lt;=28){draw_sprite_ext(wings,8,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.50);}
-if (wingstimer&gt;28 and wingstimer&lt;=30){draw_sprite_ext(wings,9,player.x, player.y-35,image_xscale,image_yscale,0,c_white,0.25);}
+if (wingstimer&gt;0 and wingstimer&lt;=4){draw_sprite_ext(wings,0,player.x, player.y-70,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;4 and wingstimer&lt;=9){draw_sprite_ext(wings,1,player.x, player.y-70,image_xscale,image_yscale,0,c_white,0.25);}
+if (wingstimer&gt;9 and wingstimer&lt;=14){draw_sprite_ext(wings,2,player.x, player.y-70,image_xscale,image_yscale,0,c_white,0.50);}
+if (wingstimer&gt;14 and wingstimer&lt;=17){draw_sprite_ext(wings,3,player.x, player.y-70,image_xscale,image_yscale,0,c_white,0.75);}
+if (wingstimer&gt;17 and wingstimer&lt;=20){draw_sprite_ext(wings,4,player.x, player.y-70,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;20 and wingstimer&lt;=22){draw_sprite_ext(wings,5,player.x, player.y-70,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;22 and wingstimer&lt;=24){draw_sprite_ext(wings,6,player.x, player.y-70,image_xscale,image_yscale,0,c_white,1);}
+if (wingstimer&gt;24 and wingstimer&lt;=26){draw_sprite_ext(wings,7,player.x, player.y-70,image_xscale,image_yscale,0,c_white,0.75);}
+if (wingstimer&gt;26 and wingstimer&lt;=28){draw_sprite_ext(wings,8,player.x, player.y-70,image_xscale,image_yscale,0,c_white,0.50);}
+if (wingstimer&gt;28 and wingstimer&lt;=30){draw_sprite_ext(wings,9,player.x, player.y-70,image_xscale,image_yscale,0,c_white,0.25);}
 }
 
+if umbrella=true
+{
+draw_sprite_ext(s_umbrella,2,x,y-35,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+}
+if (spanim=0)
+{
+if (global.weaponstyle=1)
+{
+if (chararm.image_index&lt;3 or chararm.image_index&gt;8) {draw_sprite_ext(chararm.sprite_index,chararm.image_index,chararm.x,chararm.y,chararm.image_xscale,chararm.image_yscale,chararm.image_angle,chararm.image_blend,chararm.image_alpha)}
+}
+}
 
-draw_self();
+if double_jump=0
+{
+if slidealpha&lt;1 {slidealpha+=0.05}
+}
+else
+{
+if slidealpha&gt;0 {slidealpha-=0.1}
+}
+dist=point_distance(x,y,xprevious,yprevious)
+dire=point_direction(x,y,xprevious,yprevious)
+draw_set_blend_mode(bm_add);
+draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(dist*5,dire),y+lengthdir_y(dist*5,dire),image_xscale,image_yscale,image_angle,c_fuchsia,0.1*slidealpha)
+draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(dist*4,dire),y+lengthdir_y(dist*4,dire),image_xscale,image_yscale,image_angle,c_fuchsia,0.2*slidealpha)
+draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(dist*3,dire),y+lengthdir_y(dist*3,dire),image_xscale,image_yscale,image_angle,c_fuchsia,0.3*slidealpha)
+draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(dist*2,dire),y+lengthdir_y(dist*2,dire),image_xscale,image_yscale,image_angle,c_fuchsia,0.4*slidealpha)
+draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(dist*1,dire),y+lengthdir_y(dist*1,dire),image_xscale,image_yscale,image_angle,c_fuchsia,0.5*slidealpha)
+draw_sprite_ext(luna_hat,hatindex,x+lengthdir_x(dist*5,dire) + xcor[i_off, ii], y+lengthdir_y(dist*5,dire) + ycor[i_off, ii],image_xscale, image_yscale,0,c_fuchsia,0.1*slidealpha);
+draw_sprite_ext(luna_hat,hatindex,x+lengthdir_x(dist*4,dire) + xcor[i_off, ii], y+lengthdir_y(dist*4,dire) + ycor[i_off, ii],image_xscale, image_yscale,0,c_fuchsia,0.2*slidealpha);
+draw_sprite_ext(luna_hat,hatindex,x+lengthdir_x(dist*3,dire) + xcor[i_off, ii], y+lengthdir_y(dist*3,dire) + ycor[i_off, ii],image_xscale, image_yscale,0,c_fuchsia,0.3*slidealpha);
+draw_sprite_ext(luna_hat,hatindex,x+lengthdir_x(dist*2,dire) + xcor[i_off, ii], y+lengthdir_y(dist*2,dire) + ycor[i_off, ii],image_xscale, image_yscale,0,c_fuchsia,0.4*slidealpha);
+draw_sprite_ext(luna_hat,hatindex,x+lengthdir_x(dist*1,dire) + xcor[i_off, ii], y+lengthdir_y(dist*1,dire) + ycor[i_off, ii],image_xscale, image_yscale,0,c_fuchsia,0.5*slidealpha);
+draw_set_blend_mode(bm_normal);
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale, image_yscale,image_angle,image_blend,image_alpha);
 
 if eyehurt=0
 {
 if (flashlight=true)
 {
-draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
+draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii], image_xscale, image_yscale,0,c_white,1);
 if image_xscale&gt;0
 {
 switch (point_direction(x, y, mouse_x, mouse_y) + 45) div 22.5  {
@@ -1037,19 +1371,19 @@ case 16:
 case 0: eyeindex = 0; break;
 case 1: eyeindex = 1; break;
 case 2: eyeindex = 2; break;
-case 3: eyeindex = 3;  break;
+case 3: eyeindex = 3; break;
 case 4: eyeindex = 4; break;
 case 5: eyeindex = 5; break;
 case 6: eyeindex = 6; break;
-case 7: eyeindex = 7;  break;
+case 7: eyeindex = 7; break;
 case 8: eyeindex = 8; break;
 case 9: eyeindex = 9; break;
 case 10: eyeindex = 10; break;
-case 11: eyeindex = 11;  break;
+case 11: eyeindex = 11; break;
 case 12: eyeindex = 12; break;
 case 13: eyeindex = 13; break;
 case 14: eyeindex = 14; break;
-case 15: eyeindex = 15;  break;
+case 15: eyeindex = 15; break;
 }
 }
 else
@@ -1059,27 +1393,27 @@ case 16:
 case 0: eyeindex = 10; break;
 case 1: eyeindex = 9; break;
 case 2: eyeindex = 8; break;
-case 3: eyeindex = 7;  break;
+case 3: eyeindex = 7; break;
 case 4: eyeindex = 6; break;
 case 5: eyeindex = 5; break;
 case 6: eyeindex = 4; break;
-case 7: eyeindex = 3;  break;
+case 7: eyeindex = 3; break;
 case 8: eyeindex = 2; break;
 case 9: eyeindex = 1; break;
 case 10: eyeindex = 0; break;
-case 11: eyeindex = 15;  break;
+case 11: eyeindex = 15; break;
 case 12: eyeindex = 14; break;
 case 13: eyeindex = 13; break;
 case 14: eyeindex = 12; break;
-case 15: eyeindex = 11;  break;
+case 15: eyeindex = 11; break;
 }
 }
 }
 
 if (flashlight=false)
 {
-draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
-if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = luna_run or sprite_index = luna_run_a)
+draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
+if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_drink)
 {
 eyeindex=0
 }
@@ -1097,9 +1431,43 @@ if (image_index=6) {eyeindex=14}
 }
 else
 {
-draw_sprite_ext(lunahurt_eyes,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
+draw_sprite_ext(lunahurt_eyes,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
 }
-draw_sprite_ext(luna_hat,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,image_alpha);
+
+draw_sprite_ext(luna_hat,hatindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,image_alpha);
+if (hatscale=1) {hatindex=0} if (hatscale=-1) {hatindex=1}
+
+if (spanim=0)
+{
+if (global.weaponstyle=1)
+{
+if (chararm.image_index&gt;=3 and chararm.image_index&lt;=8) {draw_sprite_ext(chararm.sprite_index,chararm.image_index,chararm.x,chararm.y,chararm.image_xscale,chararm.image_yscale,chararm.image_angle,chararm.image_blend,chararm.image_alpha)}
+}
+if (global.weaponstyle=2)
+{
+if (char_luna.x&lt;mouse_x)
+{
+draw_sprite_ext(luna_projector,0,chararm.x+lengthdir_x(11,chararm.direction),chararm.y+4+lengthdir_y(10,chararm.direction),chararm.image_xscale,chararm.image_yscale,chararm.image_angle,c_white,chararm.image_alpha)
+if umbrella=false
+{
+draw_sprite_ext(luna_projectorhand1,0,chararm.x-6,chararm.y,chararm.image_xscale,chararm.image_yscale,chararm.image_angle,chararm.image_blend,chararm.image_alpha)
+}
+}
+else 
+{
+draw_sprite_ext(luna_projector,0,chararm.x+lengthdir_x(11,chararm.direction),chararm.y+4+lengthdir_y(10,chararm.direction),chararm.image_xscale,chararm.image_yscale,chararm.image_angle,c_white,chararm.image_alpha)
+if umbrella=false
+{
+draw_sprite_ext(luna_projectorhand1,0,chararm.x+6,chararm.y,chararm.image_xscale,chararm.image_yscale,chararm.image_angle,chararm.image_blend,chararm.image_alpha)
+}
+}
+}
+}
+
+if umbrella=true
+{
+if flashlight=true {draw_sprite_ext(s_umbrella,0,x,y-35,image_xscale,image_yscale,image_angle,image_blend,image_alpha)} else {draw_sprite_ext(s_umbrella,1,x,y-35,image_xscale,image_yscale,image_angle,image_blend,image_alpha)}
+}
 </string>
           </argument>
         </arguments>
@@ -1130,8 +1498,8 @@ double_jump=0;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,mparticles)
-a.type=3;
+part_emitter_region(particles.Starter_Depth0,particles.Emitter4,self.x,self.x,self.y+10,self.y+10,ps_shape_rectangle,25)
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter4,particles.Particle4,5)
 } 
 }
 
@@ -1143,18 +1511,18 @@ double_jump=2;
 yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,mparticles)
-a.type=3;
+part_emitter_region(particles.Starter_Depth0,particles.Emitter4,self.x,self.x,self.y+10,self.y+10,ps_shape_rectangle,25)
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter4,particles.Particle4,5)
 } 
 else
 if( place_free(x,y+1) &amp;&amp; double_jump = 2 )
 { 
 double_jump=0;
-yspeed = -jumpHeight*1.2;
+yspeed = -jumpHeight;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 
-a=instance_create(x,y,mparticles)
-a.type=6;
+part_emitter_region(particles.Starter_Depth0,particles.Emitter7,self.x,self.x,self.y,self.y,ps_shape_rectangle,1)
+part_emitter_burst(particles.Starter_Depth0,particles.Emitter7,particles.Particle7,15)
 } 
 }
 </string>

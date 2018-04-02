@@ -46,7 +46,7 @@
       <sprite>sprites\hollowjustwalk</sprite>
       <sprite>sprites\hollowattack</sprite>
       <sprites name="bosses">
-        <sprite>sprites\bosses</sprite>
+        <sprite>sprites\asylum</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\shovelsleep</sprite>

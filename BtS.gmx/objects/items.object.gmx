@@ -31,14 +31,17 @@ image_speed=0
 if (rare=0 and type=0) {image_index=0}
 if (rare=0 and type=1) {image_index=3}
 if (rare=0 and type=2) {image_index=6}
+if (rare=0 and type=3) {image_index=9}
 
 if (rare=1 and type=0) {image_index=1}
 if (rare=1 and type=1) {image_index=4}
 if (rare=1 and type=2) {image_index=7}
+if (rare=1 and type=3) {image_index=10}
 
 if (rare=2 and type=0) {image_index=2}
 if (rare=2 and type=1) {image_index=5}
 if (rare=2 and type=2) {image_index=8}
+if (rare=2 and type=3) {image_index=11}
 
 
 part_emitter_region(particles.Starter_Depth0,particles.Emitter11,self.x+1,self.x-1,self.y+1,self.y-1,ps_shape_ellipse,1);
@@ -75,14 +78,17 @@ w=0
 if (rare=0 and type=0) {image_index=0}
 if (rare=0 and type=1) {image_index=3}
 if (rare=0 and type=2) {image_index=6}
+if (rare=0 and type=3) {image_index=9}
 
 if (rare=1 and type=0) {image_index=1}
 if (rare=1 and type=1) {image_index=4}
 if (rare=1 and type=2) {image_index=7}
+if (rare=1 and type=3) {image_index=10}
 
 if (rare=2 and type=0) {image_index=2}
 if (rare=2 and type=1) {image_index=5}
 if (rare=2 and type=2) {image_index=8}
+if (rare=2 and type=3) {image_index=11}
 
 
 if rare=0
@@ -146,13 +152,16 @@ if w=1{image_xscale-=0.005; if image_xscale=0.8{w=0}}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>part_emitter_clear(particles.Starter_Depth0,particles.Emitter11)
+            <string>if image_alpha=1
+{
+part_emitter_clear(particles.Starter_Depth0,particles.Emitter11)
 
 if rare=0
 {
-if type=0 {if global.lightscale&lt;1 {global.lightscale+=0.25;} if global.damage&lt;10{global.damage+=1;} if global.shotspeed&lt;30{global.shotspeed+=5;}} //увеличивает урон и размер снаряда, уменьшает скорострельность
+if type=0 {if global.lightscale&lt;1 {global.lightscale+=0.125;} if global.elecdamage&lt;10{global.elecdamage+=1;} if global.shotspeed&lt;30{global.shotspeed+=5;}} //увеличивает урон и размер снаряда, уменьшает скорострельность
 if type=1 {if global.bulletspeed&lt;30{global.bulletspeed+=5;}} //увеличивает скорость снарядов
 if type=2 {if global.shotspeed&gt;5{global.shotspeed-=5;}} //увеличивает скорострельность
+if type=3 {global.lightspread=1;} //уменьшает разброс от орудий
 ds_list_delete(global.item1tierlist,0)
 }
 
@@ -161,6 +170,7 @@ if rare=1
 if type=0 {global.stonehorseshoe=true;} //блокирует урон от шипов
 if type=1 {global.jumpheight=21;} //увеличивает высоту прыжка
 if type=2 {global.mirror=true;} //блокирует урон от шипов
+if type=3 {global.goldenmagnet=true;} //притягивает пикапы к игроку
 ds_list_delete(global.item2tierlist,0)
 }
 
@@ -169,11 +179,14 @@ if rare=2
 if type=0 {global.getwings=true;} //даёт тройной прыжок
 if type=1 {global.ancientjewel=true;} //увеличивает шанс выпадения редких предметов
 if type=2 {global.brokenlock=true;} //для открытия дверей не нужно убивать всех монстров
+if type=3 {global.getumbrella=true;} //даёт возможность замедлить падение
 ds_list_delete(global.item3tierlist,0)
 }
 
-
-
+a=instance_create(x,y,itemdescription)
+a.type=type a.rare=rare a.i_s=image_index
+a.forweapon=false
+}
 
 </string>
           </argument>

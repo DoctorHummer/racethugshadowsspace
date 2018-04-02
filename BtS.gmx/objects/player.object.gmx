@@ -25,16 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bessmertie&lt;1
+            <string>if canmove=true
+{
+if bessmertie&lt;1
 {
 alarm[0]=80;
 bessmertie=1;
 alarm[1]=20;
 eyehurt=1;
+if lives=1
+{
+other.depth=-1000003
+}
 lives-=1;
 if other.x&lt;x{xspeed = +30;}
 else{xspeed = -30;}
 yspeed = -15;
+}
 }
 </string>
           </argument>
@@ -58,16 +65,23 @@ yspeed = -15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bessmertie&lt;1
+            <string>if canmove=true
 {
+if bessmertie&lt;1
+{ 
 alarm[0]=80;
 bessmertie=1;
 alarm[1]=20;
 eyehurt=1;
+if lives=1
+{
+other.depth=-1000003
+}
 lives-=1;
 if other.x&lt;x{xspeed = +30;}
 else{xspeed = -30;}
 yspeed = -15;
+}
 }
 </string>
           </argument>
@@ -91,16 +105,23 @@ yspeed = -15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (bessmertie&lt;1 and other.active=1)
+            <string>if canmove=true
+{
+if (bessmertie&lt;1 and other.active=1)
 {
 alarm[0]=40;
 bessmertie=1;
 alarm[1]=20;
 eyehurt=1;
+if lives=1
+{
+other.depth=-1000003
+}
 lives-=1;
 if other.x&lt;x{xspeed = +30;}
 else{xspeed = -30;}
 yspeed = -15;
+}
 }
 </string>
           </argument>
@@ -124,10 +145,16 @@ yspeed = -15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.stonehorseshoe=false
+            <string>if canmove=true
+{
+if global.stonehorseshoe=false
 {
 if (bessmertie&lt;1 and other.active=1)
 {
+if lives=1
+{
+other.depth=-1000003
+}
 alarm[0]=40;
 bessmertie=1;
 alarm[1]=20;
@@ -136,6 +163,8 @@ lives-=1;
 if other.x&lt;x{xspeed = +30;}
 else{xspeed = -30;}
 yspeed = -15;
+
+}
 }
 }
 </string>

@@ -28,6 +28,27 @@
             <string>active=1
 gearot=0;
 roomup=0;
+doortype=0;
+col = make_color_rgb(0,0,0);
+glxscale=0.6
+glyscale=0.6
+w=0
+if doortype=1
+{
+col = make_color_rgb(255,255,51);
+}
+if doortype=2
+{
+col = make_color_rgb(0, 191, 255);
+}
+if doortype=3
+{
+col = make_color_rgb(255, 0, 0);
+}
+if doortype=4
+{
+col = make_color_rgb(255, 0, 255);
+}
 </string>
           </argument>
         </arguments>
@@ -58,6 +79,27 @@ image_yscale=-1
 if roomup&lt;192{roomup+=4}else{active=2}
 }
 if active=1 {gearot+=3}
+
+if doortype=1
+{
+col = make_color_rgb(255,255,51);
+}
+if doortype=2
+{
+col = make_color_rgb(0, 191, 255);
+}
+if doortype=3
+{
+col = make_color_rgb(255, 0, 0);
+}
+if doortype=4
+{
+col = make_color_rgb(255, 0, 255);
+}
+
+glyscale=glxscale
+if w=0{glxscale+=0.005; if glxscale=1{w=1}}
+if w=1{glxscale-=0.005; if glxscale=0.6{w=0}}
 </string>
           </argument>
         </arguments>
@@ -80,9 +122,25 @@ if active=1 {gearot+=3}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(door,1,x,y-roomup,1,1,0,c_white,1);
-draw_sprite_ext(door,0,x,y,1,1,0,c_white,1);
-draw_sprite_ext(gear,0,x-13,y-12,1,1,gearot,c_white,1);
+            <string>if image_angle=0 {draw_sprite_ext(door,1,x,y-roomup,1,1,image_angle,c_white,1);}
+if image_angle=90 {draw_sprite_ext(door,1,x-roomup,y,1,1,image_angle,c_white,1);}
+if image_angle=180 {draw_sprite_ext(door,1,x,y+roomup,1,1,image_angle,c_white,1);}
+if image_angle=270 {draw_sprite_ext(door,1,x+roomup,y,1,1,image_angle,c_white,1);}
+draw_sprite_ext(door,0,x,y,1,1,image_angle,c_white,1);
+if doortype=0
+{
+if image_angle=0 {draw_sprite_ext(gear,0,x-13,y-13,1,1,gearot,c_white,1);}
+if image_angle=90 {draw_sprite_ext(gear,0,x-13,y+13,1,1,gearot,c_white,1);}
+if image_angle=180 {draw_sprite_ext(gear,0,x+13,y+13,1,1,gearot,c_white,1);}
+if image_angle=270 {draw_sprite_ext(gear,0,x+13,y-13,1,1,gearot,c_white,1);}
+}
+if doortype&gt;0
+{
+if image_angle=0 {draw_sprite_ext(lightballsprite,0,x-15,y-15,glxscale,glyscale,image_angle,col,0.6) draw_sprite_ext(doorgem,0,x-15,y-15,1,1,0,col,1);}
+if image_angle=90 {draw_sprite_ext(lightballsprite,0,x-15,y+15,glxscale,glyscale,image_angle,col,0.6) draw_sprite_ext(doorgem,0,x-15,y+15,1,1,0,col,1);}
+if image_angle=180 {draw_sprite_ext(lightballsprite,0,x+15,y+15,glxscale,glyscale,image_angle,col,0.6) draw_sprite_ext(doorgem,0,x+15,y+15,1,1,0,col,1);}
+if image_angle=270 {draw_sprite_ext(lightballsprite,0,x+15,y-15,glxscale,glyscale,image_angle,col,0.6) draw_sprite_ext(doorgem,0,x+15,y-15,1,1,0,col,1);}
+}
 
 </string>
           </argument>

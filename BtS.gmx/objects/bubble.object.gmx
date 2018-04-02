@@ -3,7 +3,7 @@
   <spriteName>jumpshroom</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>5</depth>
+  <depth>6</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,8 +28,38 @@
             <string>image_speed=0
 image_index=0
 jump=0
+jumpf=0
 index=0
 scalex=1;scaley=1;
+
+Starter_Depth6 = part_system_create()
+part_system_depth(Starter_Depth6,depth);
+
+Particle15 = part_type_create();
+Emitter15 = part_emitter_create(Starter_Depth6);
+part_type_shape(Particle15,pt_shape_flare);
+part_type_size(Particle15,1,1,0,0);
+part_type_scale(Particle15,0.45,0.45);
+part_type_color3(Particle15,c_aqua,c_aqua,c_fuchsia);
+part_type_alpha3(Particle15,0,0.8,0);
+part_type_speed(Particle15,0,0.3,0.01,0);
+part_type_direction(Particle15,0,359,1,1);
+part_type_gravity(Particle15,0.02,90);
+part_type_orientation(Particle15,0,0,0,0,1);
+part_type_blend(Particle15,0);
+part_type_life(Particle15,60,180);
+
+part_emitter_region(Starter_Depth6,Emitter15,self.x-96,self.x+96,self.y-96,self.y+96,ps_shape_ellipse,1);
+part_emitter_stream(Starter_Depth6,Emitter15,Particle15,-12);
+
+
+a=0;
+m=0;
+k2=0;
+v1=choose(2,6);
+v2=choose(3,7);
+v3=choose(4,8);
+v4=choose(5,9);
 </string>
           </argument>
         </arguments>
@@ -52,7 +82,7 @@ scalex=1;scaley=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if jump=0
+            <string>if (jump=0)
 {
 index=0
 }
@@ -60,19 +90,95 @@ if jump=1
 {
 index+=1
 if index&gt;9
-{jump=0}
+{jump=0 jumpf=0}
 }
 
-if random(30)&lt;3
-{
-a=instance_create(x+random_range(-48,48),y+24,particle)
-a.type=0;
-a.image_xscale=choose(0.1,0.25,0.5)
-a.image_yscale=a.image_xscale
-a.speed=2.5+random(2.5)
-a.direction=85+random(10)
-a.image_alpharange=choose(0.25,0.5,0.75)
-}
+while (!collision_line(x,y,x,y+a,o_lvl1block,1,1))
+   {
+   a+=32
+   }
+
+
+if random(200)=1{k2=1}
+if k2=0{m+=0.001 m+=0.001}
+if k2=1{m-=0.001 m-=0.001}
+if m&lt;-0.05{k2=0}
+if m&gt;0.05{k2=1}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+part_system_destroy(Starter_Depth6)
+part_particles_clear(Particle15)
+part_emitter_clear(Starter_Depth6,Emitter15)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_particles_clear(Particle15)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+part_system_destroy(Starter_Depth6)
+part_particles_clear(Particle15)
+part_emitter_clear(Starter_Depth6,Emitter15)
 </string>
           </argument>
         </arguments>
@@ -95,14 +201,23 @@ a.image_alpharange=choose(0.25,0.5,0.75)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(jumpshroom,0,x,y,scalex,scaley,image_angle,c_white,image_alpha)//пузырь
-draw_sprite_ext(jumpshroom,1,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha)//камни
+            <string>
+draw_text(x,y+a,'ass')
+if (a&gt;0 and a&lt;=64) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)}
+if (a&gt;64 and a&lt;=128) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v2,x,y+104,1,1,0,c_white,1)}
+if (a&gt;128 and a&lt;=192) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v2,x,y+104,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v3,x,y+168,1,1,0,c_white,1)}
+if (a&gt;192 and a&lt;=256) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v2,x,y+104,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v3,x,y+168,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v4,x,y+232,1,1,0,c_white,1)}
+
+draw_sprite_ext(jumpshroom,0,x,y,scalex+m,scaley+m,image_angle,c_white,image_alpha)//пузырь
 if index=0{scalex=1; scaley=1}
 if (index=1 or index=2){scalex=1.1; scaley=0.9}
 if (index=3 or index=4){scalex=1; scaley=1}
 if (index=5 or index=6){scalex=0.9; scaley=1.1}
 if (index=7 or index=8){scalex=0.8; scaley=1.2}
 if index=9{scalex=0.9; scaley=1.1}
+draw_sprite_ext(jumpshroom,1,x,y-32+a,1,1,0,c_white,image_alpha)//камни
+
+
 </string>
           </argument>
         </arguments>
