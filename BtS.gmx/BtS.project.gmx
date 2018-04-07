@@ -35,9 +35,7 @@
     </sprites>
     <sprites name="objects">
       <sprite>sprites\o_l1grass</sprite>
-      <sprite>sprites\s_mirror</sprite>
       <sprite>sprites\blockforrooms</sprite>
-      <sprite>sprites\stoneforroom</sprite>
       <sprite>sprites\column</sprite>
       <sprite>sprites\columnforroom</sprite>
       <sprite>sprites\grass</sprite>
@@ -62,6 +60,7 @@
       <sprite>sprites\gchest2</sprite>
       <sprite>sprites\sbush</sprite>
       <sprite>sprites\grasscover</sprite>
+      <sprite>sprites\grasscover_transition</sprite>
       <sprite>sprites\wall</sprite>
       <sprite>sprites\blockadditional</sprite>
       <sprite>sprites\torches</sprite>
@@ -171,7 +170,6 @@
     <objects name="objects">
       <object>objects\o_blockparent</object>
       <object>objects\o_lvl1block</object>
-      <object>objects\o_lvl1stone</object>
       <object>objects\o_wall</object>
       <object>objects\o_column</object>
       <objects name="traps">

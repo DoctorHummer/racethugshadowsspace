@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0;
 sprite_index = o_l1grass;
-image_index = scr_auto_tile();
+image_index=scr_auto_tile()
 
 centrestyle=choose(0,1,2,3,4)
 centrestylespawn=choose(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
@@ -68,10 +68,13 @@ if (
  }
 }
 
+grassed=true
 grassindex=choose(0,1,2,3,4,5,6,7,8,9);rotlevs1=random_range(-2,2);k1=0;grassrandom=choose(0,1,2);
 vineindex=choose(0,1,2);k2=0;rotvins1=random_range(-1,1);vinerandom=choose(0,1,2,3,4);
 vineindex2=choose(3,4,5);
 cangrass=0; canvine1=0; canvine2=0;
+if grassed=true
+{
 if (y&gt;32 and x&lt;room_width-64)
 {
 if 
@@ -86,6 +89,487 @@ if
 {cangrass=1}
 if (!place_meeting(x,y+64,o_blockparent) &amp;&amp; !place_meeting(x,y+128,o_blockparent)) {canvine1=1}
 if (!place_meeting(x+64,y+64,o_blockparent) &amp;&amp; place_meeting(x+64,y,o_blockparent) &amp;&amp; !place_meeting(x,y+64,o_blockparent)) {cangvine2=1}
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sprite_grass = grasscover;
+iw  = sprite_width;
+
+imagegrass=44
+
+iw          = sprite_width;
+w_left      = instance_place(x-iw,y,object_index);
+w_right     = instance_place(x+iw,y,object_index);
+w_up        = instance_place(x,y-iw,object_index);
+w_down      = instance_place(x,y+iw,object_index);
+w_upleft    = instance_place(x-iw,y-iw,object_index);
+w_downleft  = instance_place(x-iw,y+iw,object_index);
+w_upright   = instance_place(x+iw,y-iw,object_index);
+w_downright = instance_place(x+iw,y+iw,object_index);
+alarm[0]=5
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+imagegrass=44
+
+if(w_up)
+{
+ if w_up.grassed {imagegrass=0} else{imagegrass=48}
+ if(w_right)
+ {
+ if w_up.grassed &amp;&amp; w_right.grassed {imagegrass=4} 
+ else if w_up.grassed &amp;&amp; !w_right.grassed {imagegrass=101} 
+ else if !w_up.grassed &amp;&amp; w_right.grassed {imagegrass=102} 
+ else if !w_up.grassed &amp;&amp; !w_right.grassed {imagegrass=52} 
+  if(w_down)
+  {
+   if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=4} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=113} 
+   else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=117} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=126} 
+   else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=113} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=109} 
+   else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=131} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=64} 
+   if(w_left)
+   {
+    if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=129}
+    else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=132} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=133}
+    else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=131} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=134}
+    else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=135} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=136}
+    else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=130} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=137}
+    else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=138} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=139}
+    else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=140} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=141}
+    else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=142} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=28}
+    if(w_upright)
+    {
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=129}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=132}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=133}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=156}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=157}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=143}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=144}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=146}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=147}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=148}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=149}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=150}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=151}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=29}
+     if(w_downright)
+     {
+      if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=129}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=153}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=129}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=153}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=146}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=158}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=33}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=146}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=158}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=33}
+      if(w_downleft)
+      {
+       if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=39}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=39}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=39}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=39}
+       if(w_upleft)imagegrass=43
+      }
+      else if(w_upleft)
+      {
+       if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=40}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=40}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=40}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=40}
+      }
+     }
+     else if(w_downleft)
+     {
+      if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=161}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=162}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=156}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=163}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=41}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=164}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=145}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=39}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=165}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=148}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=149}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=166}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=167}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=37}
+      if(w_upleft)
+      {
+       if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=43}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=161}
+       else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=161}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=156}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=156}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=41}
+       else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=41}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=43}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=161}
+       else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=161}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=156}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=156}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=41}
+       else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=41}
+      }
+     }
+     else if(w_upleft)
+     {
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=132} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=168}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=156} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=169}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=170} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=36}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=132} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=168}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=156} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=169}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=170} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=36}
+     }
+    }
+    else if(w_downright)
+    {
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=129}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=153}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=172}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=173} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=174}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=130} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=137}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=175} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=176}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=177} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=178}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=179} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=30}
+     if(w_downleft)
+     {
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=180}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=180}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=130} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=181}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=130} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=181}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=182} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=34}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=180} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=34}
+      if(w_upleft)
+      {
+      if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=43}
+      else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=43}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=171}
+      else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=171}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=183} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=183}
+      else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=183} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=183}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=42} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=42}
+      else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=42} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=42}
+      }
+     }
+     else if(w_upleft)
+     {
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=152} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=40}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=184}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=173} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=185}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=183} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=166}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=187} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=188}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=42} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=189}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=190} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=38}
+     }
+    }
+    else if(w_downleft)
+    {     
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=159}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=161} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=162}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=131} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=191}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=192} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=180}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=130} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=181}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=194} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=195}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=140} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=196}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=197} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=31}
+     if(w_upleft)
+     {
+     if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=43}
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=161} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=161}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=131} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=131}
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=198} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=198}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=183} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=183}
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=199} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=199}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=200} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=200}
+     else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=35} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=35}
+     }
+    }
+    else if(w_upleft)
+    {
+    if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=43} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=160}
+    else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=132} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=168}
+    else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=131} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=201}
+    else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=135} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=202}
+    else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=183} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=186}
+    else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=203} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=204}
+    else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=200} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=205}
+    else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=206} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=32}
+    }
+   }
+   else if(w_upright)
+   {
+   if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=16} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=113} 
+   else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=82} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=68} 
+   else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=113} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=68} 
+   else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=207} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=64} 
+    if(w_downright)
+    {
+    if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=18} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=72} 
+    else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=18} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=68} 
+    else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=72} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=68} 
+    else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=64} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=64} 
+    }
+   }
+   else if(w_downright)
+   {
+   if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=17} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_down.grassed {imagegrass=72} 
+   else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=79} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=126} 
+   else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=72} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=109} 
+   else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=171} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=64} 
+   }
+  }
+  else if(w_left)
+  {
+   if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=15} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=120} 
+   else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=208} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=209} 
+   else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=112} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=130} 
+   else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=116} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=67} 
+   if(w_upright)
+   {
+    if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=25} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=97} 
+    else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=25} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=98} 
+    else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=112} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=145} 
+    else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=75} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=67} 
+    if(w_upleft)
+    {
+     if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=27} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=27} 
+     else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=27} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=27} 
+     else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=71} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=43} 
+     else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=75} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=67} 
+    }
+   }
+   else if(w_upleft)
+   { 
+   if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=26} else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; w_left.grassed {imagegrass=97} 
+   else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=99} else if w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=26} 
+   else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=71} else if w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=183} 
+   else if !w_up.grassed &amp;&amp; w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=116} else if !w_up.grassed &amp;&amp; !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=67} 
+   }
+  }
+  else if(w_upright)
+  {
+  if w_up.grassed &amp;&amp; w_right.grassed {imagegrass=8} 
+  else if w_up.grassed &amp;&amp; !w_right.grassed {imagegrass=53} 
+  else if !w_up.grassed &amp;&amp; w_right.grassed {imagegrass=54} 
+  else if !w_up.grassed &amp;&amp; !w_right.grassed {imagegrass=52} 
+  }
+ }
+ else if(w_down)
+ {
+  if w_up.grassed &amp;&amp; w_down.grassed {imagegrass=45} 
+  else if w_up.grassed &amp;&amp; !w_down.grassed {imagegrass=210} 
+  else if !w_up.grassed &amp;&amp; w_down.grassed {imagegrass=211} 
+  else if !w_up.grassed &amp;&amp; !w_down.grassed {imagegrass=212} 
+  if(w_left)
+  {
+   if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=14} else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=213} 
+   else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=214} else if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=119} 
+   else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=215} else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=115} 
+   else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=111} else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=66} 
+   if(w_downleft)
+   {
+    if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=22} else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=216} 
+    else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=125} else if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=94} 
+    else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=217} else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=115} 
+    else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=70} else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=66} 
+    if(w_upleft)
+    {
+    if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=24} else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=70} 
+    else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=74} else if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=24} 
+    else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=66} else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=74} 
+    else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=70} else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=66} 
+    }
+   }
+   else if(w_upleft)
+   {
+   if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=23} else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=122} 
+   else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=218} else if w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=94} 
+   else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=219} else if w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=74} 
+   else if !w_up.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=111} else if !w_up.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=66} 
+   }
+  }
+ }
+ else if(w_left)
+ {
+  if w_up.grassed &amp;&amp; w_left.grassed {imagegrass=7} 
+  else if w_up.grassed &amp;&amp; !w_left.grassed {imagegrass=108} 
+  else if !w_up.grassed &amp;&amp; w_left.grassed {imagegrass=107} 
+  else if !w_up.grassed &amp;&amp; !w_left.grassed {imagegrass=61} 
+  if(w_upleft)
+  {
+  if w_up.grassed &amp;&amp; w_left.grassed {imagegrass=11} 
+  else if w_up.grassed &amp;&amp; !w_left.grassed {imagegrass=63} 
+  else if !w_up.grassed &amp;&amp; w_left.grassed {imagegrass=62} 
+  else if !w_up.grassed &amp;&amp; !w_left.grassed {imagegrass=61} 
+  }
+ }
+}
+else if(w_right)
+{
+ if w_right.grassed {imagegrass=1} else{imagegrass=49}
+ if(w_down)
+ {
+ if w_right.grassed &amp;&amp; w_down.grassed {imagegrass=5} 
+ else if w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=103} 
+ else if !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=104} 
+ else if !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=55} 
+  if(w_left)
+  {
+   if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=13} else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=154} 
+   else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=118} else if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=155} 
+   else if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=73} else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=110} 
+   else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=221} else if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=65} 
+   if(w_downright)
+   {
+    if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=65}
+    else if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=114} 
+    else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=223} 
+    else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=123} 
+    else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=69} 
+    else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=21} 
+    else if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=87}
+    else if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=19} 
+    if(w_downleft)
+    {
+     if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=65}
+     else if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=73} 
+     else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=65} 
+     else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=73} 
+     else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=69} 
+     else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=21} 
+     else if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=21}
+     else if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=21} 
+    }
+   }
+   else if(w_downleft)
+   {
+   if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=20} else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; w_left.grassed {imagegrass=220} 
+   else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=85} else if w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=128} 
+   else if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=73} else if w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=110} 
+   else if !w_right.grassed &amp;&amp; w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=222} else if !w_right.grassed &amp;&amp; !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=65} 
+   }
+  }
+  else if(w_downright)
+  {
+  if w_right.grassed &amp;&amp; w_down.grassed {imagegrass=9} 
+  else if w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=56} 
+  else if !w_right.grassed &amp;&amp; w_down.grassed {imagegrass=57} 
+  else if !w_right.grassed &amp;&amp; !w_down.grassed {imagegrass=55} 
+  }
+ }
+ else if(w_left)
+ {
+  if w_right.grassed &amp;&amp; w_left.grassed {imagegrass=46} 
+  else if w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=225} 
+  else if !w_right.grassed &amp;&amp; w_left.grassed {imagegrass=224} 
+  else if !w_right.grassed &amp;&amp; !w_left.grassed {imagegrass=226} 
+ }
+}
+else if(w_down)
+{
+ if w_down.grassed {imagegrass=2} else{imagegrass=50}
+ if(w_left)
+ {
+ if w_down.grassed &amp;&amp; w_left.grassed {imagegrass=6} 
+ else if w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=105} 
+ else if !w_down.grassed &amp;&amp; w_left.grassed {imagegrass=106} 
+ else if !w_down.grassed &amp;&amp; !w_left.grassed {imagegrass=58} 
+  if(w_downleft)
+  {
+   if w_down.grassed &amp;&amp; w_left.grassed &amp;&amp; w_downleft.grassed {imagegrass=10} else if !w_down.grassed &amp;&amp; w_left.grassed &amp;&amp; w_downleft.grassed {imagegrass=60} 
+   else if w_down.grassed &amp;&amp; !w_left.grassed &amp;&amp; w_downleft.grassed {imagegrass=59} else if w_down.grassed &amp;&amp; w_left.grassed &amp;&amp; !w_downleft.grassed {imagegrass=10} 
+   else if !w_down.grassed &amp;&amp; !w_left.grassed &amp;&amp; w_downleft.grassed {imagegrass=58} else if w_down.grassed &amp;&amp; !w_left.grassed &amp;&amp; !w_downleft.grassed {imagegrass=59} 
+   else if !w_down.grassed &amp;&amp; w_left.grassed &amp;&amp; !w_downleft.grassed {imagegrass=60} else if !w_down.grassed &amp;&amp; !w_left.grassed &amp;&amp; !w_downleft.grassed {imagegrass=58} 
+  }
+ }
+}
+else if(w_left)
+{
+ if w_left.grassed {imagegrass=3} else{imagegrass=51}
 }
 </string>
           </argument>
@@ -153,7 +637,8 @@ part_emitter_burst(particles.Starter_Depth0,particles.Emitter14,particles.Partic
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (grassrandom=1 &amp;&amp; cangrass=1){draw_sprite_ext(grass,grassindex,x,y-28,1,1,rotlevs1,c_white,1);}
+            <string>if grassed=true {
+if (grassrandom=1 &amp;&amp; cangrass=1){draw_sprite_ext(grass,grassindex,x,y-28,1,1,rotlevs1,c_white,1);}
 if (vinerandom=1 &amp;&amp; canvine1=1){draw_sprite_ext(vine,vineindex,x,y-4,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x+6,y-28,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x-6,y-30,1,1,rotlevs1,c_white,1);}
@@ -166,9 +651,12 @@ if (cangrass=1){draw_sprite_ext(grass,10,x-24,y-22,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x+24,y-20,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x+30,y-20,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x-30,y-20,1,1,rotlevs1,c_white,1);}
+}
 draw_self();
+if grassed=true {
 if (vinerandom=4 &amp;&amp; canvine2=1){draw_sprite_ext(vine,vineindex2,x,y,1,1,0,c_white,1);}
-draw_sprite_ext(grasscover,image_index,x,y,1,1,0,c_white,1);
+draw_sprite_ext(sprite_grass,imagegrass,x,y,1,1,0,c_white,1);}
+
 </string>
           </argument>
         </arguments>

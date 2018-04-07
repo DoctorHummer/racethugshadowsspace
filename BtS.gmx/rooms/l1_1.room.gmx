@@ -97,23 +97,16 @@
     <instance objName="o_wall" x="1280" y="768" name="inst_C9A6CF08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="1280" y="832" name="inst_929ABB24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="1280" y="896" name="inst_72E6F5CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="704" y="960" name="inst_1DA52B11" locked="0" code="mirror=true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="768" y="960" name="inst_8E2B389B" locked="0" code="mirror=true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="832" y="960" name="inst_EF267275" locked="0" code="mirror=true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1280" y="448" name="inst_CAB73ADC" locked="0" code="mirror=true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1280" y="384" name="inst_E0D1B2D8" locked="0" code="mirror=true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1280" y="512" name="inst_DA35E36D" locked="0" code="mirror=true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1280" y="320" name="inst_C73DC435" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1280" y="576" name="inst_7701208A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="896" y="960" name="inst_CA6DF80D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="640" y="960" name="inst_9D5EECC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="512" y="320" name="inst_2A661E73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="832" y="384" name="inst_96419B95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1152" y="448" name="inst_D0E6DE30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="192" y="256" name="inst_5B27BCF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="832" y="192" name="inst_B4029CF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_lvl1stone" x="1152" y="128" name="inst_14084B88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bubble" x="640" y="928" name="inst_5D61C7FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="640" y="960" name="inst_97695B2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="704" y="960" name="inst_A1B609C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="768" y="960" name="inst_B42953AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="896" y="960" name="inst_2AB999ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="832" y="960" name="inst_8100497E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="1280" y="576" name="inst_8BF43B38" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="1280" y="512" name="inst_CECB48E4" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="1280" y="448" name="inst_E03E6C27" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="1280" y="384" name="inst_A6717AC7" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="1280" y="320" name="inst_89C50CD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

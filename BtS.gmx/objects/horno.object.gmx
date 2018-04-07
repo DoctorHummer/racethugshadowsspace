@@ -142,8 +142,8 @@ if (speed &gt; 0.5){ speed = 0.5;}
 if (timer&gt;100 and timer&lt;130 and attack=false) 
 {
 attack=true; 
-if dashright=true {motion_add(0,10)}
-if dashright=false {motion_add(180,10)}
+if dashright=true {motion_add(0,12)}
+if dashright=false {motion_add(180,12)}
 }
 if (timer&gt;100 and timer&lt;=105) {image_index=1}
 if (timer&gt;105 and timer&lt;=125) {image_index=2}
