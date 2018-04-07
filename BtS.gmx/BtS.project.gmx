@@ -44,7 +44,8 @@
       <sprite>sprites\aspike</sprite>
       <sprite>sprites\bspike</sprite>
       <sprite>sprites\tree</sprite>
-      <sprite>sprites\treelight</sprite>
+      <sprite>sprites\treeeyes</sprite>
+      <sprite>sprites\treepuff</sprite>
       <sprite>sprites\jumpshroom</sprite>
       <sprite>sprites\platform</sprite>
       <sprite>sprites\ptrack</sprite>

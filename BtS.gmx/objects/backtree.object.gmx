@@ -47,8 +47,12 @@ vx6=+82;vy6=-292;
 
 glowing=choose(0,1,2,3)
 
-part_emitter_region(particles.Starter_Depth19,particles.Emitter10,self.x-348,self.x+348,self.y-800,self.y-350,ps_shape_rectangle,1);
-part_emitter_stream(particles.Starter_Depth19,particles.Emitter10,particles.Particle10,1);
+part_emitter_region(particles.Starter_Depth19,particles.Emitter10,self.x-348,self.x+348,self.y-600,self.y-250,ps_shape_rectangle,1);
+part_emitter_stream(particles.Starter_Depth19,particles.Emitter10,particles.Particle10,-10);
+
+et=0
+erandom=choose(200,400,600,800,1000)
+ei=0
 </string>
           </argument>
         </arguments>
@@ -73,40 +77,33 @@ part_emitter_stream(particles.Starter_Depth19,particles.Emitter10,particles.Part
             <kind>1</kind>
             <string>
 if random(200)=1{k1=1}
-if k1=0{rotvins1+=0.04}
-if k1=1{rotvins1-=0.04}
+if k1=0{rotvins1+=0.02}
+if k1=1{rotvins1-=0.02}
 if rotvins1&lt;-2{k1=0}
 if rotvins1&gt;2{k1=1}
 
 if random(200)=1{k2=1}
-if k2=0{rotvins2+=0.04}
-if k2=1{rotvins2-=0.04}
+if k2=0{rotvins2+=0.02}
+if k2=1{rotvins2-=0.02}
 if rotvins2&lt;-2{k2=0}
 if rotvins2&gt;2{k2=1}
 
-if random(200)=1{k3=1}
-if k3=0{rotvins3+=0.04}
-if k3=1{rotvins3-=0.04}
-if rotvins3&lt;-2{k3=0}
-if rotvins3&gt;2{k3=1}
+et++
 
-if random(200)=1{k4=1}
-if k4=0{rotvins4+=0.04}
-if k4=1{rotvins4-=0.04}
-if rotvins4&lt;-2{k4=0}
-if rotvins4&gt;2{k4=1}
-
-if random(200)=1{k5=1}
-if k5=0{rotvins5+=0.04}
-if k5=1{rotvins5-=0.04}
-if rotvins5&lt;-2{k5=0}
-if rotvins5&gt;2{k5=1}
-
-if random(200)=1{k6=1}
-if k6=0{rotvins6+=0.04}
-if k6=1{rotvins6-=0.04}
-if rotvins6&lt;-2{k6=0}
-if rotvins6&gt;2{k6=1}
+if (et&gt;erandom &amp;&amp; et&lt;=erandom+5) {ei=0}
+if (et&gt;erandom+5 &amp;&amp; et&lt;=erandom+10) {ei=1}
+if (et&gt;erandom+10 &amp;&amp; et&lt;=erandom+15) {ei=2}
+if (et&gt;erandom+15 &amp;&amp; et&lt;=erandom+20) {ei=3}
+if (et&gt;erandom+20 &amp;&amp; et&lt;=erandom+138) {ei=4}
+if (et&gt;erandom+138 &amp;&amp; et&lt;=erandom+142) {ei=5}
+if (et&gt;erandom+142 &amp;&amp; et&lt;=erandom+146) {ei=6}
+if (et&gt;erandom+146 &amp;&amp; et&lt;=erandom+150) {ei=7}
+if (et&gt;erandom+150 &amp;&amp; et&lt;=erandom+340) {ei=4}
+if (et&gt;erandom+340 &amp;&amp; et&lt;=erandom+345) {ei=3}
+if (et&gt;erandom+345 &amp;&amp; et&lt;=erandom+350) {ei=2}
+if (et&gt;erandom+350 &amp;&amp; et&lt;=erandom+355) {ei=1}
+if (et&gt;erandom+355 &amp;&amp; et&lt;erandom+360) {ei=0}
+if (et=erandom+360) {et=choose(-200,-400,-600,-800,-1000) erandom=choose(200,400,600,800,1000)}
 </string>
           </argument>
         </arguments>
@@ -130,13 +127,22 @@ if rotvins6&gt;2{k6=1}
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_sprite_ext(vine,vineindex1,x+vx1,y+vy1-32,1,1,rotvins1,c_white,1);
-draw_sprite_ext(vine,vineindex2,x+vx2,y+vy2-32,1,1,rotvins2,c_white,1);
-draw_sprite_ext(vine,vineindex3,x+vx3,y+vy3-32,1,1,rotvins3,c_white,1);
-draw_sprite_ext(vine,vineindex4,x+vx4,y+vy4-32,1,1,rotvins4,c_white,1);
-draw_sprite_ext(vine,vineindex5,x+vx5,y+vy5-32,1,1,rotvins5,c_white,1);
-draw_sprite_ext(vine,vineindex6,x+vx6,y+vy6-32,1,1,rotvins6,c_white,1);
+//draw_sprite_ext(vine,vineindex1,x+vx1,y+vy1-32,1,1,rotvins1,c_white,1);
+//draw_sprite_ext(vine,vineindex2,x+vx2,y+vy2-32,1,1,rotvins2,c_white,1);
+//draw_sprite_ext(vine,vineindex3,x+vx3,y+vy3-32,1,1,rotvins3,c_white,1);
+//draw_sprite_ext(vine,vineindex4,x+vx4,y+vy4-32,1,1,rotvins4,c_white,1);
+//draw_sprite_ext(vine,vineindex5,x+vx5,y+vy5-32,1,1,rotvins5,c_white,1);
+//draw_sprite_ext(vine,vineindex6,x+vx6,y+vy6-32,1,1,rotvins6,c_white,1);
 
+draw_sprite_ext(treeeyes,ei,x-2,y-180,1,1,rotvins2,c_white,1);
+
+draw_sprite_ext(treepuff,0,x-190,y-400,1,1,rotvins1,c_white,1);
+draw_sprite_ext(treepuff,1,x-130,y-288,1,1,rotvins2,c_white,1);
+draw_sprite_ext(treepuff,2,x+25,y-380,1,1,rotvins2,c_white,1);
+draw_sprite_ext(treepuff,2,x+125,y-415,1,1,rotvins2,c_white,1);
+draw_sprite_ext(treepuff,0,x+49,y-476,1,1,rotvins1,c_white,1);
+draw_sprite_ext(treepuff,1,x+189,y-315,1,1,rotvins1,c_white,1);
+draw_sprite_ext(treepuff,1,x+103,y-324,1,1,rotvins2,c_white,1);
 </string>
           </argument>
         </arguments>

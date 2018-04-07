@@ -605,6 +605,8 @@ if k2=1{rotvins1-=0.02}
 if rotvins1&lt;-2{k2=0}
 if rotvins1&gt;2{k2=1}
 
+if grassed=true
+{
 if (place_meeting(x,y-25,player) and player.yspeed&gt;0)
 {
 part_emitter_region(particles.Starter_Depth0,particles.Emitter14,player.x-33,player.x+33,player.y+35+8,player.y+35-8,ps_shape_ellipse,1);
@@ -614,6 +616,7 @@ if (place_meeting(x,y,lightballexplo_impact) and image_index!=43)
 {
 part_emitter_region(particles.Starter_Depth0,particles.Emitter14,x-32,x+32,y-32,y+32,ps_shape_ellipse,1);
 part_emitter_burst(particles.Starter_Depth0,particles.Emitter14,particles.Particle14,2);
+}
 }
 </string>
           </argument>
@@ -642,15 +645,15 @@ if (grassrandom=1 &amp;&amp; cangrass=1){draw_sprite_ext(grass,grassindex,x,y-28
 if (vinerandom=1 &amp;&amp; canvine1=1){draw_sprite_ext(vine,vineindex,x,y-4,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x+6,y-28,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x-6,y-30,1,1,rotlevs1,c_white,1);}
-if (cangrass=1){draw_sprite_ext(grass,10,x+18,y-22,1,1,rotlevs1,c_white,1);}
-if (cangrass=1){draw_sprite_ext(grass,10,x-18,y-24,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+15,y-22,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-15,y-24,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x,y-28,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x+12,y-32,1,1,rotlevs1,c_white,1);}
 if (cangrass=1){draw_sprite_ext(grass,10,x-12,y-24,1,1,rotlevs1,c_white,1);}
-if (cangrass=1){draw_sprite_ext(grass,10,x-24,y-22,1,1,rotlevs1,c_white,1);}
-if (cangrass=1){draw_sprite_ext(grass,10,x+24,y-20,1,1,rotlevs1,c_white,1);}
-if (cangrass=1){draw_sprite_ext(grass,10,x+30,y-20,1,1,rotlevs1,c_white,1);}
-if (cangrass=1){draw_sprite_ext(grass,10,x-30,y-20,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-20,y-22,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+20,y-20,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x+25,y-20,1,1,rotlevs1,c_white,1);}
+if (cangrass=1){draw_sprite_ext(grass,10,x-25,y-20,1,1,rotlevs1,c_white,1);}
 }
 draw_self();
 if grassed=true {

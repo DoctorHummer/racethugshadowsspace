@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>starsystem = part_system_create();
-part_system_depth(starsystem,1000001);
+part_system_depth(starsystem,1000002);
 partstar = part_type_create();
 part_type_shape(partstar,pt_shape_flare);
 part_type_size(partstar,0.05,0.4,0,0);
