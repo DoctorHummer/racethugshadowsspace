@@ -222,6 +222,43 @@ a=0
          x=player.x-5;y=player.y-51;
        }
       }
+      if (char_luna.sprite_index = luna_stopstart or char_luna.sprite_index = luna_stopstart_a or char_luna.sprite_index = luna_stopstart_b)
+      {
+       if char_luna.image_xscale&gt;0
+       {
+         if char_luna.image_index=0 { x=player.x+5; y=player.y-46; }
+         if char_luna.image_index=1 { x=player.x+6; y=player.y-46; }
+         if char_luna.image_index=2 { x=player.x+6; y=player.y-45; }
+         if char_luna.image_index=3 { x=player.x+7; y=player.y-45; }
+         if char_luna.image_index=4 { x=player.x+7; y=player.y-44; }
+         if char_luna.image_index=5 { x=player.x+8; y=player.y-44; }
+         if char_luna.image_index=6 { x=player.x+5; y=player.y-46; }
+         if char_luna.image_index=7 { x=player.x+3; y=player.y-44; }
+         if char_luna.image_index=8 { x=player.x; y=player.y-40; }
+         if char_luna.image_index=9 { x=player.x; y=player.y-44; }
+         if char_luna.image_index=10 { x=player.x; y=player.y-46; }
+       }
+       if char_luna.image_xscale&lt;0
+       {
+         if char_luna.image_index=0 { x=player.x-5; y=player.y-46; }
+         if char_luna.image_index=1 { x=player.x-6; y=player.y-46; }
+         if char_luna.image_index=2 { x=player.x-6; y=player.y-45; }
+         if char_luna.image_index=3 { x=player.x-7; y=player.y-45; }
+         if char_luna.image_index=4 { x=player.x-7; y=player.y-44; }
+         if char_luna.image_index=5 { x=player.x-8; y=player.y-44; }
+         if char_luna.image_index=6 { x=player.x-5; y=player.y-46; }
+         if char_luna.image_index=7 { x=player.x-3; y=player.y-44; }
+         if char_luna.image_index=8 { x=player.x; y=player.y-40; }
+         if char_luna.image_index=9 { x=player.x; y=player.y-44; }
+         if char_luna.image_index=10 { x=player.x; y=player.y-46; }
+       }
+      }
+      
+ycor[10, 0] = -36; xcor[10, 0] = +5;
+ycor[10, 1] = -34; xcor[10, 1] = +3;
+ycor[10, 2] = -30; xcor[10, 2] = -6;
+ycor[10, 3] = -34; xcor[10, 3] = -3;
+ycor[10, 4] = -36; xcor[10, 4] = +0;
    }
    
 </string>
@@ -290,6 +327,8 @@ if weaponstyle=0
 {
 sprite_index=luna_arm
 if char_luna.umbrella=false {char_luna.dontdrawarms=false} else {char_luna.dontdrawarms=true};
+if can_shoot=1{image_speed=0}
+if can_shoot=0{if image_index&lt;4 {image_speed=0.2} else {image_speed=0}}
 };
 
 if weaponstyle=1
@@ -395,7 +434,7 @@ if char_luna.spanim=0
 
 if weaponstyle=0
 {
-image_index=0;
+image_index=0
 can_shoot=0;
 char_luna.flashlight=true;
 alarm[2]=45

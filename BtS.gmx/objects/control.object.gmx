@@ -131,7 +131,7 @@ ds_list_shuffle(global.item3tierlist);
           <argument>
             <kind>1</kind>
             <string>select_timer=0
-room_speed=60
+room_speed=30
 global.autogeneration=false
 //global.delta = delta_time / 16666
 balpha2=1
@@ -280,6 +280,7 @@ if balpha2&gt;0 {balpha2-=0.025}
 {
 script_execute(select_down)
 select_timer=10
+chararm.image_index=0
 }
 </string>
           </argument>
@@ -307,6 +308,7 @@ select_timer=10
 {
 script_execute(select_up)
 select_timer=10
+chararm.image_index=0
 }
 </string>
           </argument>

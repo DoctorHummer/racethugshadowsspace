@@ -56,7 +56,7 @@ xmaxspeed = global.movespeed;
 ymaxspeed = 40.0;      
 weight = global.playergravity;         
 accel = 2;          
-xfriction = 2.5;       
+xfriction = 0.3;       
 jumpHeight = global.jumpheight;     
 
 maxDoubleJumps = 0;     
@@ -82,6 +82,13 @@ hatscale=1
 canmove=true
 hatindex=0
 slidealpha=0
+
+//startframes=0
+stopframes=0
+startframes=0
+canturn=true
+brake=-1
+drake=0
 </string>
           </argument>
         </arguments>
@@ -231,6 +238,42 @@ ycor[9, 3] = -40; xcor[9, 3] = +0;
 ycor[9, 4] = -40; xcor[9, 4] = +0;
 ycor[9, 5] = -40; xcor[9, 5] = +0;
 ycor[9, 6] = -40; xcor[9, 6] = +0;
+
+ycor[10, 0] = -36; xcor[10, 0] = 0;
+ycor[10, 1] = -34; xcor[10, 1] = +4;
+ycor[10, 2] = -35; xcor[10, 2] = +5;
+ycor[10, 3] = -36; xcor[10, 3] = +5;
+ycor[10, 4] = -35; xcor[10, 4] = +5;
+ycor[10, 5] = -33; xcor[10, 5] = +5;
+ycor[10, 6] = -36; xcor[10, 6] = +5;
+ycor[10, 7] = -34; xcor[10, 7] = +3;
+ycor[10, 8] = -30; xcor[10, 8] = -6;
+ycor[10, 9] = -34; xcor[10, 9] = -3;
+ycor[10, 10] = -36; xcor[10, 10] = +0;
+
+ycor[11, 0] = -36; xcor[11, 0] = 0;
+ycor[11, 1] = -34; xcor[11, 1] = +4;
+ycor[11, 2] = -35; xcor[11, 2] = +5;
+ycor[11, 3] = -36; xcor[11, 3] = +5;
+ycor[11, 4] = -35; xcor[11, 4] = +5;
+ycor[11, 5] = -33; xcor[11, 5] = +5;
+ycor[11, 6] = -36; xcor[11, 6] = +5;
+ycor[11, 7] = -34; xcor[11, 7] = +3;
+ycor[11, 8] = -30; xcor[11, 8] = -6;
+ycor[11, 9] = -34; xcor[11, 9] = -3;
+ycor[11, 10] = -36; xcor[11, 10] = +0;
+
+ycor[12, 0] = -36; xcor[12, 0] = 0;
+ycor[12, 1] = -34; xcor[12, 1] = +4;
+ycor[12, 2] = -35; xcor[12, 2] = +5;
+ycor[12, 3] = -36; xcor[12, 3] = +5;
+ycor[12, 4] = -35; xcor[12, 4] = +5;
+ycor[12, 5] = -33; xcor[12, 5] = +5;
+ycor[12, 6] = -36; xcor[12, 6] = +5;
+ycor[12, 7] = -34; xcor[12, 7] = +3;
+ycor[12, 8] = -30; xcor[12, 8] = -6;
+ycor[12, 9] = -34; xcor[12, 9] = -3;
+ycor[12, 10] = -36; xcor[12, 10] = +0;
 }
 
 
@@ -330,6 +373,42 @@ ycor[9, 3] = -40; xcor[9, 3] = +0;
 ycor[9, 4] = -40; xcor[9, 4] = +0;
 ycor[9, 5] = -40; xcor[9, 5] = +0;
 ycor[9, 6] = -40; xcor[9, 6] = +0;
+
+ycor[10, 0] = -36; xcor[10, 0] = 0;
+ycor[10, 1] = -34; xcor[10, 1] = -4;
+ycor[10, 2] = -35; xcor[10, 2] = -5;
+ycor[10, 3] = -36; xcor[10, 3] = -5;
+ycor[10, 4] = -35; xcor[10, 4] = -5;
+ycor[10, 5] = -33; xcor[10, 5] = -5;
+ycor[10, 6] = -36; xcor[10, 6] = -5;
+ycor[10, 7] = -34; xcor[10, 7] = -3;
+ycor[10, 8] = -30; xcor[10, 8] = +6;
+ycor[10, 9] = -34; xcor[10, 9] = +3;
+ycor[10, 10] = -36; xcor[10, 10] = 0;
+
+ycor[11, 0] = -36; xcor[11, 0] = 0;
+ycor[11, 1] = -34; xcor[11, 1] = -4;
+ycor[11, 2] = -35; xcor[11, 2] = -5;
+ycor[11, 3] = -36; xcor[11, 3] = -5;
+ycor[11, 4] = -35; xcor[11, 4] = -5;
+ycor[11, 5] = -33; xcor[11, 5] = -5;
+ycor[11, 6] = -36; xcor[11, 6] = -5;
+ycor[11, 7] = -34; xcor[11, 7] = -3;
+ycor[11, 8] = -30; xcor[11, 8] = -6;
+ycor[11, 9] = -34; xcor[11, 9] = -3;
+ycor[11, 10] = -36; xcor[11, 10] = 0;
+
+ycor[12, 0] = -36; xcor[12, 0] = 0;
+ycor[12, 1] = -34; xcor[12, 1] = -4;
+ycor[12, 2] = -35; xcor[12, 2] = -5;
+ycor[12, 3] = -36; xcor[12, 3] = -5;
+ycor[12, 4] = -35; xcor[12, 4] = -5;
+ycor[12, 5] = -33; xcor[12, 5] = -5;
+ycor[12, 6] = -36; xcor[12, 6] = -5;
+ycor[12, 7] = -34; xcor[12, 7] = -3;
+ycor[12, 8] = -30; xcor[12, 8] = +6;
+ycor[12, 9] = -34; xcor[12, 9] = +3;
+ycor[12, 10] = -36; xcor[12, 10] = 0;
 }
 spanim=0
 k1=0;
@@ -602,6 +681,42 @@ ycor[9, 3] = -40; xcor[9, 3] = +0;
 ycor[9, 4] = -40; xcor[9, 4] = +0;
 ycor[9, 5] = -40; xcor[9, 5] = +0;
 ycor[9, 6] = -40; xcor[9, 6] = +0;
+
+ycor[10, 0] = -36; xcor[10, 0] = 0;
+ycor[10, 1] = -34; xcor[10, 1] = +4;
+ycor[10, 2] = -35; xcor[10, 2] = +5;
+ycor[10, 3] = -36; xcor[10, 3] = +5;
+ycor[10, 4] = -35; xcor[10, 4] = +5;
+ycor[10, 5] = -33; xcor[10, 5] = +5;
+ycor[10, 6] = -36; xcor[10, 6] = +5;
+ycor[10, 7] = -34; xcor[10, 7] = +3;
+ycor[10, 8] = -30; xcor[10, 8] = -6;
+ycor[10, 9] = -34; xcor[10, 9] = -3;
+ycor[10, 10] = -36; xcor[10, 10] = +0;
+
+ycor[11, 0] = -36; xcor[11, 0] = 0;
+ycor[11, 1] = -34; xcor[11, 1] = +4;
+ycor[11, 2] = -35; xcor[11, 2] = +5;
+ycor[11, 3] = -36; xcor[11, 3] = +5;
+ycor[11, 4] = -35; xcor[11, 4] = +5;
+ycor[11, 5] = -33; xcor[11, 5] = +5;
+ycor[11, 6] = -36; xcor[11, 6] = +5;
+ycor[11, 7] = -34; xcor[11, 7] = +3;
+ycor[11, 8] = -30; xcor[11, 8] = -6;
+ycor[11, 9] = -34; xcor[11, 9] = -3;
+ycor[11, 10] = -36; xcor[11, 10] = +0;
+
+ycor[12, 0] = -36; xcor[12, 0] = 0;
+ycor[12, 1] = -34; xcor[12, 1] = +4;
+ycor[12, 2] = -35; xcor[12, 2] = +5;
+ycor[12, 3] = -36; xcor[12, 3] = +5;
+ycor[12, 4] = -35; xcor[12, 4] = +5;
+ycor[12, 5] = -33; xcor[12, 5] = +5;
+ycor[12, 6] = -36; xcor[12, 6] = +5;
+ycor[12, 7] = -34; xcor[12, 7] = +3;
+ycor[12, 8] = -30; xcor[12, 8] = -6;
+ycor[12, 9] = -34; xcor[12, 9] = -3;
+ycor[12, 10] = -36; xcor[12, 10] = +0;
 }
 
 
@@ -701,6 +816,42 @@ ycor[9, 3] = -40; xcor[9, 3] = +0;
 ycor[9, 4] = -40; xcor[9, 4] = +0;
 ycor[9, 5] = -40; xcor[9, 5] = +0;
 ycor[9, 6] = -40; xcor[9, 6] = +0;
+
+ycor[10, 0] = -36; xcor[10, 0] = 0;
+ycor[10, 1] = -34; xcor[10, 1] = -4;
+ycor[10, 2] = -35; xcor[10, 2] = -5;
+ycor[10, 3] = -36; xcor[10, 3] = -5;
+ycor[10, 4] = -35; xcor[10, 4] = -5;
+ycor[10, 5] = -33; xcor[10, 5] = -5;
+ycor[10, 6] = -36; xcor[10, 6] = -5;
+ycor[10, 7] = -34; xcor[10, 7] = -3;
+ycor[10, 8] = -30; xcor[10, 8] = +6;
+ycor[10, 9] = -34; xcor[10, 9] = +3;
+ycor[10, 10] = -36; xcor[10, 10] = 0;
+
+ycor[11, 0] = -36; xcor[11, 0] = 0;
+ycor[11, 1] = -34; xcor[11, 1] = -4;
+ycor[11, 2] = -35; xcor[11, 2] = -5;
+ycor[11, 3] = -36; xcor[11, 3] = -5;
+ycor[11, 4] = -35; xcor[11, 4] = -5;
+ycor[11, 5] = -33; xcor[11, 5] = -5;
+ycor[11, 6] = -36; xcor[11, 6] = -5;
+ycor[11, 7] = -34; xcor[11, 7] = -3;
+ycor[11, 8] = -30; xcor[11, 8] = +6;
+ycor[11, 9] = -34; xcor[11, 9] = +3;
+ycor[11, 10] = -36; xcor[11, 10] = 0;
+
+ycor[12, 0] = -36; xcor[12, 0] = 0;
+ycor[12, 1] = -34; xcor[12, 1] = -4;
+ycor[12, 2] = -35; xcor[12, 2] = -5;
+ycor[12, 3] = -36; xcor[12, 3] = -5;
+ycor[12, 4] = -35; xcor[12, 4] = -5;
+ycor[12, 5] = -33; xcor[12, 5] = -5;
+ycor[12, 6] = -36; xcor[12, 6] = -5;
+ycor[12, 7] = -34; xcor[12, 7] = -3;
+ycor[12, 8] = -30; xcor[12, 8] = +6;
+ycor[12, 9] = -34; xcor[12, 9] = +3;
+ycor[12, 10] = -36; xcor[12, 10] = 0;
 }
 </string>
           </argument>
@@ -763,12 +914,7 @@ else {
   move_contact_solid(point_direction(x, y, x + xspeed, y), xspeed);
   xspeed = 0;
 }
-  if (gamepad_button_check_pressed(0, gp_padl) || keyboard_check_pressed(ord('A')) || (keyboard_check(ord('A')) &amp;&amp; keyboard_check_released(ord('D')))) {
-    dir = -1;
-  }
-  if (gamepad_button_check_pressed(0, gp_padr) || keyboard_check_pressed(ord('D')) || (keyboard_check(ord('D')) &amp;&amp; keyboard_check_released(ord('A')))) {
-    dir = 1; 
-  }
+
   if (place_free(x, y + 1)) {
     yspeed += weight;
 
@@ -786,7 +932,16 @@ else {
       isJumping = true;
     }
     }
-
+    
+  if (gamepad_button_check_pressed(0, gp_padl) || keyboard_check_pressed(ord('A')) || (keyboard_check(ord('A')) &amp;&amp; keyboard_check_released(ord('D')))) {
+    dir = -1;
+  }
+  if (gamepad_button_check_pressed(0, gp_padr) || keyboard_check_pressed(ord('D')) || (keyboard_check(ord('D')) &amp;&amp; keyboard_check_released(ord('A')))) {
+    dir = 1; 
+  }
+    
+  if !brake
+  {
   if (
   keyboard_check(ord('A')) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1 ||
   gamepad_button_check(0, gp_padl) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1
@@ -795,19 +950,20 @@ else {
   }
   if (
   keyboard_check(ord('D')) &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1 ||
-  gamepad_button_check(0, gp_padr)  &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1
+  gamepad_button_check(0, gp_padr) &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1
   ) {
     xspeed += accel;
   }
   
+  }
+
   if (!gamepad_button_check(0, gp_padl) &amp;&amp; !gamepad_button_check(0, gp_padr) &amp;&amp; !keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D'))) {
     if (abs(xspeed) &gt; xfriction) {
       xspeed -= sign(xspeed) * xfriction;
     } else {
       xspeed = 0;
     }
-  }
-
+    }
 
 if (gamepad_button_check_pressed(0, gp_face2))
 {if (global.getwings=false)
@@ -990,7 +1146,7 @@ else
 {
 weight = global.playergravity;   
 }
-}                             
+}  
 </string>
           </argument>
         </arguments>
@@ -1057,23 +1213,60 @@ weight = global.playergravity;
 
 // Draw the appropriate sprites:
 if ((place_meeting(x, y+1, o_blockparent))) {
-  if (xspeed == 0) {
-    // Idle.
+  if (xspeed == 0) 
+    {
     if (flashlight=true) sprite_index = luna_stay;
     if (dontdrawarms=true) sprite_index = luna_stay_b;
     if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_stay_a;
-
-  }
-  else {
+    stopframes=0
+    startframes=0
+    brake=-1
+    // Idle.
+    }
+    else 
+    {
     // Running.
-    //if (sign(xspeed) == sign(dir)) {
+    if brake=-1
+    {
+    if startframes&lt;=10 {startframes++}
+    if (flashlight=true) sprite_index=luna_stopstart
+    if (dontdrawarms=true) sprite_index = luna_stopstart_b;
+    if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_stopstart_a;
+    if startframes&gt;=0 and startframes&lt;2 {image_index=0}
+    if startframes&gt;=2 and startframes&lt;4 {image_index=1}
+    if startframes&gt;=4 and startframes&lt;6 {image_index=2}
+    if startframes&gt;=6 and startframes&lt;8 {image_index=3}
+    if startframes&gt;=8 and startframes&lt;=10 {image_index=4}
+    if startframes&gt;10 {brake=0 image_index=0}
+    }
+    if brake=0 or brake=-1
+    {
+    if keyboard_check_released(ord('A')) or keyboard_check_released(ord('D'))
+    {
+    brake=1
+    stopframes=0
+    }
+    }
+    if brake=0
+    {
     if (flashlight=true) sprite_index = luna_run;
     if (dontdrawarms=true) sprite_index = luna_run_b;
     if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_run_a;
-    //}
-    //else {
-    //sprite_index = luna_jump;
-    //}
+    }
+    if (sign(xspeed) != sign(dir)) { brake=0 }
+    if brake=1
+    {
+    if stopframes&lt;=26 {stopframes++}
+    if (flashlight=true) sprite_index=luna_stopstart
+    if (dontdrawarms=true) sprite_index = luna_stopstart_b;
+    if (dontdrawarms=false &amp;&amp; flashlight=false) sprite_index = luna_stopstart_a;
+    if stopframes&gt;=0 and stopframes&lt;3 {image_index=6}
+    if stopframes&gt;=3 and stopframes&lt;6 {image_index=7}
+    if stopframes&gt;=6 and stopframes&lt;20 {image_index=8}
+    if stopframes&gt;=20 and stopframes&lt;23 {image_index=9}
+    if stopframes&gt;=23 and stopframes&lt;=26 {image_index=10}
+    if stopframes&gt;26 {xspeed=0}
+    }
   }
 }
 else {
@@ -1095,15 +1288,20 @@ landing -= 1;
 }
 
 // Configure image speeds.
-image_speed = 0.5;
 
 if (sprite_index == luna_run || sprite_index == luna_run_a || sprite_index == luna_run_b) {
   image_speed = 0.35;
 }
-
+else
 if (sprite_index == luna_stay || sprite_index == luna_stay_a || sprite_index == luna_stay_b) {
   image_speed = 0.05;
 }
+else
+if (sprite_index == luna_stopstart || sprite_index == luna_stopstart_a || sprite_index == luna_stopstart_b) {
+  image_speed = 0;
+}
+else
+image_speed = 0.5;
 
 </string>
           </argument>
@@ -1292,9 +1490,7 @@ ds_list_shuffle(myRooms);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-var i_off;
+            <string>var i_off;
 switch( sprite_index ) { 
 case( luna_stay ): i_off = 0; break; 
 case( luna_stay_a ): i_off = 1; break; 
@@ -1306,6 +1502,9 @@ case( luna_drink ): i_off = 6; break;
 case( luna_stay_b ): i_off = 7; break; 
 case( luna_run_b ): i_off = 8; break;
 case( luna_jump_b ): i_off = 9; break; 
+case( luna_stopstart ): i_off = 10; break; 
+case( luna_stopstart_a ): i_off = 11; break; 
+case( luna_stopstart_b ): i_off = 12; break; 
 }
 
 var ii = floor( image_index );
@@ -1364,7 +1563,37 @@ if eyehurt=0
 {
 if (flashlight=true)
 {
+if (sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_run_b)
+{
+if image_xscale&gt;0 {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] - 7, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
+else {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] +7, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
+}
+else if (sprite_index = luna_stopstart_b or sprite_index = luna_stopstart_a or sprite_index = luna_stopstart)
+{
+if image_xscale&gt;0
+{
+if (image_index=0 or image_index=8 or image_index=9 or image_index=10) draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
+if (image_index=1 or image_index=7) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,35,20,player.x + xcor[i_off, ii]-17, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=2) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,33,20,player.x + xcor[i_off, ii]-15, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=3 or image_index=6) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,30,20,player.x + xcor[i_off, ii]-12, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=4) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,28,20,player.x + xcor[i_off, ii]-10, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=5) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,27,20,player.x + xcor[i_off, ii]-9, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+}
+else 
+{
+if (image_index=0 or image_index=8 or image_index=9 or image_index=10) draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
+if (image_index=1 or image_index=7) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,35,20,player.x + xcor[i_off, ii]+17, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=2) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,33,20,player.x + xcor[i_off, ii]+15, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=3 or image_index=6) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,30,20,player.x + xcor[i_off, ii]+12, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=4) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,28,20,player.x + xcor[i_off, ii]+10, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=5) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,27,20,player.x + xcor[i_off, ii]+9, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+}
+}
+else
+{
 draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii], image_xscale, image_yscale,0,c_white,1);
+}
+
 if image_xscale&gt;0
 {
 switch (point_direction(x, y, mouse_x, mouse_y) + 45) div 22.5  {
@@ -1413,13 +1642,20 @@ case 15: eyeindex = 11; break;
 
 if (flashlight=false)
 {
-draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
-if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_drink)
+if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = luna_stay_b or sprite_index = luna_drink)
 {
+draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
 eyeindex=0
 }
-if ((sprite_index = luna_jump_a or sprite_index = luna_jump))
+if (sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_run_b or sprite_index = luna_drink)
 {
+if dir=1 {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] - 7, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
+else {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] -26, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
+eyeindex=0
+}
+if ((sprite_index = luna_jump_b or sprite_index = luna_jump_a or sprite_index = luna_jump))
+{
+draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
 if (image_index=0) {eyeindex=3}
 if (image_index=1) {eyeindex=2}
 if (image_index=2) {eyeindex=1}
@@ -1428,6 +1664,28 @@ if (image_index=4) {eyeindex=16}
 if (image_index=5) {eyeindex=15}
 if (image_index=6) {eyeindex=14}
 }
+if (sprite_index = luna_stopstart_b or sprite_index = luna_stopstart_a or sprite_index = luna_stopstart)
+{
+if dir=1 
+{
+if (image_index=0 or image_index=8 or image_index=9 or image_index=10) draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
+if (image_index=1 or image_index=7) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,35,20,player.x + xcor[i_off, ii]-17, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=2) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,33,20,player.x + xcor[i_off, ii]-15, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=3 or image_index=6) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,30,20,player.x + xcor[i_off, ii]-12, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=4) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,28,20,player.x + xcor[i_off, ii]-10, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=5) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,27,20,player.x + xcor[i_off, ii]-9, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+}
+else 
+{
+if (image_index=0 or image_index=8 or image_index=9 or image_index=10) draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
+if (image_index=1 or image_index=7) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,35,20,player.x + xcor[i_off, ii]+17, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=2) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,33,20,player.x + xcor[i_off, ii]+15, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=3 or image_index=6) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,30,20,player.x + xcor[i_off, ii]+12, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=4) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,28,20,player.x + xcor[i_off, ii]+10, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+if (image_index=5) draw_sprite_part_ext(luna_eyes,eyeindex,0,0,27,20,player.x + xcor[i_off, ii]+9, player.y + ycor[i_off, ii]-39,image_xscale,image_yscale,c_white,1);
+}
+eyeindex=0
+}
 }
 }
 else
@@ -1435,8 +1693,39 @@ else
 draw_sprite_ext(lunahurt_eyes,0,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,1);
 }
 
+if (hatscale=1) 
+{
+if (sprite_index == luna_run || sprite_index == luna_run_a || sprite_index == luna_run_b) 
+{
+hatindex=10
+}
+else if (sprite_index == luna_stopstart || sprite_index == luna_stopstart_a || sprite_index == luna_stopstart_b) 
+{
+if image_index=0 {hatindex=0} if image_index=1 {hatindex=2} if image_index=2 {hatindex=4}
+if image_index=3 {hatindex=6} if image_index=4 {hatindex=8} if image_index=5 {hatindex=10}
+if image_index=6 {hatindex=6} if image_index=7 {hatindex=2} if image_index=8 {hatindex=0}
+if image_index=9 {hatindex=0} if image_index=10 {hatindex=0} 
+}
+else hatindex=0
+} 
+
+if (hatscale=-1) 
+{
+if (sprite_index == luna_run || sprite_index == luna_run_a || sprite_index == luna_run_b) 
+{
+hatindex=11
+}
+else if (sprite_index == luna_stopstart || sprite_index == luna_stopstart_a || sprite_index == luna_stopstart_b) 
+{
+if image_index=0 {hatindex=1} if image_index=1 {hatindex=3} if image_index=2 {hatindex=5}
+if image_index=3 {hatindex=7} if image_index=4 {hatindex=9} if image_index=5 {hatindex=11}
+if image_index=6 {hatindex=7} if image_index=7 {hatindex=3} if image_index=8 {hatindex=1}
+if image_index=9 {hatindex=1} if image_index=10 {hatindex=1} 
+}
+else hatindex=1
+}
 draw_sprite_ext(luna_hat,hatindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale, image_yscale,0,c_white,image_alpha);
-if (hatscale=1) {hatindex=0} if (hatscale=-1) {hatindex=1}
+
 
 if (spanim=0)
 {
@@ -1469,6 +1758,7 @@ if umbrella=true
 {
 if flashlight=true {draw_sprite_ext(s_umbrella,0,x,y-35,image_xscale,image_yscale,image_angle,image_blend,image_alpha)} else {draw_sprite_ext(s_umbrella,1,x,y-35,image_xscale,image_yscale,image_angle,image_blend,image_alpha)}
 }
+
 </string>
           </argument>
         </arguments>

@@ -32,6 +32,9 @@
       <sprite>sprites\luna_arm_lamps</sprite>
       <sprite>sprites\luna_lavalamp</sprite>
       <sprite>sprites\s_umbrella</sprite>
+      <sprite>sprites\luna_stopstart</sprite>
+      <sprite>sprites\luna_stopstart_a</sprite>
+      <sprite>sprites\luna_stopstart_b</sprite>
     </sprites>
     <sprites name="objects">
       <sprite>sprites\o_l1grass</sprite>
@@ -61,7 +64,6 @@
       <sprite>sprites\gchest2</sprite>
       <sprite>sprites\sbush</sprite>
       <sprite>sprites\grasscover</sprite>
-      <sprite>sprites\grasscover_transition</sprite>
       <sprite>sprites\wall</sprite>
       <sprite>sprites\blockadditional</sprite>
       <sprite>sprites\torches</sprite>
