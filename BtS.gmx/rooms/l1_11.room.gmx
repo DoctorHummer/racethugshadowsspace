@@ -196,11 +196,9 @@
     <instance objName="red_haunt" x="832" y="192" name="inst_A1DF281D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes_movable" x="512" y="896" name="inst_4849F2AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="576" y="896" name="inst_599C4371" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_movable" x="576" y="896" name="inst_48D2DABC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="640" y="896" name="inst_AB32132E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="704" y="896" name="inst_5EDC5517" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="768" y="896" name="inst_9CCF0E38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="spikes_movable" x="768" y="896" name="inst_1D4D1138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="896" y="896" name="inst_4B702229" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="832" y="896" name="inst_DB73132A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="spikes_movable" x="960" y="896" name="inst_68BB9E2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>

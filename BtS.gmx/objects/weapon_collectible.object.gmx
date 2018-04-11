@@ -135,7 +135,7 @@ if type=1 {global.have_gun[1]=true; global.weaponstyle=1}
 if type=2 {global.have_gun[2]=true; global.weaponstyle=2}
 if type=3 {global.have_gun[3]=true; global.weaponstyle=3}
 a=instance_create(x,y,itemdescription)
-a.forweapon=true a.weapontype=type 
+a.variation=1 a.weapontype=type 
 instance_destroy()
 }
 image_speed=0

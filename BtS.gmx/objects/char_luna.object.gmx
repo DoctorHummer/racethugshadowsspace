@@ -274,6 +274,20 @@ ycor[12, 7] = -34; xcor[12, 7] = +3;
 ycor[12, 8] = -30; xcor[12, 8] = -6;
 ycor[12, 9] = -34; xcor[12, 9] = -3;
 ycor[12, 10] = -36; xcor[12, 10] = +0;
+
+ycor[13, 0] = -41; xcor[13, 0] = 0;
+ycor[13, 1] = -41; xcor[13, 1] = 0;
+ycor[13, 2] = -41; xcor[13, 2] = 0;
+ycor[13, 3] = -42; xcor[13, 3] = 0;
+ycor[13, 4] = -42; xcor[13, 4] = 0;
+ycor[13, 5] = -42; xcor[13, 5] = 0;
+ycor[13, 6] = -42; xcor[13, 6] = 0;
+ycor[13, 7] = -42; xcor[13, 7] = 0;
+ycor[13, 8] = -42; xcor[13, 8] = 0;
+ycor[13, 9] = -42; xcor[13, 9] = 0;
+ycor[13, 10] = -42; xcor[13, 10] = 0;
+ycor[13, 11] = -41; xcor[13, 11] = 0;
+ycor[13, 12] = -41; xcor[13, 12] = 0;
 }
 
 
@@ -409,6 +423,20 @@ ycor[12, 7] = -34; xcor[12, 7] = -3;
 ycor[12, 8] = -30; xcor[12, 8] = +6;
 ycor[12, 9] = -34; xcor[12, 9] = +3;
 ycor[12, 10] = -36; xcor[12, 10] = 0;
+
+ycor[13, 0] = -41; xcor[13, 0] = 0;
+ycor[13, 1] = -41; xcor[13, 1] = 0;
+ycor[13, 2] = -41; xcor[13, 2] = 0;
+ycor[13, 3] = -42; xcor[13, 3] = 0;
+ycor[13, 4] = -42; xcor[13, 4] = 0;
+ycor[13, 5] = -42; xcor[13, 5] = 0;
+ycor[13, 6] = -42; xcor[13, 6] = 0;
+ycor[13, 7] = -42; xcor[13, 7] = 0;
+ycor[13, 8] = -42; xcor[13, 8] = 0;
+ycor[13, 9] = -42; xcor[13, 9] = 0;
+ycor[13, 10] = -42; xcor[13, 10] = 0;
+ycor[13, 11] = -41; xcor[13, 11] = 0;
+ycor[13, 12] = -41; xcor[13, 12] = 0;
 }
 spanim=0
 k1=0;
@@ -717,6 +745,20 @@ ycor[12, 7] = -34; xcor[12, 7] = +3;
 ycor[12, 8] = -30; xcor[12, 8] = -6;
 ycor[12, 9] = -34; xcor[12, 9] = -3;
 ycor[12, 10] = -36; xcor[12, 10] = +0;
+
+ycor[13, 0] = -41; xcor[13, 0] = 0;
+ycor[13, 1] = -41; xcor[13, 1] = 0;
+ycor[13, 2] = -41; xcor[13, 2] = 0;
+ycor[13, 3] = -42; xcor[13, 3] = 0;
+ycor[13, 4] = -42; xcor[13, 4] = 0;
+ycor[13, 5] = -42; xcor[13, 5] = 0;
+ycor[13, 6] = -42; xcor[13, 6] = 0;
+ycor[13, 7] = -42; xcor[13, 7] = 0;
+ycor[13, 8] = -42; xcor[13, 8] = 0;
+ycor[13, 9] = -42; xcor[13, 9] = 0;
+ycor[13, 10] = -42; xcor[13, 10] = 0;
+ycor[13, 11] = -41; xcor[13, 11] = 0;
+ycor[13, 12] = -41; xcor[13, 12] = 0;
 }
 
 
@@ -852,6 +894,20 @@ ycor[12, 7] = -34; xcor[12, 7] = -3;
 ycor[12, 8] = -30; xcor[12, 8] = +6;
 ycor[12, 9] = -34; xcor[12, 9] = +3;
 ycor[12, 10] = -36; xcor[12, 10] = 0;
+
+ycor[13, 0] = -41; xcor[13, 0] = 0;
+ycor[13, 1] = -41; xcor[13, 1] = 0;
+ycor[13, 2] = -41; xcor[13, 2] = 0;
+ycor[13, 3] = -42; xcor[13, 3] = 0;
+ycor[13, 4] = -42; xcor[13, 4] = 0;
+ycor[13, 5] = -42; xcor[13, 5] = 0;
+ycor[13, 6] = -42; xcor[13, 6] = 0;
+ycor[13, 7] = -42; xcor[13, 7] = 0;
+ycor[13, 8] = -42; xcor[13, 8] = 0;
+ycor[13, 9] = -42; xcor[13, 9] = 0;
+ycor[13, 10] = -42; xcor[13, 10] = 0;
+ycor[13, 11] = -41; xcor[13, 11] = 0;
+ycor[13, 12] = -41; xcor[13, 12] = 0;
 }
 </string>
           </argument>
@@ -1212,7 +1268,7 @@ weight = global.playergravity;
             <string>///Image Handling
 
 // Draw the appropriate sprites:
-if ((place_meeting(x, y+1, o_blockparent))) {
+if (place_meeting(x, y+1, o_blockparent)) {
   if (xspeed == 0) 
     {
     if (flashlight=true) sprite_index = luna_stay;
@@ -1404,7 +1460,15 @@ alarm[2]=40
             <string>///Potion
 if spanim=1
 {
-sprite_index=luna_drink; image_speed = 0.35;
+if (place_meeting(x, y+1, o_blockparent))
+{
+sprite_index=luna_drink;
+}
+else
+{
+sprite_index=luna_drinkjump;
+}
+image_speed = 0.35;
 if image_index&gt;5 and image_index&lt;10
 {
 eyehurt=1 
@@ -1412,7 +1476,7 @@ part_emitter_region(particles.Starter_Depth0,particles.Emitter16,self.x-64,self.
 part_emitter_burst(particles.Starter_Depth0,particles.Emitter16,particles.Particle16,6);}  
 }
 
-if spanim=1 { xmaxspeed = 0; }
+if spanim=1 and (place_meeting(x, y+1, o_blockparent)) { xmaxspeed = 0; }
 else
 { xmaxspeed = global.movespeed; }
 
@@ -1505,6 +1569,7 @@ case( luna_jump_b ): i_off = 9; break;
 case( luna_stopstart ): i_off = 10; break; 
 case( luna_stopstart_a ): i_off = 11; break; 
 case( luna_stopstart_b ): i_off = 12; break; 
+case( luna_drinkjump ): i_off = 13; break;
 }
 
 var ii = floor( image_index );
@@ -1647,7 +1712,7 @@ if (sprite_index = luna_stay or sprite_index = luna_stay_a or sprite_index = lun
 draw_sprite_ext(luna_eyes,eyeindex,player.x + xcor[i_off, ii], player.y + ycor[i_off, ii],image_xscale,image_yscale,0,c_white,1);
 eyeindex=0
 }
-if (sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_run_b or sprite_index = luna_drink)
+if (sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_run_b)
 {
 if dir=1 {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] - 7, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
 else {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] -26, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}

@@ -339,6 +339,14 @@ for (i = 0; i &lt; room_width; i += 64)
    }
 room_speed=60
 alarm[0]=25
+
+if room=l1_1
+{
+a=instance_create(x,y,itemdescription)
+a.itemname="Mirkwood" a.itemdesc="" a.ax1=525 a.ay1=360 
+a.variation=2
+a.rare=0
+}
 </string>
           </argument>
         </arguments>

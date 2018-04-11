@@ -237,6 +237,7 @@
     <instance objName="o_lvl1block" x="256" y="960" name="inst_3E93AE3D" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="192" y="960" name="inst_80D3394C" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_lvl1block" x="128" y="960" name="inst_99A7BBC2" locked="0" code="grassed=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_lvl1block" x="960" y="960" name="inst_65107BF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

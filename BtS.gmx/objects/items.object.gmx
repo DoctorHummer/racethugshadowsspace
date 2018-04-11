@@ -185,26 +185,14 @@ ds_list_delete(global.item3tierlist,0)
 
 a=instance_create(x,y,itemdescription)
 a.type=type a.rare=rare a.i_s=image_index
-a.forweapon=false
+a.variation=0
+
+instance_destroy()
 }
 
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="7" enumb="5">

@@ -289,7 +289,10 @@ image_angle=direction;
 
 if instance_exists(char_luna)
 {
-if (char_luna.flashlight=false or char_luna.spanim=1){visible=false}
+if (char_luna.flashlight=false or char_luna.spanim=1)
+{
+visible=false 
+}
 else{visible=true}
 }
 
@@ -301,6 +304,7 @@ else
 {
 image_yscale=-1
 }
+
 </string>
           </argument>
         </arguments>
@@ -339,8 +343,11 @@ if char_luna.umbrella=false {char_luna.dontdrawarms=false} else {char_luna.dontd
 
 if can_shoot=1
 {
+if visible=true
+{
 part_emitter_region(Starter_Torch,EmitterTorch,xshoot + lengthdir_x(35,direction),xshoot + lengthdir_x(35,direction),yshoot + lengthdir_y(35,direction),yshoot + lengthdir_y(35,direction),ps_shape_ellipse,1);
 part_emitter_burst(Starter_Torch,EmitterTorch,ParticleTorch,2);
+}
 image_speed=0
 }
 if can_shoot=0
@@ -358,8 +365,11 @@ char_luna.dontdrawarms=true;
 
 if weaponstyle=3 
 {
+if visible=true
+{
 part_emitter_region(Starter_LavaBubble,EmitterLavaBubble,xshoot - 5 + lengthdir_x(24,direction),xshoot + 7 + lengthdir_x(24,direction),yshoot + 20 + lengthdir_y(24,direction),yshoot + 20 + lengthdir_y(24,direction),ps_shape_ellipse,1);
 part_emitter_burst(Starter_LavaBubble,EmitterLavaBubble,ParticleLavaBubble,15);
+}
 sprite_index=luna_arm_lamps;
 char_luna.flashlight=true;
 if char_luna.umbrella=false {char_luna.dontdrawarms=false} else {char_luna.dontdrawarms=true};
@@ -510,8 +520,11 @@ a.damage=0.5
           <argument>
             <kind>1</kind>
             <string>part_system_destroy(Starter_Torch)
+part_system_destroy(Starter_LavaBubble)
 part_particles_clear(ParticleTorch)
+part_particles_clear(ParticleLavaBubble)
 part_emitter_clear(Starter_Torch,EmitterTorch)
+part_emitter_clear(Starter_LavaBubble,EmitterLavaBubble)
 </string>
           </argument>
         </arguments>
@@ -535,6 +548,7 @@ part_emitter_clear(Starter_Torch,EmitterTorch)
           <argument>
             <kind>1</kind>
             <string>part_particles_clear(ParticleTorch)
+part_particles_clear(ParticleLavaBubble)
 </string>
           </argument>
         </arguments>
@@ -558,8 +572,11 @@ part_emitter_clear(Starter_Torch,EmitterTorch)
           <argument>
             <kind>1</kind>
             <string>part_system_destroy(Starter_Torch)
+part_system_destroy(Starter_LavaBubble)
 part_particles_clear(ParticleTorch)
+part_particles_clear(ParticleLavaBubble)
 part_emitter_clear(Starter_Torch,EmitterTorch)
+part_emitter_clear(Starter_LavaBubble,EmitterLavaBubble)
 </string>
           </argument>
         </arguments>
