@@ -39,7 +39,7 @@ if type=0 {image_index=0}
 if type=1 {image_index=11}
 if type=2 {image_index=22}
 
-dist=random_range(32,48)
+dist=48
 
 </string>
           </argument>
@@ -168,7 +168,7 @@ if rotlevs1&gt;2{k1=1}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(spikevines,image_index,x+lengthdir_x(-dist,image_angle),y+lengthdir_y(-dist,image_angle),1,1,image_angle+rotlevs1,c_white,1)
+            <string>draw_sprite_ext(spikevines,image_index,x,y,1,1,image_angle+rotlevs1,c_white,1)
 </string>
           </argument>
         </arguments>

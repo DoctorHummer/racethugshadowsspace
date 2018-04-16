@@ -100,7 +100,10 @@
         <sprite>sprites\rcloud</sprite>
         <sprite>sprites\recloud_eyes</sprite>
         <sprite>sprites\s_horno</sprite>
-        <sprite>sprites\sprite106</sprite>
+        <sprite>sprites\hornogore</sprite>
+        <sprite>sprites\wallflower</sprite>
+        <sprite>sprites\wallflower2</sprite>
+        <sprite>sprites\wallflowergrass</sprite>
       </sprites>
       <sprites name="tier3">
         <sprite>sprites\rspike</sprite>
@@ -222,7 +225,6 @@
       <object>objects\parbullet</object>
       <objects name="bullets">
         <object>objects\weepbullet</object>
-        <object>objects\spikeshot</object>
       </objects>
       <objects name="forest">
         <objects name="tier1">
@@ -231,8 +233,13 @@
         <objects name="tier2">
           <object>objects\weep</object>
           <object>objects\horno</object>
-          <object>objects\weepdead</object>
           <object>objects\redcloud</object>
+          <object>objects\flowerbud</object>
+          <objects name="other">
+            <object>objects\hornodead</object>
+            <object>objects\flowerbuddead</object>
+            <object>objects\weepdead</object>
+          </objects>
         </objects>
         <objects name="tier3">
           <object>objects\redspike</object>
@@ -291,6 +298,7 @@
       <room>rooms\l1_30</room>
       <room>rooms\l1_31</room>
       <room>rooms\l1_32</room>
+      <room>rooms\l1_33</room>
       <room>rooms\l1_torch_1</room>
       <room>rooms\f_undertaleisbanned</room>
       <room>rooms\f_you_are_gayy</room>

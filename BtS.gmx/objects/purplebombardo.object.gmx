@@ -58,6 +58,7 @@ as=8
 
 if (global.passedrooms&gt;15 and global.passedrooms&lt;30){as=10}
 if (global.passedrooms&gt;=30){as=12}
+active=true
 </string>
           </argument>
         </arguments>

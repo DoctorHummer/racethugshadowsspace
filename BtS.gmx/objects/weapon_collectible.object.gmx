@@ -3,7 +3,7 @@
   <spriteName>weapon_items</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>3</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -131,7 +131,7 @@ part_emitter_stream(Starter_Depth6,Emitter15,Particle15,8);
             <string>if (keyboard_check_pressed(ord('E')) and distance_to_object(player)&lt;=32 and active=0) 
 {
 active=1
-if type=1 {global.have_gun[1]=true; global.weaponstyle=1}
+if type=1 {global.have_gun[1]=true; global.weaponstyle=1 chararm.image_index=0}
 if type=2 {global.have_gun[2]=true; global.weaponstyle=2}
 if type=3 {global.have_gun[3]=true; global.weaponstyle=3}
 a=instance_create(x,y,itemdescription)

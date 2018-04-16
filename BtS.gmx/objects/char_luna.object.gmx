@@ -86,9 +86,7 @@ slidealpha=0
 //startframes=0
 stopframes=0
 startframes=0
-canturn=true
 brake=-1
-drake=0
 </string>
           </argument>
         </arguments>
@@ -499,6 +497,8 @@ ds_list_add(myRooms,l1_spotlight_2);
 ds_list_add(myRooms,l1_spotlight_3);
 ds_list_add(myRooms,l1_31);
 ds_list_add(myRooms,l1_32);
+ds_list_add(myRooms,l1_33);
+ds_list_add(myRooms,l1_torch_1);
 </string>
           </argument>
         </arguments>
@@ -996,7 +996,7 @@ else {
     dir = 1; 
   }
     
-  if !brake
+  if !brake or !(place_meeting(x, y+1, o_blockparent))
   {
   if (
   keyboard_check(ord('A')) &amp;&amp; xspeed &gt; -xmaxspeed &amp;&amp; dir == -1 ||
@@ -1010,7 +1010,6 @@ else {
   ) {
     xspeed += accel;
   }
-  
   }
 
   if (!gamepad_button_check(0, gp_padl) &amp;&amp; !gamepad_button_check(0, gp_padr) &amp;&amp; !keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D'))) {
@@ -1715,7 +1714,7 @@ eyeindex=0
 if (sprite_index = luna_run or sprite_index = luna_run_a or sprite_index = luna_run_b)
 {
 if dir=1 {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] - 7, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
-else {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] -26, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
+else {draw_sprite_part_ext(luna_eyes,eyeindex,0,0,25,20,player.x + xcor[i_off, ii] +6, player.y + ycor[i_off, ii] - 39,image_xscale,image_yscale,c_white,1)}
 eyeindex=0
 }
 if ((sprite_index = luna_jump_b or sprite_index = luna_jump_a or sprite_index = luna_jump))

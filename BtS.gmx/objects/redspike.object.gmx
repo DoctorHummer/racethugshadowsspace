@@ -58,6 +58,7 @@ instance_destroy()
 spikedeyeimage=0
 
 image_angle=random_range(-20,20)
+active=true
 </string>
           </argument>
         </arguments>

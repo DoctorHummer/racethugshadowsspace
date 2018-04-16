@@ -201,9 +201,7 @@ part_emitter_clear(Starter_Depth6,Emitter15)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-draw_text(x,y+a,'ass')
-if (a&gt;0 and a&lt;=64) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)}
+            <string>if (a&gt;0 and a&lt;=64) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)}
 if (a&gt;64 and a&lt;=128) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v2,x,y+104,1,1,0,c_white,1)}
 if (a&gt;128 and a&lt;=192) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v2,x,y+104,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v3,x,y+168,1,1,0,c_white,1)}
 if (a&gt;192 and a&lt;=256) {draw_sprite_ext(jumpshroom,v1,x,y+40,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v2,x,y+104,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v3,x,y+168,1,1,0,c_white,1)draw_sprite_ext(jumpshroom,v4,x,y+232,1,1,0,c_white,1)}

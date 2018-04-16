@@ -36,6 +36,7 @@ image_angle=random_range(-3,3);k1=0;
 
 tier=2
 bounce=1
+active=true
 </string>
           </argument>
         </arguments>

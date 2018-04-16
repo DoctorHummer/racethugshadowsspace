@@ -125,7 +125,11 @@ w_upleft    = instance_place(x-iw,y-iw,object_index);
 w_downleft  = instance_place(x-iw,y+iw,object_index);
 w_upright   = instance_place(x+iw,y-iw,object_index);
 w_downright = instance_place(x+iw,y+iw,object_index);
-alarm[0]=5
+
+
+imagegrass=44
+
+alarm[0]=1
 </string>
           </argument>
         </arguments>
@@ -149,8 +153,6 @@ alarm[0]=5
           <argument>
             <kind>1</kind>
             <string>
-imagegrass=44
-
 if(w_up)
 {
  if w_up.grassed {imagegrass=0} else{imagegrass=48}

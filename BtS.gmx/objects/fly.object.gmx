@@ -42,6 +42,7 @@ timer=0
 coindrop=true
 justhittimer=0
 justhit=0
+active=true
 </string>
           </argument>
         </arguments>

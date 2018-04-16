@@ -55,6 +55,7 @@ tm=100
 
 if (global.passedrooms&gt;25 and global.passedrooms&lt;50){tm=75}
 if (global.passedrooms&gt;=50){tm=50}
+active=true
 </string>
           </argument>
         </arguments>
@@ -176,7 +177,9 @@ if collision_line(self.x,self.y,player.x,player.y,all,1,1)
 timer+=1
 }
 if (timer&gt;tm and timer&lt;tm+11){image_xscale-=0.0125; image_yscale+=0.0125;}
-if timer=tm+12 {instance_create(x,y,spikeshot)}
+if timer=tm+12 {m=instance_create(x,y,weepbullet) m.throughblocks=true m.type=0 m.direction=point_direction(player.x,player.y,x,y) 
+if (global.passedrooms&lt;25) {m.speed=-5} if (global.passedrooms&gt;=25 and global.passedrooms&lt;40) {m.speed=-10} if (global.passedrooms&gt;=40) {m.speed=-15}
+}
 if (timer&gt;tm+10 and timer&lt;tm+16){image_xscale+=0.0375; image_yscale-=0.0375;}
 if timer&gt;tm+15 {image_xscale=1; image_yscale=1; timer=choose(0,-25,-50,-75,-100)}
 
@@ -188,6 +191,7 @@ x=spinner.x+lengthdir_x(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
 y=spinner.y+lengthdir_y(a,point_direction(spinner.x,spinner.y,x,y)+spinspeed)
 }
 }
+
 </string>
           </argument>
         </arguments>

@@ -65,10 +65,14 @@ yspeed = -15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if canmove=true
+            <string>var specter = object_get_name(object_index);
+
+if canmove=true
 {
 if bessmertie&lt;1
 { 
+if other.active
+{
 alarm[0]=80;
 bessmertie=1;
 alarm[1]=20;
@@ -81,6 +85,7 @@ lives-=1;
 if other.x&lt;x{xspeed = +30;}
 else{xspeed = -30;}
 yspeed = -15;
+}
 }
 }
 </string>

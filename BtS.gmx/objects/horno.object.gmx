@@ -50,6 +50,11 @@ rt=80
 
 if (global.passedrooms&gt;25 and global.passedrooms&lt;50){rt=90}
 if (global.passedrooms&gt;=50){rt=95}
+
+
+active=false
+
+hitrot=0
 </string>
           </argument>
         </arguments>
@@ -79,6 +84,10 @@ a=instance_create(x,y,mparticles)
 a.type=8;
 a=instance_create(x,y,mparticles)
 a.type=7;
+a=instance_create(x,y,hornodead); a.direction=90; a.speed=3; a.image_xscale=image_xscale; a.image_index=0
+a=instance_create(x,y,hornodead); a.direction=120; a.speed=5; a.image_xscale=image_xscale; a.image_index=1
+a=instance_create(x,y,hornodead); a.direction=60; a.speed=5; a.image_xscale=image_xscale; a.image_index=2
+
 //a=instance_create(x,y,particle)
 //a.type=3;
 //a.image_xscale=choose(0.1,0.2,0.3)
@@ -123,6 +132,7 @@ if mode=1
 {
 image_yscale=1
 if image_alpha&lt;1 {image_alpha+=0.05}
+if image_alpha&gt;=1 {active=true}
 timer++
 if (attack=false and (timer&lt;rt or timer&gt;=130))
 {
@@ -134,7 +144,7 @@ if (speed &lt; 1.5){    speed = 1.5;}
 }
 if (attack=false and timer&gt;=rt and timer&lt;=100)
 {
-motion_add(point_direction(x,y,player.x,player.y),.1);
+motion_add(point_direction(x,y,player.x,player.y),1);
 if x&lt;player.x{image_xscale=1; dashright=true}
 if x&gt;player.x{image_xscale=-1; dashright=false}
 if (speed &gt; 0.5){ speed = 0.5;}
@@ -195,14 +205,22 @@ draw_sprite_ext(sprite_index,-1,x+lengthdir_x(dist*2,dire),y+lengthdir_y(dist*2,
 draw_sprite_ext(sprite_index,-1,x+lengthdir_x(dist*1,dire),y+lengthdir_y(dist*1,dire),image_xscale,image_yscale,image_angle,c_aqua,1)
 }
 draw_set_blend_mode(bm_normal);
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,hitrot,c_white,image_alpha)
 if bessmertie=1
 {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_fuchsia,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.1,image_yscale*1.1,0,c_white,0.25)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.2,image_yscale*1.2,0,c_white,0.15)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,hitrot,c_fuchsia,0.5)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.1,image_yscale*1.1,hitrot,c_white,0.25)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*1.2,image_yscale*1.2,hitrot,c_white,0.15)
 }
 
+if image_xscale=1 
+{
+switch(btimer) {case 0: hitrot=0 break; case 1: hitrot=5 break; case 2: hitrot=10 break; case 3: hitrot=15 break; case 4: hitrot=10 break; case 5: hitrot=5 break;}
+}
+else
+{
+switch(btimer) {case 0: hitrot=0 break; case 1: hitrot=355 break; case 2: hitrot=350 break; case 3: hitrot=345 break; case 4: hitrot=350 break; case 5: hitrot=355 break;}
+}
 </string>
           </argument>
         </arguments>

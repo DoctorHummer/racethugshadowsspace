@@ -3,7 +3,7 @@
   <spriteName>lightballsprite</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>6</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
   <parentName>parbullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -31,6 +31,8 @@ type=0
 w=0
 mode=0
 alarm[0]=1
+throughblocks=false
+downdestroy=false
 </string>
           </argument>
         </arguments>
@@ -92,6 +94,7 @@ if mode=1 {image_alpha-=0.2}
 if image_alpha&lt;=0 {instance_destroy()}
 if (distance_to_object(o_blockparent)&lt;=0 and mode=0)
 {
+if throughblocks=false {
 if type=0
 {
 part_emitter_region(particles.Starter_Depth1,particles.Emitter12,x,x,y,y,ps_shape_ellipse,1)
@@ -102,8 +105,33 @@ if type=1
 part_emitter_region(particles.Starter_Depth1,particles.Emitter28,x,x,y,y,ps_shape_ellipse,1)
 part_emitter_burst(particles.Starter_Depth1,particles.Emitter28,particles.Particle28,6)
 }
-mode=1
+mode=1}
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if downdestroy=false {instance_destroy()}
+if downdestroy=true {if y&gt;room_height {instance_destroy()}}
 </string>
           </argument>
         </arguments>
@@ -133,6 +161,10 @@ draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_fuchsia,image_alpha)
 if type=1
 {
 draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_red,image_alpha)
+}
+if type=2
+{
+draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_aqua,image_alpha)
 }
 draw_sprite_ext(sprite_index,0,x,y,wbxscale,wbyscale,0,c_white,image_alpha*0.5)
 draw_sprite_ext(sprite_index,0,x,y,wbxscale*0.5,wbyscale*0.5,0,c_white,image_alpha)
