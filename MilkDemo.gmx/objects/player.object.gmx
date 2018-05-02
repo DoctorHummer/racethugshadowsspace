@@ -30,6 +30,7 @@ image_speed=0.5
 movespeed=6
 movestep=0
 global.facing="D"
+action=false
 </string>
           </argument>
         </arguments>
@@ -72,12 +73,24 @@ if holdl &amp;&amp; holdr {
 if (holdd ||holdu || holdl || holdr)
         {
     if (!moving) {
+        if action=false
+        {
         if (holdd) { sprite_index=s_walk_face; global.facing="D" }
         else if (holdu) { sprite_index=s_walk_back; global.facing="U" }
         if (holdl) { sprite_index=s_walk_left; global.facing="L" }
         else if (holdr) { sprite_index=s_walk_right; global.facing="R" }
+        }
+        else
+        {
+        if (holdd) { sprite_index=s_run_face; global.facing="D" }
+        else if (holdu) { sprite_index=s_run_back; global.facing="U" }
+        if (holdl) { sprite_index=s_run_left; global.facing="L" }
+        else if (holdr) { sprite_index=s_run_right; global.facing="R" }
+        }
     }
     moving=1
+    if action=false
+    {
     if (holdd &amp;&amp; !holdl &amp;&amp; !holdr) { sprite_index=s_walk_face; global.facing="D" }
     else if (holdu &amp;&amp; !holdl &amp;&amp; !holdr) { sprite_index=s_walk_back; global.facing="U" }
     else if (holdl &amp;&amp; !holdd &amp;&amp; !holdu) { sprite_index=s_walk_left; global.facing="L" }
@@ -86,6 +99,18 @@ if (holdd ||holdu || holdl || holdr)
     else if (holdd &amp;&amp; holdr &amp;&amp; sprite_index!=s_walk_face &amp;&amp; sprite_index!=s_walk_right) { sprite_index=s_walk_right; global.facing="R" }
     else if (holdu &amp;&amp; holdl &amp;&amp; sprite_index!=s_walk_back &amp;&amp; sprite_index!=s_walk_left) { sprite_index=s_walk_left; global.facing="L" }
     else if (holdu &amp;&amp; holdr &amp;&amp; sprite_index!=s_walk_back &amp;&amp; sprite_index!=s_walk_right) { sprite_index=s_walk_right; global.facing="R" }
+    }
+    else
+    {
+    if (holdd &amp;&amp; !holdl &amp;&amp; !holdr) { sprite_index=s_run_face; global.facing="D" }
+    else if (holdu &amp;&amp; !holdl &amp;&amp; !holdr) { sprite_index=s_run_back; global.facing="U" }
+    else if (holdl &amp;&amp; !holdd &amp;&amp; !holdu) { sprite_index=s_run_left; global.facing="L" }
+    else if (holdr &amp;&amp; !holdd &amp;&amp; !holdu) { sprite_index=s_run_right; global.facing="R" }
+    if (holdd &amp;&amp; holdl &amp;&amp; sprite_index!=s_run_face &amp;&amp; sprite_index!=s_run_left) { sprite_index=s_run_left; global.facing="L" }
+    else if (holdd &amp;&amp; holdr &amp;&amp; sprite_index!=s_run_face &amp;&amp; sprite_index!=s_run_right) { sprite_index=s_run_right; global.facing="R" }
+    else if (holdu &amp;&amp; holdl &amp;&amp; sprite_index!=s_run_back &amp;&amp; sprite_index!=s_run_left) { sprite_index=s_run_left; global.facing="L" }
+    else if (holdu &amp;&amp; holdr &amp;&amp; sprite_index!=s_run_back &amp;&amp; sprite_index!=s_run_right) { sprite_index=s_run_right; global.facing="R" }
+    }
 } else { moving=0 }
 
 if (moving) {
@@ -129,6 +154,10 @@ if (moving) {
         case s_walk_back: sprite_index=s_stand_back; break;
         case s_walk_left: sprite_index=s_stand_left; break;
         case s_walk_right: sprite_index=s_stand_right; break;
+        case s_run_face: sprite_index=s_idle_face; break;
+        case s_run_back: sprite_index=s_idle_back; break;
+        case s_run_left: sprite_index=s_idle_left; break;
+        case s_run_right: sprite_index=s_idle_right; break;
     }
     movestep=0
 }
@@ -139,11 +168,25 @@ case s_walk_face: image_speed=0.5; break;
 case s_walk_left: image_speed=0.5; break;
 case s_walk_back: image_speed=0.5; break;
 case s_walk_right: image_speed=0.5; break;
+case s_run_face: image_speed=0.5; break;
+case s_run_left: image_speed=0.5; break;
+case s_run_back: image_speed=0.5; break;
+case s_run_right: image_speed=0.5; break;
 case s_stand_face: image_speed=0.1; break;
 case s_stand_left: image_speed=0.1; break;
 case s_stand_back: image_speed=0.1; break;
 case s_stand_right: image_speed=0.1; break;
+case s_idle_face: image_speed=0.1; break;
+case s_idle_left: image_speed=0.1; break;
+case s_idle_back: image_speed=0.1; break;
+case s_idle_right: image_speed=0.1; break;
 }
+
+if action
+{
+movespeed=12
+}
+else movespeed=6
 
 </string>
           </argument>
