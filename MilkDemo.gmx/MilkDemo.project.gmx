@@ -14,14 +14,49 @@
     <sprite>sprites\s_walk_back</sprite>
     <sprite>sprites\s_walk_right</sprite>
     <sprite>sprites\s_walk_left</sprite>
+    <sprite>sprites\s_idle_face</sprite>
+    <sprite>sprites\s_idle_back</sprite>
+    <sprite>sprites\s_idle_right</sprite>
+    <sprite>sprites\s_idle_left</sprite>
+    <sprite>sprites\s_run_face</sprite>
+    <sprite>sprites\s_run_back</sprite>
+    <sprite>sprites\s_run_right</sprite>
+    <sprite>sprites\s_run_left</sprite>
     <sprite>sprites\s_mask</sprite>
-    <sprite>sprites\s_block</sprite>
+    <sprites name="objects">
+      <sprite>sprites\s_block</sprite>
+      <sprite>sprites\locomotive</sprite>
+      <sprite>sprites\loc_wheel</sprite>
+      <sprite>sprites\loc_stick</sprite>
+      <sprite>sprites\loco</sprite>
+    </sprites>
+    <sprite>sprites\blackpixel</sprite>
+    <sprite>sprites\s_sleeping</sprite>
+    <sprite>sprites\s_dialogue</sprite>
+    <sprite>sprites\dio</sprite>
+    <sprites name="background">
+      <sprite>sprites\sky</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\ssand</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_auto_tile.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\dialoguefont</font>
+  </fonts>
   <objects name="objects">
+    <object>objects\control</object>
     <object>objects\player</object>
     <object>objects\block</object>
+    <object>objects\o_locomotive</object>
+    <object>objects\superview</object>
+    <object>objects\player_sleepfall</object>
+    <object>objects\dialogue</object>
+    <object>objects\background1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

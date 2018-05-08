@@ -256,9 +256,6 @@
     <instance objName="o_wall" x="640" y="256" name="inst_ED1A0066" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="704" y="320" name="inst_DA62BAE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="768" y="384" name="inst_DBAED12B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_wall" x="960" y="448" name="inst_EC1D7CB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_wall" x="896" y="448" name="inst_E9AAD30A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_wall" x="832" y="448" name="inst_F2C67A55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="896" y="512" name="inst_6309B046" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="960" y="576" name="inst_028CDFFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="1024" y="640" name="inst_87D56820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -300,6 +297,13 @@
     <instance objName="backtree" x="448" y="896" name="inst_558D80CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="frog" x="896" y="416" name="inst_80929D6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="char_luna" x="128" y="928" name="inst_62E7DA09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="purplebombardo" x="896" y="704" name="inst_ED13BA97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platformtrack" x="896" y="736" name="inst_69C101E0" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="896" y="800" name="inst_00AD6398" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="896" y="864" name="inst_0D7539CF" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="896" y="608" name="inst_03CFC131" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="896" y="672" name="inst_56D49207" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="platformtrack" x="896" y="544" name="inst_1BEEEF50" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

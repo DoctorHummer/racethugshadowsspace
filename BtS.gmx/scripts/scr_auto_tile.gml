@@ -1,6 +1,3 @@
-//GM Auto tile script
-//Original script by Nocturne, modifications by ShaunJS
-//Link to original script: http://gmc.yoyogames.com/index.php?showtopic=416796?st=0
 
 var tile,iw,w_left,w_right,w_up,w_down,w_upleft,w_downleft,w_upright,w_downright;
 
