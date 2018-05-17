@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>mode=1
+
+camx=1024
+camy=960
 </string>
           </argument>
         </arguments>
@@ -56,13 +59,13 @@ if o_locomotive.locco2=1 and o_locomotive.loccotimer&gt;=50
 
 if mode=0
 {
-x +=(o_locomotive.x-x)*.12
-y +=(o_locomotive.y-y)*.12
+x +=(o_locomotive.x-x)*.3
+y +=(o_locomotive.y-y)*.3
 }
 if mode=1
 {
-x +=(player.x-x)*.06
-y +=(player.y-y)*.06
+x +=(player.x-x)*.3
+y +=(player.y-y)*.3
 }
 
 </string>

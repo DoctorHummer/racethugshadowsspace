@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>s_mask</maskName>
   <events>
@@ -70,7 +70,7 @@ if holdl &amp;&amp; holdr {
     holdr=0
 }
 
-if (holdd ||holdu || holdl || holdr)
+if ((holdd || holdu || holdl || holdr) &amp;&amp; !instance_exists(sys_transition))
         {
     if (!moving) {
         if action=false
@@ -112,6 +112,7 @@ if (holdd ||holdu || holdl || holdr)
     else if (holdu &amp;&amp; holdr &amp;&amp; sprite_index!=s_run_back &amp;&amp; sprite_index!=s_run_right) { sprite_index=s_run_right; global.facing="R" }
     }
 } else { moving=0 }
+
 
 if (moving) {
     if ((holdd || holdu) &amp;&amp; (holdl || holdr)) { movestep+=(movespeed/sqrt(2)) }
@@ -188,6 +189,27 @@ movespeed=12
 }
 else movespeed=6
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>depth=-y
 </string>
           </argument>
         </arguments>

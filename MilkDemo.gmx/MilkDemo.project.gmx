@@ -25,10 +25,17 @@
     <sprite>sprites\s_mask</sprite>
     <sprites name="objects">
       <sprite>sprites\s_block</sprite>
+      <sprite>sprites\tp</sprite>
       <sprite>sprites\locomotive</sprite>
       <sprite>sprites\loc_wheel</sprite>
       <sprite>sprites\loc_stick</sprite>
       <sprite>sprites\loco</sprite>
+      <sprites name="back">
+        <sprite>sprites\sandblock</sprite>
+        <sprite>sprites\torch</sprite>
+        <sprite>sprites\torch2</sprite>
+      </sprites>
+      <sprite>sprites\s_door</sprite>
     </sprites>
     <sprite>sprites\blackpixel</sprite>
     <sprite>sprites\s_sleeping</sprite>
@@ -40,10 +47,11 @@
   </sprites>
   <backgrounds name="background">
     <background>background\ssand</background>
+    <background>background\stone</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_auto_tile.gml</script>
+    <script>scripts\room_goto_transition.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\dialoguefont</font>
@@ -53,13 +61,30 @@
     <object>objects\player</object>
     <object>objects\block</object>
     <object>objects\o_locomotive</object>
+    <object>objects\sys_transition</object>
     <object>objects\superview</object>
     <object>objects\player_sleepfall</object>
     <object>objects\dialogue</object>
     <object>objects\background1</object>
+    <objects name="backgroundobjects">
+      <object>objects\o_torch</object>
+      <object>objects\blocc</object>
+      <object>objects\door</object>
+    </objects>
+    <object>objects\teleport</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <rooms name="intro">
+      <room>rooms\start1</room>
+      <room>rooms\start2</room>
+      <room>rooms\start3</room>
+      <room>rooms\start4</room>
+      <room>rooms\start5</room>
+      <room>rooms\start6</room>
+      <room>rooms\start7</room>
+      <room>rooms\start8</room>
+      <room>rooms\start9</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

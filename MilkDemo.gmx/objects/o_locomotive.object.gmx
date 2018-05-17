@@ -140,7 +140,7 @@ draw_sprite_ext(loc_stick,0,x+293+lengthdir_x(3,rot),y+293+lengthdir_y(3,rot),1,
 
 draw_sprite_ext(loco,loccoimg,x+173,y+175,image_xscale,image_yscale,image_angle,c_white,1)
 
-if sleeptimer&lt;50 {draw_sprite_ext(s_sleeping,simg,x+46,y+141,1,1,0,c_white,1)}
+if sleeptimer&lt;50 {draw_sprite_ext(s_sleeping,simg,x+46,y+189,1,1,0,c_white,1)}
 
 
 
@@ -162,7 +162,7 @@ if sleeptimer&gt;=9 and sleeptimer&lt;20 {simg=4}
 if sleeptimer&gt;=20 and sleeptimer&lt;23 {simg=5}
 if sleeptimer&gt;=23 and sleeptimer&lt;26 {simg=6}
 if sleeptimer&gt;=26 and sleeptimer&lt;50 {simg=7}
-if sleeptimer=50 {instance_create(x+46,y+151,player_sleepfall)}
+if sleeptimer=50 {instance_create(x+46,y+199,player_sleepfall)}
 }
 }
 
