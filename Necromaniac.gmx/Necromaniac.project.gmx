@@ -127,6 +127,7 @@
     <background>background\tile2</background>
     <background>background\tile3</background>
     <background>background\tile4</background>
+    <background>background\tile5</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
