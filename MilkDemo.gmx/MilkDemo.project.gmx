@@ -4,24 +4,17 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sand1</sound>
+    <sound>sound\sand2</sound>
+    <sound>sound\swing1</sound>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\s_stand_face</sprite>
-    <sprite>sprites\s_stand_back</sprite>
-    <sprite>sprites\s_stand_right</sprite>
-    <sprite>sprites\s_stand_left</sprite>
-    <sprite>sprites\s_walk_face</sprite>
-    <sprite>sprites\s_walk_back</sprite>
-    <sprite>sprites\s_walk_right</sprite>
-    <sprite>sprites\s_walk_left</sprite>
-    <sprite>sprites\s_idle_face</sprite>
-    <sprite>sprites\s_idle_back</sprite>
-    <sprite>sprites\s_idle_right</sprite>
-    <sprite>sprites\s_idle_left</sprite>
-    <sprite>sprites\s_run_face</sprite>
-    <sprite>sprites\s_run_back</sprite>
-    <sprite>sprites\s_run_right</sprite>
-    <sprite>sprites\s_run_left</sprite>
+    <sprite>sprites\s_idle</sprite>
+    <sprite>sprites\s_idle2</sprite>
+    <sprite>sprites\s_run</sprite>
+    <sprite>sprites\s_attack1</sprite>
+    <sprite>sprites\s_attack3</sprite>
     <sprite>sprites\s_mask</sprite>
     <sprites name="objects">
       <sprite>sprites\s_block</sprite>
@@ -76,14 +69,6 @@
   <rooms name="rooms">
     <rooms name="intro">
       <room>rooms\start1</room>
-      <room>rooms\start2</room>
-      <room>rooms\start3</room>
-      <room>rooms\start4</room>
-      <room>rooms\start5</room>
-      <room>rooms\start6</room>
-      <room>rooms\start7</room>
-      <room>rooms\start8</room>
-      <room>rooms\start9</room>
     </rooms>
   </rooms>
   <help>

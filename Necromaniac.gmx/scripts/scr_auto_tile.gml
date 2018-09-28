@@ -11,10 +11,10 @@ w_downleft  = place_meeting(x-iw,y+iw,object_index);
 w_upright   = place_meeting(x+iw,y-iw,object_index);
 w_downright = place_meeting(x+iw,y+iw,object_index);
 
-if (x-iw < 0            ) {w_left = 1; w_upleft = 1; w_downleft = 1;}
-if (x+iw > room_width   ) {w_right = 1; w_upright = 1; w_downright = 1;}
-if (y-iw < 0            ) {w_up = 1; w_upright = 1; w_upleft = 1;}
-if (y+iw > room_height  ) {w_down = 1; w_downright = 1; w_downleft = 1;}
+//if (x-iw/2 < 0            ) {w_left = 1; w_upleft = 1; w_downleft = 1;}
+//if (x+iw*2 > room_width   ) {w_right = 1; w_upright = 1; w_downright = 1;}
+//if (y-iw/2 < 0            ) {w_up = 1; w_upright = 1; w_upleft = 1;}
+//if (y+iw*2 > room_height  ) {w_down = 1; w_downright = 1; w_downleft = 1;}
 
 tile=44
 if(w_up)

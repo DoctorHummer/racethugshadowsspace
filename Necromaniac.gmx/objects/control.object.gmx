@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-1000000</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -32,8 +32,11 @@ global.controlattack=ord('J');
 global.controldown=ord('S');
 global.controlup=ord('W');
 global.location=0;
-secondalpha=1
 started=0
+
+instance_create(x,y,transit2)
+
+guialpha=1
 </string>
           </argument>
         </arguments>
@@ -56,10 +59,10 @@ started=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound1=undeadasylum1;
-if started=1 {if global.location=0 {if !audio_is_playing(sound1) {audio_play_sound(sound1,1,true); audio_sound_gain(sound1,0.5,0)}}}
+            <string>//sound1=undeadasylum1;
+//if started=1 {if global.location=0 {if !audio_is_playing(sound1) {audio_play_sound(sound1,1,true); audio_sound_gain(sound1,0.5,0)}}}
 
-if secondalpha&gt;0 {secondalpha-=0.05}
+image_speed=0.5
 </string>
           </argument>
         </arguments>
@@ -81,6 +84,29 @@ if secondalpha&gt;0 {secondalpha-=0.05}
         <isnot>0</isnot>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>guialpha=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -98,99 +124,21 @@ if secondalpha&gt;0 {secondalpha-=0.05}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(hud,0,view_xview,view_yview)
-if global.souls=0 {draw_text(view_xview+13, view_yview+9, 0) }
-if global.souls&gt;0 {draw_text(view_xview+13, view_yview+9, global.souls) }
-if global.hp=0 
-{
-draw_sprite(will,2,view_xview+158,view_yview+13)
-draw_sprite(will,2,view_xview+168,view_yview+13)
-draw_sprite(will,2,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=1 
-{
-draw_sprite(will,1,view_xview+158,view_yview+13)
-draw_sprite(will,2,view_xview+168,view_yview+13)
-draw_sprite(will,2,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=2 
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,2,view_xview+168,view_yview+13)
-draw_sprite(will,2,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=3
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,1,view_xview+168,view_yview+13)
-draw_sprite(will,2,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=4
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,2,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=5
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,1,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=6
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,0,view_xview+178,view_yview+13)
-draw_sprite(will,2,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=7
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,0,view_xview+178,view_yview+13)
-draw_sprite(will,1,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=8
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,0,view_xview+178,view_yview+13)
-draw_sprite(will,0,view_xview+188,view_yview+13)
-draw_sprite(will,2,view_xview+198,view_yview+13)
-}
-if global.hp=9
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,0,view_xview+178,view_yview+13)
-draw_sprite(will,0,view_xview+188,view_yview+13)
-draw_sprite(will,1,view_xview+198,view_yview+13)
-}
-if global.hp=10
-{
-draw_sprite(will,0,view_xview+158,view_yview+13)
-draw_sprite(will,0,view_xview+168,view_yview+13)
-draw_sprite(will,0,view_xview+178,view_yview+13)
-draw_sprite(will,0,view_xview+188,view_yview+13)
-draw_sprite(will,0,view_xview+198,view_yview+13)
-}
+            <string>var vx=view_xview; var vy=view_yview
 
-draw_sprite_ext(died,0,view_xview,view_yview,25,14,0,image_blend,secondalpha)
+draw_sprite_ext(hud,1,vx+0,vy+0,1,1,0,c_white,1)
+
+if global.hp=0 {for(i=1; i&lt;4; i++) {draw_sprite_ext(point,-1,vx+16*i,vy+16,1,1,0,c_white,1)}}
+
+if global.hp=6 { draw_sprite_ext(heart,0,vx+16,vy+16,1,1,0,c_white,1) draw_sprite_ext(heart,0,vx+32,vy+16,1,1,0,c_white,1) draw_sprite_ext(heart,0,vx+48,vy+16,1,1,0,c_white,1)}
+if global.hp=5 { draw_sprite_ext(heart,0,vx+16,vy+16,1,1,0,c_white,1) draw_sprite_ext(heart,0,vx+32,vy+16,1,1,0,c_white,1) draw_sprite_ext(heart,1,vx+48,vy+16,1,1,0,c_white,1)}
+if global.hp=4 { draw_sprite_ext(heart,0,vx+16,vy+16,1,1,0,c_white,1) draw_sprite_ext(heart,0,vx+32,vy+16,1,1,0,c_white,1)}
+if global.hp=3 { draw_sprite_ext(heart,0,vx+16,vy+16,1,1,0,c_white,1) draw_sprite_ext(heart,1,vx+32,vy+16,1,1,0,c_white,1)}
+if global.hp=2 { draw_sprite_ext(heart,0,vx+16,vy+16,1,1,0,c_white,1)}
+if global.hp=1 { draw_sprite_ext(heart,1,vx+16,vy+16,1,1,0,c_white,1)}
+
+with(playerpar) {if distance_to_object(teleport)&lt;100 {control.guialpha=distance_to_object(teleport)/42-1} else {control.guialpha=1}}
+
 </string>
           </argument>
         </arguments>
@@ -236,6 +184,37 @@ draw_sprite_ext(died,0,view_xview,view_yview,25,14,0,image_blend,secondalpha)
           <argument>
             <kind>13</kind>
             <string>16777215</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if window_get_fullscreen()
+{
+window_set_fullscreen(false);
+}
+else
+{
+window_set_fullscreen(true);
+}
+
+</string>
           </argument>
         </arguments>
       </action>

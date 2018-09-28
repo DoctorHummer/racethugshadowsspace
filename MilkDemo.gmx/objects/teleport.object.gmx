@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-next_room = noone;
+next_room = room;
 kind = 'left';
 xx = -1;
 yy = -1;

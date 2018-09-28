@@ -182,8 +182,7 @@ rot=point_direction(x,y,player.x,player.y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var width;
-width=sprite_get_width(rspikesmallchain)
+            <string>var width=sprite_get_width(rspikesmallchain)
 
 var a = collision_line(x,y,x,-128,o_lvl1block, false, false)
 var atrail=distance_to_object(a)/23+2;

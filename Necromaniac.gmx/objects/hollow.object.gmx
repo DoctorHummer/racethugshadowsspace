@@ -6,7 +6,7 @@
   <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>parmonster</parentName>
-  <maskName>sk_mask</maskName>
+  <maskName>vv_mask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -70,7 +70,7 @@ gravity = 2
 else                      
 gravity = 0                 
 
-if instance_exists(shovelknight) &gt;0            
+if instance_exists(playerpar) &gt;0            
 {
 if distance_to_object(playerpar) &lt;150      
 if !collision_line(x,y,playerpar.x,playerpar.y,cube,false,false)         
@@ -123,7 +123,7 @@ if attack=1
 sprite_index=hollowattack
 image_speed=0.2
 if attacktimer=10 {
-audio_play_sound(shovelattack,0.5,false); if playerpar.x &lt; x {instance_create(x-24,y,enemiehitbox)} else {instance_create(x+24,y,enemiehitbox)}}
+audio_play_sound(v_attack,0.5,false); if playerpar.x &lt; x {instance_create(x-24,y,enemiehitbox)} else {instance_create(x+24,y,enemiehitbox)}}
 attacktimer-=2
 }
 }

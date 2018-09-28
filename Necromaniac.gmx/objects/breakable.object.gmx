@@ -293,7 +293,7 @@ timer=5
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="4" ename="shovelknight">
+    <event eventtype="4" ename="velvet">
       <action>
         <libid>1</libid>
         <id>603</id>

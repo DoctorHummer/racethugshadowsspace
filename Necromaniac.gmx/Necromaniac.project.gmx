@@ -5,131 +5,237 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\undeadasylum1</sound>
-    <sound>sound\shovelattack</sound>
+    <sound>sound\v_attack</sound>
     <sound>sound\jump</sound>
-    <sound>sound\hit</sound>
+    <sound>sound\enemyhit</sound>
     <sound>sound\jumpstop</sound>
     <sound>sound\explo</sound>
-    <sound>sound\goodbye</sound>
-    <sound>sound\playerded</sound>
-    <sound>sound\jumpstart</sound>
-    <sound>sound\tadada</sound>
-    <sound>sound\restore</sound>
+    <sound>sound\playerhit</sound>
+    <sound>sound\death</sound>
+    <sound>sound\death2</sound>
+    <sound>sound\doublejump</sound>
+    <sound>sound\spearstuck</sound>
+    <sound>sound\spearbroke</sound>
+    <sound>sound\shroomjump</sound>
+    <sound>sound\speargone</sound>
+    <sound>sound\spearhit</sound>
+    <sound>sound\enemycloud</sound>
+    <sound>sound\frogjump</sound>
+    <sound>sound\frogland</sound>
+    <sound>sound\fireball</sound>
+    <sound>sound\hpup</sound>
+    <sound>sound\deswitch</sound>
+    <sound>sound\doors</sound>
+    <sound>sound\buginwalll</sound>
+    <sound>sound\shatterbroke</sound>
+    <sound>sound\shatterappear</sound>
+    <sound>sound\throwpot</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\shovel_idle</sprite>
-    <sprite>sprites\shovel_run</sprite>
-    <sprite>sprites\shovel_skid</sprite>
-    <sprite>sprites\shovel_jump</sprite>
-    <sprite>sprites\shovel_land</sprite>
-    <sprite>sprites\shovel_attack</sprite>
-    <sprite>sprites\shovelclimb</sprite>
-    <sprite>sprites\shovelclimbattack</sprite>
-    <sprite>sprites\shovelclimbtop</sprite>
-    <sprite>sprites\sk_mask</sprite>
-    <sprite>sprites\block</sprite>
-    <sprite>sprites\atbox</sprite>
-    <sprite>sprites\shovel_downattack</sprite>
-    <sprite>sprites\hud</sprite>
-    <sprite>sprites\will</sprite>
-    <sprite>sprites\blood</sprite>
-    <sprite>sprites\downthrust</sprite>
-    <sprite>sprites\shovel_hit</sprite>
-    <sprite>sprites\shovel_died</sprite>
-    <sprite>sprites\died</sprite>
-    <sprite>sprites\youdiedsprite</sprite>
-    <sprites name="enemies">
-      <sprite>sprites\hollowstand</sprite>
-      <sprite>sprites\hollowjuststand</sprite>
-      <sprite>sprites\hollowwalk</sprite>
-      <sprite>sprites\hollowjustwalk</sprite>
-      <sprite>sprites\hollowattack</sprite>
-      <sprites name="bosses">
-        <sprite>sprites\bosses</sprite>
-      </sprites>
+    <sprites name="velvet">
+      <sprite>sprites\velvet_idle</sprite>
+      <sprite>sprites\velvet_run</sprite>
+      <sprite>sprites\velvet_skid</sprite>
+      <sprite>sprites\velvet_land</sprite>
+      <sprite>sprites\velvet_attack</sprite>
+      <sprite>sprites\velvet_jump</sprite>
+      <sprite>sprites\velvet_djump</sprite>
+      <sprite>sprites\velvet_hit</sprite>
+      <sprite>sprites\velvet_throw</sprite>
+      <sprite>sprites\jumpelin</sprite>
+      <sprite>sprites\javelin</sprite>
     </sprites>
-    <sprite>sprites\shovelsleep</sprite>
-    <sprite>sprites\shovelcheer</sprite>
-    <sprite>sprites\swater</sprite>
-    <sprite>sprites\torches</sprite>
-    <sprite>sprites\sbonfiregrass</sprite>
-    <sprite>sprites\sbonfiretrees</sprite>
-    <sprite>sprites\fog</sprite>
-    <sprite>sprites\sbonfire</sprite>
-    <sprite>sprites\door</sprite>
-    <sprite>sprites\ladder</sprite>
-    <sprite>sprites\shovelbonfire</sprite>
-    <sprite>sprites\torches2</sprite>
-    <sprite>sprites\vulture</sprite>
-    <sprite>sprites\fxplosion</sprite>
-    <sprite>sprites\block2</sprite>
-    <sprite>sprites\lit</sprite>
-    <sprite>sprites\brickss</sprite>
+    <sprite>sprites\wings</sprite>
+    <sprite>sprites\vv_mask</sprite>
+    <sprite>sprites\atbox</sprite>
+    <sprite>sprites\sky1</sprite>
+    <sprite>sprites\sky2</sprite>
+    <sprite>sprites\bground</sprite>
+    <sprite>sprites\bground2</sprite>
+    <sprite>sprites\bg2star</sprite>
+    <sprite>sprites\bgroundsides</sprite>
+    <sprite>sprites\hud</sprite>
+    <sprite>sprites\heart</sprite>
+    <sprite>sprites\point</sprite>
+    <sprite>sprites\died</sprite>
+    <sprites name="enemies">
+      <sprite>sprites\thorn</sprite>
+      <sprite>sprites\thornjump</sprite>
+      <sprite>sprites\thornspawn</sprite>
+      <sprite>sprites\thorndead</sprite>
+      <sprite>sprites\thornthrower</sprite>
+      <sprite>sprites\pot</sprite>
+      <sprite>sprites\hollowstand</sprite>
+      <sprite>sprites\hollowwalk</sprite>
+      <sprite>sprites\hollowattack</sprite>
+      <sprite>sprites\buggy</sprite>
+      <sprite>sprites\buggy_cover</sprite>
+      <sprite>sprites\hogfrog_stand</sprite>
+      <sprite>sprites\hogfrog_sleep</sprite>
+      <sprite>sprites\hogfrog_hitted</sprite>
+      <sprite>sprites\hogfrog_died</sprite>
+      <sprite>sprites\hogfrog_jump</sprite>
+      <sprite>sprites\sticc</sprite>
+      <sprite>sprites\bat</sprite>
+      <sprite>sprites\bateye</sprite>
+      <sprite>sprites\spider</sprite>
+      <sprite>sprites\spiderd</sprite>
+      <sprite>sprites\web</sprite>
+      <sprite>sprites\eye</sprite>
+      <sprite>sprites\potgore</sprite>
+      <sprite>sprites\thorn2</sprite>
+      <sprite>sprites\thorn2jump</sprite>
+      <sprite>sprites\thorn2spawn</sprite>
+      <sprite>sprites\thorn2dead</sprite>
+      <sprite>sprites\thorn2attack</sprite>
+    </sprites>
+    <sprite>sprites\clouds1</sprite>
+    <sprite>sprites\clouds2</sprite>
+    <sprite>sprites\clouds3</sprite>
+    <sprite>sprites\clouds4</sprite>
+    <sprite>sprites\clouds5</sprite>
+    <sprite>sprites\transition</sprite>
+    <sprite>sprites\megamanring</sprite>
+    <sprite>sprites\column</sprite>
+    <sprite>sprites\z</sprite>
+    <sprites name="tiles">
+      <sprite>sprites\grass1</sprite>
+      <sprite>sprites\grass1a</sprite>
+      <sprite>sprites\grass1_1</sprite>
+      <sprite>sprites\grass1_2</sprite>
+      <sprite>sprites\grass1_3</sprite>
+      <sprite>sprites\brick</sprite>
+      <sprite>sprites\shroomy</sprite>
+      <sprite>sprites\track</sprite>
+      <sprite>sprites\pform</sprite>
+      <sprite>sprites\sps</sprite>
+      <sprite>sprites\tdoor</sprite>
+      <sprite>sprites\tswitcher</sprite>
+      <sprite>sprites\shatterstone</sprite>
+    </sprites>
+    <sprite>sprites\greenback</sprite>
+    <sprite>sprites\stopclouds</sprite>
+    <sprite>sprites\pheart</sprite>
+    <sprite>sprites\pheartstar</sprite>
+    <sprite>sprites\buggyinwall</sprite>
+    <sprite>sprites\platform2gore</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\brickwall</background>
-    <background>background\brickwall2</background>
-    <background>background\brickwall3</background>
-    <background>background\brickwall4</background>
-    <background>background\column</background>
-    <background>background\skeletonslayer</background>
-    <background>background\column2</background>
-    <background>background\doors</background>
+    <background>background\tile1</background>
+    <background>background\tile2</background>
+    <background>background\tile3</background>
+    <background>background\tile4</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\iff.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\loaddata.gml</script>
+    <script>scripts\iff.gml</script>
+    <script>scripts\room_goto_transition.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font</font>
   </fonts>
   <objects name="objects">
+    <objects name="player">
+      <object>objects\velvet</object>
+      <object>objects\velvet_death</object>
+      <object>objects\playerpar</object>
+      <object>objects\spear</object>
+      <object>objects\spear_jumper</object>
+      <object>objects\spear_dead</object>
+      <object>objects\attackhitbox</object>
+      <object>objects\mmring</object>
+      <object>objects\pickupheart</object>
+      <object>objects\phstar</object>
+    </objects>
     <object>objects\overgame</object>
-    <object>objects\playerpar</object>
     <object>objects\control</object>
-    <object>objects\shovelknight</object>
     <object>objects\cube</object>
+    <object>objects\spearblock</object>
     <object>objects\cube1</object>
     <object>objects\cube2</object>
-    <object>objects\breakable</object>
-    <object>objects\superview</object>
+    <object>objects\teleport</object>
     <object>objects\viewcontrol</object>
-    <object>objects\attackhitbox</object>
-    <object>objects\downeffect</object>
-    <object>objects\shovelgetrekt</object>
-    <object>objects\youdied</object>
-    <object>objects\bonfirelit</object>
-    <object>objects\sleepstart</object>
     <object>objects\drawbackground</object>
-    <object>objects\bonfire1</object>
-    <object>objects\flipdoor1</object>
-    <object>objects\flipdoor2</object>
-    <object>objects\o_ladder</object>
-    <object>objects\shovelcampfire</object>
-    <object>objects\explosion</object>
-    <object>objects\blackback</object>
-    <objects name="decor">
-      <object>objects\vultures</object>
-      <object>objects\bonfiretrees</object>
-      <object>objects\bonfiregrass</object>
-      <object>objects\torch</object>
-      <object>objects\torch2</object>
-      <object>objects\water</object>
+    <objects name="backgroundstuff">
+      <object>objects\eyeinwall</object>
+      <object>objects\buginwall</object>
     </objects>
     <objects name="monsters">
       <object>objects\parmonster</object>
+      <object>objects\parenemyshot</object>
+      <object>objects\enemyborder</object>
       <object>objects\enemiehitbox</object>
       <object>objects\hollow</object>
-      <object>objects\hollowwithoutweapons</object>
-      <object>objects\bloodexplo</object>
-      <object>objects\asulym_demon</object>
+      <object>objects\bug</object>
+      <object>objects\thorny</object>
+      <object>objects\thornleafy</object>
+      <object>objects\thornythrower</object>
+      <object>objects\hogfrog</object>
+      <object>objects\spotter</object>
+      <object>objects\spiduh_web</object>
+      <object>objects\spiduh</object>
+      <objects name="spawn">
+        <object>objects\hogfrog_sleeping</object>
+        <object>objects\zzz</object>
+        <object>objects\thorny_spawn</object>
+        <object>objects\thorny2_spawn</object>
+      </objects>
+      <objects name="dead">
+        <object>objects\bug_dead</object>
+        <object>objects\thorny_dead</object>
+        <object>objects\thorny2_dead</object>
+        <object>objects\hogfrog_dead</object>
+        <object>objects\spotter_dead</object>
+        <object>objects\spiduh_dead</object>
+        <object>objects\thorny_stick</object>
+      </objects>
+      <objects name="projectile">
+        <object>objects\potfragment</object>
+        <object>objects\potty</object>
+      </objects>
     </objects>
+    <object>objects\cloud</object>
+    <objects name="gui">
+      <object>objects\transition_par</object>
+      <object>objects\transit</object>
+      <object>objects\transit2</object>
+      <object>objects\sys_transition</object>
+      <object>objects\viewthing</object>
+      <object>objects\blastedheart</object>
+      <object>objects\shaker</object>
+    </objects>
+    <object>objects\shroom</object>
+    <object>objects\platformtrack</object>
+    <object>objects\platform</object>
+    <object>objects\spikes</object>
+    <object>objects\hdoor</object>
+    <object>objects\switcher</object>
+    <object>objects\platform2</object>
+    <object>objects\platform2stone</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <rooms name="garden">
+      <room>rooms\l1_1</room>
+      <room>rooms\l1_2</room>
+      <room>rooms\l1_3</room>
+      <room>rooms\l1_3a</room>
+      <room>rooms\l1_3b</room>
+      <room>rooms\l1_3c</room>
+      <room>rooms\l1_4</room>
+      <room>rooms\l1_statues</room>
+      <room>rooms\l1_5</room>
+      <room>rooms\l1_6</room>
+      <room>rooms\l1_7</room>
+      <room>rooms\l1_8</room>
+      <room>rooms\l1_9</room>
+      <room>rooms\l1_10</room>
+      <room>rooms\l1_tree</room>
+    </rooms>
+    <rooms name="japan">
+      <room>rooms\l2_1</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

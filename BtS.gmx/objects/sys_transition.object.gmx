@@ -179,6 +179,17 @@ if (room != next_room) { room_goto(next_room); }
 
 draw_surface_stretched(surf_end, x1, y1, width, height);
 draw_surface_stretched(surf_start, x2, y2, width, height);
+
+var hh = surface_get_height(application_surface);
+var ww = surface_get_width(application_surface);
+var ww2 = (display_get_width() - ww)/2;
+
+if window_get_fullscreen() 
+{
+    draw_set_color(c_black);
+    draw_rectangle(-ww2, 0, 0, hh, false);
+    draw_rectangle(ww, 0, ww + ww2, hh, false);
+}
 </string>
           </argument>
         </arguments>

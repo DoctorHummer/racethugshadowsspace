@@ -25,7 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fogx=0
+            <string>fogx=0 fogx2=1.25 fogx3=1.5
+plus=0
+xsc=-0.1 xm=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if xm=0 {xsc+=0.005 if xsc&gt;=0.1 {xm=1}}
+if xm=1 {xsc-=0.005 if xsc&lt;=-0.1 {xm=0}}
 </string>
           </argument>
         </arguments>
@@ -48,26 +74,137 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.location=0
+            <string>var ib=image_blend; var xv=view_xview; var yv=view_yview;
+
+if global.location=0
 {
-fogx++
-if fogx&gt;256{fogx=0}
-draw_sprite_ext(fog,0,view_xview+fogx,view_yview,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx,view_yview+64,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx,view_yview+128,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx,view_yview+192,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx,view_yview+256,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx+256,view_yview,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx+256,view_yview+64,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx+256,view_yview+128,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx+256,view_yview+192,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx+256,view_yview+256,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx-256,view_yview,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx-256,view_yview+64,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx-256,view_yview+128,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx-256,view_yview+192,1,1,0,c_white,0.6)
-draw_sprite_ext(fog,0,view_xview+fogx-256,view_yview+256,1,1,0,c_white,0.6)
+if room_height=480 {plus=240} else {plus=0}
+
+if room=l1_6
+{
+draw_sprite_ext(sky1,0,xv,0,room_width,1,0,ib,1)
 }
+else
+{
+draw_sprite_ext(sky1,0,xv,plus,room_width,1,0,ib,1)
+}
+
+fogx++ fogx2++ fogx3++
+if fogx&gt;800{fogx=0} if fogx2&gt;400{fogx2=0} if fogx3&gt;200{fogx3=0}
+
+for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,10,xv+a+fogx*0.5,yv,1,1,0,ib,1)}
+for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,9,xv+a+fogx2,yv,1,1,0,ib,1)}
+for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,8,xv+a+fogx3*2,yv,1,1,0,ib,1)}
+
+if room=l1_1
+{
+draw_sprite_ext(bground,0,xv*0.8,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,1,xv*0.5,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,2,xv*0.25,plus-240,1,1,0,ib,1)
+draw_sprite_ext(bground,3,xv*0.25,plus,1,1,0,ib,1)
+}
+if room=l1_2
+{
+draw_sprite_ext(bground,0,xv*0.8,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,12,xv*0.5,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,11,xv*0.25,plus,1,1,0,ib,1)
+for (a=400; a&lt;room_width+400; a+=400)
+{
+draw_sprite_ext(bground,0,xv*0.8+a,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,1,xv*0.5+a,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,3,xv*0.25+a,plus,1,1,0,ib,1)
+}
+}
+if room=l1_3
+{
+draw_sprite_ext(bground,4,xv*0.8,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,5,xv*0.5,plus,1,1,0,ib,1)
+draw_sprite_ext(bground,7,xv*0.25,plus,1,1,0,ib,1)
+}
+if room=l1_4 or room=l1_5
+{
+for (a=0; a&lt;room_width+400; a+=400)
+{
+draw_sprite_ext(bground,4,xv*0.8+a,0,1,1,0,ib,1)
+draw_sprite_ext(bground,5,xv*0.5+a,0,1,1,0,ib,1)
+}
+draw_sprite_ext(column,1,xv*0.3+200,190,0.8,0.8,0,ib,1)
+draw_sprite_ext(column,1,xv*0.3+700,190,0.8,0.8,0,ib,1)
+for (a=0; a&lt;room_width+400; a+=400)
+{
+draw_sprite_ext(bground,6,xv*0.25+a,0,1,1,0,ib,1)
+}
+draw_sprite_ext(column,0,xv*0.15+400,280,1,1,0,ib,1)
+draw_sprite_ext(column,0,xv*0.15+600,240,1,1,0,ib,1)
+draw_sprite_ext(column,2,xv*0.15+800,230,1,1,0,ib,1)
+draw_sprite_ext(column,2,xv*0.15+1100,250,1,1,0,ib,1)
+}
+if room=l1_6 or room=l1_10
+{
+draw_sprite_ext(bground,4,xv*0.8,0,1,1,0,ib,1)
+draw_sprite_ext(bground,5,xv*0.5,0,1,1,0,ib,1)
+draw_sprite_ext(bground,6,xv*0.25,0,1,1,0,ib,1)
+draw_sprite_ext(greenback,0,xv,240,25,15,0,ib,1)
+draw_sprite_ext(bgroundsides,0,0,0,1,1,0,ib,1)
+if room=l1_10 draw_sprite_ext(bgroundsides,1,304,0,1,1,0,ib,1)
+}
+if room=l1_statues or room=l1_3c or room=l1_7 or room=l1_8 or room=l1_tree
+{
+draw_sprite_ext(bground,4,xv*0.8,0,1,1,0,ib,1)
+draw_sprite_ext(bground,5,xv*0.5,0,1,1,0,ib,1)
+draw_sprite_ext(bground,6,xv*0.25,0,1,1,0,ib,1)
+draw_sprite_ext(bground,4,xv*0.8+400,0,1,1,0,ib,1)
+draw_sprite_ext(bground,5,xv*0.5+400,0,1,1,0,ib,1)
+draw_sprite_ext(bground,6,xv*0.25+400,0,1,1,0,ib,1)
+draw_sprite_ext(greenback,0,xv,240,25,15,0,ib,1)
+draw_sprite_ext(greenback,0,xv,480,25,15,0,ib,1)
+if room=l1_tree {draw_sprite_ext(greenback,0,xv,720,25,15,0,ib,1) draw_sprite_ext(greenback,0,xv,960,25,15,0,ib,1) draw_sprite_ext(greenback,0,xv,1200,25,15,0,ib,1) draw_sprite_ext(greenback,0,xv,1440,25,15,0,ib,1)}
+if room=l1_statues draw_sprite_ext(bgroundsides,1,304,0,1,1,0,ib,1)
+if room=l1_7 draw_sprite_ext(bgroundsides,0,0,0,1,1,0,ib,1)
+}
+if room=l1_9
+{
+for (a=0; a&lt;room_width+400; a+=400)
+{
+draw_sprite_ext(bground,4,xv*0.8+a,0,1,1,0,ib,1)
+draw_sprite_ext(bground,5,xv*0.5+a,0,1,1,0,ib,1)
+draw_sprite_ext(bground,6,xv*0.25+a,0,1,1,0,ib,1)
+draw_sprite_ext(bgroundsides,1,1504,0,1,1,0,ib,1)
+draw_sprite_ext(bgroundsides,0,0,0,1,1,0,ib,1)
+}
+}
+}
+
+if global.location=1
+{
+draw_sprite_ext(sky2,0,xv,yv,room_width,1,0,ib,1)
+
+draw_sprite_ext(bg2star,0,xv+342,yv+115,xsc/4+0.2,xsc/4+0.2,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,0,xv+330,yv+90,xsc/4+0.6,xsc/4+0.6,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,0,xv+300,yv+60,xsc/4+1,xsc/4+1,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,0,xv+270,yv+30,xsc/4+0.6,xsc/4+0.6,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,0,xv+242,yv+15,xsc/4+0.2,xsc/4+0.2,0,ib,control.guialpha)
+
+draw_sprite_ext(bg2star,1,xv+342,yv+115,xsc+0.2,xsc+0.2,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,1,xv+330,yv+90,xsc+0.6,xsc+0.6,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,1,xv+300,yv+60,xsc+1,xsc+1,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,1,xv+270,yv+30,xsc+0.6,xsc+0.6,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,1,xv+242,yv+15,xsc+0.2,xsc+0.2,0,ib,control.guialpha)
+
+draw_sprite_ext(bg2star,2,xv+342,yv+115,xsc*3+0.2,xsc*3+0.2,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,2,xv+330,yv+90,xsc*3+0.6,xsc*3+0.6,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,2,xv+300,yv+60,xsc*3+1,xsc*3+1,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,2,xv+270,yv+30,xsc*3+0.6,xsc*3+0.6,0,ib,control.guialpha)
+draw_sprite_ext(bg2star,2,xv+242,yv+15,xsc*3+0.2,xsc*3+0.2,0,ib,control.guialpha)
+if room=l2_1
+{
+draw_sprite_ext(bground2,0,xv,yv,1,1,0,ib,1)
+draw_sprite_ext(bground2,1,xv*0.8,yv,1,1,0,ib,1)
+draw_sprite_ext(bground2,2,xv*0.5,yv,1,1,0,ib,1)
+draw_sprite_ext(bground2,3,xv*0.25,yv,1,1,0,ib,1)
+}
+}
+
 </string>
           </argument>
         </arguments>
