@@ -38,10 +38,12 @@
       <sprite>sprites\velvet_skid</sprite>
       <sprite>sprites\velvet_land</sprite>
       <sprite>sprites\velvet_attack</sprite>
+      <sprite>sprites\velvet_jumpattack</sprite>
       <sprite>sprites\velvet_jump</sprite>
       <sprite>sprites\velvet_djump</sprite>
       <sprite>sprites\velvet_hit</sprite>
       <sprite>sprites\velvet_throw</sprite>
+      <sprite>sprites\velvet_jumpthrow</sprite>
       <sprite>sprites\jumpelin</sprite>
       <sprite>sprites\javelin</sprite>
     </sprites>

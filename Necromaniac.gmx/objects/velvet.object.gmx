@@ -210,7 +210,7 @@ if !dead and (!instance_exists(transition_par) or (instance_exists(sys_transitio
 
 if attack=0
 {
-if place_meeting(x,y+1,cube) and !isJumping{
+if place_meeting(x,y+1,cube){
   if xspeed=0 { sprite_index = velvet_idle; } // Idle. 
   else {
     // Running.
@@ -246,26 +246,28 @@ if (keyboard_check_pressed(global.controlattack))
 {
 if keyboard_check(global.controlup)
 {
-if global.unlockedthrow { image_index=0 attacktimer=10 attack=2 audio_play_sound(v_attack,0.5,false); }
+if global.unlockedthrow { image_index=0 attacktimer=12 attack=2 audio_play_sound(v_attack,0.5,false); }
 else 
-{ image_index=0 attacktimer=10 attack=1 audio_play_sound(v_attack,0.5,false); }
+{ image_index=0 attacktimer=12 attack=1 audio_play_sound(v_attack,0.5,false); }
 }
 else 
-{ image_index=0 attacktimer=10 attack=1 audio_play_sound(v_attack,0.5,false); }
+{ image_index=0 attacktimer=12 attack=1 audio_play_sound(v_attack,0.5,false); }
 }
 }
 }
 
 if attack=1
 {
-sprite_index=velvet_attack; image_speed = 0.5;
-if attacktimer=5 {if dir=1 {with instance_create(velvet.x+3,velvet.y+4,attackhitbox) {image_xscale=0.8 image_yscale=0.75 right=true}} else {with instance_create(velvet.x-3,velvet.y+4,attackhitbox) {image_xscale=-0.8 image_yscale=0.75  right=false}}}
+if place_meeting(x,y+1,cube) sprite_index=velvet_attack else sprite_index=velvet_jumpattack
+image_speed = 0.5;
+if attacktimer=7 {if image_xscale=1 {with instance_create(velvet.x+3,velvet.y+4,attackhitbox) {image_xscale=0.8 image_yscale=0.75 right=true}} else {with instance_create(velvet.x-3,velvet.y+4,attackhitbox) {image_xscale=-0.8 image_yscale=0.75  right=false}}}
 attacktimer--
 }
 if attack=2
 {
-sprite_index=velvet_throw; image_speed = 0.5;
-if attacktimer=4 {if dir=1 {with instance_create(velvet.x+5,velvet.y-3,spear) {image_xscale=1 speed=12 direction=0}} else {with instance_create(velvet.x-5,velvet.y-3,spear) {image_xscale=-1 speed=12 direction=180}}}
+if place_meeting(x,y+1,cube) sprite_index=velvet_throw else sprite_index=velvet_jumpthrow
+image_speed = 0.5;
+if attacktimer=4 {if image_xscale=1 {with instance_create(velvet.x+8,velvet.y-3,spear) {image_xscale=1 speed=12 direction=0}} else {with instance_create(velvet.x-8,velvet.y-3,spear) {image_xscale=-1 speed=12 direction=180}}}
 attacktimer--
 }
 if attacktimer=0
@@ -612,7 +614,9 @@ if (y&lt;other.y and other.stimer=0 and jumptimer=0)
 {
 hitted=0
 jumptimer=3
-audio_play_sound(spearjump,0.5,false);
+if shroompitch&lt;1.2 shroompitch+=0.1 else shroompitch=0.8
+ind=audio_play_sound(shroomjump,0.5,false);
+audio_sound_pitch(ind, shroompitch);
 other.stimer=8;
 yspeed = -jumpHeight*1.35;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
