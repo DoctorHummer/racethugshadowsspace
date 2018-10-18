@@ -3,7 +3,7 @@
   <spriteName>pheart</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-21</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -48,10 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.1
+            <string>image_speed=0.2
 i++ if i&gt;40 {i=0}
 if i&lt;20 {y-=0.2}
 if i&gt;=20 {y+=0.2}
+
 </string>
           </argument>
         </arguments>

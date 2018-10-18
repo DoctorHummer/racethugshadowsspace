@@ -37,6 +37,8 @@ time = 30;
 // Fade Variables
 alpha = 0;
 fade = 1;
+
+revivingtrans=false;
 </string>
           </argument>
         </arguments>
@@ -85,8 +87,20 @@ if (step &gt; time) { instance_destroy(); }
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(next_room);
-            
+            <string>if revivingtrans=true
+{
+global.hp=global.maxhp
+if instance_exists(playerpar)
+{
+playerpar.dead=false
+playerpar.visible=true
+playerpar.sprite_index=velvet_idle
+playerpar.image_alpha=1
+}
+}
+
+room_goto(next_room);
+ 
 if (xx != -1) { playerpar.x = xx; }
 if (yy != -1) { playerpar.y = yy; }
     
@@ -101,7 +115,9 @@ if ykind=4 { playerpar.y += 480 }
 if ykind=5 { playerpar.y -= 1200 }  
 if ykind=6 { playerpar.y += 1200 } 
 
-viewthing.x=playerpar.x viewthing.y=playerpar.y
+viewthing.x=playerpar.x 
+viewthing.y=playerpar.y
+
 </string>
           </argument>
         </arguments>
@@ -137,6 +153,8 @@ viewthing.x=playerpar.x viewthing.y=playerpar.y
         draw_set_color(c_black);
         draw_rectangle(x, y, ww, hh, false);
         draw_set_alpha(1);
+        draw_set_color(c_white);
+        
 </string>
           </argument>
         </arguments>

@@ -52,7 +52,6 @@ a=0
             <kind>1</kind>
             <string>if timer&gt;=0{timer++;}
 
-
 if timer=2 or timer = 6 or timer=10 or timer=14 {x+=2}
 if timer=4 or timer = 8 or timer=12 or timer=16 {x-=2}
 

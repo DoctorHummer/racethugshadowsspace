@@ -68,7 +68,7 @@
     <instance objName="cube1" x="352" y="-96" name="inst_9F774807" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="368" y="-96" name="inst_B8AB5179" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-32" y="224" name="inst_8A012797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="teleport" x="-48" y="16" name="inst_0EB64734" locked="0" code="xx=1184  yy=-1 next_room=l1_2 kind='right'&#xA;" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="-48" y="16" name="inst_0EB64734" locked="0" code="xx=384 yy=-1 next_room=l1_2a&#xA;" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="drawbackground" x="160" y="-64" name="inst_51142DE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-48" y="224" name="inst_82BEB12F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="384" y="0" name="inst_61FCF3D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -90,7 +90,7 @@
     <instance objName="cube1" x="128" y="-80" name="inst_90B29582" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="128" y="0" name="inst_E75F2B55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="416" y="144" name="inst_A740DE1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="teleport" x="432" y="16" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_4 kind='left'&#xA;" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="432" y="16" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_4&#xA;" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="432" y="144" name="inst_13B7F9DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="432" y="0" name="inst_8A0A290E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="0" name="inst_95B4E2A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -335,7 +335,6 @@
     <tile bgName="tile1" x="112" y="208" w="16" h="16" xo="16" yo="160" id="10001022" name="inst_DA015919" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile1" x="80" y="208" w="16" h="16" xo="16" yo="112" id="10001023" name="inst_6AC51BF3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile1" x="144" y="208" w="16" h="16" xo="32" yo="112" id="10001024" name="inst_027CD2C0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tile2" x="96" y="144" w="48" h="48" xo="160" yo="144" id="10003091" name="inst_AB94E780" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile2" x="72" y="96" w="32" h="48" xo="208" yo="144" id="10003124" name="inst_FBBFD9E2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile2" x="32" y="16" w="16" h="32" xo="96" yo="112" id="10003129" name="inst_004551BC" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tile2" x="352" y="208" w="32" h="16" xo="32" yo="80" id="10003132" name="inst_E5031723" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

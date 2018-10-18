@@ -58,7 +58,7 @@ unlocker=false
             <kind>1</kind>
             <string>if instance_exists(playerpar)
 {
-if (distance_to_object(playerpar)&lt;144 and timer&lt;30) or timer&gt;=30 timer++
+if timer&lt;40 timer++
 
 if timer&lt;39 
 {
@@ -103,7 +103,7 @@ if vspeed &gt; 0
 {
 with instance_create(x,y+20,cloud) {sprite_index=stopclouds image_speed=0.6}
 audio_play_sound(frogland,0.5,false); move_contact_solid(270, vspeed) vspeed = 0 hspeed = 0 hitted=0 isJumping = 0 gravity = 0 
-if distance_to_object(playerpar)&lt;75 {if !evil timer=10 else timer=15} else {if !evil timer=20 else timer=25}
+if !evil timer=16 else timer=26
 } 
 else
 {vspeed=-vspeed/3}
@@ -143,7 +143,7 @@ if g&gt;0 {g-=0.25}
 if !place_free(x,y+vspeed) 
 {
 timer=39
-audio_play_sound(spearjump,0.5,false);
+audio_play_sound(shroomjump,0.5,false);
 other.stimer=8;
 vspeed=-10
 if x&gt;playerpar.x {image_xscale=-1 hspeed=-5} else {image_xscale=1 hspeed=5}

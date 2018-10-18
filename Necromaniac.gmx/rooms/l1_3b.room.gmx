@@ -51,7 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="teleport" x="1232" y="128" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_3c kind='left'&#xA;" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="1232" y="128" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_3c &#xA;" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="cube2" x="0" y="0" name="inst_ED3CDBF4" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="16" y="0" name="inst_61F885DC" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="16" y="0" name="inst_B660AF67" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
@@ -193,7 +193,7 @@
     <instance objName="cube2" x="448" y="224" name="inst_C6AF4D80" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="432" y="224" name="inst_7A9CB15C" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="416" y="224" name="inst_5C60E880" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
-    <instance objName="teleport" x="-48" y="160" name="inst_5CB1D1E3" locked="0" code="xx=384 yy=-1 next_room=l1_3a kind='right'&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="-48" y="160" name="inst_5CB1D1E3" locked="0" code="xx=384 yy=-1 next_room=l1_3a&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="cube2" x="-16" y="144" name="inst_023C6B6A" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="-48" y="144" name="inst_5B6F96A5" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="-32" y="224" name="inst_F558597F" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
@@ -333,7 +333,7 @@
     <instance objName="cube2" x="880" y="208" name="inst_140E5168" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="896" y="208" name="inst_58D044E8" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="800" y="160" name="inst_3B81137A" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
-    <instance objName="spotter" x="720" y="80" name="inst_FACA319C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spotter" x="720" y="80" name="inst_FACA319C" locked="0" code="hp=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemyborder" x="1200" y="128" name="inst_E1E2AAD2" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="cube2" x="1184" y="16" name="inst_CE5A45E6" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="1168" y="112" name="inst_71FF6396" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
@@ -344,7 +344,7 @@
     <instance objName="cube2" x="1168" y="32" name="inst_D3C531C6" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="1168" y="16" name="inst_F9EFDB58" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="enemyborder" x="-16" y="160" name="inst_1C3EBA0F" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="spotter" x="784" y="112" name="inst_5B558B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spotter" x="784" y="112" name="inst_5B558B33" locked="0" code="hp=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="288" y="192" name="inst_36B5F274" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="288" y="208" name="inst_4E2145FF" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="304" y="176" name="inst_6E3BB7F8" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>

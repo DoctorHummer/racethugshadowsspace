@@ -51,7 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="teleport" x="432" y="160" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_3b kind='left'&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="432" y="160" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_3b&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="176" y="64" name="inst_DF6C975E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="192" y="64" name="inst_7A3730E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="208" y="64" name="inst_6A7C0815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -64,8 +64,8 @@
     <instance objName="cube1" x="320" y="64" name="inst_9D8CE420" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="336" y="64" name="inst_8F80EA3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="352" y="64" name="inst_1C027F40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="368" y="64" name="inst_2D3FF543" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="16" y="64" name="inst_4962EFE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cube1" x="368" y="64" name="inst_2D3FF543" locked="0" code="image_index=46&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cube1" x="16" y="64" name="inst_4962EFE0" locked="0" code="image_index=46&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="32" y="64" name="inst_2D983F07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="48" y="64" name="inst_F4BA53C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="64" y="64" name="inst_ABA3A35C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -73,7 +73,7 @@
     <instance objName="cube1" x="432" y="224" name="inst_991E639F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="416" y="144" name="inst_25A38A79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="432" y="144" name="inst_B64F2F41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="teleport" x="240" y="-48" name="inst_942140DA" locked="0" code="xx=-1 yy=192 next_room=l1_3 kind='down'&#xA;" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="240" y="-48" name="inst_942140DA" locked="0" code="xx=-1 yy=192 next_room=l1_3&#xA;" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="224" y="-32" name="inst_0BB7F69A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="336" y="-32" name="inst_B68F1CC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="224" y="-48" name="inst_FC8F7C17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -157,7 +157,7 @@
     <instance objName="cube1" x="176" y="112" name="inst_CE0F5AC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="192" y="112" name="inst_61E5EB98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="192" y="96" name="inst_E709D13B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="spotter" x="200" y="160" name="inst_D2D9D0D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spotter" x="200" y="160" name="inst_D2D9D0D7" locked="0" code="hp=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="176" y="224" name="inst_EB395CC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="192" y="224" name="inst_365D8538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="208" y="224" name="inst_01C492A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

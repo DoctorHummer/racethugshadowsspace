@@ -51,8 +51,35 @@ timer=0
           <argument>
             <kind>1</kind>
             <string>timer++
-if timer&gt;36 {game_restart()}
 if xx1&gt;0 {if xx&gt;0.001 xx-=0.001 xx1-=xx}
+
+if timer&gt;36 
+{
+ini_open('savegame.ss');
+if ini_section_exists('saving')
+{
+  with (instance_create(0, 0, sys_transition)) {
+    revivingtrans=true
+    if ini_key_exists('saving','next_room') {next_room=(ini_read_real('saving','next_room',0))}
+    if ini_key_exists('saving','xx') {xx=(ini_read_real('saving','xx',0))}
+    if ini_key_exists('saving','yy') {yy=(ini_read_real('saving','yy',0))}
+    if ini_key_exists('saving','time') {time=(ini_read_real('saving','time',0))}
+    step=time/2
+  }
+}
+else
+{
+  with (instance_create(0, 0, sys_transition)) {
+    revivingtrans=true
+    next_room=l1_1
+    xx=192
+    yy=448
+    time=30
+    step=time/2
+  }
+}
+ini_close(); 
+}
 </string>
           </argument>
         </arguments>
@@ -75,7 +102,7 @@ if xx1&gt;0 {if xx&gt;0.001 xx-=0.001 xx1-=xx}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if xx1&gt;=0
+            <string>if xx1&gt;=0.05
 {
 draw_sprite_ext(transition,0,view_xview+200,view_yview+120,1*xx1,1*xx1,0,c_black,1)
 

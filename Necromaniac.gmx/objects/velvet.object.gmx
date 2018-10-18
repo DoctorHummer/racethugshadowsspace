@@ -25,15 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xfriction=1 accel=1
+            <string>xfriction=1.25 accel=1.25
 xspeed=0 yspeed=0
 xmaxspeed=6 ymaxspeed=20
 isJumping=false
+inAir=false
 dir=1
 landing=0 landing_max=1
 jumpHeight=10
 weight=1
 
+hitfromright=0
 double_jump=1
 t = 40; //invincibility
 
@@ -98,8 +100,7 @@ bessmertie=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if !dead and (!instance_exists(transition_par) or (instance_exists(sys_transition) and sys_transition.step&gt;sys_transition.time/2))
+            <string>if !dead and (!instance_exists(transition_par) or (instance_exists(sys_transition) and sys_transition.step&gt;sys_transition.time/2))
 {
 xspeed = iff(abs(xspeed) &gt; xmaxspeed, xmaxspeed * sign(xspeed), xspeed);
 yspeed = iff(abs(yspeed) &gt; ymaxspeed, ymaxspeed * sign(yspeed), yspeed);
@@ -108,6 +109,7 @@ if (place_free(x, y + yspeed)) { y += yspeed; }
 else {
   if (yspeed &gt; 0) {
     isJumping = false;
+    inAir = false;
     landing = landing_max;
     double_jump=1;
     y = floor(y);
@@ -132,6 +134,7 @@ else {
       xspeed = xmaxspeed * (0 - keyboard_check(global.controlleft) + keyboard_check(global.controlright));
       double_jump=1;
       isJumping = true;
+      inAir = true;
       audio_play_sound(jump,0.5,false)
     }
   } //jump and falling
@@ -147,7 +150,18 @@ else {
   }
   if (keyboard_check(global.controlright) &amp;&amp; xspeed &lt; xmaxspeed &amp;&amp; dir == 1) {
     xspeed += accel;
-  }//acceleration
+  }
+  //acceleration
+  
+  if hitted&gt;10
+  {
+  if (hitfromright==0) {
+    xspeed -= xmaxspeed;
+  }
+  if (hitfromright==1) {
+    xspeed += xmaxspeed;
+  }//get hit
+  }
   
   if (!keyboard_check(global.controlleft) &amp;&amp; !keyboard_check(global.controlright)) {
     if (abs(xspeed) &gt; xfriction) {
@@ -211,6 +225,8 @@ if !dead and (!instance_exists(transition_par) or (instance_exists(sys_transitio
 if attack=0
 {
 if place_meeting(x,y+1,cube){
+  if inAir=false
+  {
   if xspeed=0 { sprite_index = velvet_idle; } // Idle. 
   else {
     // Running.
@@ -219,6 +235,7 @@ if place_meeting(x,y+1,cube){
       sprite_index = velvet_skid;// Skidding.
       //with instance_create(x+10*image_xscale,y+16+random(3),cloud) {sprite_index=clouds1}
     }
+  }
   }
 }
 else {
@@ -267,7 +284,7 @@ if attack=2
 {
 if place_meeting(x,y+1,cube) sprite_index=velvet_throw else sprite_index=velvet_jumpthrow
 image_speed = 0.5;
-if attacktimer=4 {if image_xscale=1 {with instance_create(velvet.x+8,velvet.y-3,spear) {image_xscale=1 speed=12 direction=0}} else {with instance_create(velvet.x-8,velvet.y-3,spear) {image_xscale=-1 speed=12 direction=180}}}
+if attacktimer=4 {if image_xscale=1 {with instance_create(velvet.x+5,velvet.y-3,spear) {image_xscale=1 speed=12 direction=0}} else {with instance_create(velvet.x-5,velvet.y-3,spear) {image_xscale=-1 speed=12 direction=180}}}
 attacktimer--
 }
 if attacktimer=0
@@ -317,6 +334,7 @@ if (sprite_index == velvet_idle) image_speed = 0.1;
           <argument>
             <kind>1</kind>
             <string>if (global.hp&lt;=0 and !dead){with(instance_create(x,y,velvet_death)){image_xscale=other.image_xscale}; dead=true xspeed=0 yspeed=0}
+if room=l1_tree and y&gt;view_yview[0]+view_hview[0]+18 and !dead and !instance_exists(transition_par) {audio_play_sound(fallfromtree,0.5,false); instance_create(view_xview,view_yview,transit) dead=true xspeed=0 yspeed=0}
 
 if !dead and !instance_exists(transition_par)
 {
@@ -338,6 +356,34 @@ image_alpha = 1;
 }
 if dead {image_alpha=0}
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="fallblock">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !dead and !instance_exists(transition_par)
+{
+audio_play_sound(fallfromtree,0.5,false); 
+instance_create(view_xview,view_yview,transit) 
+dead=true xspeed=0 yspeed=0
+}
 </string>
           </argument>
         </arguments>
@@ -366,6 +412,8 @@ if !dead and !instance_exists(transition_par)
 {
 if t=40
 {
+hitfromright=2
+
 if global.hp=6 {h=instance_create(view_xview+48,view_yview+16,blastedheart) h.xx=48 h.yy=16 h.hspeed=5 h.vspeed=-3 h.image_index=2}
 if global.hp=5 {h=instance_create(view_xview+48,view_yview+16,blastedheart) h.xx=48 h.yy=16 h.hspeed=2 h.vspeed=-3 h.image_index=1}
 if global.hp=4 {h=instance_create(view_xview+32,view_yview+16,blastedheart) h.xx=32 h.yy=16 h.hspeed=5 h.vspeed=-3 h.image_index=2}
@@ -375,7 +423,6 @@ if global.hp=1 {h=instance_create(view_xview+16,view_yview+16,blastedheart) h.xx
 hitted=15
 global.hp--;
 yspeed = -jumpHeight*1;
-if (x&lt;other.x) {xspeed=-xmaxspeed} else {xspeed=xmaxspeed};
 isJumping = false;
 t=0;
 audio_play_sound(playerhit,0.5,false)
@@ -415,8 +462,7 @@ jumptimer=3
 if shroompitch&lt;1.2 shroompitch+=0.1 else shroompitch=0.8
 ind=audio_play_sound(shroomjump,0.5,false);
 audio_sound_pitch(ind, shroompitch);
-other.stimer=6;
-other.t=1;
+other.stimer=6; other.t=1;
 yspeed = -jumpHeight*1.35;
 xspeed = xmaxspeed * (0 - keyboard_check(ord('A')) + keyboard_check(ord('D')));
 isJumping = false;
@@ -450,6 +496,11 @@ double_jump=1;
 {
 if t=40
 {
+var ww=(sprite_get_bbox_left(other.sprite_index) - sprite_get_bbox_right(other.sprite_index))/2;
+if (xprevious&gt;other.x-ww) {hitfromright=1}
+else if (xprevious&lt;other.x+ww) {hitfromright=0}
+else {hitfromright=2}
+
 if global.hp=6 {h=instance_create(view_xview+48,view_yview+16,blastedheart) h.xx=48 h.yy=16 h.hspeed=5 h.vspeed=-3 h.image_index=2}
 if global.hp=5 {h=instance_create(view_xview+48,view_yview+16,blastedheart) h.xx=48 h.yy=16 h.hspeed=2 h.vspeed=-3 h.image_index=1}
 if global.hp=4 {h=instance_create(view_xview+32,view_yview+16,blastedheart) h.xx=32 h.yy=16 h.hspeed=5 h.vspeed=-3 h.image_index=2}
@@ -459,7 +510,6 @@ if global.hp=1 {h=instance_create(view_xview+16,view_yview+16,blastedheart) h.xx
 hitted=15
 global.hp--;
 yspeed = -jumpHeight*1;
-if (x&lt;other.x) {xspeed=-xmaxspeed} else {xspeed=xmaxspeed};
 
 t=0;
 audio_play_sound(playerhit,0.5,false)
@@ -489,6 +539,10 @@ audio_play_sound(playerhit,0.5,false)
             <kind>1</kind>
             <string>if !dead and !instance_exists(transition_par)
 {
+var ww=(sprite_get_bbox_left(other.sprite_index) - sprite_get_bbox_right(other.sprite_index))/2;
+if (xprevious&gt;other.x-ww) {hitfromright=1}
+else if (xprevious&lt;other.x+ww) {hitfromright=0}
+else {hitfromright=2}
 if t=40
 {
 if object_get_name(other.object_index)="potty"
@@ -508,7 +562,6 @@ if global.hp=1 {h=instance_create(view_xview+16,view_yview+16,blastedheart) h.xx
 hitted=15
 global.hp--;
 yspeed = -jumpHeight*1;
-if (x&lt;other.x) {xspeed=-xmaxspeed} else {xspeed=xmaxspeed};
 
 t=0;
 audio_play_sound(playerhit,0.5,false)
@@ -540,6 +593,11 @@ audio_play_sound(playerhit,0.5,false)
 {
 if t=40
 {
+var ww=(sprite_get_bbox_left(other.sprite_index) - sprite_get_bbox_right(other.sprite_index))/2;
+if (xprevious&gt;other.x-ww) {hitfromright=1}
+else if (xprevious&lt;other.x+ww) {hitfromright=0}
+else {hitfromright=2}
+
 if global.hp=6 {h=instance_create(view_xview+48,view_yview+16,blastedheart) h.xx=48 h.yy=16 h.hspeed=5 h.vspeed=-3 h.image_index=2}
 if global.hp=5 {h=instance_create(view_xview+48,view_yview+16,blastedheart) h.xx=48 h.yy=16 h.hspeed=2 h.vspeed=-3 h.image_index=1}
 if global.hp=4 {h=instance_create(view_xview+32,view_yview+16,blastedheart) h.xx=32 h.yy=16 h.hspeed=5 h.vspeed=-3 h.image_index=2}
@@ -549,7 +607,6 @@ if global.hp=1 {h=instance_create(view_xview+16,view_yview+16,blastedheart) h.xx
 hitted=15
 global.hp--;
 yspeed = -jumpHeight*1;
-if (x&lt;other.x) {xspeed=-xmaxspeed} else {xspeed=xmaxspeed};
 
 t=0;
 audio_play_sound(playerhit,0.5,false)
@@ -577,8 +634,8 @@ audio_play_sound(playerhit,0.5,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.hp=5 {global.hp++}
-if global.hp&lt;=4 {global.hp+=2}
+            <string>if global.hp=global.maxhp-1 {global.hp++}
+if global.hp&lt;=global.maxhp-2 {global.hp+=2}
 s1=instance_create(other.x,other.y,phstar) s1.speed=4 s1.direction=45
 s2=instance_create(other.x,other.y,phstar) s2.speed=4 s2.direction=135
 s3=instance_create(other.x,other.y,phstar) s3.speed=4 s3.direction=225
@@ -708,6 +765,7 @@ d3d_set_fog(false, c_white, 0, 0);
 }
 }
 //draw_text(x,y-48,sprite_index)
+
 </string>
           </argument>
         </arguments>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000000</depth>
+  <depth>-999999</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -37,6 +37,73 @@ started=0
 instance_create(x,y,transit2)
 
 guialpha=1
+
+/*
+with (instance_create(x,y,dialogue))
+{
+dlg_add_str(0,"Хватит прохлаждаться, #принимайся за работу!")
+dlg_add_str(0,"Только не говори что так и не нашёл #ничего полезного.")
+dlg_add_str(1,"Чувак, это помойка, никто бы не стал #выбрасывать сюда полезные вещи!")
+dlg_add_str(2,"В любом случае, бездействие не принесёт #никакого прогресса.")
+dlg_add_str(0,"Так что поднимай свою задницу и давай #сделаем ещё один круг.")
+dlg_add_str(3,"Знаешь, браток. Я тут подумал.. #Может нам найти.. героя?")
+dlg_add_str(4,"Ну типа, парень который всегда приходит #на помощь, спасает в трудной ситуации #и готовый сделать для тебя всё о чём ты #его попросишь..")
+dlg_add_str(8,"Типа.. слуги? Звучит нелепо.")
+dlg_add_str(0,"В наше время не найти того, кому #настолько наплевать на себя.")
+dlg_add_str(5,"Может быть, вы просто плохо ищите?")
+dlg_add_str(6,"Потому что герой, всегда приходящий на #помощь, спасающий в трудной ситуации и #готовый сделать всё о чём вы его #попросите...")
+dlg_add_str(7,"Стоит прямо перед вами!")
+dlg_add_str(8,"Святые звёзды.. Это что ещё за штука?")
+dlg_add_str(9,"Копьё Отчаяния, поборник добра и #справедливости, к вашим услугам!")
+dlg_add_str(10,"Притормози, чувиха! Просто положи палку #на землю и мы открыты для переговоров!")
+dlg_add_str(10,"Прежде всего.. что за прозвище такое #странное?")
+dlg_add_str(11,"Ох.. Оно означает, что я приношу отчаяние #всем своим врагам!")
+dlg_add_str(0,"Знаешь, звучит не очень распологающе.")
+dlg_add_str(12,"Как уж есть. #Так нужна ли вам помощь вообще?")
+dlg_add_str(16,"Да, да, раз ты настаиваешь! #Один волшебный артефакт каким то образом #очутился в дупле самого высокого дерева #в саду.")
+dlg_add_str(13,"Ага.. И вы никак не можете его достать?")
+dlg_add_str(0,"Очевидно, руками же мы обделены. #Ты когда-нибудь видела грибов, способных #ходить по вертикальным поверхностям?")
+dlg_add_str(14,"Нет.. С каких пор грибы вообще #на двух ногах ходят..")
+dlg_add_str(0,"Прошу прощения?")
+dlg_add_str(15,"Всё в порядке! Я посмотрю что можно сделать. #Ведите!")
+}
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ini_open('savegame.ss');
+if ini_section_exists('saving')
+{
+  with (instance_create(0, 0, sys_transition)) {
+    revivingtrans=true
+    if ini_key_exists('saving','next_room') {next_room=(ini_read_real('saving','next_room',0))}
+    if ini_key_exists('saving','xx') {xx=(ini_read_real('saving','xx',0))}
+    if ini_key_exists('saving','yy') {yy=(ini_read_real('saving','yy',0))}
+    if ini_key_exists('saving','time') {time=(ini_read_real('saving','time',0))}
+    step=time/2
+  }
+}
+ini_close();
+
 </string>
           </argument>
         </arguments>
@@ -107,6 +174,29 @@ image_speed=0.5
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0]=1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -143,50 +233,6 @@ with(playerpar) {if distance_to_object(teleport)&lt;100 {control.guialpha=distan
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>526</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_font</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>12</kind>
-            <font>font</font>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>524</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_color</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>13</kind>
-            <string>16777215</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="9" enumb="81">
       <action>
@@ -214,6 +260,67 @@ else
 window_set_fullscreen(true);
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="71">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ini_open('savegame.ss');
+ini_write_real('saving','next_room',room);
+ini_write_real('saving','xx',playerpar.x);
+ini_write_real('saving','yy',playerpar.y);
+ini_write_real('saving','time',30);
+ini_close(); 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="70">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ini_open('savegame.ss');
+if ini_section_exists('saving')
+{
+  with (instance_create(0, 0, sys_transition)) {
+    if ini_key_exists('saving','next_room') {next_room=(ini_read_real('saving','next_room',0))}
+    if ini_key_exists('saving','xx') {xx=(ini_read_real('saving','xx',0))}
+    if ini_key_exists('saving','yy') {yy=(ini_read_real('saving','yy',0))}
+    if ini_key_exists('saving','time') {time=(ini_read_real('saving','time',0))}
+  }
+}
+ini_close(); 
 </string>
           </argument>
         </arguments>

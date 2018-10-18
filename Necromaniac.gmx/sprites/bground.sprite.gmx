@@ -33,5 +33,10 @@
     <frame index="10">images\bground_10.png</frame>
     <frame index="11">images\bground_11.png</frame>
     <frame index="12">images\bground_12.png</frame>
+    <frame index="13">images\bground_13.png</frame>
+    <frame index="14">images\bground_14.png</frame>
+    <frame index="15">images\bground_15.png</frame>
+    <frame index="16">images\bground_16.png</frame>
+    <frame index="17">images\bground_17.png</frame>
   </frames>
 </sprite>

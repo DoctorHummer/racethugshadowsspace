@@ -30,6 +30,14 @@
     <sound>sound\shatterbroke</sound>
     <sound>sound\shatterappear</sound>
     <sound>sound\throwpot</sound>
+    <sound>sound\spawnthorn</sound>
+    <sound>sound\fallfromtree</sound>
+    <sound>sound\herojump</sound>
+    <sound>sound\herofalls</sound>
+    <sound>sound\dia1</sound>
+    <sound>sound\dia2</sound>
+    <sound>sound\dia3</sound>
+    <sound>sound\bedjump</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="velvet">
@@ -46,6 +54,8 @@
       <sprite>sprites\velvet_jumpthrow</sprite>
       <sprite>sprites\jumpelin</sprite>
       <sprite>sprites\javelin</sprite>
+      <sprite>sprites\velvet_saving</sprite>
+      <sprite>sprites\bed</sprite>
     </sprites>
     <sprite>sprites\wings</sprite>
     <sprite>sprites\vv_mask</sprite>
@@ -53,6 +63,7 @@
     <sprite>sprites\sky1</sprite>
     <sprite>sprites\sky2</sprite>
     <sprite>sprites\bground</sprite>
+    <sprite>sprites\bgroundtree</sprite>
     <sprite>sprites\bground2</sprite>
     <sprite>sprites\bg2star</sprite>
     <sprite>sprites\bgroundsides</sprite>
@@ -60,6 +71,7 @@
     <sprite>sprites\heart</sprite>
     <sprite>sprites\point</sprite>
     <sprite>sprites\died</sprite>
+    <sprite>sprites\scube</sprite>
     <sprites name="enemies">
       <sprite>sprites\thorn</sprite>
       <sprite>sprites\thornjump</sprite>
@@ -91,6 +103,10 @@
       <sprite>sprites\thorn2dead</sprite>
       <sprite>sprites\thorn2attack</sprite>
     </sprites>
+    <sprites name="npcs">
+      <sprite>sprites\shroombros</sprite>
+      <sprite>sprites\shroomspin</sprite>
+    </sprites>
     <sprite>sprites\clouds1</sprite>
     <sprite>sprites\clouds2</sprite>
     <sprite>sprites\clouds3</sprite>
@@ -121,6 +137,10 @@
     <sprite>sprites\pheartstar</sprite>
     <sprite>sprites\buggyinwall</sprite>
     <sprite>sprites\platform2gore</sprite>
+    <sprite>sprites\dialoguewindow</sprite>
+    <sprite>sprites\dialogueface</sprite>
+    <sprite>sprites\bigstars</sprite>
+    <sprite>sprites\fallskull</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile1</background>
@@ -135,6 +155,10 @@
     <script>scripts\loaddata.gml</script>
     <script>scripts\iff.gml</script>
     <script>scripts\room_goto_transition.gml</script>
+    <scripts name="dlg">
+      <script>scripts\dlg_add_str.gml</script>
+      <script>scripts\dlg_close.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font</font>
@@ -208,6 +232,14 @@
       <object>objects\viewthing</object>
       <object>objects\blastedheart</object>
       <object>objects\shaker</object>
+      <object>objects\dialogue</object>
+      <objects name="cutscene">
+        <objects name="start">
+          <object>objects\bshr</object>
+          <object>objects\rshr</object>
+          <object>objects\her_o</object>
+        </objects>
+      </objects>
     </objects>
     <object>objects\shroom</object>
     <object>objects\platformtrack</object>
@@ -217,11 +249,15 @@
     <object>objects\switcher</object>
     <object>objects\platform2</object>
     <object>objects\platform2stone</object>
+    <object>objects\fallblock</object>
+    <object>objects\skullfall</object>
+    <object>objects\bedch</object>
   </objects>
   <rooms name="rooms">
     <rooms name="garden">
       <room>rooms\l1_1</room>
       <room>rooms\l1_2</room>
+      <room>rooms\l1_2a</room>
       <room>rooms\l1_3</room>
       <room>rooms\l1_3a</room>
       <room>rooms\l1_3b</room>
@@ -235,6 +271,7 @@
       <room>rooms\l1_9</room>
       <room>rooms\l1_10</room>
       <room>rooms\l1_tree</room>
+      <room>rooms\room17</room>
     </rooms>
     <rooms name="japan">
       <room>rooms\l2_1</room>

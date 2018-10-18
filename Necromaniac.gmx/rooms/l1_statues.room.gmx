@@ -78,7 +78,7 @@
     <instance objName="cube1" x="384" y="224" name="inst_5EA8DEEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-32" y="224" name="inst_8A012797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-16" y="224" name="inst_5643017A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="teleport" x="-48" y="0" name="inst_0EB64734" locked="0" code="xx=384  yy=-1 next_room=l1_3c kind='right'&#xA;" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="-48" y="0" name="inst_0EB64734" locked="0" code="xx=384  yy=-1 next_room=l1_3c&#xA;" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="drawbackground" x="16" y="-48" name="inst_51142DE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-48" y="224" name="inst_82BEB12F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-48" y="-16" name="inst_D75CE36C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -118,7 +118,7 @@
     <instance objName="cube1" x="400" y="128" name="inst_57C03CFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="416" y="128" name="inst_C96547EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="432" y="128" name="inst_F647FACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="teleport" x="432" y="144" name="inst_91B652A2" locked="0" code="xx=12 ykind=2 yy=-1 next_room=l1_6 kind='left'&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="432" y="144" name="inst_91B652A2" locked="0" code="xx=12 ykind=2 yy=-1 next_room=l1_6 &#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="608" y="128" name="inst_32840408" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="384" y="16" name="inst_B95C6317" locked="0" code="" scaleX="-0.5" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="384" y="48" name="inst_69FAB5AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

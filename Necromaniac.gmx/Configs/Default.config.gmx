@@ -529,7 +529,7 @@
     <option_win8_analytics_id></option_win8_analytics_id>
     <option_win8_build_version>0</option_win8_build_version>
     <option_win8_certificate_location>Windows8_TemporaryKey.pfx</option_win8_certificate_location>
-    <option_win8_display_name>ShovelSouls</option_win8_display_name>
+    <option_win8_display_name>Spear of Despair</option_win8_display_name>
     <option_win8_internet_capable>0</option_win8_internet_capable>
     <option_win8_interpolate>-1</option_win8_interpolate>
     <option_win8_landscape_allowed>-1</option_win8_landscape_allowed>
@@ -555,7 +555,7 @@
     <option_win8_splash_background_colour>#000000</option_win8_splash_background_colour>
     <option_win8_splash_png>Configs\Default\Windows8\splashscreen.png</option_win8_splash_png>
     <option_win8_store_logo>Configs\Default\Windows8\logos\logo50.png</option_win8_store_logo>
-    <option_win8_texture_page>1024</option_win8_texture_page>
+    <option_win8_texture_page>2048</option_win8_texture_page>
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
     <option_winUAP_allowfullscreen>false</option_winUAP_allowfullscreen>
     <option_winUAP_build_version>0</option_winUAP_build_version>

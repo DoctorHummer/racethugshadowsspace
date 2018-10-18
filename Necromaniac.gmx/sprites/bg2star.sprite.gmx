@@ -23,5 +23,8 @@
     <frame index="0">images\bg2star_0.png</frame>
     <frame index="1">images\bg2star_1.png</frame>
     <frame index="2">images\bg2star_2.png</frame>
+    <frame index="3">images\bg2star_3.png</frame>
+    <frame index="4">images\bg2star_4.png</frame>
+    <frame index="5">images\bg2star_5.png</frame>
   </frames>
 </sprite>

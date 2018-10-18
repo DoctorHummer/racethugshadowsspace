@@ -36,7 +36,7 @@ sdv=0 sdv2=0
 check1=place_free(x,y-16)
 check2=place_free(x-16,y)
 check3=place_free(x+16,y)
-check4=place_meeting(x,y+16,cube)
+
 </string>
           </argument>
         </arguments>
@@ -74,7 +74,7 @@ if grassvar=11 {grassvar=13}
 }
 
 if sprite_index=grass1 
-{sdv=0 sdv2=0 if flowerchanse=1 and check4{draw_sprite(grass1_3,grassvar3,x,y)}} 
+{sdv=0 sdv2=0 if image_index=43 and flowerchanse=1{draw_sprite(grass1_3,grassvar3,x,y)}} 
 else 
 {sdv=14 sdv2=5}
 

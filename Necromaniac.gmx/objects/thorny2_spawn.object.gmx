@@ -61,6 +61,7 @@ dig=0
 if (fromleftside &amp;&amp; playerpar.x&lt;x)||(!fromleftside &amp;&amp; playerpar.x&gt;x)
 {
 active=true
+audio_play_sound(spawnthorn,0.5,false)
 }
 }
 
