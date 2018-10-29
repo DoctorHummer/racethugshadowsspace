@@ -26,12 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>hp=2
-speed=2.5
+//speed=2.5
 type=3
-t=0
-direction=choose(45,135,225,315)
-r=-2
+t=0 t2=0
+//direction=choose(45,135,225,315)
+//r=-2
 hitside=0
+speeed=choose(1,1.25,1.5)
+
+attack=false
+timer=0
+dashright=true
 </string>
           </argument>
         </arguments>
@@ -54,17 +59,42 @@ hitside=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.25*speed
+            <string>timer++
+
+if ((timer&lt;80 or timer&gt;=130))
+{
+motion_add(point_direction(x,y,playerpar.x,playerpar.y),.1);
+if x&lt;playerpar.x{image_xscale=1; dashright=true}
+if x&gt;playerpar.x{image_xscale=-1; dashright=false}
+if (speed &gt; speeed){ speed = speeed;}
+if (speed &lt; 1){ speed = 1;}
+}
+if timer=80 {audio_play_sound(spotterready,0.5,false)}
+if (timer&gt;=80 and timer&lt;=96)
+{
+motion_add(point_direction(x,y,playerpar.x,playerpar.y),0.1);
+if x&lt;playerpar.x{image_xscale=1; dashright=true}
+if x&gt;playerpar.x{image_xscale=-1; dashright=false}
+if (speed &gt; 0.5){ speed = 0.5;}
+if (timer&gt;80 and timer&lt;=84) or (timer&gt;88 and timer&lt;=92) {t2=1}
+if (timer&gt;84 and timer&lt;=88) or (timer&gt;92 and timer&lt;=96) {t2=0}
+}
+if timer=96 {audio_play_sound(spotterdash,0.5,false)}
+if (timer&gt;96 and timer&lt;130) 
+{
+if dashright=true {motion_add(0,3)}
+if dashright=false {motion_add(180,3)}
+}
+if timer&gt;=150 {timer=choose(-20,-10,0,10,20)}
+
+if timer&lt;=96 or timer&gt;=130
+{
+gravity=0.01
+if t&gt;0 {if hitside=0 motion_add(0, speed*2) else motion_add(180, speed*2) t-=0.1}
+}
+
+image_speed=0.1*speed
 if speed&gt;2.5 speed=2.5
-if t&gt;0 {if hitside=0 motion_add(0, speed*2) else motion_add(180, speed*2) t-=0.25} else {speed=2.5}
-
-if t=0 {r=-2}
-if t=0.25 {r=-1}
-if t=0.5 {r=-0}
-if t=0.75 {r=1}
-if t=1 {r=2}
-
-
 </string>
           </argument>
         </arguments>
@@ -143,10 +173,11 @@ if t=1 {r=2}
 
 draw_set_blend_mode( bm_add );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,t)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,t2)
 draw_set_blend_mode( bm_normal );
 
-var dir = point_direction(playerpar.x,playerpar.y,x,y);
-draw_sprite(bateye,0,x+lengthdir_x(r,point_direction(playerpar.x,playerpar.y,x,y)),y+4+lengthdir_y(r,point_direction(playerpar.x,playerpar.y,x,y)));
+//var dir = point_direction(playerpar.x,playerpar.y,x,y);
+//draw_sprite(bateye,0,x+lengthdir_x(r,point_direction(playerpar.x,playerpar.y,x,y)),y+4+lengthdir_y(r,point_direction(playerpar.x,playerpar.y,x,y)));
 </string>
           </argument>
         </arguments>

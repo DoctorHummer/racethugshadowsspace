@@ -77,7 +77,7 @@
     <instance objName="cube1" x="-16" y="0" name="inst_A99C485D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="0" y="0" name="inst_0129F0CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="16" y="0" name="inst_4C39693B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="teleport" x="432" y="16" name="inst_2809AF4A" locked="0" code="//xx=12 yy=-1 next_room=l1_3&#xA;xx=12 yy=-1 ykind=6 next_room=l1_tree&#xA;" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="432" y="16" name="inst_2809AF4A" locked="0" code="xx=12 yy=-1 next_room=l1_3&#xA;//xx=12 yy=-1 ykind=6 next_room=l1_tree&#xA;" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="432" y="0" name="inst_8A0A290E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="0" name="inst_95B4E2A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="416" y="0" name="inst_53BEAEB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -178,7 +178,7 @@
     <instance objName="cube2" x="240" y="208" name="inst_E758F83E" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="128" y="208" name="inst_4DCF7D1B" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="256" y="208" name="inst_D9729FA0" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
-    <instance objName="bedch" x="200" y="184" name="inst_C6A11260" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="saveflag" x="192" y="192" name="inst_1A859E42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile1" x="272" y="208" w="64" h="16" xo="64" yo="112" id="10006023" name="inst_1A5CA0E0" depth="1000003" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

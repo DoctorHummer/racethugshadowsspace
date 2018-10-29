@@ -49,7 +49,7 @@ xx1=0.02
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if xx1&lt;1 {xx+=0.005 xx1+=xx}
+            <string>if xx1&lt;1 {xx+=0.001 xx1+=xx/1}
 if xx1&gt;1 {instance_destroy()}
 
 </string>

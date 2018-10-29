@@ -53,13 +53,13 @@ ad=0
             <kind>1</kind>
             <string>if mode=0
 {
-timer++
+timer+=0.5
 if timer&lt;96
 {
 if t&gt;=16 {t=0} 
-t++
+t+=0.5
 if t&gt;=0 and t&lt;4 {image_index=2} if t&gt;=4 and t&lt;8 {image_index=3} if t&gt;=8 and t&lt;12 {image_index=2} if t&gt;=12 and t&lt;16 {image_index=4}
-x-=2
+x-=1
 }
 else
 {
@@ -69,19 +69,20 @@ mode=1 t=0 timer=0 with (instance_create(x,y,dialogue)) { dlg_add_str(0,"Да т
 if mode=1
 {
 if tt&gt;24 {tt=0} 
-tt++
+tt+=0.5
 if tt&gt;12 {image_index=2} else {image_index=17}
 }
 if mode=2 
 {
-t++ 
+t+=0.5
 if t=10 {instance_create(201,79,her_o)}
-if t&gt;=125
+if t&gt;=80
 {
 mode=3 if instance_exists(bshr) bshr.mode=6
 with (instance_create(x,y,dialogue))
 {
-dlg_add_str(6,"Потому что герой, всегда приходящий на #помощь, спасающий в трудной ситуации и #готовый сделать всё о чём вы его #попросите...",dia3)
+downdraw=172;
+dlg_add_str(6,"Потому что герой, всегда приходящий напомощь, #спасающий в трудной ситуации и готовый #сделать всё о чём его попросят...",dia3)
 }
 }
 }
@@ -93,7 +94,7 @@ if her_o.y&lt;360 {image_index=28}
 else 
 {
 if t&gt;24 {t=0} 
-t++
+t+=0.5
 if t&gt;12 {image_index=30} else {image_index=44}
 }
 }
@@ -101,19 +102,19 @@ if t&gt;12 {image_index=30} else {image_index=44}
 if mode=4
 {
 image_index=33
-t++ if t&gt;3 {t=0}
+t+=0.5 if t&gt;3 {t=0}
 if t&gt;=0 and t&lt;2 {ad=1} if t&gt;=2 and t&lt;4 {ad=-1}
 }
 if mode=5
 {
 image_xscale=-1
-timer++
+timer+=0.5
 if timer&lt;96
 {
 if t&gt;=16 {t=0} 
-t++
+t+=0.5
 if t&gt;=0 and t&lt;4 {image_index=2} if t&gt;=4 and t&lt;8 {image_index=3} if t&gt;=8 and t&lt;12 {image_index=2} if t&gt;=12 and t&lt;16 {image_index=4}
-x+=3
+x+=1.5
 
 }
 else

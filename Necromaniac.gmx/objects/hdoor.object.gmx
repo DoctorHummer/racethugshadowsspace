@@ -57,17 +57,17 @@ if opened=1
 t+=1
 if t=2 or t=6 or t=10 or t=14 or t=18 or t=22 or t=26 {x+=1}
 if t=4 or t=8 or t=12 or t=16 or t=20 or t=24 or t=28 {x-=1}
-if t&gt;28 {image_index+=1}
-if t&gt;44 
+if t&gt;28 {image_index+=0.5}
+if t&gt;60
 opened=2
 }
 if opened=2 {image_index=16 t=0 image_yscale=0 solid=false}
 if opened=3
 {
-image_index-=1
+image_index-=0.5
 if image_index&lt;=0 
   {
-  with instance_create(x+16,y+64,cloud) {sprite_index=stopclouds image_speed=0.6}
+  with instance_create(x+16,y+64,cloud) {sprite_index=stopclouds image_speed=0.3}
   instance_create(x,y,shaker) audio_play_sound(doors,0.5,false) 
   opened=0
   }

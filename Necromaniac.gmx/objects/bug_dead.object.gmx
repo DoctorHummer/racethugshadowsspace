@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_yscale=-1
 col = make_color_rgb(100, 145, 255); a=1;
+image_speed=0.2
 </string>
           </argument>
         </arguments>
@@ -49,8 +50,8 @@ col = make_color_rgb(100, 145, 255); a=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.6
-if a&gt;0 {a-=0.25}
+            <string>gravity=0.15
+if a&gt;0 {a-=0.125}
 </string>
           </argument>
         </arguments>

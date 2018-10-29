@@ -49,9 +49,9 @@ r=-2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.6
-image_speed=1
-if t&gt;0 {t-=0.25}
+            <string>gravity=0.15
+image_speed=0.4
+if t&gt;0 {t-=0.125}
 </string>
           </argument>
         </arguments>
@@ -75,7 +75,7 @@ if t&gt;0 {t-=0.25}
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(enemycloud,0.5,false)
-spr=instance_create(x,y+speed,cloud) spr.sprite_index=clouds3 spr.image_xscale=other.image_xscale spr.image_speed=0.5
+spr=instance_create(x,y+speed,cloud) spr.sprite_index=clouds4 spr.image_xscale=other.image_xscale spr.image_speed=0.25
 instance_destroy()
 </string>
           </argument>
@@ -105,8 +105,8 @@ draw_set_blend_mode( bm_add );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,t)
 draw_set_blend_mode( bm_normal );
 
-var dir = point_direction(playerpar.x,playerpar.y,x,y);
-draw_sprite(bateye,1,x+lengthdir_x(r,point_direction(playerpar.x,playerpar.y,x,y)),y+4+lengthdir_y(r,point_direction(playerpar.x,playerpar.y,x,y)));
+//var dir = point_direction(playerpar.x,playerpar.y,x,y);
+//draw_sprite(bateye,1,x+lengthdir_x(r,point_direction(playerpar.x,playerpar.y,x,y)),y+4+lengthdir_y(r,point_direction(playerpar.x,playerpar.y,x,y)));
 </string>
           </argument>
         </arguments>

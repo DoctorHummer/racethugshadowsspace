@@ -49,9 +49,9 @@ r=-2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.6
-image_speed=1
-if t&gt;0 {t-=0.25}
+            <string>gravity=0.15
+image_speed=0.5
+if t&gt;0 {t-=0.125}
 </string>
           </argument>
         </arguments>

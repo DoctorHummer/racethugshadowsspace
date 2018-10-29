@@ -31,6 +31,7 @@ movespeed=1;
 image_speed=0
 image_index=0
 gearot=0;
+sp=0.75
 </string>
           </argument>
         </arguments>
@@ -53,29 +54,31 @@ gearot=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (place_meeting(x,y-(8+2*movespeed),playerpar)){if vspeed!=0 {playerpar.y+=vspeed}}
-if place_meeting(x,y+(8+2*movespeed),playerpar){ playerpar.y+=abs(vspeed)}
+            <string>if (place_meeting(x,y-35,playerpar)){if vspeed!=0 {playerpar.y+=vspeed}}
+if place_meeting(x,y+4,playerpar){ playerpar.y+=abs(vspeed)}
 
 if movemode=0//down
 {
-vspeed=movespeed
+vspeed=1
 hspeed=0;
-if (!place_meeting(x,y+16,platformtrack))
-{
-movemode=1; 
-if place_meeting(x,y-(8+2*movespeed),playerpar){playerpar.y-=2*movespeed};
-}
+if (!place_meeting(x,y+16,platformtrack)){movemode=1; vspeed=0; hspeed=0; if place_meeting(self.x,self.y-35,playerpar){playerpar.y-=1};}
 }
 
-if movemode=1//up
+if movemode=1
 {
-vspeed=-movespeed
-hspeed=0;
-if (!place_meeting(x,y-16,platformtrack))
-{
-movemode=0; 
-if place_meeting(x,y-(8+2*movespeed),playerpar){playerpar.y+=2*movespeed};
+movetimer++ if movetimer&gt;50 {movemode=2; movetimer=0 if place_meeting(self.x,self.y-35,playerpar){playerpar.y-=1};}
 }
+
+if movemode=2//up
+{
+vspeed=-1
+hspeed=0;
+if (!place_meeting(x,y-16,platformtrack)){movemode=3; vspeed=0; hspeed=0;if place_meeting(self.x,self.y-35,playerpar){playerpar.y+=1};}
+}
+
+if movemode=3
+{
+movetimer++ if movetimer&gt;50 {movemode=0; movetimer=0 if place_meeting(self.x,self.y-35,playerpar){playerpar.y+=1};}
 }
 
 </string>
@@ -101,10 +104,11 @@ if place_meeting(x,y-(8+2*movespeed),playerpar){playerpar.y+=2*movespeed};
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index,1,x+22,y,1,1,gearot,c_white,1);
-draw_sprite_ext(sprite_index,1,x-22,y,1,1,gearot,c_white,1);
+draw_sprite_ext(sprite_index,1,x-22,y,1,1,-gearot,c_white,1);
 draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_white,1);
 
-gearot+=2*movespeed
+gearot+=2*vspeed
+
 </string>
           </argument>
         </arguments>

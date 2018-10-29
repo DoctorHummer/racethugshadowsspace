@@ -3,8 +3,8 @@
   <caption></caption>
   <width>400</width>
   <height>1440</height>
-  <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -190,9 +190,6 @@
     <instance objName="cube1" x="400" y="32" name="inst_224815BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="48" name="inst_E110705B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="64" name="inst_5AC4B7B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="400" y="1328" name="inst_38C39F5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="416" y="1328" name="inst_B1BFF836" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="432" y="1328" name="inst_16FB1AD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="1424" name="inst_68EF6030" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="416" y="1424" name="inst_D23B5757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="432" y="1424" name="inst_87901CD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -208,11 +205,6 @@
     <instance objName="cube1" x="400" y="1200" name="inst_C3786DCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="1216" name="inst_EE2F892A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="1232" name="inst_379081E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="400" y="1248" name="inst_CBAC28A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="400" y="1264" name="inst_9BDEA333" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="400" y="1280" name="inst_FBB8C4AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="400" y="1296" name="inst_7CC739E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="400" y="1312" name="inst_68BDBBAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="1040" name="inst_2C3A18DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="1024" name="inst_43153A00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="400" y="1008" name="inst_9D12C6DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -337,7 +329,7 @@
     <instance objName="cube" x="208" y="1136" name="inst_7A4626D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="272" y="1136" name="inst_D2750269" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="eyeinwall" x="200" y="1120" name="inst_BB0ACE36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bug" x="240" y="1120" name="inst_13362506" locked="0" code="col = make_color_rgb(128, 128, 255); sp=2&#xA;direction=0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bug" x="240" y="1120" name="inst_13362506" locked="0" code="col = make_color_rgb(128, 128, 255); sp=1.25&#xA;direction=0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemyborder" x="144" y="1120" name="inst_D3B810A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemyborder" x="320" y="1120" name="inst_084296C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="336" y="1088" name="inst_238F90B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -346,7 +338,7 @@
     <instance objName="cube" x="384" y="1088" name="inst_3C614FFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="shroom" x="376" y="1088" name="inst_BD654E7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="shroom" x="24" y="992" name="inst_7BFBF917" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bug" x="144" y="976" name="inst_C6701132" locked="0" code="col = make_color_rgb(128, 128, 255); sp=2&#xA;direction=0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bug" x="144" y="976" name="inst_C6701132" locked="0" code="col = make_color_rgb(128, 128, 255); sp=1.25&#xA;direction=0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemyborder" x="320" y="976" name="inst_83EA4AD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="0" y="992" name="inst_702C12BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="16" y="992" name="inst_E332DCF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -389,7 +381,7 @@
     <instance objName="spikes" x="176" y="976" name="inst_7A2C51BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="192" y="976" name="inst_2753C1B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="208" y="976" name="inst_91D58497" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="thornythrower" x="200" y="704" name="inst_28029B22" locked="0" code="xrange=3&#xA;timer=24&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thornythrower" x="200" y="704" name="inst_28029B22" locked="0" code="xrange=1.5&#xA;timer=24&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="80" y="672" name="inst_29A0DC25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="64" y="672" name="inst_046A45B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="48" y="672" name="inst_94CFBD51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -435,11 +427,14 @@
     <instance objName="cube" x="96" y="256" name="inst_C5129F8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="16" y="304" name="inst_94B11B4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="0" y="304" name="inst_71AEDC53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bug" x="256" y="976" name="inst_1ABFB6C1" locked="0" code="col = make_color_rgb(128, 128, 255); sp=2&#xA;direction=0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bug" x="256" y="976" name="inst_1ABFB6C1" locked="0" code="col = make_color_rgb(128, 128, 255); sp=1.25&#xA;direction=0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="128" y="416" name="inst_565A03F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="144" y="416" name="inst_8879FC09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="240" y="416" name="inst_4949E66A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="256" y="416" name="inst_45438A32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cube1" x="416" y="1232" name="inst_8E952218" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cube1" x="432" y="1232" name="inst_FE27942B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="teleport" x="432" y="1248" name="inst_CF39261F" locked="0" code="xx=12 yy=-1 ykind=5 next_room=l1_11&#xA;" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile3" x="168" y="688" w="32" h="32" xo="304" yo="160" id="10005604" name="inst_EDD329C1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

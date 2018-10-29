@@ -90,11 +90,11 @@ for (a=0; a&lt;room_width; a+=4) {draw_sprite_ext(sky1,0,xv+a,yv,1,1,0,ib,1)}
 }
 
 fogx++ fogx2++ fogx3++
-if fogx&gt;800{fogx=0} if fogx2&gt;400{fogx2=0} if fogx3&gt;200{fogx3=0}
+if fogx&gt;1600{fogx=0} if fogx2&gt;800{fogx2=0} if fogx3&gt;400{fogx3=0}
 
-for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,10,xv+a+fogx*0.5,yv*0.98,1,1,0,ib,1)}
-for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,9,xv+a+fogx2,yv*0.96,1,1,0,ib,1)}
-for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,8,xv+a+fogx3*2,yv*0.94,1,1,0,ib,1)}
+for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,10,xv+a+fogx*0.25,yv*0.98,1,1,0,ib,1)}
+for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,9,xv+a+fogx2*0.5,yv*0.96,1,1,0,ib,1)}
+for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,8,xv+a+fogx3,yv*0.94,1,1,0,ib,1)}
 //2 200   1 400   0.5 800   0.75 600   0.25 1600
 
 if room=l1_1
@@ -152,7 +152,7 @@ draw_sprite_ext(bground,13,xv*0.8,yv*0.8,1,1,0,ib,1)
 draw_sprite_ext(bground,5,xv*0.5,yv*0.4,1,1,0,ib,1)
 draw_sprite_ext(bground,6,xv*0.25,yv*0.25,1,1,0,ib,1)
 draw_sprite_ext(greenback,0,xv,yv*0.25+240,25,15,0,ib,1)
-if room=l1_6 draw_sprite_ext(bgroundsides,0,0,0,1,1,0,ib,1)
+if room=l1_6 draw_sprite_ext(bgroundsides,0,xv*0.25,yv*0.25,1,1,0,ib,1)
 
 if room=l1_10 
 {

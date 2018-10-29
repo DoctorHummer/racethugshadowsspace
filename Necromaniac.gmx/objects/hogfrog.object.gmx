@@ -29,7 +29,7 @@
 type=2
 t=0
 isJumping=false
-timer=0
+timer=-25
 hitted=0
 evil=false
 g=0
@@ -58,11 +58,11 @@ unlocker=false
             <kind>1</kind>
             <string>if instance_exists(playerpar)
 {
-if timer&lt;40 timer++
+if timer&lt;40 timer+=0.5
 
 if timer&lt;39 
 {
-sprite_index=hogfrog_stand image_speed=0.15
+sprite_index=hogfrog_stand image_speed=0.1
 if x&gt;playerpar.x {image_xscale=-1} else {image_xscale=1}
 }
 if timer&gt;=30 and timer&lt;33 {g=0.25 image_index=0}
@@ -74,13 +74,15 @@ if timer=39
 audio_play_sound(frogjump,0.5,false);
 if collision_line(x,y,playerpar.x,playerpar.y,cube,false,false)
 {
-vspeed=-12
-if x&gt;playerpar.x {image_xscale=-1 hspeed=-choose(2,3)} else {image_xscale=1 hspeed=choose(2,3)}
+if x&gt;playerpar.x {image_xscale=-1 motion_add(100,5)} else {image_xscale=1 motion_add(80,5)}
+//vspeed=-6
+//if x&gt;playerpar.x {image_xscale=-1 hspeed=choose(-1,-1.5)} else {image_xscale=1 hspeed=choose(1,1.5)}
 }
 else
 {
-vspeed=-6
-if x&gt;playerpar.x {image_xscale=-1 hspeed=-choose(4,5)} else {image_xscale=1 hspeed=choose(4,5)}
+if x&gt;playerpar.x {image_xscale=-1 motion_add(135,4)} else {image_xscale=1 motion_add(45,4)}
+//vspeed=-3
+//if x&gt;playerpar.x {image_xscale=-1 hspeed=choose(-2,-2.5)} else {image_xscale=1 hspeed=choose(2,2.5)}
 }
 }
 
@@ -93,7 +95,7 @@ image_index = 1 + sign(vspeed);
 if (abs(vspeed) &lt; 2) { image_index = 1; }
 }
 
-gravity=0.8 
+gravity=0.2 
 
 if place_meeting(x+hspeed,y,cube) or place_meeting(x+hspeed,y,enemyborder) {hspeed=-hspeed/2 if isJumping=0 {image_xscale=-image_xscale}}
 
@@ -101,7 +103,7 @@ if place_meeting(x,y+vspeed,cube) or place_meeting(x,y+vspeed,enemyborder)
 {
 if vspeed &gt; 0
 {
-with instance_create(x,y+20,cloud) {sprite_index=stopclouds image_speed=0.6}
+with instance_create(x,y+20,cloud) {sprite_index=stopclouds image_speed=0.3}
 audio_play_sound(frogland,0.5,false); move_contact_solid(270, vspeed) vspeed = 0 hspeed = 0 hitted=0 isJumping = 0 gravity = 0 
 if !evil timer=16 else timer=26
 } 
@@ -111,8 +113,8 @@ else
 } 
 }
 
-if t&gt;0 {t-=0.25}
-if g&gt;0 {g-=0.25}
+if t&gt;0 {t-=0.125}
+if g&gt;0 {g-=0.125}
 </string>
           </argument>
         </arguments>
@@ -145,8 +147,9 @@ if !place_free(x,y+vspeed)
 timer=39
 audio_play_sound(shroomjump,0.5,false);
 other.stimer=8;
-vspeed=-10
-if x&gt;playerpar.x {image_xscale=-1 hspeed=-5} else {image_xscale=1 hspeed=5}
+//vspeed=-5
+//if x&gt;playerpar.x {image_xscale=-1 hspeed=-2.5} else {image_xscale=1 hspeed=2.5}
+if x&gt;playerpar.x {image_xscale=-1 motion_add(135,4)} else {image_xscale=1 motion_add(45,4)}
 }
 </string>
           </argument>
@@ -173,15 +176,13 @@ if x&gt;playerpar.x {image_xscale=-1 hspeed=-5} else {image_xscale=1 hspeed=5}
             <string>draw_self();
 draw_set_blend_mode( bm_add );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,t)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_green,g)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,g)
 draw_set_blend_mode( bm_normal );
 
 //draw_text(x,y-32,'timer '+string(timer))
 //draw_text(x,y-32,'vspeed '+string(vspeed))
 //draw_text(x,y-64,'hitted '+string(hitted))
 //draw_text(x,y-96,'isJumping '+string(isJumping))
-//draw_text(x,y-128, x&gt;playerpar.x)
-
 
 </string>
           </argument>

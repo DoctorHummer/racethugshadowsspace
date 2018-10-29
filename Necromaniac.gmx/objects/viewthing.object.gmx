@@ -97,17 +97,17 @@ else
   {
   y = yMax 
   timer++
-  if timer=10 or timer=20 or timer=30 or timer=40 or timer=50 or timer=60 or timer=70 {instance_create(random(room_width),view_yview+256,skullfall) }
-  if timer&gt;=70 {timer=choose(-10,0,10)}
+  if timer=20 or timer=40 or timer=60 or timer=80 or timer=100 or timer=120 or timer=140 {instance_create(random(room_width),view_yview+256,skullfall) }
+  if timer&gt;=140 {timer=choose(-10,0,10)}
   }
   }
   
 }
 else if room=l1_1 and !nocutscene
 {
-if mode=0 {if y&lt;320 {motion_add(270,0.5) if speed&gt;3 speed=3} else {if speed&gt;0 speed-=0.1}}
-if mode=1 {if y&gt;80 {motion_add(90,0.5) if speed&gt;3 speed=3} else {if speed&gt;0 speed-=0.1}}
-if mode=2 {if y&lt;320 {motion_add(270,0.5) if speed&gt;4 speed=4} else {if speed&gt;0 speed-=0.1}}
+if mode=0 or mode=2 {if y&lt;330 {motion_add(270,0.25) if speed&gt;1.75 speed=1.75} else {if speed&gt;0 speed-=0.05}}
+if mode=1 {if y&gt;80 {motion_add(90,0.25) if speed&gt;1.75 speed=1.75} else {if speed&gt;0 speed-=0.05}}
+//if mode=2 {if y&lt;320 {motion_add(270,0.25) if speed&gt;2 speed=2} else {if speed&gt;0 speed-=0.05}}
 }
 else
 {

@@ -34,8 +34,9 @@ isJumping=1
 hitted=1
 timer=39
 sprite_index=hogfrog_hitted
-vspeed=-6
-if x&gt;playerpar.x {image_xscale=-1 hspeed=5} else {image_xscale=1 hspeed=-5}
+speed=0
+
+if x&gt;other.x {image_xscale=-1 motion_add(45,4)} else {image_xscale=1 motion_add(135,4)}
 }
 if type=3 {if x&gt;playerpar.x hitside=0 else hitside=1}
 
@@ -43,20 +44,21 @@ audio_play_sound(enemyhit,0.5,false);
 
 if hp=1 
 { 
-if type=0 {ded=instance_create(x,y,bug_dead) {ded.col=col if x&lt;playerpar.x {ded.speed=6; ded.direction=135} else {ded.speed=6; ded.direction=45} ded.image_xscale=image_xscale}}
+if type=0 {ded=instance_create(x,y,bug_dead) {ded.col=col ded.speed=3; if x&lt;playerpar.x {ded.direction=135} else {ded.direction=45} ded.image_xscale=image_xscale}}
 if type=1 {
-ded=instance_create(x,y,thorny_dead) {if x&lt;playerpar.x {ded.speed=8; ded.direction=145} else {ded.speed=8; ded.direction=35} ded.image_xscale=image_xscale}
+ded=instance_create(x,y,thorny_dead) {if x&lt;playerpar.x {ded.speed=4; ded.direction=145} else {ded.speed=4; ded.direction=35} ded.image_xscale=image_xscale}
 if object_get_name(object_index)="thornythrower" and image_index!=4 and image_index!=5
 {
 ww=instance_create(x,y-15,potty) 
-if image_xscale=-1 {ww.image_xscale=-1 ww.hspeed=-5}else{ww.image_xscale=1 ww.hspeed=5}
-ww.vspeed=-6
+if image_xscale=-1 {ww.image_xscale=-1 ww.hspeed=-2.5}else{ww.image_xscale=1 ww.hspeed=2.5}
+ww.vspeed=-3
 }
 }
-if type=2 {ded=instance_create(x,y,hogfrog_dead) {if x&lt;other.x {ded.speed=7; ded.direction=115} else {ded.speed=7; ded.direction=65} ded.image_xscale=image_xscale ded.unlocker=unlocker}}
-if type=3 {ded=instance_create(x,y,spotter_dead) {if x&lt;playerpar.x {ded.speed=6; ded.direction=135} else {ded.speed=6; ded.direction=45} ded.image_xscale=image_xscale}}
-if type=4 {ded=instance_create(x,y,spiduh_dead) {if x&lt;playerpar.x {ded.speed=6; ded.direction=135} else {ded.speed=6; ded.direction=45} ded.image_xscale=image_xscale at=instance_create(x,y,spiduh_web) at.atrail=atrail at.dirr=dirr at.webtype=webtype}}
-if type=5 {ded=instance_create(x,y,thorny2_dead) {if x&lt;playerpar.x {ded.speed=8; ded.direction=145} else {ded.speed=8; ded.direction=35} ded.image_xscale=image_xscale}}
+if type=2 {ded=instance_create(x,y,hogfrog_dead) {ded.speed=3.5; if x&lt;other.x ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale ded.unlocker=unlocker}}
+if type=3 {ded=instance_create(x,y,spotter_dead) {ded.speed=3; if x&lt;playerpar.x ded.direction=135 else ded.direction=45 ded.image_xscale=image_xscale}}
+if type=4 {ded=instance_create(x,y,spiduh_dead) {ded.speed=3; if x&lt;playerpar.x ded.direction=135 else ded.direction=45 ded.image_xscale=image_xscale at=instance_create(x,y,spiduh_web) at.atrail=atrail at.dirr=dirr at.webtype=webtype}}
+if type=5 {ded=instance_create(x,y,thorny2_dead) {ded.speed=4; if x&lt;playerpar.x ded.direction=145 else ded.direction=35 ded.image_xscale=image_xscale}}
+if type=6 {ded=instance_create(x,y,wurmy_dead) {ded.speed=3.5; if x&lt;other.x ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}}
 instance_destroy()
 }
 
@@ -93,8 +95,9 @@ isJumping=1
 hitted=1
 timer=39
 sprite_index=hogfrog_hitted
-vspeed=-6
-if x&gt;playerpar.x {image_xscale=-1 hspeed=5} else {image_xscale=1 hspeed=-5}
+speed=0
+
+if x&gt;other.x {image_xscale=-1 motion_add(45,4)} else {image_xscale=1 motion_add(135,4)}
 }
 
 if hp=1 
@@ -102,23 +105,24 @@ if hp=1
 if type=0 {spr=instance_create(x,y+8,cloud) spr.sprite_index=clouds3 spr.image_xscale=other.image_xscale spr.image_speed=0.5}
 if type=1 
 {
-ded=instance_create(x,y,thorny_dead) {if other.image_xscale=-1 {ded.speed=7; ded.direction=115} else {ded.speed=7; ded.direction=65} ded.image_xscale=image_xscale}
+ded=instance_create(x,y,thorny_dead) ded.speed=3.5; if other.image_xscale=-1 {ded.direction=115} else {ded.direction=65} ded.image_xscale=image_xscale
 if object_get_name(object_index)="thornythrower" and image_index!=4 and image_index!=5
 {
 ww=instance_create(x,y-15,potty) 
-if image_xscale=-1 {ww.image_xscale=-1 ww.hspeed=-5}else{ww.image_xscale=1 ww.hspeed=5}
-ww.vspeed=-6
+if image_xscale=-1 {ww.image_xscale=-1 ww.hspeed=-2.5} else {ww.image_xscale=1 ww.hspeed=2.5}
+ww.vspeed=-3
 }
 }
-if type=2 {ded=instance_create(x,y,hogfrog_dead) {if other.image_xscale=-1 {ded.speed=7; ded.direction=115} else {ded.speed=7; ded.direction=65} ded.image_xscale=image_xscale ded.unlocker=unlocker}}
-if type=3 {ded=instance_create(x,y,spotter_dead) {if other.image_xscale=-1 {ded.speed=7; ded.direction=115} else {ded.speed=7; ded.direction=65} ded.image_xscale=image_xscale}}
+if type=2 {ded=instance_create(x,y,hogfrog_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale ded.unlocker=unlocker}
+if type=3 {ded=instance_create(x,y,spotter_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}
 if type=4 {spr=instance_create(x,y+speed,cloud) spr.sprite_index=clouds3 spr.image_xscale=other.image_xscale spr.image_speed=0.5 at=instance_create(x,y,spiduh_web) at.atrail=atrail at.dirr=dirr at.webtype=webtype}
-if type=5 {ded=instance_create(x,y,thorny2_dead) {if other.image_xscale=-1 {ded.speed=7; ded.direction=115} else {ded.speed=7; ded.direction=65} ded.image_xscale=image_xscale}
+if type=5 {ded=instance_create(x,y,thorny2_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}
+if type=6 {ded=instance_create(x,y,wurmy_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}
 
-}
 instance_destroy()
 }
-spr=instance_create(other.x,other.y,cloud) spr.sprite_index=clouds2 spr.image_xscale=other.image_xscale spr.image_speed=0.5
+
+spr=instance_create(other.x,other.y,cloud) spr.sprite_index=clouds2 spr.image_xscale=other.image_xscale spr.image_speed=0.25
 audio_play_sound(spearhit,0.5,false);
 hp--;
 with(other) {instance_destroy()}

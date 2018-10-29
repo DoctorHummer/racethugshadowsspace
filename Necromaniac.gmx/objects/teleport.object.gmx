@@ -52,7 +52,7 @@ ykind = 0;
           <argument>
             <kind>1</kind>
             <string>if (place_meeting(x, y, playerpar) &amp;&amp; !instance_exists(sys_transition)) {    
-    room_goto_transition(next_room, xx, yy, ykind, 25);
+    room_goto_transition(next_room, xx, yy, ykind, 50);
 }
 </string>
           </argument>

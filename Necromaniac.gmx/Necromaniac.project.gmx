@@ -38,6 +38,10 @@
     <sound>sound\dia2</sound>
     <sound>sound\dia3</sound>
     <sound>sound\bedjump</sound>
+    <sound>sound\spotterready</sound>
+    <sound>sound\spotterdash</sound>
+    <sound>sound\flagup</sound>
+    <sound>sound\wurmyshot</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="velvet">
@@ -102,6 +106,10 @@
       <sprite>sprites\thorn2spawn</sprite>
       <sprite>sprites\thorn2dead</sprite>
       <sprite>sprites\thorn2attack</sprite>
+      <sprite>sprites\worm</sprite>
+      <sprite>sprites\worm_dead</sprite>
+      <sprite>sprites\s_bubble</sprite>
+      <sprite>sprites\s_bubbledied</sprite>
     </sprites>
     <sprites name="npcs">
       <sprite>sprites\shroombros</sprite>
@@ -134,6 +142,7 @@
     <sprite>sprites\greenback</sprite>
     <sprite>sprites\stopclouds</sprite>
     <sprite>sprites\pheart</sprite>
+    <sprite>sprites\heartout</sprite>
     <sprite>sprites\pheartstar</sprite>
     <sprite>sprites\buggyinwall</sprite>
     <sprite>sprites\platform2gore</sprite>
@@ -141,6 +150,8 @@
     <sprite>sprites\dialogueface</sprite>
     <sprite>sprites\bigstars</sprite>
     <sprite>sprites\fallskull</sprite>
+    <sprite>sprites\flagstock</sprite>
+    <sprite>sprites\flag</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tile1</background>
@@ -203,17 +214,20 @@
       <object>objects\spotter</object>
       <object>objects\spiduh_web</object>
       <object>objects\spiduh</object>
+      <object>objects\wurmy</object>
       <objects name="spawn">
         <object>objects\hogfrog_sleeping</object>
         <object>objects\zzz</object>
         <object>objects\thorny_spawn</object>
         <object>objects\thorny2_spawn</object>
+        <object>objects\wurmy_spawn</object>
       </objects>
       <objects name="dead">
         <object>objects\bug_dead</object>
         <object>objects\thorny_dead</object>
         <object>objects\thorny2_dead</object>
         <object>objects\hogfrog_dead</object>
+        <object>objects\wurmy_dead</object>
         <object>objects\spotter_dead</object>
         <object>objects\spiduh_dead</object>
         <object>objects\thorny_stick</object>
@@ -221,6 +235,7 @@
       <objects name="projectile">
         <object>objects\potfragment</object>
         <object>objects\potty</object>
+        <object>objects\bubble</object>
       </objects>
     </objects>
     <object>objects\cloud</object>
@@ -252,6 +267,8 @@
     <object>objects\fallblock</object>
     <object>objects\skullfall</object>
     <object>objects\bedch</object>
+    <object>objects\saveflag</object>
+    <object>objects\saveflag_heartout</object>
   </objects>
   <rooms name="rooms">
     <rooms name="garden">
@@ -271,7 +288,7 @@
       <room>rooms\l1_9</room>
       <room>rooms\l1_10</room>
       <room>rooms\l1_tree</room>
-      <room>rooms\room17</room>
+      <room>rooms\l1_11</room>
     </rooms>
     <rooms name="japan">
       <room>rooms\l2_1</room>

@@ -50,8 +50,8 @@ unlocker=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.1
-timer++ if timer&gt;100 {timer=0}
+            <string>image_speed=0.05
+timer+=0.5 if timer&gt;100 {timer=0}
 if timer=40 or timer=50 or timer=60
 {
 instance_create(x+4,y,zzz)

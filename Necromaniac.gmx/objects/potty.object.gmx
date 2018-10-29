@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.4
+            <string>image_speed=0.2
 </string>
           </argument>
         </arguments>
@@ -50,10 +50,10 @@
             <kind>1</kind>
             <string>
 spr=instance_create(x,y,cloud) spr.sprite_index=clouds3 spr.image_xscale=other.image_xscale spr.image_speed=0.5
-spr=instance_create(x,y,potfragment) spr.direction=100 spr.speed=6
-spr=instance_create(x,y,potfragment) spr.direction=80 spr.speed=6
-spr=instance_create(x,y,potfragment) spr.direction=125 spr.speed=4 spr.t=4
-spr=instance_create(x,y,potfragment) spr.direction=55 spr.speed=4 spr.t=4
+spr=instance_create(x,y,potfragment) spr.direction=100 spr.speed=3
+spr=instance_create(x,y,potfragment) spr.direction=80 spr.speed=3
+spr=instance_create(x,y,potfragment) spr.direction=125 spr.speed=2 spr.t=4
+spr=instance_create(x,y,potfragment) spr.direction=55 spr.speed=2 spr.t=4
 </string>
           </argument>
         </arguments>
@@ -77,7 +77,7 @@ spr=instance_create(x,y,potfragment) spr.direction=55 spr.speed=4 spr.t=4
           <argument>
             <kind>1</kind>
             <string>
-gravity=0.6
+gravity=0.15
 
 if y&gt;room_height+100 {instance_destroy()}
 </string>
@@ -151,6 +151,10 @@ instance_destroy()
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(enemycloud,0.5,false)
+
+spr=instance_create(other.x,other.y,cloud) spr.sprite_index=clouds2 spr.image_xscale=other.image_xscale spr.image_speed=0.25
+
+with(other) {instance_destroy()}
 instance_destroy()
 </string>
           </argument>

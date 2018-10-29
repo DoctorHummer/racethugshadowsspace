@@ -30,7 +30,13 @@ global.hp=6;
 global.maxhp=6;
 global.unshroom=0;
 global.unlockedjump=false; global.unlockedthrow=false;
-global.doorstate[0]=0; global.doorstate[1]=2;
+global.doorstate[0]=0; 
+global.doorstate[1]=2;
+global.doorstate[2]=2;
+for (a=0; a&lt;2; a+=1)
+{
+global.flagstate[a]=false;
+}
 global.treecompleted=false;
 
 </string>

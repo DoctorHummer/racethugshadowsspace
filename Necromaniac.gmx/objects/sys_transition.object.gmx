@@ -32,7 +32,7 @@ next_room = room;
 xx = -1;
 yy = -1;
 step = 0;
-time = 30;
+time = 60;
 
 // Fade Variables
 alpha = 0;
@@ -96,6 +96,12 @@ playerpar.dead=false
 playerpar.visible=true
 playerpar.sprite_index=velvet_idle
 playerpar.image_alpha=1
+playerpar.hitted=0
+playerpar.t=40
+playerpar.attack=0;
+playerpar.attacktimer=0;
+playerpar.isJumping=false;
+playerpar.shrJumping=false;
 }
 }
 
@@ -117,6 +123,7 @@ if ykind=6 { playerpar.y += 1200 }
 
 viewthing.x=playerpar.x 
 viewthing.y=playerpar.y
+
 
 </string>
           </argument>

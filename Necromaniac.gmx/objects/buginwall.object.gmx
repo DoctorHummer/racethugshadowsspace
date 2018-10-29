@@ -49,7 +49,7 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>timer++
+            <string>timer+=0.5
 if timer&lt;18 {image_index=0}
 if timer=18 {image_index=1}
 if timer=20 {image_index=2}

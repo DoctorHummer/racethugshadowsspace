@@ -26,11 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>movemode=choose(0,1)
-sp=1.75
+sp=1
 hp=1
 t=0
 type=4
-image_speed=0.2
+image_speed=0.1
 
 a = collision_line(x,y,x,y-128,cube, false, false)
 width=1
@@ -71,10 +71,10 @@ vspeed=-sp
 if (!place_meeting(x,y-16,platformtrack)){movemode=3;}
 }
 
-if movemode=2{vspeed=sp sp-=0.1 if sp&lt;=0 {movemode=4}}
-if movemode=3{vspeed=-sp sp-=0.1 if sp&lt;=0 {movemode=5}}
-if movemode=4{vspeed=-sp sp+=0.1 if sp&gt;=2 {movemode=1}}
-if movemode=5{vspeed=sp sp+=0.1 if sp&gt;=2 {movemode=0}}
+if movemode=2{vspeed=sp sp-=0.05 if sp&lt;=0 {movemode=4}}
+if movemode=3{vspeed=-sp sp-=0.05 if sp&lt;=0 {movemode=5}}
+if movemode=4{vspeed=-sp sp+=0.05 if sp&gt;=1 {movemode=1}}
+if movemode=5{vspeed=sp sp+=0.05 if sp&gt;=1 {movemode=0}}
 </string>
           </argument>
         </arguments>

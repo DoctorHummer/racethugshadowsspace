@@ -79,8 +79,8 @@ ini_close();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.8
-if a&gt;0 {a-=0.25}
+            <string>gravity=0.2
+if a&gt;0 {a-=0.125}
 </string>
           </argument>
         </arguments>
@@ -104,7 +104,7 @@ if a&gt;0 {a-=0.25}
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(enemycloud,0.5,false)
-spr=instance_create(x,y,cloud) spr.sprite_index=clouds5 spr.image_xscale=other.image_xscale spr.image_speed=0.5
+spr=instance_create(x,y,cloud) spr.sprite_index=clouds5 spr.image_xscale=other.image_xscale spr.image_speed=0.25
 instance_destroy()
 </string>
           </argument>

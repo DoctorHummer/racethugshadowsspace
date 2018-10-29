@@ -50,9 +50,9 @@ alarm[0]=2
           <argument>
             <kind>1</kind>
             <string>var chanse=choose(0,1,2,3,4)
-if sprite_index=clouds3 or sprite_index=clouds4 or sprite_index=clouds5
+if sprite_index=clouds4 or sprite_index=clouds5
 {
-if global.hp=1
+if global.hp&lt;=2
 {
 if chanse=1 {
 if !instance_exists(pickupheart) {instance_create(x,y-8,pickupheart)}

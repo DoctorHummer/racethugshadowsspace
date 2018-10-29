@@ -51,7 +51,7 @@ if chanse&lt;2 {sk=instance_create(x+8,y+choose(8,-8,24,-24,-40,-56),skullfall) 
           <argument>
             <kind>1</kind>
             <string>timer++
-if timer&gt;=70 {instance_create(x+8,y+8,skullfall) timer=choose(-10,0,10)}
+if timer&gt;=140 {instance_create(x+8,y+8,skullfall) timer=choose(-10,0,10)}
 </string>
           </argument>
         </arguments>

@@ -50,10 +50,10 @@ vs=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index=3 or image_index=8 vs=0.25
-if image_index=2 or image_index=6 vs=0.5
-if image_index=1 or image_index=4 or image_index=7 vs=1
-if image_index=0 or image_index=5 vs=1.5
+            <string>if image_index=3 or image_index=8 vs=0.125
+if image_index=2 or image_index=6 vs=0.2
+if image_index=1 or image_index=4 or image_index=7 vs=0.5
+if image_index=0 or image_index=5 vs=0.75
 image_alpha-=alphaspeed
 if image_alpha&lt;=0 {instance_destroy()}
 motion_add(270,vs)
@@ -79,7 +79,7 @@ motion_add(270,vs)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha-=0.4
+            <string>image_alpha-=0.2
 motion_add(270,0)
 </string>
           </argument>

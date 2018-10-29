@@ -86,14 +86,14 @@ else
             <kind>1</kind>
             <string>if stimer&gt;0 {stimer-=1}
 
-if stimer=5 {image_index=5}
-if stimer=3 {image_index=4}
-if stimer=1 {image_index=3}
+if stimer=10 {image_index=5}
+if stimer=6 {image_index=4}
+if stimer=2 {image_index=3}
 if stimer=0 {image_index=3}
 
 image_speed=0
 
-if t&gt;0 t-=0.2
+if t&gt;0 t-=0.1
 
 if (unlockable and global.unshroom=1) or !unlockable 
 {
@@ -104,9 +104,9 @@ if (unlockable and global.unshroom=1)
 if bwalpha&gt;0 {bwalpha-=0.05}
 }
 
-if tt&gt;48 {tt=0}
+if tt&gt;60 {tt=0}
 
-if tt=11 {simage=0} if tt=23 {simage=1} if tt=35 {simage=2} if tt=47 {simage=1}
+if tt=14 {simage=0} if tt=29 {simage=1} if tt=44 {simage=2} if tt=59 {simage=1}
 </string>
           </argument>
         </arguments>

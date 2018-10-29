@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>timer=0
 image_speed=0
-speed=choose(1.5,2,2.5)
+speed=choose(0.75,1,1.25)
 direction=90
 </string>
           </argument>
@@ -52,7 +52,7 @@ direction=90
           <argument>
             <kind>1</kind>
             <string>timer++
-if timer&gt;32 {speed-=0.2 image_speed=0.4}
+if timer&gt;64 {speed-=0.05 image_speed=0.2}
 image_alpha=0.75
 </string>
           </argument>

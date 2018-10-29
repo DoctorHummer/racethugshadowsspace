@@ -48,8 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.6
-if a&gt;0 {a-=0.25}
+            <string>gravity=0.15
+if a&gt;0 {a-=0.125}
 </string>
           </argument>
         </arguments>
@@ -73,11 +73,11 @@ if a&gt;0 {a-=0.25}
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(enemycloud,0.5,false)
-spr=instance_create(x,y,cloud) spr.sprite_index=clouds4 spr.image_xscale=other.image_xscale spr.image_speed=0.5
-spr=instance_create(x,y,thorny_stick) spr.direction=100 spr.speed=8
-spr=instance_create(x,y,thorny_stick) spr.direction=80 spr.speed=8
-spr=instance_create(x,y,thorny_stick) spr.direction=125 spr.speed=5 spr.t=4
-spr=instance_create(x,y,thorny_stick) spr.direction=55 spr.speed=5 spr.t=4
+spr=instance_create(x,y,cloud) spr.sprite_index=clouds4 spr.image_xscale=other.image_xscale spr.image_speed=0.25
+spr=instance_create(x,y,thorny_stick) spr.direction=100 spr.speed=4
+spr=instance_create(x,y,thorny_stick) spr.direction=80 spr.speed=4
+spr=instance_create(x,y,thorny_stick) spr.direction=125 spr.speed=3 spr.t=4
+spr=instance_create(x,y,thorny_stick) spr.direction=55 spr.speed=3 spr.t=4
 instance_destroy()
 </string>
           </argument>

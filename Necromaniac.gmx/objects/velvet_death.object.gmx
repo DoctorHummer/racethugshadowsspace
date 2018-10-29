@@ -50,20 +50,20 @@ a=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if timer&gt;=0{timer++;}
+            <string>if timer&gt;=0{timer+=0.5;}
 
 if timer=2 or timer = 6 or timer=10 or timer=14 {x+=2}
 if timer=4 or timer = 8 or timer=12 or timer=16 {x-=2}
 
 if type=0
 {
-if timer&gt;16{audio_play_sound(death,0.5,false); image_yscale=-1 vspeed-=10; hspeed-=0 gravity=0.6; timer=-1}
+if timer&gt;16{audio_play_sound(death,0.5,false); image_yscale=-1 vspeed-=5; hspeed-=0 gravity=0.15; timer=-1}
 if y&gt;room_height {instance_create(view_xview,view_yview,transit)}
 }
 if type=1
 {
 if timer=10 a=0.25 if timer=12 a=0.5 if timer=14 a=0.75 if timer=16 a=1
-if timer=17{audio_play_sound(death2,0.5,false); visible=false; for (i=0;i&lt;8;i++){with(instance_create(x,y,mmring)){speed=6;direction=45*other.i}}}
+if timer=17{audio_play_sound(death2,0.5,false); visible=false; for (i=0;i&lt;8;i++){with(instance_create(x,y,mmring)){speed=3;direction=45*other.i}}}
 if timer&gt;32 {instance_create(view_xview,view_yview,transit)}
 }
 </string>

@@ -31,7 +31,7 @@ active=false
 yd=50
 timer=0
 closespawn=true
-zpeed=2.5
+zpeed=1.25
 
 dig=0
 </string>
@@ -67,9 +67,9 @@ active=true
 
 if active
 {
-if timer=0 {if yd&gt;0 {yd-=2.5} else {timer=5}}
-if timer&gt;0 {timer--}
-if timer=1 {ss=instance_create(x,y,thorny) ss.image_xscale=image_xscale ss.zpeed=zpeed instance_destroy()}
+if timer=0 {if yd&gt;0 {yd-=1.25} else {timer=5}}
+if timer&gt;0 {timer-=0.5}
+if timer=1 {ss=instance_create(x,y-1,thorny) ss.image_xscale=image_xscale ss.zpeed=zpeed instance_destroy()}
 }
 
 if playerpar.x&gt;x {image_xscale=1} else {image_xscale=-1}

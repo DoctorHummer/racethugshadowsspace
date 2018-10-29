@@ -53,12 +53,12 @@ mode=0
             <string>if mode=0
 {
 if t&gt;=15 {t=0} 
-t++
+t+=0.5
 if t&gt;=0 and t&lt;3 {image_index=20} if t&gt;=3 and t&lt;6 {image_index=21} if t&gt;=6 and t&lt;9 {image_index=22} if t&gt;=9 and t&lt;12 {image_index=23} if t&gt;=12 and t&lt;15 {image_index=24}
 }
 if mode=1
 {
-t++
+t+=0.5
 if t&gt;=0 and t&lt;3 {image_index=25}
 if t&gt;=3 and t&lt;12 {image_index=26}
 if t=12 
@@ -66,18 +66,18 @@ if t=12
 image_index=27
 audio_play_sound(deswitch,0.5,false);
 instance_create(x,y,shaker)
-motion_add(90,12)
+motion_add(90,6)
 }
 if t&gt;12 {if y&lt;-96 {speed=0 viewthing.mode=2 mode=2 t=0 x=50}}
 }
 
 if mode=2
 {
-t++
+t+=0.5
 image_index=34
 if t&gt;50
 {
-motion_add(270,12) if speed&gt;12 speed=12
+motion_add(270,6) if speed&gt;6 speed=6
 if y&gt;425
 {
 y=440 mode=3 t=0 speed=0
@@ -90,7 +90,7 @@ bshr.mode=7 bshr.t=0 rshr.mode=4 rshr.t=0
 
 if mode=3
 {
-t++
+t+=0.5
 if t&gt;=0 and t&lt;2 {image_index=35}
 if t&gt;=2 and t&lt;4 {image_index=36}
 if t&gt;=4 and t&lt;15 {image_index=37}
@@ -101,8 +101,8 @@ if t=30
 with (instance_create(x,y,dialogue))
 {
 dlg_add_str(7,"Стоит прямо перед вами!",dia3)
-dlg_add_str(8,"Святые звёзды.. Это что ещё за штука?",dia2)
-dlg_add_str(9,"Я Копьё Отчаяния, прекрасный воин в #доспехах, поборник добра и справедливо- #сти, и я здесь чтобы вам помочь!",dia3)
+dlg_add_str(8,"Святые звёзды.. Что это ещё за штука?",dia2)
+dlg_add_str(9,"Я Копьё Отчаяния, прекрасный воин в доспехах, #поборник добра и справедливости, #и я здесь чтобы вам помочь!",dia3)
 dlg_add_str(10,"Притормози, чувиха! Просто положи палку #на землю и мы открыты для переговоров!",dia1)
 }
 }
@@ -110,7 +110,7 @@ dlg_add_str(10,"Притормози, чувиха! Просто положи п
 
 if mode=4
 {
-t++ image_index=38 if t&gt;4 and t&lt;=8{image_index=42}
+t+=0.5 image_index=38 if t&gt;4 and t&lt;=8{image_index=42}
 if t&gt;8 {image_index=43}
 if t&gt;15 {mode=5}
 }
@@ -118,7 +118,7 @@ if t&gt;15 {mode=5}
 if mode=5
 {
 if t&gt;=28 {t=0} 
-t++
+t+=0.5
 if t&gt;=0 and t&lt;7 {image_index=40} if t&gt;=7 and t&lt;14 {image_index=41} if t&gt;=14 and t&lt;21 {image_index=42} if t&gt;=21 and t&lt;28 {image_index=43}
 }
 </string>

@@ -333,7 +333,6 @@
     <instance objName="cube2" x="880" y="208" name="inst_140E5168" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="896" y="208" name="inst_58D044E8" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="800" y="160" name="inst_3B81137A" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
-    <instance objName="spotter" x="720" y="80" name="inst_FACA319C" locked="0" code="hp=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemyborder" x="1200" y="128" name="inst_E1E2AAD2" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="cube2" x="1184" y="16" name="inst_CE5A45E6" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="1168" y="112" name="inst_71FF6396" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
@@ -344,7 +343,7 @@
     <instance objName="cube2" x="1168" y="32" name="inst_D3C531C6" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="1168" y="16" name="inst_F9EFDB58" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="enemyborder" x="-16" y="160" name="inst_1C3EBA0F" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="spotter" x="784" y="112" name="inst_5B558B33" locked="0" code="hp=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spotter" x="768" y="96" name="inst_5B558B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="288" y="192" name="inst_36B5F274" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="288" y="208" name="inst_4E2145FF" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spearblock" x="304" y="176" name="inst_6E3BB7F8" locked="0" code="" scaleX="-0.5" scaleY="1" colour="4294967295" rotation="0"/>
@@ -534,6 +533,7 @@
     <instance objName="cube2" x="688" y="240" name="inst_7DF36D41" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="704" y="240" name="inst_562EC0B4" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
     <instance objName="cube2" x="720" y="240" name="inst_0EC13E08" locked="0" code="" scaleX="1" scaleY="1" colour="4290822336" rotation="0"/>
+    <instance objName="spotter" x="1088" y="64" name="inst_69AEB33C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tile1" x="240" y="0" w="16" h="16" xo="112" yo="64" id="10000500" name="inst_D6A577BF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

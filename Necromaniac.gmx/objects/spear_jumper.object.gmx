@@ -50,7 +50,7 @@ timer=0
           <argument>
             <kind>1</kind>
             <string>image_index=0
-if stimer&gt;0 {stimer-=1}
+if stimer&gt;0 {stimer-=0.5}
 if stimer=8 {image_angle=10}
 if stimer=7 {image_angle=-8.75}
 if stimer=6 {image_angle=7.5}
@@ -61,10 +61,10 @@ if stimer=2 {image_angle=2.5}
 if stimer=1 {image_angle=-1}
 if stimer=0 {image_angle=0}
 timer++
-if timer&gt;180 {instance_destroy()}
-if timer=180 || timer=174 || timer=168 || timer=162 || timer=156 || timer=150 || timer=144 || timer=138 {image_alpha=1}
-if timer=177 || timer=171 || timer=165 || timer=159 || timer=153 || timer=147 || timer=141 || timer=135 {image_alpha=0.1}
-if timer=135 {audio_play_sound(speargone,0.5,false);}
+if timer&gt;360 {instance_destroy()}
+if timer=360 || timer=348 || timer=336 || timer=324 || timer=312 || timer=300 || timer=288 || timer=276 {image_alpha=1}
+if timer=354 || timer=342 || timer=330 || timer=318 || timer=306 || timer=294 || timer=282 || timer=270 {image_alpha=0.1}
+if timer=270 {audio_play_sound(speargone,0.5,false);}
 
 </string>
           </argument>

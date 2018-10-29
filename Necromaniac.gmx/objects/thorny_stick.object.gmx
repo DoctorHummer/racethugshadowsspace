@@ -48,8 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.6
-if t&lt;15{t++}else{t=0}
+            <string>gravity=0.15
+if t&lt;15{t+=0.5}else{t=0}
 if t=0 {image_angle=0}
 if t=2 {image_angle=45}
 if t=4 {image_angle=90}

@@ -48,10 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.2
-i++ if i&gt;40 {i=0}
-if i&lt;20 {y-=0.2}
-if i&gt;=20 {y+=0.2}
+            <string>image_speed=0.1
+i++ if i&gt;20 {i=0}
+if i&lt;10 {y-=0.1}
+if i&gt;=10 {y+=0.1}
 
 </string>
           </argument>

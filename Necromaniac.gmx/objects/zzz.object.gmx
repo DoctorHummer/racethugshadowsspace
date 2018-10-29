@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspeed=1
+            <string>hspeed=0.3
+timer=240
 </string>
           </argument>
         </arguments>
@@ -48,9 +49,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity+=0.01
+            <string>if timer&lt;270
+{
+gravity+=0.001
+}
 gravity_direction=90
 
+timer++
+if timer&gt;300 {instance_destroy()}
 </string>
           </argument>
         </arguments>

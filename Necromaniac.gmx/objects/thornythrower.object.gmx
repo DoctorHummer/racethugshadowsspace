@@ -31,8 +31,8 @@ t=0
 image_speed=0
 timer=0
 image_index=5
-xrange=4
-yrange=6
+xrange=2
+yrange=3
 </string>
           </argument>
         </arguments>
@@ -55,7 +55,7 @@ yrange=6
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>timer++
+            <string>timer+=0.5
 if timer=3 image_index=6
 if timer=6 image_index=7
 if timer=9 image_index=0

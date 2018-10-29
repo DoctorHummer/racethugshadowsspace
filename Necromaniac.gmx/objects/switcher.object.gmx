@@ -68,15 +68,15 @@ if opened=3 {global.doorstate[type]=0 ini_open('savegame.ss'); ini_write_real('u
 }
 
 }
-if left {if ia&lt;90 {ia+=15}}
-else{if ia&gt;-90 {ia-=15}}
+if left {if ia&lt;90 {ia+=4.5}}
+else{if ia&gt;-90 {ia-=4.5}}
 t-=1
 }
 else
 {ia=0}
 
-if a&gt;-1 {a-=0.25}
-if a=1 {ad=-4} if a=0.75 {ad=+3.5} if a=0.5 {ad=-3} if a=0.25 {ad=+2.5} if a=0 {ad=-2} if a=-0.25 {ad=+1.5} if a=-0.5 {ad=-1} if a=-0.75 {ad=+0.5} if a=-1 {ad=0}
+if a&gt;-1 {a-=0.1}
+if a=0.6 {ad=-4} if a=0.4 {ad=+3.5} if a=0.2 {ad=-3} if a=0 {ad=+2.5} if a=-0.2 {ad=-2} if a=-0.4 {ad=+1.5} if a=-0.6 {ad=-1} if a=-0.8 {ad=+0.5} if a=-1 {ad=0}
 </string>
           </argument>
         </arguments>
@@ -144,7 +144,7 @@ a.speed=10
 audio_play_sound(deswitch,0.5,false);
 if playerpar.x&lt;x left=false else left=true
 t=45
-a=1
+a=0.6
 with(other){instance_destroy()}
 }
 

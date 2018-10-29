@@ -50,7 +50,7 @@ image_index=choose(0,1,2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity=0.6
+            <string>gravity=0.15
 if t&lt;15{t++}else{t=0}
 if t=0 {image_angle=0}
 if t=2 {image_angle=45}

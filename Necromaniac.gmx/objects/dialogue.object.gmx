@@ -49,6 +49,8 @@ q_content=ds_queue_create();
 q_sound=ds_queue_create();
 
 alarm[0]=1;
+
+downdraw=0;
 </string>
           </argument>
         </arguments>
@@ -121,7 +123,7 @@ if pos&lt;string_length(cur_text) then
     pos+=1;
     str+=sca;
     if !sca=" " {if !audio_is_playing(cur_sound){audio_play_sound(cur_sound,0.5,false)}};
-    if (sca="!" or sca="?" or sca=".") and sca2=" " {alarm[1]=8} else if sca="," alarm[1]=4 else alarm[1]=1
+    if (sca="!" or sca="?" or sca=".") and sca2=" " {alarm[1]=16} else if sca="," alarm[1]=8 else alarm[1]=2
 }
 </string>
           </argument>
@@ -198,7 +200,7 @@ symb=sys
 }
 */
 
-if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(global.controlattack)
+if keyboard_check_pressed(vk_space) or keyboard_check_pressed(vk_enter) or keyboard_check_pressed(global.controlattack)
     {
         if pos&lt;string_length(cur_text) then
         {
@@ -243,16 +245,16 @@ draw_text_ext_transformed_colour(view_xview+76,view_yview+16,string_copy(dtext[d
 var vx=view_xview
 var vy=view_yview
 
-draw_sprite(dialoguewindow,0,vx+32,vy+32)
+draw_sprite(dialoguewindow,0,vx+32,vy+32+downdraw)
 
 if cur_icon!=-1 then 
 {
-draw_sprite_ext(dialogueface,cur_icon,vx+32,vy+32,1,1,0,c_white,1);
+draw_sprite_ext(dialogueface,cur_icon,vx+32,vy+34+downdraw,1,1,0,c_white,1);
 }
 
 draw_set_color(c_white);
 draw_set_font(f) 
-draw_text_ext(vx+68,vy+2,str,15,330);
+draw_text_ext(vx+67,vy+2+downdraw,str,15,330);
 </string>
           </argument>
         </arguments>

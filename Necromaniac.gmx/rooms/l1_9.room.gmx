@@ -396,8 +396,8 @@
     <instance objName="spikes" x="608" y="224" name="inst_96B6CAF2" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="624" y="224" name="inst_E4840155" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="672" y="224" name="inst_9F471506" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="thornythrower" x="430" y="70" name="inst_54B39531" locked="0" code="xrange=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="thornythrower" x="495" y="70" name="inst_6002684A" locked="0" code="xrange=3.3&#xA;timer=24&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thornythrower" x="430" y="70" name="inst_54B39531" locked="0" code="xrange=0.5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thornythrower" x="495" y="70" name="inst_6002684A" locked="0" code="xrange=1.65&#xA;timer=24&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="592" y="160" name="inst_CE9E4E2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="608" y="160" name="inst_639AA54F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="624" y="160" name="inst_5632A76C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -476,7 +476,7 @@
     <instance objName="cube" x="1136" y="192" name="inst_91DF0F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="1152" y="192" name="inst_C3737569" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube" x="1168" y="192" name="inst_B13A9011" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="thorny_spawn" x="768" y="160" name="inst_C890211F" locked="0" code="fromleftside=false&#xA;distance=100&#xA;zpeed=2.8&#xA;closespawn=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thorny_spawn" x="768" y="160" name="inst_C890211F" locked="0" code="fromleftside=false&#xA;distance=100&#xA;zpeed=1.2&#xA;closespawn=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thorny_spawn" x="1248" y="176" name="inst_BA2EE33B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="720" y="224" name="inst_D6B23B1D" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spikes" x="688" y="224" name="inst_CF1E06C1" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -488,7 +488,7 @@
     <instance objName="cube1" x="752" y="176" name="inst_118E44B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="736" y="176" name="inst_CCCC103C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemyborder" x="1600" y="144" name="inst_D8567D02" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="thornythrower" x="1024" y="48" name="inst_A46ECB37" locked="0" code="xrange=3.3&#xA;timer=24&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thornythrower" x="1024" y="48" name="inst_A46ECB37" locked="0" code="xrange=1.65&#xA;timer=24&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="640" y="160" name="inst_22E8C4A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="656" y="160" name="inst_98BDEA3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="320" y="224" name="inst_D9A97945" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
