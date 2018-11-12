@@ -102,11 +102,12 @@ playerpar.attack=0;
 playerpar.attacktimer=0;
 playerpar.isJumping=false;
 playerpar.shrJumping=false;
-}
-}
 
-room_goto(next_room);
  
+}
+}
+room_goto(next_room);
+
 if (xx != -1) { playerpar.x = xx; }
 if (yy != -1) { playerpar.y = yy; }
     

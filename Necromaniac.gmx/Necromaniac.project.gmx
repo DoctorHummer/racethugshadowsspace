@@ -42,6 +42,7 @@
     <sound>sound\spotterdash</sound>
     <sound>sound\flagup</sound>
     <sound>sound\wurmyshot</sound>
+    <sound>sound\burbyspawn</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="velvet">
@@ -52,7 +53,6 @@
       <sprite>sprites\velvet_attack</sprite>
       <sprite>sprites\velvet_jumpattack</sprite>
       <sprite>sprites\velvet_jump</sprite>
-      <sprite>sprites\velvet_djump</sprite>
       <sprite>sprites\velvet_hit</sprite>
       <sprite>sprites\velvet_throw</sprite>
       <sprite>sprites\velvet_jumpthrow</sprite>
@@ -88,6 +88,7 @@
       <sprite>sprites\hollowattack</sprite>
       <sprite>sprites\buggy</sprite>
       <sprite>sprites\buggy_cover</sprite>
+      <sprite>sprites\hogfrog_mask</sprite>
       <sprite>sprites\hogfrog_stand</sprite>
       <sprite>sprites\hogfrog_sleep</sprite>
       <sprite>sprites\hogfrog_hitted</sprite>
@@ -110,10 +111,15 @@
       <sprite>sprites\worm_dead</sprite>
       <sprite>sprites\s_bubble</sprite>
       <sprite>sprites\s_bubbledied</sprite>
+      <sprite>sprites\burb</sprite>
+      <sprite>sprites\burb_spawn</sprite>
+      <sprite>sprites\burb_dead</sprite>
     </sprites>
     <sprites name="npcs">
       <sprite>sprites\shroombros</sprite>
       <sprite>sprites\shroomspin</sprite>
+      <sprite>sprites\moss</sprite>
+      <sprite>sprites\mossface</sprite>
     </sprites>
     <sprite>sprites\clouds1</sprite>
     <sprite>sprites\clouds2</sprite>
@@ -194,7 +200,6 @@
     <object>objects\cube1</object>
     <object>objects\cube2</object>
     <object>objects\teleport</object>
-    <object>objects\viewcontrol</object>
     <object>objects\drawbackground</object>
     <objects name="backgroundstuff">
       <object>objects\eyeinwall</object>
@@ -212,6 +217,7 @@
       <object>objects\thornythrower</object>
       <object>objects\hogfrog</object>
       <object>objects\spotter</object>
+      <object>objects\burby</object>
       <object>objects\spiduh_web</object>
       <object>objects\spiduh</object>
       <object>objects\wurmy</object>
@@ -221,6 +227,7 @@
         <object>objects\thorny_spawn</object>
         <object>objects\thorny2_spawn</object>
         <object>objects\wurmy_spawn</object>
+        <object>objects\burby_spawn</object>
       </objects>
       <objects name="dead">
         <object>objects\bug_dead</object>
@@ -230,6 +237,7 @@
         <object>objects\wurmy_dead</object>
         <object>objects\spotter_dead</object>
         <object>objects\spiduh_dead</object>
+        <object>objects\burby_dead</object>
         <object>objects\thorny_stick</object>
       </objects>
       <objects name="projectile">
@@ -254,6 +262,9 @@
           <object>objects\rshr</object>
           <object>objects\her_o</object>
         </objects>
+        <objects name="tree">
+          <object>objects\drmoss</object>
+        </objects>
       </objects>
     </objects>
     <object>objects\shroom</object>
@@ -273,6 +284,7 @@
   <rooms name="rooms">
     <rooms name="garden">
       <room>rooms\l1_1</room>
+      <room>rooms\l1_0</room>
       <room>rooms\l1_2</room>
       <room>rooms\l1_2a</room>
       <room>rooms\l1_3</room>

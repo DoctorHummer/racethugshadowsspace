@@ -91,7 +91,7 @@
     <instance objName="cube1" x="32" y="16" name="inst_FD866E7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="-16" y="224" name="inst_6BDFEC4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="0" y="224" name="inst_74F04893" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cube1" x="16" y="224" name="inst_B528AE32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cube1" x="16" y="224" name="inst_B528AE32" locked="0" code="check1=false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="32" y="224" name="inst_44E304BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="48" y="224" name="inst_0A2FB794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cube1" x="64" y="224" name="inst_3C5271AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

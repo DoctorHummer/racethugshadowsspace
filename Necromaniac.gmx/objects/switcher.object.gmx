@@ -76,7 +76,7 @@ else
 {ia=0}
 
 if a&gt;-1 {a-=0.1}
-if a=0.6 {ad=-4} if a=0.4 {ad=+3.5} if a=0.2 {ad=-3} if a=0 {ad=+2.5} if a=-0.2 {ad=-2} if a=-0.4 {ad=+1.5} if a=-0.6 {ad=-1} if a=-0.8 {ad=+0.5} if a=-1 {ad=0}
+//if a=0.6 {ad=-4} if a=0.4 {ad=+3.5} if a=0.2 {ad=-3} if a=0 {ad=+2.5} if a=-0.2 {ad=-2} if a=-0.4 {ad=+1.5} if a=-0.6 {ad=-1} if a=-0.8 {ad=+0.5} if a=-1 {ad=0}
 </string>
           </argument>
         </arguments>

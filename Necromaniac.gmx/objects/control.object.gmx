@@ -28,9 +28,9 @@
             <string>global.controlleft=ord('A');
 global.controlright=ord('D');
 global.controljump=ord('K');
-global.controlattack=ord('J');
 global.controldown=ord('S');
 global.controlup=ord('W');
+global.controlattack=ord('J');
 global.location=0;
 started=0
 

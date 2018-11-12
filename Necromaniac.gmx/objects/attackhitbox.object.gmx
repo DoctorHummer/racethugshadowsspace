@@ -49,10 +49,10 @@ right=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if timer&gt;2 {instance_destroy()}
+            <string>if timer&gt;4 {instance_destroy()}
 timer++
 
-if right=true {x=playerpar.x+3 y=playerpar.y+4} else {x=playerpar.x-3 y=playerpar.y+4}
+if right=true {x=playerpar.x+3 y=playerpar.y-12} else {x=playerpar.x-3 y=playerpar.y-12}
 </string>
           </argument>
         </arguments>

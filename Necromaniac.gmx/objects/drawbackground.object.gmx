@@ -97,6 +97,13 @@ for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,9,xv+a+fogx2*0.5,yv*0.96,
 for (a=-400; a&lt;800; a+=400){draw_sprite_ext(bground,8,xv+a+fogx3,yv*0.94,1,1,0,ib,1)}
 //2 200   1 400   0.5 800   0.75 600   0.25 1600
 
+if room=l1_0
+{
+draw_sprite_ext(bground,21,xv,0,1,1,0,ib,1)
+draw_sprite_ext(bground,20,xv,0,1,1,0,ib,1)
+draw_sprite_ext(bground,19,xv,0,1,1,0,ib,1)
+draw_sprite_ext(bground,18,xv,0,1,1,0,ib,1)
+}
 if room=l1_1
 {
 draw_sprite_ext(bground,0,xv,32+yv*0.8,1,1,0,ib,1)

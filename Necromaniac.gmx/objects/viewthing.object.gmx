@@ -93,11 +93,12 @@ else
   if instance_exists(playerpar)
   {
   if (yMax &gt; playerpar.y) yMax = playerpar.y 
-  if y&gt;968 or global.treecompleted {y = playerpar.y} else 
+  if y&gt;968 or global.treecompleted {y +=(playerpar.y-y)*.5} else 
   {
-  y = yMax 
+  //y = yMax 
+  y +=(yMax-y)*.5
   timer++
-  if timer=20 or timer=40 or timer=60 or timer=80 or timer=100 or timer=120 or timer=140 {instance_create(random(room_width),view_yview+256,skullfall) }
+  if timer=20 or timer=40 or timer=60 or timer=80 or timer=100 or timer=120 or timer=140 {instance_create(random(room_width),view_yview+276,skullfall) }
   if timer&gt;=140 {timer=choose(-10,0,10)}
   }
   }
@@ -111,8 +112,9 @@ if mode=1 {if y&gt;80 {motion_add(90,0.25) if speed&gt;1.75 speed=1.75} else {if
 }
 else
 {
-  if instance_exists(playerpar) {y = playerpar.y x +=(playerpar.x-x)*.5}
+  if instance_exists(playerpar) {y +=(playerpar.y-y)*.5 /*y = playerpar.y*/ x +=(playerpar.x-x)*.5}
 }
+
 </string>
           </argument>
         </arguments>
@@ -135,8 +137,20 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if room=l1_tree {yMax=1440} else {yMax=room_height}
+            <string>if room=l1_tree 
+{
+yMax=1440
+
+if !global.treescene 
+{
+playerpar.dead=true
+}
+} 
+else 
+{
+yMax=room_height
+}
+
 </string>
           </argument>
         </arguments>

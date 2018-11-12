@@ -3,10 +3,10 @@
   <spriteName>hogfrog_stand</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>parmonster</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>hogfrog_mask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -29,11 +29,13 @@
 type=2
 t=0
 isJumping=false
-timer=-25
+timer=-12
 hitted=0
 evil=false
 g=0
 unlocker=false
+col=collision_line(x,y,playerpar.x,playerpar.y-16,cube,false,false)
+calm=true
 </string>
           </argument>
         </arguments>
@@ -56,61 +58,44 @@ unlocker=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(playerpar)
-{
-if timer&lt;40 timer+=0.5
+            <string>col=collision_line(x,y,playerpar.x,playerpar.y-16,cube,false,false)
 
-if timer&lt;39 
+if timer&lt;79 
 {
+if timer&lt;56 {if !calm {timer++} else {if !col timer++}}
+else timer++
 sprite_index=hogfrog_stand image_speed=0.1
 if x&gt;playerpar.x {image_xscale=-1} else {image_xscale=1}
 }
-if timer&gt;=30 and timer&lt;33 {g=0.25 image_index=0}
-if timer&gt;=33 and timer&lt;36 {g=0.5 image_index=1}
-if timer&gt;=36 and timer&lt;39 {g=0.75 image_index=2}
 
-if timer=39
+if timer&gt;=56 and timer&lt;62 {g=0.25 image_index=0}
+if timer&gt;=62 and timer&lt;68 {g=0.5 image_index=1}
+if timer&gt;=68 and timer&lt;74 {g=0.75 image_index=2}
+
+if timer=74 {audio_play_sound(frogjump,0.5,false);}
+
+if timer&gt;=74 and timer&lt;=78
 {
-audio_play_sound(frogjump,0.5,false);
-if collision_line(x,y,playerpar.x,playerpar.y,cube,false,false)
-{
-if x&gt;playerpar.x {image_xscale=-1 motion_add(100,5)} else {image_xscale=1 motion_add(80,5)}
-//vspeed=-6
-//if x&gt;playerpar.x {image_xscale=-1 hspeed=choose(-1,-1.5)} else {image_xscale=1 hspeed=choose(1,1.5)}
-}
-else
-{
-if x&gt;playerpar.x {image_xscale=-1 motion_add(135,4)} else {image_xscale=1 motion_add(45,4)}
-//vspeed=-3
-//if x&gt;playerpar.x {image_xscale=-1 hspeed=choose(-2,-2.5)} else {image_xscale=1 hspeed=choose(2,2.5)}
-}
+if col{ if x&gt;playerpar.x {image_xscale=-1 motion_add(100,1.25)} else {image_xscale=1 motion_add(80,1.25)}} 
+else{ if x&gt;playerpar.x {image_xscale=-1 motion_add(125,1)} else {image_xscale=1 motion_add(55,1)}}
 }
 
-if timer&gt;=39 
+if timer&gt;=74
 {
-if hitted=0 
-{
-sprite_index=hogfrog_jump 
-image_index = 1 + sign(vspeed);
-if (abs(vspeed) &lt; 2) { image_index = 1; }
-}
-
-gravity=0.2 
-
-if place_meeting(x+hspeed,y,cube) or place_meeting(x+hspeed,y,enemyborder) {hspeed=-hspeed/2 if isJumping=0 {image_xscale=-image_xscale}}
-
+if hitted=0 {sprite_index=hogfrog_jump; image_index = 1 + sign(vspeed); if (abs(vspeed) &lt; 1) image_index = 1;} else {sprite_index=hogfrog_hitted}
+gravity=0.2
+if place_meeting(x+hspeed,y,cube) or place_meeting(x+hspeed,y,enemyborder) {if hitted=0 hspeed=-hspeed/3 else hspeed=-hspeed/10}
 if place_meeting(x,y+vspeed,cube) or place_meeting(x,y+vspeed,enemyborder) 
 {
 if vspeed &gt; 0
 {
-with instance_create(x,y+20,cloud) {sprite_index=stopclouds image_speed=0.3}
-audio_play_sound(frogland,0.5,false); move_contact_solid(270, vspeed) vspeed = 0 hspeed = 0 hitted=0 isJumping = 0 gravity = 0 
 if !evil timer=16 else timer=26
+with instance_create(x,y+20,cloud) {sprite_index=stopclouds image_speed=0.3}
+audio_play_sound(frogland,0.5,false); move_contact_solid(270, vspeed) speed=0 hspeed=0 vspeed = 0 hitted=0 gravity = 0 
 } 
 else
 {vspeed=-vspeed/3}
 }
-} 
 }
 
 if t&gt;0 {t-=0.125}
@@ -137,7 +122,8 @@ if g&gt;0 {g-=0.125}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if timer&gt;=65 and !place_free(x+speed,y+speed)
+            <string>/*
+//if timer&gt;=65 and !place_free(x+speed,y+speed)
 //{  
 //move_contact_solid(direction,speed)  
 //gravity=0 speed=0 timer=0
@@ -151,6 +137,7 @@ other.stimer=8;
 //if x&gt;playerpar.x {image_xscale=-1 hspeed=-2.5} else {image_xscale=1 hspeed=2.5}
 if x&gt;playerpar.x {image_xscale=-1 motion_add(135,4)} else {image_xscale=1 motion_add(45,4)}
 }
+*/
 </string>
           </argument>
         </arguments>
@@ -182,8 +169,10 @@ draw_set_blend_mode( bm_normal );
 //draw_text(x,y-32,'timer '+string(timer))
 //draw_text(x,y-32,'vspeed '+string(vspeed))
 //draw_text(x,y-64,'hitted '+string(hitted))
-//draw_text(x,y-96,'isJumping '+string(isJumping))
+//draw_text(x,y-96,timer)
 
+
+//draw_sprite_ext(hogfrog_mask,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,0.5)
 </string>
           </argument>
         </arguments>

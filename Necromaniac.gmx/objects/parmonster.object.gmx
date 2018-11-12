@@ -25,18 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if t&lt;=0 and !collision_line(x,y,playerpar.x,playerpar.y,cube,false,false)
+            <string>if t&lt;=0 and !collision_line(x,y,playerpar.x,playerpar.y-16,cube,false,false)
 {
 t=1
 if type=2 
 {
-isJumping=1
 hitted=1
-timer=39
+timer=78
 sprite_index=hogfrog_hitted
 speed=0
 
-if x&gt;other.x {image_xscale=-1 motion_add(45,4)} else {image_xscale=1 motion_add(135,4)}
+/*if x&gt;other.x*/if x&gt;playerpar.x {image_xscale=-1 motion_set(45,4)} else {image_xscale=1 motion_set(135,4)}
 }
 if type=3 {if x&gt;playerpar.x hitside=0 else hitside=1}
 
@@ -54,11 +53,12 @@ if image_xscale=-1 {ww.image_xscale=-1 ww.hspeed=-2.5}else{ww.image_xscale=1 ww.
 ww.vspeed=-3
 }
 }
-if type=2 {ded=instance_create(x,y,hogfrog_dead) {ded.speed=3.5; if x&lt;other.x ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale ded.unlocker=unlocker}}
+if type=2 {ded=instance_create(x,y,hogfrog_dead) {ded.speed=3.5; if x&lt;playerpar.x ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale ded.unlocker=unlocker}}
 if type=3 {ded=instance_create(x,y,spotter_dead) {ded.speed=3; if x&lt;playerpar.x ded.direction=135 else ded.direction=45 ded.image_xscale=image_xscale}}
 if type=4 {ded=instance_create(x,y,spiduh_dead) {ded.speed=3; if x&lt;playerpar.x ded.direction=135 else ded.direction=45 ded.image_xscale=image_xscale at=instance_create(x,y,spiduh_web) at.atrail=atrail at.dirr=dirr at.webtype=webtype}}
 if type=5 {ded=instance_create(x,y,thorny2_dead) {ded.speed=4; if x&lt;playerpar.x ded.direction=145 else ded.direction=35 ded.image_xscale=image_xscale}}
-if type=6 {ded=instance_create(x,y,wurmy_dead) {ded.speed=3.5; if x&lt;other.x ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}}
+if type=6 {ded=instance_create(x,y,wurmy_dead) {ded.speed=3.5; if x&lt;playerpar.x ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}}
+if type=7 {ded=instance_create(x,y,burby_dead) {ded.speed=3; if x&lt;playerpar.x ded.direction=135 else ded.direction=45 ded.image_xscale=image_xscale}}
 instance_destroy()
 }
 
@@ -91,13 +91,12 @@ hp-=1
 t=1
 if type=2 
 {
-isJumping=1
 hitted=1
-timer=39
+timer=78
 sprite_index=hogfrog_hitted
 speed=0
 
-if x&gt;other.x {image_xscale=-1 motion_add(45,4)} else {image_xscale=1 motion_add(135,4)}
+if other.image_xscale=1 {image_xscale=-1 motion_set(45,4)} else {image_xscale=1 motion_set(135,4)}
 }
 
 if hp=1 
@@ -118,6 +117,7 @@ if type=3 {ded=instance_create(x,y,spotter_dead) ded.speed=3.5; if other.image_x
 if type=4 {spr=instance_create(x,y+speed,cloud) spr.sprite_index=clouds3 spr.image_xscale=other.image_xscale spr.image_speed=0.5 at=instance_create(x,y,spiduh_web) at.atrail=atrail at.dirr=dirr at.webtype=webtype}
 if type=5 {ded=instance_create(x,y,thorny2_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}
 if type=6 {ded=instance_create(x,y,wurmy_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}
+if type=7 {ded=instance_create(x,y,burby_dead) ded.speed=3.5; if other.image_xscale=-1 ded.direction=115 else ded.direction=65 ded.image_xscale=image_xscale}
 
 instance_destroy()
 }

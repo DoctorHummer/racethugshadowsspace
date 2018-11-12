@@ -51,9 +51,9 @@ timer=0
           <argument>
             <kind>1</kind>
             <string>timer++
-if xx1&gt;0 {if xx&gt;0.001 xx-=0.001 xx1-=xx/1.25}
+if xx1&gt;0 {if xx&gt;0.001 xx-=0.001 xx1-=xx/1.4}
 
-if timer&gt;50
+if timer&gt;55
 {
 ini_open('savegame.ss');
 if ini_section_exists('saving')

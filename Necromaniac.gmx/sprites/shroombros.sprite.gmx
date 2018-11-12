@@ -8,8 +8,8 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>46</bbox_right>
-  <bbox_top>2</bbox_top>
+  <bbox_right>47</bbox_right>
+  <bbox_top>0</bbox_top>
   <bbox_bottom>47</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -66,5 +66,11 @@
     <frame index="43">images\shroombros_43.png</frame>
     <frame index="44">images\shroombros_44.png</frame>
     <frame index="45">images\shroombros_45.png</frame>
+    <frame index="46">images\shroombros_46.png</frame>
+    <frame index="47">images\shroombros_47.png</frame>
+    <frame index="48">images\shroombros_48.png</frame>
+    <frame index="49">images\shroombros_49.png</frame>
+    <frame index="50">images\shroombros_50.png</frame>
+    <frame index="51">images\shroombros_51.png</frame>
   </frames>
 </sprite>

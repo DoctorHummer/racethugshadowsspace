@@ -13,4 +13,5 @@ if ini_key_exists('unlocks','flagstate'+string(a)) {global.flagstate[a]=(ini_rea
 }
 
 global.treecompleted=(ini_read_real('unlocks','treecompleted',0))
+global.treescene=(ini_read_real('unlocks','treescene',0))
 ini_close(); 

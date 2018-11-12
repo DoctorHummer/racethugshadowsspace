@@ -34,7 +34,6 @@ t=0 t2=0
 hitside=0
 speeed=choose(1,1.25,1.5)
 
-attack=false
 timer=0
 dashright=true
 </string>
@@ -63,7 +62,7 @@ dashright=true
 
 if ((timer&lt;80 or timer&gt;=130))
 {
-motion_add(point_direction(x,y,playerpar.x,playerpar.y),.1);
+motion_add(point_direction(x,y,playerpar.x,playerpar.y-16),.1);
 if x&lt;playerpar.x{image_xscale=1; dashright=true}
 if x&gt;playerpar.x{image_xscale=-1; dashright=false}
 if (speed &gt; speeed){ speed = speeed;}
@@ -72,7 +71,7 @@ if (speed &lt; 1){ speed = 1;}
 if timer=80 {audio_play_sound(spotterready,0.5,false)}
 if (timer&gt;=80 and timer&lt;=96)
 {
-motion_add(point_direction(x,y,playerpar.x,playerpar.y),0.1);
+motion_add(point_direction(x,y,playerpar.x,playerpar.y-16),0.1);
 if x&lt;playerpar.x{image_xscale=1; dashright=true}
 if x&gt;playerpar.x{image_xscale=-1; dashright=false}
 if (speed &gt; 0.5){ speed = 0.5;}

@@ -33,7 +33,7 @@ t=0
 timer=0
 zpeed=2.5
 
-online=collision_line(x,y+15,playerpar.x,playerpar.y+15,cube,false,false)
+online=collision_line(x,y+15,playerpar.x,playerpar.y-18,cube,false,false)
 
 nonattacktimer=0
 </string>
@@ -59,7 +59,7 @@ nonattacktimer=0
           <argument>
             <kind>1</kind>
             <string>
-online=collision_line(x,y+15,playerpar.x,playerpar.y+15,cube,false,false)
+online=collision_line(x,y+15,playerpar.x,playerpar.y-18,cube,false,false)
 
 if attacktimer&lt;=0
 {

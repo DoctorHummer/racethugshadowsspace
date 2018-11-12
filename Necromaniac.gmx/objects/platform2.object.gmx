@@ -66,7 +66,7 @@ if random(10)&lt;=2
 {
 s1=instance_create(x+random_range(-24,24),y+6,platform2stone) s1.image_index=8
 }
-timer++ if timer&gt;28
+timer++ if timer&gt;32
 {
 mode=2 image_xscale=0 solid=false xsc=0
 s1=instance_create(x-1,y-3,platform2stone) s1.image_index=1
@@ -82,14 +82,14 @@ s1=instance_create(x-20,y+4,platform2stone) s1.image_index=4
 s1=instance_create(x+13,y+3,platform2stone) s1.image_index=5
 s1=instance_create(x+21,y+5,platform2stone) s1.image_index=6
 }
-stimer++ if stimer&gt;6 {stimer=0}
-if stimer=3 {sx=-1} if stimer=6 {sx=1}
+stimer++ if stimer&gt;8 {stimer=0}
+if stimer=4 {sx=-1} if stimer=8 {sx=1}
 }
 
 if mode=2
 {
 if distance_to_object(playerpar)&gt;24 {timer+=0.5}
-if timer&gt;50{sx=0 mode=3}
+if timer&gt;66{sx=0 mode=3}
 }
 
 if mode=3
